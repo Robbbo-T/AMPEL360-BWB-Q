@@ -6,7 +6,7 @@
 
 **A. Pelliccia, et al.**  
 Affiliation: Aerospace & Quantum United Advanced Venture  
-Contact: corresponding.author@ampel360.example
+
 
 ---
 
