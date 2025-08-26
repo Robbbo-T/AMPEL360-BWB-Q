@@ -223,11 +223,12 @@ wbs:
 control:
   doc_id: "AMPEL360-UTCS01-REQ-CB-PG-001-v1.3"
   checksum: "<sha256>"
-
+```
 
 ⸻
 
-Appendix C — Optimization Data Interfaces
+## Appendix C — Optimization Data Interfaces
+
    •   constraints/hard_constraints.yaml
    •   data/candidates.yaml
    •   feasible_set.json
@@ -236,7 +237,8 @@ Appendix C — Optimization Data Interfaces
 
 ⸻
 
-Appendix D — Certification & Security Case (Phase 07)
+## Appendix D — Certification & Security Case (Phase 07)
+
    •   Compliance Matrix (REQ ↔ Test/Analysis ↔ Result ↔ Standard)
    •   Safety Case (FHA/PSSA/SSA)
    •   Security Case (threat model, pen-tests, SBOM attestations)
