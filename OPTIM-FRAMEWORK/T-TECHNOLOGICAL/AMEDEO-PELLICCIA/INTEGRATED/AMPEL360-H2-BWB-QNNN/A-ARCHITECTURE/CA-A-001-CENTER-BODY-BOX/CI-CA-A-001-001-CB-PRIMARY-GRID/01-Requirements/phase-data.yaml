@@ -1,37 +1,51 @@
-phase:
-  name: 01-Requirements
-  ci: CI-CA-A-001-001-CB-PRIMARY-GRID
-  ca: CA-A-001-CENTER-BODY-BOX
-  status: Not Started
-  completion_percentage: 0
-  start_date: null
-  end_date: null
-  duration_days: null
-deliverables:
-- name: 01-Requirements Documentation
-  type: Document
-  status: Not Started
-  owner: TBD
-  due_date: null
-- name: 01-Requirements Technical Specifications
-  type: Technical
-  status: Not Started
-  owner: TBD
-  due_date: null
-metrics:
-  quality_score: null
-  cost_actual: null
-  cost_planned: null
-  effort_hours: null
-  defect_count: 0
-dependencies: []
-risks: []
-approvals:
-  technical_lead: false
-  phase_gate_review: false
-  configuration_control: false
+utcs_phase: "01"
+component_id: "CI-CA-A-001-001-CB-PRIMARY-GRID"
+status: "FROZEN"
+date: "2025-08-29"
+doc_id: "AMPEL360-REQ-CB-PG-001-v1.3"
+owner: "Amedeo Pelliccia"
+classification: "UNCLASSIFIED // For Official Use Only"
+
 metadata:
-  created_by: AMPEL360 Framework Generator
-  creation_date: '2024-01-01'
-  last_modified: '2024-01-01'
-  version: '1.0'
+  effective_date: "2025-08-26"
+  revision_date: "2025-08-29"
+  phase_gate: "01-APPROVED"
+  
+links:
+  - evidence/STR-AN-001.pdf
+  - evidence/STR-TST-PP-001.pdf
+  - evidence/LOAD-341-VC-VD.pdf
+  - evidence/AEL-GVT-001.pdf
+  - evidence/AEL-FLT-001.pdf
+  - evidence/FDT-AN-001.pdf
+  - evidence/FDT-SBCT-001.pdf
+  - evidence/BVID-TST-001.pdf
+  - evidence/FDT-CG-001.pdf
+  - evidence/THR-TST-CRYO-001.pdf
+  - evidence/THR-TST-HFX-001.pdf
+  - evidence/IFX-TST-MOUNT-001.pdf
+  - evidence/STR-AN-003.pdf
+  - evidence/MAT-ALW-CRYO-001.pdf
+  - evidence/LPS-TST-001.pdf
+  - evidence/EMC-TST-001.pdf
+  - evidence/EMC-AN-001.pdf
+  - evidence/STR-CALC-001.xlsx
+  - evidence/STR-AN-002.pdf
+
+revision_history:
+  - version: "1.0"
+    date: "2025-08-26"
+    changes: "Initial Release"
+    author: "AMPEL360 Team"
+  - version: "1.1"
+    date: "2025-08-27"
+    changes: "Addressed RFAs from Validation Report"
+    author: "AMPEL360 Team"
+  - version: "1.2"
+    date: "2025-08-28"
+    changes: "Audit-ready compliance updates"
+    author: "AMPEL360 Team"
+  - version: "1.3"
+    date: "2025-08-29"
+    changes: "Final RFA resolution - FROZEN"
+    author: "AMPEL360 Team"
