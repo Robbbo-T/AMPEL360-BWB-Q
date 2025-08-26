@@ -2,15 +2,17 @@
 
 **Amedeo Pelliccia methodology**
 
-
-⸻
-
-
 # UTCS-MI: An Executable Systems Engineering Doctrine for Quantum-Inspired Aircraft Configuration
 
 **A. Pelliccia, et al.**  
 Affiliation: Aerospace & Quantum United Advanced Venture  
-Contact: corresponding.author@ampel360.example  
+Contact: corresponding.author@ampel360.example
+
+---
+
+## AMEDEO-PELLICCIA
+
+**Amedeo Pelliccia methodology**
 
 ---
 
@@ -19,14 +21,14 @@ Contact: corresponding.author@ampel360.example
 This paper formalizes a model-based, executable doctrine for complex aeronautical systems engineering that couples:  
 (i) a domain taxonomy—the **AMEDEO-PELLICCIA methodology**—that makes large, multi-disciplinary programs tractable,  
 (ii) a life-cycle process—**UTCS**, a set of 11 canonical phases spanning requirements through sustainment and recycling, and  
-(iii) an optimization pipeline that enumerates a certifiable feasible set and selects architectures via risk-aware quantum/classical optimization.  
+(iii) an optimization pipeline that enumerates a certifiable feasible set and selects architectures via risk-aware quantum/classical optimization.
 
-We instantiate the doctrine on a hydrogen-propelled Blended Wing Body (BWB) program, **AMPEL360-H₂-BWB-Q**, and show how requirements, verification, and governance artifacts are rendered as code (YAML/JSON), enabling audit-ready traceability from initial requirements to digital packages and certification security cases.  
+We instantiate the doctrine on a hydrogen-propelled Blended Wing Body (BWB) program, **AMPEL360-H₂-BWB-Q**, and show how requirements, verification, and governance artifacts are rendered as code (YAML/JSON), enabling audit-ready traceability from initial requirements to digital packages and certification security cases.
 
 **Contributions:**  
 (a) a formal semantics for UTCS phases and artifacts,  
 (b) an executable work-breakdown mapped to the AMEDEO-PELLICCIA domains, and  
-(c) a mathematically precise selector using an \(E[cost] + \beta·CVaR_\alpha(cost)\) objective solved over a feasible set \(\mathcal{F}\) via QAOA or classical surrogates.
+(c) a mathematically precise selector using an \(E[cost] + \beta \cdot \mathrm{CVaR}_\alpha(cost)\) objective solved over a feasible set \(\mathcal{F}\) via QAOA or classical surrogates.
 
 **Keywords:** UTCS, MBSE, ARP4754A/4761, BWB, hydrogen aviation, QAOA, CVaR, digital twin, certification security, executable requirements.
 
@@ -34,13 +36,13 @@ We instantiate the doctrine on a hydrogen-propelled Blended Wing Body (BWB) prog
 
 ## 1. Introduction
 
-Modern aerospace programs confront simultaneous pressures: decarbonization (e.g., liquid hydrogen), radical geometries (e.g., BWB), and highly coupled ecosystems (airports, supply chains, cyber-physical attack surfaces). Traditional document-centric methods struggle to keep pace, leading to ambiguities, late design churn, and certification surprises.  
+Modern aerospace programs confront simultaneous pressures: decarbonization (e.g., liquid hydrogen), radical geometries (e.g., BWB), and highly coupled ecosystems (airports, supply chains, cyber-physical attack surfaces). Traditional document-centric methods struggle to keep pace, leading to ambiguities, late design churn, and certification surprises.
 
-We present an executable systems engineering doctrine that integrates a domain taxonomy, a canonical life-cycle, and a risk-aware optimizer into a single, auditable pipeline.  
+We present an executable systems engineering doctrine that integrates a domain taxonomy, a canonical life-cycle, and a risk-aware optimizer into a single, auditable pipeline.
 
 **Thesis:**  
 1. Program-level order arises from a complete, non-overlapping domain decomposition (AMEDEO-PELLICCIA).  
-2. End-to-end rigor requires a canonical life-cycle with machine-checkable entry/exit criteria (UTCS—11 phases).  
+2. End-to-end rigor requires a canonical life-cycle with machine-checkable entry/exit criteria (UTCS—11 phases).
 
 With these foundations, optimization becomes tractable: we enumerate feasible, certifiable architectures and select a risk-optimal design using tail-risk aware objectives.
 
@@ -69,7 +71,7 @@ Our doctrine interfaces with aerospace standards:
 - Environmental: **DO-160**  
 - Lightning: **ARP5412/5414/5416**  
 - Hydrogen: **ISO-19880, ISO-11114-4**  
-- Materials: **CMH-17, MMPDS**  
+- Materials: **CMH-17, MMPDS**
 
 We do not replace these norms; we bind them into an executable pipeline with explicit artifacts and acceptance criteria.
 
@@ -89,19 +91,19 @@ Each domain contains **Configuration Architectures (CAs)** decomposed into **Con
 
 ## 5. UTCS—11 Canonical Phases (Process Semantics)
 
-| Phase | Name                   | Primary Objective                          | Gate | Exit Artifacts |
-|-------|------------------------|--------------------------------------------|------|----------------|
-| 01    | Requirements           | Stakeholder needs → requirements           | SRR  | Baseline REQs (YAML), standards mapping, V&V seed |
-| 02    | Design                 | Functional/logical/physical design         | PDR/CDR | Models, ICDs, FEM/CFD, item REQs |
-| 03    | Building-Prototyping   | Prototypes, coupons, rigs, breadboards     | BRR  | Build records, test rigs, prototype BoMs |
-| 04    | Executables-Packages   | Software/firmware/data packages            | SW/HW PR | Builds, binaries, containers, SBOMs |
-| 05    | Verification-Validation| Evidence vs. requirements                  | TR/VR | Test reports, validation evidence |
-| 06    | Integration-Qualification| System integration & qualification      | IRR/QR | Integrated test logs, qual evidence |
-| 07    | Certification-Security | Compliance, safety & cyber cases           | CR/ASR | Compliance matrix, safety/cyber case |
-| 08    | Production-Scale       | Industrialization, rate readiness          | PRR  | Process FMEAs, SPC plans, configs |
-| 09    | Ops-Services           | Entry into service, operations             | ORR  | Ops manuals, training packs |
-| 10    | MRO                    | Maintenance, repair, overhaul              | MRR  | Maintenance specs, IPC |
-| 11    | Sustainment-Recycle    | End-of-life, circularity                   | DR   | Recycling plans, material passports |
+| Phase | Name                     | Primary Objective                            | Gate   | Exit Artifacts                                               |
+|:-----:|--------------------------|----------------------------------------------|:------:|--------------------------------------------------------------|
+| 01    | Requirements             | Stakeholder needs → requirements              |  SRR   | Baseline REQs (YAML), standards mapping, V&V seed            |
+| 02    | Design                   | Functional/logical/physical design            | PDR/CDR| Models, ICDs, FEM/CFD, item REQs                             |
+| 03    | Building-Prototyping     | Prototypes, coupons, rigs, breadboards        |  BRR   | Build records, test rigs, prototype BoMs                     |
+| 04    | Executables-Packages     | Software/firmware/data packages               | SW/HW PR | Builds, binaries, containers, SBOMs                          |
+| 05    | Verification-Validation  | Evidence vs. requirements                     | TR/VR  | Test reports, validation evidence                            |
+| 06    | Integration-Qualification| System integration & qualification            | IRR/QR | Integrated test logs, qual evidence                          |
+| 07    | Certification-Security   | Compliance, safety & cyber cases              | CR/ASR | Compliance matrix, safety/cyber case                         |
+| 08    | Production-Scale         | Industrialization, rate readiness             |  PRR   | Process FMEAs, SPC plans, configs                            |
+| 09    | Ops-Services             | Entry into service, operations                |  ORR   | Ops manuals, training packs                                  |
+| 10    | MRO                      | Maintenance, repair, overhaul                 |  MRR   | Maintenance specs, IPC                                       |
+| 11    | Sustainment-Recycle      | End-of-life, circularity                      |   DR   | Recycling plans, material passports                          |
 
 Formal rule: A phase transition \(k \to k+1\) is allowed iff all exit predicates \(E_k(\mathcal{A}_k)=\text{true}\). Concurrency allowed across CIs if interfaces are frozen.
 
@@ -121,7 +123,7 @@ Scenario cost \(H_s(x)\). Select:
 \[
 x^* = \arg\min_{x\in\mathcal{F}} \ \mathbb{E}_s[H_s(x)] + \beta\,\mathrm{CVaR}_\alpha(H_s(x))
 \]  
-Implemented via **QAOA** (depth p) or classical optimizer.  
+Implemented via **QAOA** (depth \(p\)) or classical optimizer.
 
 ---
 
@@ -131,7 +133,7 @@ Implemented via **QAOA** (depth p) or classical optimizer.
 - **Design (02):** SysML, ICDs, FEM/CFD analyses.  
 - **Executables (04):** Binaries, SBOMs, container manifests.  
 - **Verification & Qualification (05–06):** Test logs, EMC/lightning data.  
-- **Certification-Security (07):** Compliance, safety, cyber cases.  
+- **Certification-Security (07):** Compliance, safety, cyber cases.
 
 Stored in **WBS-backed file trees**: Domains → CAs → CIs.
 
@@ -142,16 +144,16 @@ Stored in **WBS-backed file trees**: Domains → CAs → CIs.
 ### 8.1 Program Overview
 - Architecture: BWB base with LH₂ storage + turbofan propulsion.  
 - Doctrine: Taxonomy + UTCS phases 01–11.  
-- Optimization: Feasible-first + CVaR-aware selection.  
+- Optimization: Feasible-first + CVaR-aware selection.
 
 ### 8.2 Requirements Example
-CI-CA-A-001-001 — CB-PRIMARY-GRID: Structural, cryogenic, aeroelastic, EMC requirements frozen with audit-ready V&V matrices.
+`CI-CA-A-001-001 — CB-PRIMARY-GRID`: Structural, cryogenic, aeroelastic, EMC requirements frozen with audit-ready V&V matrices.
 
 ### 8.3 Phase Progression
-- 02-Design → FEM, ICDs, thermal barrier interfaces.  
-- 03-Prototyping → Coupons, cryo rigs, impact tests.  
-- 04-Executables → Solvers, SBOMs.  
-- 05–07 → Validation, qualification, certification-security cases.
+- **02-Design:** FEM, ICDs, thermal barrier interfaces.  
+- **03-Prototyping:** Coupons, cryo rigs, impact tests.  
+- **04-Executables:** Solvers, SBOMs.  
+- **05–07:** Validation, qualification, certification-security cases.
 
 ---
 
@@ -159,7 +161,7 @@ CI-CA-A-001-001 — CB-PRIMARY-GRID: Structural, cryogenic, aeroelastic, EMC req
 
 - **Governance:** ARB/SRB with cryptographic checklists, signed artifacts.  
 - **Security (Phase 07):** Threat modeling, pen-testing, EMC/lightning indirect effects.  
-- **Risk:** Optimizer CVaR + operational leading indicators.  
+- **Risk:** Optimizer CVaR + operational leading indicators.
 
 ---
 
@@ -174,7 +176,7 @@ Doctrine assumes disciplined artifact curation; re-enumeration costly if require
 We presented an executable systems engineering doctrine combining:  
 - Domain taxonomy (AMEDEO-PELLICCIA),  
 - Canonical 11-phase life-cycle (UTCS),  
-- Risk-aware optimization.  
+- Risk-aware optimization.
 
 Applied to AMPEL360-H₂-BWB-Q, the doctrine yields a certifiable, risk-optimized architecture with end-to-end traceability.
 
@@ -182,7 +184,7 @@ Applied to AMPEL360-H₂-BWB-Q, the doctrine yields a certifiable, risk-optimize
 
 ## Acknowledgments
 
-all future contributors
+All future contributors.
 
 ---
 
@@ -197,7 +199,7 @@ all future contributors
 7. CMH-17 – Composite Materials Handbook  
 8. MMPDS – Metallic Materials Properties  
 9. Rockafellar, R.T., Uryasev, S. (2000). Conditional Value-at-Risk Optimization  
-10. Farhi, E., Goldstone, J., Gutmann, S. (2014). QAOA Algorithm  
+10. Farhi, E., Goldstone, J., Gutmann, S. (2014). QAOA Algorithm
 
 ---
 
@@ -239,6 +241,4 @@ Appendix D — Certification & Security Case (Phase 07)
    •   Safety Case (FHA/PSSA/SSA)
    •   Security Case (threat model, pen-tests, SBOM attestations)
    •   EMC/lightning artifacts
-
-⸻
 
