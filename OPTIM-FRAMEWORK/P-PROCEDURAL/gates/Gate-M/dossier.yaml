@@ -1,0 +1,67 @@
+gate: "Gate-M"
+lov_target: 35
+description: "Mid-life extension gate to achieve 35-year service life"
+timing:
+  eis_window: "12-15 years"
+  review_window: "T-6m to T-0"
+
+kpis:
+  safety:
+    hazards_mitigated: 1.0
+    target: 1.0
+    status: "TBD"
+  technical:
+    availability: 0.98
+    target: 0.98
+    status: "TBD"
+    criogenic_leak: "<=threshold"
+    lps_bonding: "<=2.5mOhm"
+    shm_stability: "24m stable"
+  structural:
+    mass_delta: "<=+3%"
+    cg_window: "±50mm"
+  
+npv:
+  discount_rate: 0.08
+  result: "TBD"
+  payback_years: "<=8"
+  sensitivity_analysis: "TBD"
+
+packages:
+  - name: "CRY Refurbishment"
+    description: "MLI/aislamientos replacement"
+    status: "PLANNED"
+  - name: "SHM Baseline"
+    description: "Structural health monitoring upgrade"
+    status: "PLANNED"
+  - name: "DIG/ELE Upgrade"
+    description: "Digital/electronics modernization"
+    status: "PLANNED"
+  - name: "LPS Refresh"
+    description: "Lightning protection system renewal"
+    status: "PLANNED"
+
+evidence_required:
+  - category: "V&V"
+    documents: ["V&V matrix extract", "UTCS evidence closure"]
+  - category: "Safety"
+    documents: ["FHA/PSSA/SSA updates", "Hazard analysis"]
+  - category: "Technical"
+    documents: ["SHM trending data", "NDT reports", "LPS measurements"]
+  - category: "Financial"
+    documents: ["NPV analysis", "Cost breakdown", "ROI projections"]
+  - category: "MRO"
+    documents: ["Heavy check planning", "Capability assessment"]
+
+decision: "TBD"
+approval:
+  program_board: "PENDING"
+  cse_lead: "PENDING"
+  safety_lead: "PENDING"
+  finance_lead: "PENDING"
+
+metadata:
+  created: "TBD"
+  last_updated: "TBD"
+  version: "1.0"
+  utcs_phase: "09-Maintenance"
