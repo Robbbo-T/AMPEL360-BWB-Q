@@ -1,6 +1,5 @@
 # AMPEL360-H2-BWB-QNNN
 
-Perfect—here’s the same navigable index without any “how long ago” timestamps. Drop this in:
 
 # AMEDEO-PELLICCIA • Integrated Index — AMPEL360-H₂-BWB-QNNN
 
