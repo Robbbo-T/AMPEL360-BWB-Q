@@ -1,51 +1,91 @@
 utcs_phase: "01"
 component_id: "CI-CA-A-001-001-CB-PRIMARY-GRID"
 status: "FROZEN"
-date: "2025-08-29"
-doc_id: "AMPEL360-REQ-CB-PG-001-v1.3"
+date: "2025-08-26"
 owner: "Amedeo Pelliccia"
-classification: "UNCLASSIFIED // For Official Use Only"
-
-metadata:
-  effective_date: "2025-08-26"
-  revision_date: "2025-08-29"
-  phase_gate: "01-APPROVED"
-  
+doc_id: "AMPEL360-REQ-CB-PG-001-v1.5"
 links:
-  - STR-AN-001.pdf
-  - STR-TST-PP-001.pdf
-  - LOAD-341-VC-VD.pdf
-  - AEL-GVT-001.pdf
-  - AEL-FLT-001.pdf
-  - FDT-AN-001.pdf
-  - FDT-SBCT-001.pdf
-  - BVID-TST-001.pdf
-  - FDT-CG-001.xlsx
-  - THR-TST-CRYO-001.pdf
-  - THR-TST-HFX-001.pdf
-  - IFX-TST-MOUNT-001.pdf
-  - STR-AN-003.pdf
-  - MAT-ALW-CRYO-001.pdf
-  - LPS-TST-001.pdf
-  - EMC-TST-001.pdf
-  - EMC-AN-001.pdf
-  - STR-CALC-001.xlsx
-  - STR-AN-002.pdf
-
-revision_history:
-  - version: "1.0"
-    date: "2025-08-26"
-    changes: "Initial Release"
-    author: "AMPEL360 Team"
-  - version: "1.1"
-    date: "2025-08-27"
-    changes: "Addressed RFAs from Validation Report"
-    author: "AMPEL360 Team"
-  - version: "1.2"
-    date: "2025-08-28"
-    changes: "Audit-ready compliance updates"
-    author: "AMPEL360 Team"
-  - version: "1.3"
-    date: "2025-08-29"
-    changes: "Final RFA resolution - FROZEN"
-    author: "AMPEL360 Team"
+  # Structural evidence files
+  - evidence/STR-AN-001_FEM-Analysis
+  - evidence/STR-TST-002_Pressure-Test
+  - evidence/STR-AN-003_Loads-Analysis
+  - evidence/STR-TST-004_GVT-Flutter
+  - evidence/STR-AN-005_Damage-Tolerance
+  - evidence/STR-TST-005a_Impact-Test
+  - evidence/STR-AN-005b_Crack-Analysis
+  
+  # Thermal evidence files
+  - evidence/THR-TST-001_Cryo-Cycle
+  - evidence/THR-TST-002_Thermal-Shock
+  - evidence/THR-AN-003_Thermal-FEM
+  
+  # Interface evidence files
+  - evidence/IFC-TST-001_Heat-Flux
+  - evidence/IFC-TST-002_Load-Test
+  - evidence/IFC-DWG-003_Interface-Drawing
+  - evidence/IFC-AN-004_Tolerance-Analysis
+  
+  # Material evidence files
+  - evidence/MAT-TST-001_Coupon-Test
+  - evidence/MAT-TST-002_H2-Compatibility
+  - evidence/MAT-INS-003_QA-Traceability
+  
+  # Environmental evidence files
+  - evidence/ENV-TST-001_Lightning-Protection
+  - evidence/ENV-TST-002_Resistance-Test
+  - evidence/ENV-AN-003_Current-Analysis
+  - evidence/ENV-TST-004_Salt-Spray
+  
+  # Manufacturing evidence files
+  - evidence/MFG-DEM-001_Process-Demo
+  - evidence/MFG-INS-002_Access-Inspection
+  - evidence/MFG-TST-003_Metrology-Test
+  
+  # Test evidence files
+  - evidence/TST-PLN-001_Test-Plan
+  - evidence/TST-AN-002_POD-Analysis
+  - evidence/TST-ART-003_Test-Article
+  
+  # Certification evidence files
+  - evidence/CRT-AN-001_Compliance-Analysis
+  - evidence/CRT-AN-002_Special-Conditions
+  - evidence/CRT-DEM-003_Concurrent-Validation
+  
+  # Compliance evidence files
+  - evidence/CMP-INS-001_Configuration-Management
+  - evidence/CMP-AN-002_Digital-Twin
+  
+  # Operational evidence files
+  - evidence/OPS-AN-001_Fatigue-Analysis
+  - evidence/OPS-DEM-002_Access-Demo
+  - evidence/OPS-TST-003_Climate-Test
+  
+  # Performance evidence files
+  - evidence/PRF-AN-001_Weight-Analysis
+  - evidence/PRF-AN-002_CG-Analysis
+  - evidence/PRF-TST-003_Modal-Test
+  
+  # Maintenance evidence files
+  - evidence/MNT-AN-001_MSG3-Analysis
+  - evidence/MNT-INS-002_Borescope-Access
+  - evidence/MNT-TST-003_Repair-Test
+  
+  # Reliability evidence files
+  - evidence/REL-AN-001_MTBF-Analysis
+  - evidence/REL-AN-002_FMEA-Analysis
+  - evidence/REL-AN-003_Statistical-Analysis
+  
+  # Safety evidence files
+  - evidence/SAF-AN-001_FTA-Analysis
+  - evidence/SAF-AN-002_Safe-Life-Analysis
+  - evidence/SAF-TST-003_H2-Detection
+  
+  # Security evidence files
+  - evidence/SEC-INS-001_ITAR-Process
+  - evidence/SEC-DEM-002_Tamper-Evidence
+  - evidence/SEC-AN-003_Cyber-Analysis
+  
+  # End-of-Life evidence files
+  - evidence/EOL-AN-001_Recyclability-Analysis
+  - evidence/EOL-AN-002_Disposal-Process
+  - evidence/EOL-DEM-003_Disassembly-Demo

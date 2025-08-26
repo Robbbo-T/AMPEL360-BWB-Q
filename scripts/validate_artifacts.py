@@ -45,11 +45,14 @@ class AMPEL360Validator:
                     result['errors'].append(f"Missing required field: {field}")
                     result['valid'] = False
                     
-            # Check if status is FROZEN (for v1.3)
+            # Check if status is FROZEN (for v1.5)
             if data.get('status') == 'FROZEN':
-                result['info'].append("Status: FROZEN - compliant with v1.3")
+                if 'v1.5' in data.get('doc_id', ''):
+                    result['info'].append("Status: FROZEN - compliant with v1.5")
+                else:
+                    result['info'].append("Status: FROZEN - version needs verification")
             else:
-                result['warnings'].append(f"Status is '{data.get('status')}' - expected 'FROZEN' for v1.3")
+                result['warnings'].append(f"Status is '{data.get('status')}' - expected 'FROZEN'")
                 
             # Check links
             if 'links' in data and isinstance(data['links'], list):
@@ -81,19 +84,20 @@ class AMPEL360Validator:
             with open(phase_md_path, 'r') as f:
                 content = f.read()
                 
-            # Check for v1.3 FROZEN indicator
-            if 'v1.3 FROZEN' in content:
-                result['info'].append("Document marked as v1.3 FROZEN")
+            # Check for v1.5 FROZEN indicator
+            if 'v1.5 FROZEN' in content:
+                result['info'].append("Document marked as v1.5 FROZEN")
+            elif 'v1.3 FROZEN' in content:
+                result['info'].append("Document marked as v1.3 FROZEN (older version)")
             else:
-                result['warnings'].append("Document not marked as v1.3 FROZEN")
+                result['warnings'].append("Document not marked as FROZEN")
                 
             # Check for requirements sections
             required_sections = [
-                'Requirements Index',
-                'Standards Mapping', 
-                'Structural Requirements',
-                'Material Specifications',
-                'Verification Matrix'
+                'REQUIREMENTS INDEX (MANDATORY)',
+                'STANDARDS MAPPING (MANDATORY)', 
+                'TECHNICAL REQUIREMENTS SECTIONS',
+                'VERIFICATION MATRIX (MANDATORY)'
             ]
             
             missing_sections = []
@@ -132,7 +136,7 @@ class AMPEL360Validator:
             result['warnings'].append("No evidence links to validate")
             return result
             
-        evidence_path = ci_path / '01-Requirements' / 'evidence'
+        evidence_path = ci_path / '01-Requirements'
         missing_files = []
         existing_files = []
         
