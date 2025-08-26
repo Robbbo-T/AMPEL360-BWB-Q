@@ -1,6 +1,6 @@
 # AMPEL360 Ledger System
 
-This directory contains the production-grade ledger system for tracking UTCS (Unified Technology Configuration Specification) artifacts across all Configuration Items (CIs) in the AMPEL360 H2-BWB project.
+This directory contains the production-grade ledger system for tracking UTCS artifacts across all Configuration Items (CIs) in the AMPEL360 H2-BWB project.
 
 ## Overview
 
