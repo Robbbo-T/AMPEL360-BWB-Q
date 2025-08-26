@@ -94,7 +94,7 @@ def main():
         print(f"   • {component}: Donor {donor_id}")
     
     print("\n📁 Generated Files:")
-    print(f"   • constraints/hard_constraints.yaml - TRL gates & compatibility rules")
+    print("   • constraints/hard_constraints.yaml - TRL gates & compatibility rules")
     print(f"   • data/candidates.yaml - AMPEL donor database")
     print(f"   • feasible_set.json - Feasible configurations")
     print(f"   • qnnn_optimization_result.json - Optimization results")
