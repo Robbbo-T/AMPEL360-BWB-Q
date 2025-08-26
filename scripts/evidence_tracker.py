@@ -110,7 +110,7 @@ def generate_evidence_checklist(ci_path, output_file=None):
     phase_data_path = Path(ci_path) / '01-Requirements' / 'phase-data.yaml'
     
     if not phase_data_path.exists():
-        print(f"❌ phase-data.yaml not found")
+        print("❌ phase-data.yaml not found")
         return
         
     with open(phase_data_path, 'r') as f:
