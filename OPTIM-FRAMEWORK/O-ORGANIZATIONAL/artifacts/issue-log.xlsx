@@ -1,0 +1,11 @@
+Issue ID,Date Raised,Title,Reporter,Assigned To,Status,Priority,Category,Phase,Description,Impact,Resolution,Date Closed
+ISS-001,2025-01-10,H2 Storage Pressure Certification Gap,H2 Infrastructure Lead,Cert Lead,Open,High,Technical,Requirements,Missing certification requirements for high-pressure H2 storage on aircraft,Schedule Risk,TBD,
+ISS-002,2025-01-12,Digital Twin Data Latency,Chief Architect DT,Software Lead,In Progress,Medium,Technical,Design,Real-time data feeds showing 2-3 second latency affecting decision models,Performance Impact,Architecture review in progress,
+ISS-003,2025-01-15,Budget Variance Q4,Financial Controller,Program Board,Closed,High,Financial,Implementation,Q4 spending exceeded budget by 12% due to accelerated testing,Cost Impact,Additional funding approved,2025-01-18
+ISS-004,2025-01-18,Safety Protocol Updates Needed,Safety AI Officer,SRB,Open,Critical,Process,Requirements,Current safety protocols do not address H2-BWB integration scenarios,Safety Risk,TBD,
+ISS-005,2025-01-20,Stakeholder Communication Gaps,Defense Liaison,Program Board,Open,Medium,Organizational,Implementation,Key defense stakeholders not receiving timely program updates,Relationship Risk,Communication plan being revised,
+ISS-006,2025-01-22,Compliance Documentation Incomplete,Compliance Officer,DSC,In Progress,High,Compliance,Verification,Export control documentation missing for H2 propulsion components,Regulatory Risk,Documentation review underway,
+ISS-007,2025-01-24,Resource Allocation Conflicts,Space Ops Lead,Program Board,Open,Medium,Resource,Implementation,Conflicting resource assignments between H2 and BWB work packages,Schedule Risk,TBD,
+ISS-008,2025-01-25,Quality Metrics Dashboard Errors,QMS Lead,CWG,Open,Low,Technical,Implementation,Quality dashboard showing incorrect defect escape rates,Data Quality,TBD,
+ISS-009,2025-01-26,Training Program Delays,HR Lead,Safety AI Officer,Open,Medium,Process,Design,H2 safety training program development behind schedule,Capability Risk,TBD,
+ISS-010,2025-01-27,Supply Chain Risk Assessment,Supply Chain Lead,SRB,Open,High,Process,Requirements,Need comprehensive risk assessment of H2 component supply chain,Supply Risk,TBD,

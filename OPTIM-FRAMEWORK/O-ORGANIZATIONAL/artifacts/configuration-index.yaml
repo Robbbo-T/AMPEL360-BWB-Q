@@ -1,0 +1,51 @@
+# AMPEL360 H₂-BWB-Q Configuration Index
+# Component: Configuration Management
+# Document ID: CI-INDEX-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Configuration Working Group"
+  classification: "Internal"
+
+configuration_items:
+  # Core Configuration Items
+  ci_001:
+    id: "CI-H2-BWB-SYS-001"
+    name: "H₂-BWB Integration System"
+    type: "System"
+    status: "Under Development"
+    owner: "H2 Infrastructure Lead"
+    version: "0.8"
+    baseline: "BL-DES-001"
+    
+  ci_002:
+    id: "CI-ORG-DT-001"
+    name: "Organizational Digital Twin"
+    type: "Software"
+    status: "Active"
+    owner: "Chief Architect DT"
+    version: "1.2"
+    baseline: "BL-DES-001"
+    
+  ci_003:
+    id: "CI-CERT-PROC-001"
+    name: "Certification Process Framework"
+    type: "Process"
+    status: "Active"
+    owner: "Cert Lead"
+    version: "1.0"
+    baseline: "BL-ORG-001"
+    
+  ci_004:
+    id: "CI-SAFETY-H2-001"
+    name: "H₂ Safety Management System"
+    type: "Process"
+    status: "Under Development"
+    owner: "Safety AI Officer"
+    version: "0.6"
+    baseline: "BL-REQ-001"
+
+# Configuration Item Types: System, Subsystem, Software, Hardware, Process, Document
+# Status: Planning, Under Development, Active, Superseded, Retired
+# Categories: Technical, Organizational, Process, Documentation

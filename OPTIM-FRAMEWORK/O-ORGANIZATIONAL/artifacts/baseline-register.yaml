@@ -1,0 +1,51 @@
+# AMPEL360 H₂-BWB-Q Baseline Register
+# Component: Configuration Management
+# Document ID: BL-REG-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Configuration Working Group"
+  classification: "Internal"
+
+baselines:
+  requirements_baseline:
+    id: "BL-REQ-001"
+    name: "Requirements Baseline 1.0"
+    date_established: "2025-01-10"
+    status: "Active"
+    description: "Initial requirements baseline for H₂-BWB integration"
+    documents:
+      - "SRD-H2-BWB-001 v1.0"
+      - "IRD-H2-BWB-002 v1.0"
+      - "ORD-AMPEL360-003 v1.0"
+    approval_authority: "Program Board"
+    change_control: "CCB-001"
+    
+  design_baseline:
+    id: "BL-DES-001"
+    name: "Design Baseline 1.0"
+    date_established: "2025-01-20"
+    status: "Under Development"
+    description: "Preliminary design baseline including digital twin architecture"
+    documents:
+      - "SDD-H2-BWB-001 v0.8"
+      - "ARCH-DT-001 v0.9"
+      - "ICD-H2-BWB-002 v0.7"
+    approval_authority: "Architecture Review Board"
+    change_control: "CCB-001"
+    
+  organizational_baseline:
+    id: "BL-ORG-001"
+    name: "Organizational Baseline 1.0"
+    date_established: "2025-01-15"
+    status: "Active"
+    description: "Initial organizational structure and governance baseline"
+    documents:
+      - "ORG-STRUCTURE-001 v1.0"
+      - "GOV-CHARTER-001 v1.0"
+      - "RACI-MATRIX-001 v1.0"
+    approval_authority: "Program Board"
+    change_control: "CWG-001"
+
+# Baseline Status: Planning, Under Development, Active, Superseded, Archived

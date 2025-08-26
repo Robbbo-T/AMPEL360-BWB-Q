@@ -1,0 +1,84 @@
+# Change Request Form Template
+# Note: This is a template. Actual form would be in MS Word/DocX format
+
+## AMPEL360 H₂-BWB-Q Change Request Form
+
+### Section 1: Basic Information
+**Change Request ID**: CR-[AUTO-GENERATED]
+**Date Submitted**: [DATE]
+**Requestor Name**: [NAME]
+**Requestor Organization**: [ORG]
+**Contact Information**: [EMAIL/PHONE]
+
+### Section 2: Change Description
+**Change Title**: [BRIEF DESCRIPTIVE TITLE]
+
+**Detailed Description**: 
+[Comprehensive description of the proposed change]
+
+**Rationale/Justification**:
+[Why is this change necessary? What problem does it solve?]
+
+**Affected Documents/Systems**:
+- [ ] Requirements Documents
+- [ ] Design Documents  
+- [ ] Process Documents
+- [ ] Software/Hardware
+- [ ] Organizational Structure
+- [ ] Other: [SPECIFY]
+
+**Specific Items Affected**:
+[List specific documents, systems, or processes]
+
+### Section 3: Impact Assessment
+**Technical Impact**: [HIGH/MEDIUM/LOW]
+[Description of technical implications]
+
+**Schedule Impact**: [HIGH/MEDIUM/LOW]
+[Impact on milestones and deliverables]
+
+**Cost Impact**: [HIGH/MEDIUM/LOW]
+Estimated Cost: $[AMOUNT]
+
+**Risk Impact**: [HIGH/MEDIUM/LOW]
+[New risks introduced or existing risks affected]
+
+**Resource Impact**: [HIGH/MEDIUM/LOW]
+[Personnel, equipment, or facility impacts]
+
+### Section 4: Implementation
+**Proposed Implementation Date**: [DATE]
+**Implementation Duration**: [TIMEFRAME]
+**Implementation Resources Required**:
+[Personnel, budget, equipment needed]
+
+**Dependencies**:
+[Other changes or activities this depends on]
+
+**Verification Approach**:
+[How will successful implementation be verified?]
+
+### Section 5: Approval Routing
+**Technical Review Required**: [ ] Yes [ ] No
+**Safety Review Required**: [ ] Yes [ ] No  
+**Financial Review Required**: [ ] Yes [ ] No
+**Regulatory Review Required**: [ ] Yes [ ] No
+
+**Recommended Approval Authority**:
+- [ ] CCB
+- [ ] Program Board
+- [ ] Other: [SPECIFY]
+
+### Section 6: Signatures
+**Requestor Signature**: [SIGNATURE] Date: [DATE]
+**Supervisor Approval**: [SIGNATURE] Date: [DATE]
+
+---
+*For CCB Use Only*
+
+**CR Received Date**: [DATE]
+**Initial Review By**: [NAME]
+**CCB Meeting Date**: [DATE]
+**Decision**: [ ] Approved [ ] Denied [ ] Deferred
+**Decision Rationale**: [NOTES]
+**CCB Chair Signature**: [SIGNATURE] Date: [DATE]

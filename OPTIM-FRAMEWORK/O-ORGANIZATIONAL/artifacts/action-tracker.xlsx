@@ -1,0 +1,11 @@
+Action ID,Title,Assigned To,Due Date,Status,Priority,Description,Phase,Committee,Progress
+ACT-001,H2 Infrastructure Risk Assessment,H2 Infrastructure Lead,2025-02-15,Open,High,Complete assessment of hydrogen infrastructure integration risks for BWB platform,Requirements,HCC,25%
+ACT-002,Digital Twin Validation Framework,Chief Architect DT,2025-02-28,Open,High,Establish validation protocols for organizational digital twin models,Design,ARB,10%
+ACT-003,Safety Certification Planning,Cert Lead,2025-01-31,In Progress,Critical,Develop certification strategy for H2-BWB integration,Requirements,SRB,60%
+ACT-004,Stakeholder Engagement Plan,Program Board,2025-02-10,Open,Medium,Create comprehensive stakeholder engagement strategy,Requirements,DSC,0%
+ACT-005,Budget Variance Analysis,Financial Controller,2025-02-05,In Progress,High,Analyze Q4 budget variances and provide recommendations,Design,Program Board,80%
+ACT-006,Quality Metrics Dashboard,QMS Lead,2025-02-20,Open,Medium,Implement automated quality metrics tracking dashboard,Implementation,CWG,0%
+ACT-007,Risk Register Updates,Risk Manager,2025-01-30,In Progress,High,Update enterprise risk register with H2 integration risks,Requirements,SRB,45%
+ACT-008,Compliance Gap Analysis,Compliance Officer,2025-02-12,Open,High,Identify compliance gaps for aviation H2 systems,Requirements,DSC,5%
+ACT-009,Organizational Chart Updates,HR Lead,2025-01-29,Open,Low,Update organizational structure for new H2 team members,Implementation,Program Board,0%
+ACT-010,Training Program Development,Safety AI Officer,2025-03-01,Planning,Medium,Develop H2 safety training program for technical staff,Design,SRB,0%

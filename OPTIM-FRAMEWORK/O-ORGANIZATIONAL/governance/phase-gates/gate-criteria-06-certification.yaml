@@ -1,0 +1,26 @@
+# AMPEL360 H₂-BWB-Q Phase Gate 06 - Certification
+# UTCS Mapping: Phase 06 - Certification/Deployment
+# Document ID: PG-06-CERT
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Program Board"
+  classification: "Internal"
+  utcs_phase: "06-Certification-Deployment"
+  utcs_gate: "ORR - Operational Readiness Review"
+
+gate_criteria:
+  certification_completion:
+    status: "Required"
+    description: "System certification achieved"
+    deliverables:
+      - "Certification Evidence"
+      - "Regulatory Approvals"
+      - "Deployment Authorization"
+    verification: "Regulatory authority approval"
+
+success_criteria:
+  - "Certification obtained"
+  - "Deployment authorized"
+  - "Operational ready"

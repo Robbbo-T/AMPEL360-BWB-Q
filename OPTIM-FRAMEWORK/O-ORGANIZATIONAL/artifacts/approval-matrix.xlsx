@@ -1,0 +1,16 @@
+Role,Authority Level,Financial Threshold,Technical Approval,Safety Approval,Regulatory Approval,Change Control,Risk Acceptance
+Program Board,Executive,$10M+,Major Architecture,Critical Safety,All Regulatory,Major Changes,High Risk
+Chief Architect DT,Senior,$1M,Digital Twin Design,AI Safety,Export Control,Design Changes,Medium Risk
+CSE Office,Senior,$500K,Systems Engineering,System Safety,Technical Standards,Technical Changes,Medium Risk
+Cert Lead,Senior,$250K,Certification Design,Cert Safety,Certification Bodies,Cert Changes,High Risk
+H2 Infrastructure Lead,Senior,$750K,H2 System Design,H2 Safety,H2 Regulations,H2 Changes,High Risk
+Safety AI Officer,Senior,$100K,AI Safety Design,AI Safety,AI Regulations,Safety Changes,Medium Risk
+Defense Liaison,Senior,$2M,Defense Requirements,Defense Safety,Defense Regulations,Defense Changes,Medium Risk
+Space Ops Lead,Senior,$500K,Space Systems,Space Safety,Space Regulations,Ops Changes,Medium Risk
+Supply Chain Lead,Operational,$250K,Supply Requirements,Supply Safety,Supply Regulations,Supply Changes,Low Risk
+Financial Controller,Senior,$5M,Financial Systems,Financial Controls,Financial Regulations,Financial Changes,Low Risk
+QMS Lead,Operational,$100K,Quality Systems,Quality Safety,Quality Standards,Quality Changes,Low Risk
+Risk Manager,Operational,$50K,Risk Systems,Risk Assessment,Risk Regulations,Risk Changes,Medium Risk
+Compliance Officer,Senior,$100K,Compliance Systems,Compliance Safety,All Compliance,Compliance Changes,High Risk
+HR Lead,Operational,$200K,HR Systems,HR Safety,HR Regulations,HR Changes,Low Risk
+Software Lead,Technical,$300K,Software Design,Software Safety,Software Standards,Software Changes,Medium Risk

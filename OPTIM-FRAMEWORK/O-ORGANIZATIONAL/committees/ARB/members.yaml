@@ -1,0 +1,72 @@
+# AMPEL360 H₂-BWB-Q ARB Members
+# Architecture Review Board
+# Document ID: ARB-MEMBERS-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Chief Architect DT"
+  classification: "Internal"
+
+chairman:
+  name: "Dr. Sarah Chen"
+  role: "Chief Architect DT"
+  organization: "AMPEL360 Program Office"
+  email: "s.chen@ampel360.org"
+  term: "2025-2026"
+
+vice_chairman:
+  name: "Dr. Michael Rodriguez"
+  role: "Senior Systems Architect"
+  organization: "Systems Engineering"
+  email: "m.rodriguez@ampel360.org"
+  term: "2025-2026"
+
+voting_members:
+  - name: "Dr. Lisa Kim"
+    role: "Digital Twin Lead"
+    organization: "Digital Systems"
+    specialization: "AI/ML Architecture"
+    email: "l.kim@ampel360.org"
+    
+  - name: "Prof. James Wilson"
+    role: "H₂ Systems Architect"
+    organization: "H₂ Infrastructure"
+    specialization: "Hydrogen Systems"
+    email: "j.wilson@ampel360.org"
+    
+  - name: "Dr. Anna Petrov"
+    role: "BWB Integration Architect"
+    organization: "Aircraft Systems"
+    specialization: "BWB Configuration"
+    email: "a.petrov@ampel360.org"
+    
+  - name: "Dr. Robert Johnson"
+    role: "Software Architecture Lead"
+    organization: "Software Engineering"
+    specialization: "Distributed Systems"
+    email: "r.johnson@ampel360.org"
+
+advisory_members:
+  - name: "Dr. Maria Gonzalez"
+    role: "Safety Systems Specialist"
+    organization: "Safety Review Board"
+    specialization: "System Safety"
+    
+  - name: "Mr. David Park"
+    role: "Certification Engineer"
+    organization: "Certification Office"
+    specialization: "Aviation Certification"
+
+meeting_schedule:
+  frequency: "Bi-weekly"
+  day: "Wednesday"
+  time: "14:00-15:30 UTC"
+  location: "Engineering Conference Room / Teams"
+
+quorum: "4 voting members including Chairman or Vice Chairman"
+
+contact_info:
+  secretary: "Ms. Jennifer Lee"
+  email: "arb-secretary@ampel360.org"
+  phone: "+1-555-0123"

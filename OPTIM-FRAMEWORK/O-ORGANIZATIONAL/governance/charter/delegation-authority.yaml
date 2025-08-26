@@ -1,0 +1,54 @@
+# AMPEL360 H₂-BWB-Q Delegation of Authority Matrix
+# Component: Governance
+# Document ID: DOA-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Program Board"
+  classification: "Internal"
+
+delegation_matrix:
+  program_board:
+    role: "Executive Authority"
+    financial_authority: "$10,000,000+"
+    technical_authority: "Major architecture decisions, system-level approvals"
+    safety_authority: "Critical safety decisions, major hazard acceptance"
+    regulatory_authority: "All regulatory submissions and compliance decisions"
+    delegation_scope: "Full program authority with board oversight"
+    
+  chief_architect_dt:
+    role: "Digital Twin Architecture Authority"
+    financial_authority: "$1,000,000"
+    technical_authority: "Digital twin design, AI/ML model approvals"
+    safety_authority: "AI safety decisions, autonomous system safety"
+    regulatory_authority: "AI/ML regulatory compliance"
+    delegation_scope: "Digital twin and intelligent systems domain"
+    delegated_by: "Program Board"
+    
+  cse_office:
+    role: "Systems Engineering Authority"
+    financial_authority: "$500,000"
+    technical_authority: "Systems requirements, interface control"
+    safety_authority: "System safety analysis and assessment"
+    regulatory_authority: "Technical standard compliance"
+    delegation_scope: "Systems engineering processes and standards"
+    delegated_by: "Program Board"
+    
+  cert_lead:
+    role: "Certification Authority"
+    financial_authority: "$250,000"
+    technical_authority: "Certification planning and execution"
+    safety_authority: "Certification safety requirements"
+    regulatory_authority: "Certification body coordination"
+    delegation_scope: "All certification activities"
+    delegated_by: "Program Board"
+    
+  h2_infrastructure_lead:
+    role: "H₂ Systems Authority"
+    financial_authority: "$750,000"
+    technical_authority: "H₂ system design and integration"
+    safety_authority: "H₂ safety systems and procedures"
+    regulatory_authority: "H₂ regulatory compliance"
+    delegation_scope: "Hydrogen infrastructure and systems"
+    delegated_by: "Program Board"

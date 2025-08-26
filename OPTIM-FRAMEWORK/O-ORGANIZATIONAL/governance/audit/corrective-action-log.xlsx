@@ -1,0 +1,11 @@
+CA ID,Finding ID,Date Raised,Title,Root Cause,Corrective Action,Responsible,Target Date,Status,Verification Method,Effectiveness Review,Date Closed
+CA-001,AUD-F-001,2025-02-12,Authority Delegation Matrix Update,Incomplete documentation during initial setup,Update delegation matrix with all role financial thresholds,Program Board,2025-02-26,Open,Document review by QA,TBD,
+CA-002,AUD-F-002,2025-03-05,H2 Emergency Response Procedures,Gap in safety planning for H2-specific scenarios,Develop comprehensive H2 emergency response procedures,Safety AI Officer,2025-03-15,Open,Safety drill simulation,TBD,
+CA-003,AUD-F-003,2025-02-13,Committee Attendance Tracking,Inconsistent governance practices across committees,Standardize attendance tracking for all committees,Committee Chairs,2025-03-01,In Progress,Attendance log review,TBD,
+CA-004,Previous-Finding,2025-01-15,Document Control Process,Manual document control causing version issues,Implement automated document control system,QMS Lead,2025-02-28,In Progress,System audit,TBD,
+CA-005,Previous-Finding,2025-01-20,Risk Register Updates,Irregular risk review cycles,Establish monthly risk review meetings,Risk Manager,2025-02-15,Open,Meeting schedule review,TBD,
+CA-006,Previous-Finding,2025-01-22,Training Record Maintenance,Decentralized training records causing gaps,Centralize training record management,HR Lead,2025-03-10,Planning,Training audit,TBD,
+CA-007,Previous-Finding,2025-01-25,Change Control Timing,Change requests not processed within target timeframes,Optimize change control workflow,CCB Chair,2025-02-20,Open,Process timing analysis,TBD,
+CA-008,Previous-Finding,2025-01-18,Financial Variance Reporting,Monthly variance reports incomplete,Enhance financial reporting procedures,Financial Controller,2025-02-10,In Progress,Report completeness review,TBD,
+CA-009,Previous-Finding,2025-01-28,Safety Training Gaps,Some personnel missing H2 safety training,Complete H2 safety training for all relevant personnel,Safety AI Officer,2025-03-20,Planning,Training record audit,TBD,
+CA-010,Previous-Finding,2025-01-30,Procurement Documentation,Procurement files missing required documentation,Update procurement procedures and train staff,Supply Chain Lead,2025-02-25,Open,File audit,TBD,

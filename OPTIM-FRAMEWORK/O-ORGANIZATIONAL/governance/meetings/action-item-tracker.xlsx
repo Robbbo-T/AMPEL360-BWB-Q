@@ -1,0 +1,16 @@
+AI ID,Meeting,Date Raised,Title,Description,Assigned To,Due Date,Status,Priority,Progress,Comments,Date Closed
+AI-001,Program Board,2025-01-15,H2 Infrastructure Risk Assessment,Complete comprehensive risk assessment for H2 integration,H2 Infrastructure Lead,2025-02-15,Open,High,25%,Initial assessment started,
+AI-002,ARB,2025-01-17,Digital Twin Performance Optimization,Optimize digital twin performance for real-time decision making,Chief Architect DT,2025-02-28,Open,High,10%,Performance baseline established,
+AI-003,SRB,2025-01-19,H2 Safety Training Program,Develop comprehensive H2 safety training for all personnel,Safety AI Officer,2025-03-01,In Progress,Critical,60%,Training materials 75% complete,
+AI-004,CCB,2025-01-22,Change Control Process Automation,Implement automated change control workflow,CSE Office Lead,2025-02-20,Open,Medium,0%,Requirements gathering phase,
+AI-005,Program Board,2025-01-15,Stakeholder Communication Plan,Develop comprehensive stakeholder engagement strategy,Defense Liaison,2025-02-10,Open,Medium,15%,Stakeholder mapping complete,
+AI-006,CWG,2025-01-24,Configuration Database Update,Update configuration database with latest baselines,Configuration Manager,2025-02-05,In Progress,High,80%,Database schema updated,
+AI-007,HCC,2025-01-23,H2 Corridor Infrastructure Planning,Finalize H2 corridor infrastructure requirements,H2 Infrastructure Lead,2025-02-12,Open,High,40%,Site surveys in progress,
+AI-008,DSC,2025-01-21,Export Control Documentation,Complete export control documentation for H2 components,Compliance Officer,2025-02-08,In Progress,High,70%,Documentation review underway,
+AI-009,ARB,2025-01-17,Technical Interface Documentation,Update technical interface documentation,Systems Engineer,2025-02-25,Open,Medium,5%,Interface identification complete,
+AI-010,SRB,2025-01-19,Emergency Response Procedures,Develop H2-specific emergency response procedures,Safety AI Officer,2025-02-18,Open,Critical,30%,Draft procedures under review,
+AI-011,Program Board,2025-01-15,Budget Variance Analysis,Analyze Q4 budget variances and provide recommendations,Financial Controller,2025-02-01,Closed,High,100%,Analysis complete and presented,2025-01-30
+AI-012,CCB,2025-01-22,Document Control Improvements,Implement improved document control processes,QMS Lead,2025-03-05,Open,Medium,20%,Current process analysis complete,
+AI-013,HCC,2025-01-23,Partner Agreement Updates,Update partnership agreements for H2 infrastructure,Legal Counsel,2025-02-22,Open,Medium,0%,Legal review initiated,
+AI-014,DSC,2025-01-21,Security Protocol Updates,Update security protocols for H2 facility access,Security Manager,2025-02-15,Open,High,50%,Security assessment complete,
+AI-015,CWG,2025-01-24,Baseline Verification Process,Establish baseline verification and validation process,Configuration Manager,2025-02-28,Open,Medium,10%,Process framework drafted,

@@ -1,0 +1,110 @@
+# AMPEL360 H₂-BWB-Q Change Approval Workflow
+# Component: Change Control
+# Document ID: CAW-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Change Control Board"
+  classification: "Internal"
+
+workflow_stages:
+  submission:
+    stage: "1 - Submission"
+    description: "Change request submitted via standard form"
+    duration: "Same day"
+    responsible: "Requestor"
+    deliverables:
+      - "Completed change request form"
+      - "Supporting documentation"
+      - "Initial impact assessment"
+    exit_criteria:
+      - "Form completeness verified"
+      - "Requestor authorization confirmed"
+      
+  initial_review:
+    stage: "2 - Initial Review"
+    description: "Rapid screening for completeness and routing"
+    duration: "48 hours"
+    responsible: "CCB Chair/Vice Chair"
+    deliverables:
+      - "Completeness assessment"
+      - "Routing determination"
+      - "Priority assignment"
+    exit_criteria:
+      - "Change categorized and prioritized"
+      - "Review team assigned"
+      
+  impact_assessment:
+    stage: "3 - Impact Assessment"
+    description: "Detailed technical, schedule, cost, and risk analysis"
+    duration: "5-10 working days"
+    responsible: "Subject Matter Experts"
+    deliverables:
+      - "Technical impact analysis"
+      - "Schedule impact analysis"
+      - "Cost impact analysis"
+      - "Risk assessment"
+      - "Resource requirement analysis"
+    exit_criteria:
+      - "All impact areas assessed"
+      - "Mitigation strategies identified"
+      
+  ccb_review:
+    stage: "4 - CCB Review"
+    description: "Formal CCB evaluation and decision"
+    duration: "Next scheduled CCB meeting"
+    responsible: "Change Control Board"
+    deliverables:
+      - "CCB meeting minutes"
+      - "Decision rationale"
+      - "Implementation conditions"
+    exit_criteria:
+      - "Formal decision recorded"
+      - "Decision communicated to stakeholders"
+      
+  implementation:
+    stage: "5 - Implementation"
+    description: "Approved change execution and tracking"
+    duration: "Variable based on change"
+    responsible: "Implementation Team"
+    deliverables:
+      - "Implementation plan"
+      - "Progress reports"
+      - "Updated documentation"
+    exit_criteria:
+      - "Change fully implemented"
+      - "Documentation updated"
+      - "Stakeholders notified"
+      
+  verification:
+    stage: "6 - Verification"
+    description: "Post-implementation review and closure"
+    duration: "2-5 working days"
+    responsible: "Quality Assurance"
+    deliverables:
+      - "Verification report"
+      - "Lessons learned"
+      - "Change closure record"
+    exit_criteria:
+      - "Implementation verified"
+      - "Benefits realized"
+      - "Change record closed"
+
+approval_thresholds:
+  ccb_authority:
+    financial: "<$500,000"
+    schedule: "<2 weeks critical path"
+    scope: "Single work package"
+    
+  program_board_required:
+    financial: "≥$500,000"
+    schedule: "≥2 weeks critical path"
+    scope: "Cross-program impacts"
+    safety: "Critical safety systems"
+
+emergency_process:
+  trigger: "Critical safety or mission impact"
+  timeline: "24 hour decision cycle"
+  authority: "Program Board or designated representative"
+  documentation: "Expedited but complete"

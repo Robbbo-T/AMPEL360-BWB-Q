@@ -1,0 +1,25 @@
+Audit Area,Checklist Item,Requirement,Evidence Required,Audit Method,Pass Criteria,Notes
+Governance,Organizational Charter,Current organizational charter approved and effective,Charter document with signatures,Document Review,Charter exists and is properly approved,Version control required
+Governance,Authority Delegation,Clear delegation of authority documented,Delegation matrix with approvals,Document Review,All key roles have defined authority,Must include financial thresholds
+Governance,Decision Making Process,Documented decision making processes,Process documentation,Document Review + Interview,Processes are documented and followed,Include escalation paths
+Governance,Stakeholder Management,Stakeholder register maintained and current,Stakeholder register,Document Review,Register is current and complete,Quarterly updates required
+H2 Safety,Safety Management Plan,H2-specific safety management plan exists,Safety plan document,Document Review,Plan addresses H2 hazards comprehensively,Must be approved by SRB
+H2 Safety,Hazard Log,Comprehensive hazard log maintained,Hazard register/log,Document Review,All H2 hazards identified and assessed,Regular updates required
+H2 Safety,Safety Training,H2 safety training program implemented,Training records,Record Review,All personnel trained appropriately,Certification tracking needed
+H2 Safety,Incident Reporting,Incident reporting system operational,Incident reports,Process Review,System captures and tracks incidents,Response time tracking
+Digital Twin,Architecture Documentation,Digital twin architecture documented,Architecture documents,Document Review,Architecture is complete and current,Include data flow diagrams
+Digital Twin,Model Validation,AI/ML models validated and verified,Validation reports,Technical Review,Models meet accuracy requirements,Statistical validation required
+Digital Twin,Data Integrity,Data integrity controls implemented,Control documentation,Process Review,Data quality assured,Include backup and recovery
+Digital Twin,Performance Monitoring,System performance monitoring active,Performance reports,Record Review,Performance meets requirements,Include response time metrics
+Financial,Budget Controls,Budget control processes documented,Budget procedures,Process Review,Controls prevent overspending,Include approval thresholds
+Financial,Procurement Compliance,Procurement follows established procedures,Procurement records,Record Review,All procurements properly authorized,Include competitive bidding
+Financial,Cost Tracking,Cost tracking system operational,Cost reports,Record Review,Actual costs tracked against budget,Variance analysis required
+Financial,Financial Reporting,Regular financial reporting implemented,Financial reports,Record Review,Reports are timely and accurate,Monthly minimum frequency
+Certification,Certification Plan,Certification planning complete,Certification plan,Document Review,Plan addresses all requirements,Regulatory body coordination
+Certification,Documentation Control,Certification documentation controlled,Document control logs,Process Review,Documents properly controlled,Version control essential
+Certification,Compliance Tracking,Regulatory compliance tracked,Compliance matrix,Record Review,All requirements tracked,Gap analysis included
+Certification,Evidence Management,Certification evidence managed,Evidence logs,Record Review,Evidence properly organized,Traceability required
+Quality,QMS Documentation,Quality management system documented,QMS manual,Document Review,QMS is complete and current,Regular updates required
+Quality,Process Control,Quality processes controlled,Process documents,Process Review,Processes consistently followed,Include work instructions
+Quality,Corrective Actions,Corrective action system operational,CA records,Record Review,CAs properly processed,Effectiveness verification
+Quality,Document Control,Document control system operational,DC procedures,Process Review,Documents properly controlled,Include obsolete document removal

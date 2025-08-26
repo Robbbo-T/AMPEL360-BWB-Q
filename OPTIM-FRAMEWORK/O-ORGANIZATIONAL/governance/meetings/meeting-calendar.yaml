@@ -1,0 +1,109 @@
+# AMPEL360 H₂-BWB-Q Meeting Calendar 2025
+# Component: Governance
+# Document ID: MEET-CAL-2025
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Program Management Office"
+  classification: "Internal"
+
+recurring_meetings:
+  program_board:
+    frequency: "Monthly"
+    day: "First Tuesday"
+    time: "09:00-11:00 UTC"
+    duration: "2 hours"
+    location: "Conference Room A / Teams"
+    chair: "Program Director"
+    participants: ["Program Board Members", "Key Stakeholders"]
+    
+  architecture_review_board:
+    frequency: "Bi-weekly"
+    day: "Wednesday"
+    time: "14:00-15:30 UTC"
+    duration: "1.5 hours"
+    location: "Engineering Conference Room / Teams"
+    chair: "Chief Architect DT"
+    participants: ["ARB Members", "Technical Leads"]
+    
+  safety_review_board:
+    frequency: "Weekly"
+    day: "Friday"
+    time: "10:00-11:00 UTC"
+    duration: "1 hour"
+    location: "Safety Conference Room / Teams"
+    chair: "Safety AI Officer"
+    participants: ["SRB Members", "Safety Specialists"]
+    
+  change_control_board:
+    frequency: "Weekly"
+    day: "Wednesday"
+    time: "15:30-16:30 UTC"
+    duration: "1 hour"
+    location: "Configuration Management Room / Teams"
+    chair: "CSE Office Lead"
+    participants: ["CCB Members", "Change Requestors as needed"]
+    
+  configuration_working_group:
+    frequency: "Bi-weekly"
+    day: "Thursday"
+    time: "13:00-14:00 UTC"
+    duration: "1 hour"
+    location: "Engineering Conference Room / Teams"
+    chair: "Configuration Manager"
+    participants: ["CWG Members", "Technical Documentation Teams"]
+    
+  h2_corridor_committee:
+    frequency: "Weekly"
+    day: "Tuesday"
+    time: "15:00-16:00 UTC"
+    duration: "1 hour"
+    location: "H2 Lab Conference Room / Teams"
+    chair: "H2 Infrastructure Lead"
+    participants: ["HCC Members", "H2 Specialists", "Partners"]
+    
+  defense_security_committee:
+    frequency: "Monthly"
+    day: "Third Thursday"
+    time: "11:00-12:00 UTC"
+    duration: "1 hour"
+    location: "Secure Conference Room / Secure Teams"
+    chair: "Defense Liaison"
+    participants: ["DSC Members", "Security Personnel"]
+
+quarterly_reviews:
+  q1_2025:
+    date: "2025-03-28"
+    time: "09:00-17:00 UTC"
+    type: "Phase Gate Review"
+    chair: "Program Board"
+    
+  q2_2025:
+    date: "2025-06-27"
+    time: "09:00-17:00 UTC"
+    type: "Mid-Year Program Review"
+    chair: "Program Board"
+    
+  q3_2025:
+    date: "2025-09-26"
+    time: "09:00-17:00 UTC"
+    type: "Phase Gate Review"
+    chair: "Program Board"
+    
+  q4_2025:
+    date: "2025-12-19"
+    time: "09:00-17:00 UTC"
+    type: "Annual Program Review"
+    chair: "Program Board"
+
+special_meetings:
+  emergency_response:
+    trigger: "Critical issues or safety incidents"
+    timeline: "Within 4 hours"
+    authority: "Program Board or Safety AI Officer"
+    
+  phase_gate_reviews:
+    frequency: "As per UTCS schedule"
+    duration: "Full day"
+    authority: "Program Board"
