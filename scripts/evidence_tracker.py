@@ -87,12 +87,10 @@ def check_evidence_status(ci_path):
     # Summary by category
     print("📊 Summary by Evidence Type:")
     
-    categories = {
-        "Analysis": [s for s in evidence_status if 'AN-' in s['file']],
-        "Test": [s for s in evidence_status if 'TST-' in s['file']],
-        "Calculations": [s for s in evidence_status if 'CALC-' in s['file']],
-        "Compliance": [s for s in evidence_status if any(x in s['file'] for x in ['LOAD-', 'AEL-', 'FDT-', 'EMC-', 'LPS-', 'IFX-', 'MAT-', 'BVID-', 'THR-'])]
-    }
+    # Categorize evidence files by type using the prefix dictionary
+    categories = {}
+    for category, prefixes in EVIDENCE_TYPE_PREFIXES.items():
+        categories[category] = [s for s in evidence_status if any(prefix in s['file'] for prefix in prefixes)]
     
     for category, files in categories.items():
         if files:
