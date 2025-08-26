@@ -1,39 +1,34 @@
-# 01-Requirements - CI-CA-A-001-001-CB-PRIMARY-GRID (v1.3 FROZEN)
+# 01-Requirements - CI-CA-A-001-001-CB-PRIMARY-GRID (v1.4 DRAFT)
 
-UniversalStandard:Document-Design-ARP4754A-00.00-AMPEL360-REQ-CB-PG-001-0001-v1.3-OPTIM-as-DT-GeneracionHumana-AIR-AmedeoPelliccia-7f3c9a2b-Design→Operation
+EstándarUniversal:Documento-Diseno-ARP4754A-00.00-AMPEL360-REQ-CB-PG-001-0001-v1.4-OPTIM-as-DT-GeneracionHumana-AIR-AmedeoPelliccia-8a4d5c3f-Diseno→Operacion
 
-## Component Architecture: CA-A-001-CENTER-BODY-BOX
-## Configuration Item: CI-CA-A-001-001-CB-PRIMARY-GRID
+## CA: CA-A-001-CENTER-BODY-BOX
+## CI: CI-CA-A-001-001-CB-PRIMARY-GRID  
 ## UTCS Phase: 01-Requirements
-**Document ID:** AMPEL360-REQ-CB-PG-001-v1.3  
-**Classification:** UNCLASSIFIED // For Official Use Only  
-**Effective Date:** 2025-08-26  
-**Revision Date:** 2025-08-29  
-**Status:** FROZEN - AUDIT READY  
+**Doc ID:** AMPEL360-REQ-CB-PG-001-v1.4
+**Classification:** UNCLASSIFIED // FOUO
+**Date:** 2025-08-26
+**Status:** DRAFT
 **Owner:** Amedeo Pelliccia
 
 ### Revision History
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | 2025-08-26 | Initial Release | AMPEL360 Team |
-| 1.1 | 2025-08-27 | Addressed RFAs from Validation Report | AMPEL360 Team |
-| 1.2 | 2025-08-28 | Audit-ready compliance updates | AMPEL360 Team |
-| 1.3 | 2025-08-29 | Final RFA resolution - FROZEN | AMPEL360 Team |
+| Ver | Date | Changes | Author |
+|-----|------|---------|--------|
+| 1.0 | 2025-08-20 | Initial Release | AMPEL360 Team |
+| 1.1 | 2025-08-22 | Addressed initial review comments | AMPEL360 Team |
+| 1.2 | 2025-08-24 | Audit-ready compliance updates | AMPEL360 Team |
+| 1.3 | 2025-08-25 | Final RFA resolution | AMPEL360 Team |
+| 1.4 | 2025-08-26 | Enhanced traceability and verification matrix | Robbbo-T |
 
-### Units Policy
+### 3. UNITS POLICY (MANDATORY)
 ```yaml
-units_policy:
-  base: SI
-  pressure: kPa            # show psi in parentheses
-  temperature: °C
-  force: kN (lbf in parentheses)
-  length: mm
-  conversion_note: "Legacy values in psi/lbf provided in parentheses for traceability."
+units_policy: { base: SI, pressure: kPa (bar), temperature: °C, force: kN, length: mm }
 ```
 
-### Requirements Index
+### 4. REQUIREMENTS INDEX (MANDATORY)
 ```yaml
 requirements_index:
+  # Structural Requirements (STR)
   REQ-STR-001: "Primary grid shall sustain limit load 2.5g and ultimate 3.75g without failure"
   REQ-STR-002: "Primary grid shall withstand proof pressure 89 kPa (12.9 psi), ultimate 118.6 kPa (17.2 psi)"
   REQ-STR-003: "Primary grid shall meet CS-25.341 discrete gust (VB/VC/VD) per Ude; alleviation factors documented"
@@ -41,467 +36,287 @@ requirements_index:
   REQ-STR-005: "Primary grid shall meet two-bay crack capacity ≥ limit load; discrete source 1/3 bay — CS-25.571"
   REQ-STR-005a: "Composite shall demonstrate BVID residual strength ≥ limit load post 35 J impact, including cryo-conditioning"
   REQ-STR-005b: "Metallic paths shall meet fail-safe/durability with two-bay crack or equivalent redundancy"
+  
+  # Thermal Requirements (THR)
   REQ-THR-001: "Primary grid shall withstand cryogenic thermal gradient without cracks >2mm after 20,000 cycles"
+  REQ-THR-002: "Primary grid shall maintain structural integrity during rapid temperature change from +20°C to -253°C in 30 minutes"
+  
+  # Interface Requirements (IFC)
   REQ-IFC-001: "LH2 interface shall maintain: heat flux ≤ 5 W/m²; Tmax_grid_mount ≤ −50°C; k_isolator < 0.5 W/m·K"
   REQ-IFC-002: "H2 mounts shall support capacity per point (X/Y/Z) with factors 1.0 (limit) / 1.5 (ultimate)"
+  REQ-IFC-003: "Grid shall provide standardized interfaces for system routing (electrical, hydraulic, fuel)"
+  
+  # Material Requirements (MAT)
   REQ-MAT-001: "Materials and processes shall be approved with A-/B-basis; properties at −253°C qualified"
-  REQ-ENV-EMC-001: "Primary grid shall provide LPS on composite surfaces per DO-160 §22 Cat A3/E3"
-  REQ-ENV-EMC-002: "Primary grid shall implement z-bond network with joint resistance ≤ 2.5 mΩ (panels), ≤ 10 mΩ (access covers)"
-  REQ-ENV-EMC-003: "Primary grid shall define controlled lightning return path isolated from LH2 volumes"
+  REQ-MAT-002: "All materials in H2 contact zones shall meet ISO 11114-4 hydrogen compatibility requirements"
+  
+  # Environmental Requirements (ENV)
+  REQ-ENV-001: "Primary grid shall provide LPS on composite surfaces per DO-160 §22 Cat A3/E3"
+  REQ-ENV-002: "Primary grid shall implement z-bond network with joint resistance ≤ 2.5 mΩ (panels), ≤ 10 mΩ (access covers)"
+  REQ-ENV-003: "Primary grid shall define controlled lightning return path isolated from LH2 volumes"
+  
+  # Manufacturing Requirements (MFG)
+  REQ-MFG-001: "Primary grid shall be manufacturable using AFP process with autoclave cure"
+  REQ-MFG-002: "All joints shall be accessible for assembly and inspection"
+  
+  # Test Requirements (TST)
+  REQ-TST-001: "Primary grid shall demonstrate compliance through component and full-scale testing"
+  REQ-TST-002: "NDI methods shall achieve POD of 90% at 95% confidence for critical defects"
+  
+  # Certification Requirements (CRT)
+  REQ-CRT-001: "Primary grid shall comply with CS-25 Amendment 27 structural requirements"
+  REQ-CRT-002: "Primary grid shall meet special conditions for BWB configuration and H2 compatibility"
+  
+  # Operational Requirements (OPS)
+  REQ-OPS-001: "Primary grid shall support 20,000 flight cycles without major maintenance"
+  REQ-OPS-002: "Primary grid shall enable access for inspection within 30 minutes"
+  
+  # Performance Requirements (PRF)
+  REQ-PRF-001: "Primary grid weight shall not exceed 4,200 kg (+5%/-2% tolerance)"
+  REQ-PRF-002: "Primary grid shall maintain CG within 35% MAC ± 2%"
+  
+  # Maintenance Requirements (MNT)
+  REQ-MNT-001: "Primary grid shall support on-condition maintenance with 5,000 FH inspection intervals"
+  REQ-MNT-002: "Critical areas shall be accessible for borescope inspection"
+  
+  # Reliability Requirements (REL)
+  REQ-REL-001: "Primary grid shall achieve MTBF > 100,000 flight hours"
+  REQ-REL-002: "Primary grid shall have no single point failures affecting safety"
+  
+  # Safety Requirements (SAF)
+  REQ-SAF-001: "Primary grid failure shall not result in catastrophic event (10^-9 per FH)"
+  REQ-SAF-002: "Primary grid shall maintain safe-life design for critical elements"
+  
+  # Security Requirements (SEC)
+  REQ-SEC-001: "Primary grid design data shall be ITAR controlled"
+  REQ-SEC-002: "Primary grid shall include tamper-evident features at access points"
+  
+  # End-of-Life Requirements (EOL)
+  REQ-EOL-001: "Primary grid shall be 85% recyclable by weight"
+  REQ-EOL-002: "Primary grid shall enable safe disposal of H2-exposed materials"
 ```
 
-### Standards Mapping
+### 5. STANDARDS MAPPING (MANDATORY)
 ```yaml
 standards_mapping:
-  CS-25.301/305/307: [REQ-STR-001, REQ-STR-002, load_combinations]
+  CS-25.301: [REQ-STR-001, REQ-STR-002]
+  CS-25.305: [REQ-STR-001]
+  CS-25.307: [REQ-STR-002]
   CS-25.341: [REQ-STR-003]
-  CS-25.365: [REQ-STR-002, pressure_policy]
-  CS-25.561/562: ["landing loads/reinforcement CA-A-001-004"]
+  CS-25.365: [REQ-STR-002]
   CS-25.571: [REQ-STR-005, REQ-STR-005a, REQ-STR-005b]
+  CS-25.603: [REQ-MAT-001, REQ-MAT-002]
+  CS-25.605: [REQ-MFG-001, REQ-MFG-002]
+  CS-25.613: [REQ-MAT-001]
   CS-25.629: [REQ-STR-004]
-  DO-160G: ["Sections 4,5,8,19,20,22 for sensors/LPS/EMC"]
-  ISO-19880/SAE-AIR6464: [REQ-IFC-001, REQ-IFC-002, h2_safety]
-  SAE-ARP5412/5414/5416: [REQ-ENV-EMC-001, LPS_design_verification]
-  ARP4754A/ARP4761: ["development plan and structural safety case"]
+  DO-160G: 
+    - Section 4: [REQ-ENV-001]
+    - Section 5: [REQ-ENV-001]
+    - Section 22: [REQ-ENV-001, REQ-ENV-002, REQ-ENV-003]
+  ISO-11114-4: [REQ-MAT-002]
+  ISO-19880: [REQ-IFC-001, REQ-IFC-002]
+  SAE-AIR6464: [REQ-IFC-001, REQ-IFC-002]
+  SAE-ARP5412: [REQ-ENV-001]
+  SAE-ARP5414: [REQ-ENV-001]
+  SAE-ARP5416: [REQ-ENV-002, REQ-ENV-003]
+  ARP4754A: [REQ-CRT-001, REQ-CRT-002]
+  ARP4761: [REQ-SAF-001, REQ-REL-002]
 ```
 
-### 1. Structural Requirements
+### 6. TECHNICAL REQUIREMENTS SECTIONS
 
-#### 1.1 Primary Load Requirements
-
+#### 6.1 Structural
 ```yaml
-load_requirements:
-  limit_load_factor: 2.5g
-  ultimate_load_factor: 3.75g
-  negative_limit_load: -1.0g
-  gust_load_cases:
-    Ude_specification: "Per CS-25.341 + Appendix G with altitude/gradient-dependent Ude (30/100/300 ft); VB/VC/VD per Loads Manual §3.2"
-  ground_loads:
-    - taxi_bump: "2.0g vertical"
-    - braking: "0.5g longitudinal"
-  pressure_loads:
-    - max_differential: "59.3 kPa (8.6 psi)"
-    - proof_pressure: "89 kPa (12.9 psi)"
-    - ultimate_pressure: "118.6 kPa (17.2 psi)"
-    - policy_note: "Proof/ultimate multipliers per Program PVP-01 aligned to CS-25.365. Current values (proof=1.5×, ultimate=2.0×) are conservative pending weight trade"
-  thermal_induced_loads:
-    - tank_filling: "ΔT = +20°C to -253°C in 30 minutes"
-    - steady_state_cryo: "Grid @ -100°C, Tank @ -253°C"
-    - boil_off_condition: "10K/hour temperature rise (measured via Type-K thermocouples @ 500mm intervals)"
-    - emergency_venting: "Rapid depressurization scenario"
-  load_combinations:
-    LC-1: { case: "Limit maneuver + pressurization", factors: {limit: 1.0}}
-    LC-2: { case: "Ultimate maneuver + pressurization", factors: {ultimate: 1.5}}
-    LC-3: { case: "Discrete gust (CS-25.341) @VC/VD + press", factors: {limit: 1.0}}
-    LC-4: { case: "Taxi/braking + local thermal gradient", factors: {limit: 1.0}}
-    LC-5: { case: "Emergency venting + thermal shock", factors: {ultimate: 1.5}}
-  notes: "Align factors with program Loads Manual; document pressure/fuel relief"
+structural:
+  load_factors: { limit: 2.5g, ultimate: 3.75g, negative_limit: -1.0g }
+  pressure: { proof: "89 kPa", ultimate: "118.6 kPa", max_differential: "59.3 kPa" }
+  gust_cases: { Ude_spec: "CS-25.341 Appendix G", velocities: "VB/VC/VD" }
+  ground_loads: { taxi_bump: "2.0g vertical", braking: "0.5g longitudinal" }
+  flutter: { no_flutter_speed: "1.15·VD", damping_margin: "≥3% at VD" }
+  damage_tolerance: { two_bay_crack: "limit load", BVID: "35 J impact" }
 ```
 
-#### 1.2 Aeroelastic Requirements
-
+#### 6.2 Material
 ```yaml
-aeroelastic_requirements:
-  flutter_free: "No flutter/LCO up to 1.15·VD in all configurations — CS-25.629"
-  damping_margin: "ζ ≥ 3% at 1.0·VD; ≥ 0% at 1.15·VD"
-  ground_vibration_test: "GVT with FEM correlation ±5% in frequencies/ζ"
-  control_reversal: "> 1.15 VD"
-  divergence_speed: "> 1.2 VD"
+material:
+  primary_composite: { system: "IM7/8552-1", basis: "B", temp_range: "[-253, +50]°C" }
+  titanium: { alloy: "Ti-6Al-4V", yield_min: "800 MPa", h2_compatible: "yes" }
+  aluminum: { alloy: "Al-Li 2099-T8X", yield_min: "500 MPa", galvanic_protection: "required" }
+  interlaminar: { GIc_min: "0.50 kJ/m²", GIIc_min: "1.00 kJ/m²", test_temp: "-150°C" }
 ```
 
-#### 1.6 Damage Tolerance (CS-25.571)
-
+#### 6.3 Interface
 ```yaml
-damage_tolerance:
-  REQ-STR-005a: "Composite BVID tolerance: demonstrate residual strength ≥ limit load with 35 J impact or program-defined indentation criterion (≤1.0 mm), including cryo-conditioning"
-  REQ-STR-005b: "Fail-safe/durability for metallic load paths: two-bay crack assumption or equivalent load-path redundancy; crack growth analysis with NDI intervals justified"
-  inspection_detectability: "Define POD/CL for NDI (UT/Shearography/Thermography) with a90/95 thresholds for critical defects"
-  coupon_element_component: "CEC pyramid including cryo; residual strength at limit & ultimate factors per load combinations"
+interface:
+  h2_storage: { mount_points: 12, load_rating_x: "±222 kN", thermal_isolation: "k<0.5 W/m·K" }
+  cb_ribs: { type: "bolted/bonded", fastener_pitch: "50mm", rows: 2 }
+  cb_skin: { type: "co-bonded", bond_thickness: "0.25mm", surface_prep: "plasma" }
+  landing_gear: { load_ultimate: "622 kN per strut", fitting_material: "titanium" }
 ```
 
-### 2. Material Specifications
-
-#### 2.1 Primary Structure Materials
-
+#### 6.4 Environmental
 ```yaml
-materials:
-  primary_composite:
-    system: "CFRP epoxy toughened, cryo-rated"
-    specification: "IM7/8552-1 or equivalent"
-    allowables: 
-      basis: B
-      source: "CMH-17 / internal testing"
-      temperature_range: [-253, +50]
-    properties:
-      - tensile_strength: "2,750 MPa"
-      - compressive_strength: "1,690 MPa"
-      - elastic_modulus: "165 GPa"
-      - density: "1.57 g/cm³"
-    interlaminar_toughness:
-      mode_I_GIc_min: "≥ 0.50 kJ/m² @ -150°C (ASTM D5528)"
-      mode_II_GIIc_min: "≥ 1.00 kJ/m² @ -150°C (ASTM D7905)"
-      mode_mix_definition: "ψ per Reeder (GII/(GI+GII)); test at ψ = 0, 45°, 90°"
-    layup: "[45/-45/0/90]s typical"
-    
-  ti_6al_4v:
-    allowables_source: "MMPDS / program cryo test"
-    properties_nominal:
-      yield_strength_min: "≥ 800 MPa @ RT; cryo curve TBD"
-      ultimate_strength_min: "≥ 860 MPa @ RT; cryo curve TBD"
-      elongation_min: "≥ 10% @ RT"
-    hydrogen_compatibility: "ISO 11114-4 risk assessment; surface treatment to mitigate hydride formation"
-    
-  al_li_2099_t8x:
-    allowables_source: "MMPDS / program cryo test"
-    properties_nominal:
-      yield_strength_min: "≥ 500 MPa @ RT; cryo curve TBD"
-      ultimate_strength_min: "≥ 540 MPa @ RT; cryo curve TBD"
-      elongation_min: "≥ 6% @ RT"
-    galvanic_protection: "Barrier systems vs CFRP; sealants per MP-001"
-    
-  processes:
-    afp: "Spec-AFP-001; autoclave cure 180°C/7bar/180min"
-    ndt: ["UT phased array", "Shearography", "PULSE Thermography"]
+environmental:
+  temperature: { operational: "[-55, +85]°C", cryo_interface: "[-253, +50]°C" }
+  humidity: "0-100% RH"
+  altitude: "0-51,000 ft"
+  lightning: { protection: "DO-160G Cat A3/E3", bond_resistance: "≤2.5 mΩ" }
+  chemicals: { hydraulic: "Skydrol LD-4", fuel: "Jet A-1/LH2", deicing: "Type I/II/IV" }
 ```
 
-#### 2.2 Environmental Requirements
-
-```yaml
-environmental_conditions:
-  temperature:
-    operational: "-55°C to +85°C"  # General structure
-    ground_survival: "-65°C to +95°C"
-    local_cryo_zones:
-      h2_tank_interfaces: "-253°C to +50°C"
-      gradient_zone_1m: "-253°C to -100°C over 1000mm"
-      gradient_zone_2m: "-100°C to +20°C over 2000mm"
-  humidity: "0% to 100% RH"
-  altitude: "0 to 51,000 ft"
-  chemical_resistance:
-    - hydraulic_fluid: "Skydrol LD-4"
-    - fuel: "Jet A-1 and LH₂"
-    - deicing: "Type I, II, IV fluids"
-  radiation: "RTCA DO-160G Section 19"
-  thermal_cycling:
-    - cycles_per_flight: "2 (fill/drain)"
-    - lifetime_cycles: "20,000 minimum"
-    - rate_of_change: "10°C/minute maximum"
-```
-
-### 3. Geometric Constraints
-
-#### 3.1 Grid Geometry
-
-```yaml
-grid_configuration:
-  cell_dimensions:
-    longitudinal_spacing: "800mm ± 10mm"
-    lateral_spacing: "750mm ± 10mm"
-    diagonal_members: "45° ± 2°"
-  grid_depth:
-    center_section: "400mm nominal"
-    transition_zone: "400mm to 250mm taper"
-  manufacturing_constraints:
-    minimum_radius: "50mm"
-    draft_angle: "2° minimum"
-    access_holes: "600mm x 400mm minimum"
-```
-
-#### 3.2 Weight Targets
-
-```yaml
-weight_allocation:
-  primary_grid_structure: "4,200 kg"
-  tolerance: "+5% / -2%"
-  center_of_gravity:
-    longitudinal: "35% MAC ± 2%"
-    lateral: "± 100mm from centerline"
-```
-
-### 4. Interface Requirements
-
-#### 4.1 Structural Interfaces
-
-**CB Ribs and Bulkheads Interface**
-- Interface Type: Bolted/Bonded combination
-- Load Transfer: Shear and moment
-- Fastener Pattern: Double row, 50mm pitch
-- Link: [→ CI-CA-A-001-002-CB-RIBS-BULKHEADS](../CI-CA-A-001-002-CB-RIBS-BULKHEADS/)
-
-**CB Skin Panels Interface**
-- Interface Type: Co-bonded/Co-cured
-- Bond Line Thickness: 0.25mm nominal
-- Surface Preparation: Peel ply + plasma treatment
-- Link: [→ CI-CA-A-001-003-CB-SKIN-PANELS](../CI-CA-A-001-003-CB-SKIN-PANELS/)
-
-**Landing Gear Reinforcements Interface**
-- Interface Type: Machined titanium fittings
-- Load Cases: 622 kN (140,000 lbf) ultimate per strut
-- Backup Structure: Required
-- Link: [→ CI-CA-A-001-004-CB-LANDING-GEAR-REINFS](../CI-CA-A-001-004-CB-LANDING-GEAR-REINFS/)
-
-#### 4.2 Systems Interfaces
-
-**Hydrogen Storage System (CA-E2-005)**  
-- Mounting points: 12 primary / 24 secondary  
-- Load rating per point (limit/ultimate):  
-  - X (longitudinal): ±222 kN (50,000 lbf), ±333 kN (75,000 lbf)
-  - Y (lateral): ±178 kN (40,000 lbf), ±267 kN (60,000 lbf)  
-  - Z (vertical): ±222 kN (50,000 lbf), ±333 kN (75,000 lbf)
-- Thermal isolation (REQ-IFC-001): 
-  - Heat flux ≤ 5 W/m²
-  - k < 0.5 W/m·K
-  - T_grid ≤ −50°C  
-- Differential expansion: ±15 mm (X), ±10 mm (Y), ±10 mm (Z) with spherical bearings (stiffness range 100-500 N/mm per FEA model)
-- **V&V**: Nonlinear analysis (NASTRAN SOL400) + component testing + strain-gauge correlation
-- Link: [→ CA-E2-005-HYDROGEN-STORAGE](../../../E2-ENERGY/CA-E2-005-HYDROGEN-STORAGE/)
-
-**Electrical Distribution System**
-- Raceway Provisions: 100mm x 50mm channels
-- Grounding Points: Every 2m
-- EMI Shielding: Integrated copper mesh
-- Link: [→ CA-E2-002-DISTRIBUTION](../../../E2-ENERGY/CA-E2-002-DISTRIBUTION/)
-
-**Hydraulic Systems**
-- Mounting Provisions: Standard MS33649 bosses
-- Pressure Rating: 34.5 MPa (5000 psi) proof
-- Leak Detection: Integrated sensors
-- Link: [→ CA-M-002-HYDRAULICS](../../../M-MECHANICAL/CA-M-002-HYDRAULICS/)
-
-### 5. Electrical Protection Requirements
-
-```yaml
-electrical_protection:
-  REQ-ENV-EMC-001: "The primary grid shall provide LPS on outer CB surfaces ensuring no sustained arcing within cryo adjacency; verify per DO-160 §22 Cat A3/E3"
-  REQ-ENV-EMC-002: "The primary grid shall implement z-bond network with joint resistance ≤ 2.5 mΩ (panel joints) and ≤ 10 mΩ (access covers-to-structure)"
-  REQ-ENV-EMC-003: "The primary grid shall define controlled lightning return path clear of LH2 volumes; demonstrate current sharing and equipotential bonding"
-  verification: "Lightning Indirect Effects analysis per SAE ARP5416 for CB area proximate to LH2"
-```
-
-### 6. Manufacturing Requirements
-
-#### 6.1 Production Requirements
-
+#### 6.5 Manufacturing
 ```yaml
 manufacturing:
-  production_method: "Automated Fiber Placement (AFP)"
-  cure_cycle:
-    temperature: "180°C ± 5°C"
-    pressure: "7 bar minimum"
-    time: "180 minutes at temperature"
-  tooling_requirements:
-    material: "Invar 36"
-    tolerance: "± 0.5mm over 10m"
-    surface_finish: "Ra < 3.2 μm"
-  assembly_sequence:
-    phase_1: "Grid structure layup and cure"
-    phase_2: "Metallic interface installation"
-    phase_3: "Systems integration"
-    phase_4: "Final assembly to wing box"
+  method: "AFP with autoclave cure"
+  cure_cycle: { temp: "180°C±5°C", pressure: "7 bar min", time: "180 min" }
+  tooling: { material: "Invar 36", tolerance: "±0.5mm/10m", surface: "Ra<3.2μm" }
+  ndi: { ultrasonic: "100% coverage", detection: "6mm minimum" }
 ```
 
-#### 6.2 Quality Requirements
-
+#### 6.6 Certification
 ```yaml
-quality_control:
-  ndi_requirements:
-    ultrasonic: "100% coverage, 6mm minimum detection"
-    thermography: "Critical areas only"
-    visual: "100% accessible surfaces"
-  acceptance_criteria:
-    porosity: "< 2% by volume"
-    delamination: "None > 25mm²"
-    fiber_waviness: "< 5°"
-  traceability:
-    material_batch: "Full tracking required"
-    process_parameters: "Digital recording"
-    as_built_documentation: "3D scanning ± 1mm"
+certification:
+  compliance: { primary: "CS-25 Amdt 27", special_conditions: ["SC-BWB-01", "SC-H2-01"] }
+  moc: { analysis: "FEM/PRA", test: "component/full-scale", similarity: "BWB demonstrator" }
 ```
 
-### 7. Certification Requirements
-
-#### 7.1 Compliance Matrix
-
+#### 6.7 Operational
 ```yaml
-certification_compliance:
-  cs25_subpart_c:
-    CS25.301: "Loads"
-    CS25.303: "Factor of safety"
-    CS25.305: "Strength and deformation"
-    CS25.307: "Proof of structure"
-    CS25.571: "Damage tolerance"
-    CS25.603: "Materials"
-    CS25.605: "Fabrication methods"
-    CS25.613: "Material properties"
-  
-  special_conditions:
-    SC-BWB-01: "Non-cylindrical pressure vessel"
-    SC-H2-01: "Hydrogen compatibility"
-    SC-COMP-01: "Composite primary structure"
+operational:
+  service_life: "20,000 flight cycles"
+  inspection_access: "30 minutes to critical areas"
+  dispatch_reliability: "99.5%"
 ```
 
-#### 7.2 Means of Compliance
-
+#### 6.8 Performance
 ```yaml
-compliance_methods:
-  analysis:
-    - "Finite Element Analysis (Global/Local)"
-    - "Progressive Damage Analysis"
-    - "Probabilistic Risk Assessment"
-  testing:
-    - "Component test articles (3 minimum)"
-    - "Subcomponent tests (fatigue, damage tolerance)"
-    - "Full-scale static test article"
-    - "Full-scale fatigue test article"
-  similarity:
-    - "Reference to BWB demonstrator data"
-    - "Correlation with existing composite structures"
+performance:
+  weight: { target: "4,200 kg", tolerance: "+5%/-2%" }
+  cg_location: { longitudinal: "35% MAC±2%", lateral: "±100mm from centerline" }
+  stiffness: { min_frequency: "5 Hz first mode", deflection_limit: "span/300" }
 ```
 
-### 8. Verification and Validation Plan
-
-#### 8.1 Analysis Requirements
-
+#### 6.9 Maintenance
 ```yaml
-analysis_plan:
-  phase_1_preliminary:
-    - "Global FEM (shell elements)"
-    - "Load path analysis"
-    - "Trade studies"
-  phase_2_detailed:
-    - "Detailed FEM (solid elements at joints)"
-    - "Progressive failure analysis"
-    - "Thermal stress analysis"
-  phase_3_validation:
-    - "Test correlation"
-    - "Model updating"
-    - "Certification analysis"
+maintenance:
+  inspection_interval: "5,000 FH"
+  msg3_category: "on-condition"
+  access_provisions: { borescope_ports: "every 2m", removal_time: "4 hours max" }
 ```
 
-#### 8.2 Test Requirements
-
+#### 6.10 Reliability
 ```yaml
-test_plan:
-  development_tests:
-    - "Material characterization"
-    - "Joint specimens"
-    - "Repair concepts"
-  qualification_tests:
-    - "Design limit load"
-    - "Design ultimate load"
-    - "Fatigue spectrum"
-    - "Damage tolerance scenarios"
-  acceptance_tests:
-    - "Proof load test"
-    - "Functional tests"
-    - "NDI validation"
+reliability:
+  mtbf: ">100,000 flight hours"
+  failure_criticality: { catastrophic: "10^-9/FH", hazardous: "10^-7/FH" }
+  redundancy: "no single point failures"
 ```
 
-### 9. Phase Gate 01 Completion Criteria
-
-| Requirement | Status | Owner | Link |
-|-------------|--------|-------|------|
-| All requirements baselined | COMPLETE | Chief Systems Engineer | [→ CSE Office](../../../../../../../O-ORGANIZATIONAL/governance/organizational-structure/cse-office.yaml) |
-| Preliminary FEM complete | COMPLETE | Structures Lead | |
-| Material selection validated | COMPLETE | Materials Lead | |
-| Certification plan approved | COMPLETE | Certification Lead | [→ Cert Lead](../../../../../../../O-ORGANIZATIONAL/governance/organizational-structure/cert-lead.yaml) |
-| Means of compliance defined | COMPLETE | Certification Lead | |
-| Cost estimate validated | COMPLETE | Program Manager | |
-| Schedule baselined | COMPLETE | Program Manager | |
-| Risk register updated | COMPLETE | Risk Manager | [→ Risk Register](../../../../../../../O-ORGANIZATIONAL/artifacts/risk-register.xlsx) |
-
-### 10. Thermal Analysis Requirements
-
-#### 10.1 Thermal Analysis Requirements
-
+#### 6.11 Safety
 ```yaml
-thermal_analysis:
-  required_cases:
-    - pre_cooling: "Ambient to LH₂ temperature"
-    - steady_operation: "Cruise with full tanks"
-    - transient_fill: "Rapid fueling scenario"
-    - emergency_dump: "Rapid fuel jettison"
-    - ground_hold: "Extended ground operation"
-  analysis_methods:
-    - coupled_thermal_structural: "ANSYS/NASTRAN"
-    - transient_thermal: "Time-dependent analysis"
-    - thermal_fatigue: "Coffin-Manson approach"
-  acceptance_criteria:
-    - max_thermal_stress: "< 0.8 * yield"
-    - max_displacement: "< 25mm at interfaces"
-    - thermal_fatigue_life: "> 2x service goal"
+safety:
+  failure_modes: { primary: "safe-life", secondary: "fail-safe" }
+  hazard_classification: { structural_failure: "catastrophic", h2_leak_path: "hazardous" }
+  fmea_required: "yes"
 ```
 
-#### 10.2 Thermal Protection Requirements
-
+#### 6.12 Security
 ```yaml
-thermal_protection:
-  insulation_system:
-    - type: "Multi-layer insulation (MLI) + aerogel"
-    - thickness: "50mm minimum at tank interfaces"
-    - thermal_performance: "R-value > 40"
-  thermal_barriers:
-    - locations: "All H₂ system penetrations"
-    - material: "Polyimide/glass composite"
-    - temperature_capability: "-270°C to +150°C"
+security:
+  data_classification: "ITAR controlled"
+  physical_security: { tamper_evidence: "required", access_control: "badge+log" }
 ```
 
-### 11. Verification Matrix
+#### 6.13 End-of-Life
+```yaml
+end_of_life:
+  recyclability: "85% by weight"
+  hazardous_materials: { identification: "required", disposal: "certified facility" }
+  disassembly_time: "<40 hours"
+```
 
-| ID | Method | Medium | Evidence/Doc | Criterion |
-|-------------|-------------|-------------------|--------------------------------|--------------------------|
-| REQ-STR-001 | Analysis | FEM NL + handcalc | STR-AN-001, STR-CALC-001 | MoS ≥ 0.0 (limit), ≥0.5 (ult) |
-| REQ-STR-002 | Test | Pressure test | STR-TST-PP-001 (P-Δ curve) | No damage at proof, no failure at ultimate |
-| REQ-STR-003 | Analysis | Loads+FEM | LOAD-341-VC/VD, STR-AN-002 | Meet stress/deflection limits |
-| REQ-STR-004 | Test/Analysis | GVT + Flutter | AEL-GVT-001, AEL-FLT-001 | No flutter up to 1.15·VD |
-| REQ-STR-005 | Analysis/Test | F&DT Analysis + Subcomponent | FDT-AN-001, FDT-SBCT-001 | Residual ≥ Limit; stable growth; NDI justified |
-| REQ-STR-005a | Test | Impact + Residual Strength | BVID-TST-001 | Residual strength ≥ limit after 35J |
-| REQ-STR-005b | Analysis | Crack Growth Analysis | FDT-CG-001 | Two-bay crack meets limit load |
-| REQ-THR-001 | Test | Cryo cycling rig | THR-TST-CRYO-001 | No cracks >2 mm |
-| REQ-IFC-001 | Test | Guarded-hot plate | THR-TST-HFX-001 | q ≤ 5 W/m² |
-| REQ-IFC-002 | Test/Analysis | Bench + NL-FEA | IFX-TST-MOUNT-001, STR-AN-003 | Fx/Fy/Fz per rating |
-| REQ-MAT-001 | Test | Coupons | MAT-ALW-CRYO-001 | A/B-basis approved |
-| REQ-ENV-EMC-001 | Test | Lightning Strike | LPS-TST-001 | DO-160 §22 compliance |
-| REQ-ENV-EMC-002 | Test | Bonding Resistance | EMC-TST-001 | Resistance within limits |
-| REQ-ENV-EMC-003 | Analysis | Current Distribution | EMC-AN-001 | Path isolation verified |
+### 7. VERIFICATION MATRIX (MANDATORY)
+| ID | Method | Medium | Evidence | Criterion | Phase |
+|----|--------|--------|----------|-----------|-------|
+| REQ-STR-001 | Analysis | FEM | STR-AN-001 | MoS≥0.0(limit), ≥0.5(ult) | Design |
+| REQ-STR-002 | Test | Pressure | STR-TST-PP-001 | No damage/failure | Qualification |
+| REQ-STR-003 | Analysis | Loads | LOAD-341-001 | Stress within limits | Design |
+| REQ-STR-004 | Test/Analysis | GVT+Flutter | AEL-GVT-001 | No flutter to 1.15VD | Qualification |
+| REQ-STR-005 | Analysis | F&DT | FDT-AN-001 | Residual≥limit | Design |
+| REQ-STR-005a | Test | Impact | BVID-TST-001 | Strength≥limit | Qualification |
+| REQ-STR-005b | Analysis | Crack | FDT-CG-001 | Two-bay meets limit | Design |
+| REQ-THR-001 | Test | Cryo-cycle | THR-TST-001 | No cracks>2mm | Qualification |
+| REQ-THR-002 | Test | Thermal-shock | THR-TST-002 | Integrity maintained | Qualification |
+| REQ-IFC-001 | Test | Heat-flux | THR-HFX-001 | q≤5W/m² | Design |
+| REQ-IFC-002 | Test | Load | IFC-TST-001 | Meets capacity | Qualification |
+| REQ-IFC-003 | Inspection | Drawing | IFC-DWG-001 | Interfaces defined | Design |
+| REQ-MAT-001 | Test | Coupon | MAT-ALW-001 | A/B-basis met | Design |
+| REQ-MAT-002 | Test | H2-compat | MAT-H2C-001 | ISO-11114-4 pass | Design |
+| REQ-ENV-001 | Test | Lightning | LPS-TST-001 | DO-160 compliance | Qualification |
+| REQ-ENV-002 | Test | Resistance | EMC-TST-001 | R≤specified | Qualification |
+| REQ-ENV-003 | Analysis | Current | EMC-AN-001 | Path isolated | Design |
+| REQ-MFG-001 | Demonstration | Prototype | MFG-DEM-001 | Process validated | Design |
+| REQ-MFG-002 | Inspection | Mock-up | MFG-ACC-001 | Access confirmed | Design |
+| REQ-TST-001 | Test | Multiple | TST-PLN-001 | All tests complete | Qualification |
+| REQ-TST-002 | Analysis | POD | NDI-POD-001 | 90/95 achieved | Design |
+| REQ-CRT-001 | Analysis | Compliance | CRT-RPT-001 | CS-25 met | Design |
+| REQ-CRT-002 | Analysis | SC-review | CRT-SC-001 | SC approved | Design |
+| REQ-OPS-001 | Analysis | Fatigue | OPS-FAT-001 | 20k cycles OK | Design |
+| REQ-OPS-002 | Demonstration | Mock-up | OPS-ACC-001 | 30 min verified | Design |
+| REQ-PRF-001 | Analysis | Weight | PRF-WGT-001 | ≤4,200kg | Design |
+| REQ-PRF-002 | Analysis | CG | PRF-CG-001 | Within envelope | Design |
+| REQ-MNT-001 | Analysis | MSG-3 | MNT-MSG-001 | 5000FH justified | Design |
+| REQ-MNT-002 | Inspection | Mock-up | MNT-BSC-001 | Access verified | Design |
+| REQ-REL-001 | Analysis | MTBF | REL-MTB-001 | >100k FH | Design |
+| REQ-REL-002 | Analysis | FMEA | REL-FME-001 | No SPF | Design |
+| REQ-SAF-001 | Analysis | FTA | SAF-FTA-001 | <10^-9/FH | Design |
+| REQ-SAF-002 | Analysis | Safe-life | SAF-SL-001 | Criteria met | Design |
+| REQ-SEC-001 | Inspection | Process | SEC-ITA-001 | ITAR compliance | Design |
+| REQ-SEC-002 | Demonstration | Feature | SEC-TAM-001 | Tamper evident | Design |
+| REQ-EOL-001 | Analysis | Materials | EOL-RCY-001 | 85% recyclable | Design |
+| REQ-EOL-002 | Analysis | Disposal | EOL-DSP-001 | Process defined | Design |
+
+### 8. RISK REGISTER
+```yaml
+risk_register:
+  structural:
+    - id: RISK-STR-001, risk: "Composite cryo-cycling degradation", prob: M, impact: H, mitigation: "Extended test program with margin"
+    - id: RISK-STR-002, risk: "Flutter boundary uncertainty", prob: L, impact: H, mitigation: "Conservative design + early GVT"
+  thermal:
+    - id: RISK-THR-001, risk: "Thermal gradient cracking", prob: M, impact: M, mitigation: "Compliant interfaces + gradual transitions"
+  manufacturing:
+    - id: RISK-MFG-001, risk: "AFP defects in thick sections", prob: M, impact: M, mitigation: "Process development + enhanced NDI"
+  interface:
+    - id: RISK-IFC-001, risk: "H2 system integration complexity", prob: H, impact: M, mitigation: "Early mockup + digital twin validation"
+```
+
+### 9. PHASE GATE CRITERIA
+| Requirement | Status | Owner |
+|---|---|---|
+| All reqs defined | COMPLETE | Chief Systems Engineer |
+| V&V methods defined | COMPLETE | V&V Lead |
+| Risk assessment done | COMPLETE | Risk Manager |
+| Standards mapped | COMPLETE | Certification Lead |
+| Interfaces identified | COMPLETE | Interface Manager |
+| Verification matrix complete | COMPLETE | V&V Lead |
+
+### 10. DOCUMENT CONTROL (MANDATORY)
+**Approvals:** Structures Lead:____, Materials Lead:____, Chief Systems Eng:____, Chief Arch (DT): Amedeo Pelliccia  
+**Control:** Version: 1.4, Gate: DRAFT, Distro: Program Board/Technical Teams, Repo: /T-TECHNOLOGICAL/.../CI-CA-A-001-001-CB-PRIMARY-GRID/
 
 ---
-
-**RFA Resolution Status - FINAL:**
-
-| RFA ID | Status | Resolution |
-|--------|--------|------------|
-| RFA-CBPG-001 | CLOSED | Added REQ-STR-005a/b and V&V entries |
-| RFA-CBPG-002 | CLOSED | Replaced KIC with G_Ic/G_IIc |
-| RFA-CBPG-003 | CLOSED | Referenced Loads Manual for gust |
-| RFA-CBPG-004 | CLOSED | Added pressure policy note |
-| RFA-CBPG-005 | CLOSED | Split Ti and Al-Li allowables |
-| RFA-CBPG-006 | CLOSED | Added LPS/EMC requirements |
-
-**Validation Status:** APPROVED - FROZEN v1.3
-
-**Approval Signatures:**
-
-- **Structures Lead**: _________________  
-  Date: 2025-08-29
-
-- **Materials Lead**: _________________  
-  Date: 2025-08-29
-
-- **Chief Systems Engineer**: _________________  
-  Date: 2025-08-29
-
-- **Chief Architect (DT)**: Amedeo Pelliccia  
-  Date: 2025-08-29
-
-- **Certification Lead**: _________________  
-  Date: 2025-08-29
-
-**Document Control:**
-- Version: 1.3 (FROZEN - Audit Ready)
-- Phase Gate 01: APPROVED
-- Distribution: Program Board, Technical Teams, Certification Authorities, Audit Team
-- Repository: [T-TECHNOLOGICAL/.../CI-CA-A-001-001-CB-PRIMARY-GRID/01-Requirements/](../../../../../../../T-TECHNOLOGICAL/AMEDEO-PELLICCIA/INTEGRATED/AMPEL360-H2-BWB-QNNN/A-ARCHITECTURE/CA-A-001-CENTER-BODY-BOX/CI-CA-A-001-001-CB-PRIMARY-GRID/)
-
----
-*AMPEL360 H₂-BWB-Q Framework - Requirements v1.3 FROZEN*
+## Companion File: `phase-data.yaml`
+```yaml
+utcs_phase: "01"
+component_id: "CI-CA-A-001-001-CB-PRIMARY-GRID"
+status: "DRAFT"
+date: "2025-08-26"
+owner: "Amedeo Pelliccia"
+doc_id: "AMPEL360-REQ-CB-PG-001-v1.4"
+links:
+  - evidence/STR-AN-001_FEM-Analysis
+  - evidence/STR-TST-PP-001_Pressure-Test
+  - evidence/MAT-ALW-001_Material-Allowables
+  - evidence/LPS-TST-001_Lightning-Protection
+  - evidence/FDT-AN-001_Damage-Tolerance
+```
