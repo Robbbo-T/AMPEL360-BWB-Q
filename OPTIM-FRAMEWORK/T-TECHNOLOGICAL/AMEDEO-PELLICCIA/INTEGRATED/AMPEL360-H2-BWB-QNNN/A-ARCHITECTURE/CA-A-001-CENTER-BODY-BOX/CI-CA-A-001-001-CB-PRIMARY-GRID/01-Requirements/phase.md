@@ -1,6 +1,6 @@
 # 01-Requirements - CI-CA-A-001-001-CB-PRIMARY-GRID (v1.3 FROZEN)
 
-EstándarUniversal:Documento-Diseno-ARP4754A-00.00-AMPEL360-REQ-CB-PG-001-0001-v1.3-OPTIM-as-DT-GeneracionHumana-AIR-AmedeoPelliccia-7f3c9a2b-Diseno→Operacion
+UniversalStandard:Document-Design-ARP4754A-00.00-AMPEL360-REQ-CB-PG-001-0001-v1.3-OPTIM-as-DT-GeneracionHumana-AIR-AmedeoPelliccia-7f3c9a2b-Design→Operation
 
 ## Component Architecture: CA-A-001-CENTER-BODY-BOX
 ## Configuration Item: CI-CA-A-001-001-CB-PRIMARY-GRID
