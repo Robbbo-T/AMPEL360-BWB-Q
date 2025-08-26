@@ -65,47 +65,47 @@ def main():
                           f"Updating configuration with optimal QNNN={qnnn}"):
             sys.exit(1)
         
+        # Step 6: Final validation
+        if not run_command("python3 ampel360_utils.py --status", 
+                          "Final configuration status"):
+            sys.exit(1)
+        
+        # Summary
+        print("\n" + "=" * 60)
+        print("🎉 AMPEL360 H₂-BWB-Q Framework Setup Complete!")
+        print("=" * 60)
+        
+        print(f"\n📊 Optimization Results:")
+        print(f"   • Optimal passenger capacity (QNNN): {optimization_result['QNNN']}")
+        print(f"   • Selected configuration: {optimization_result['selected_config']['id']}")
+        print(f"   • Architecture type: BWB with H₂ propulsion")
+        print(f"   • Objective value: ${optimization_result['objective_value']:,.0f}")
+        
+        selected_config = optimization_result['selected_config']['config']
+        print(f"\n🏗️  Architecture Details:")
+        for component, donor_id in selected_config.items():
+            print(f"   • {component}: Donor {donor_id}")
+        
+        print(f"\n📁 Generated Files:")
+        print(f"   • constraints/hard_constraints.yaml - TRL gates & compatibility rules")
+        print(f"   • data/candidates.yaml - AMPEL donor database")
+        print(f"   • feasible_set.json - Feasible configurations")
+        print(f"   • qnnn_optimization_result.json - Optimization results")
+        print(f"   • ampel360_config.json - Main configuration (updated)")
+        
+        print(f"\n🚀 Next Steps:")
+        print(f"   • Review optimization results in qnnn_optimization_result.json")
+        print(f"   • Customize constraints in constraints/hard_constraints.yaml")
+        print(f"   • Add more candidates to data/candidates.yaml")
+        print(f"   • Run detailed geometric integration analysis")
+        print(f"   • Proceed to P3 phase with BLI/DP and morphing capabilities")
+
     except FileNotFoundError:
         print("❌ Optimization result file not found")
         sys.exit(1)
     except json.JSONDecodeError:
         print("❌ Error reading optimization results")
         sys.exit(1)
-    
-    # Step 6: Final validation
-    if not run_command("python3 ampel360_utils.py --status", 
-                      "Final configuration status"):
-        sys.exit(1)
-    
-    # Summary
-    print("\n" + "=" * 60)
-    print("🎉 AMPEL360 H₂-BWB-Q Framework Setup Complete!")
-    print("=" * 60)
-    
-    print("\n📊 Optimization Results:")
-    print(f"   • Optimal passenger capacity (QNNN): {optimization_result['QNNN']}")
-    print(f"   • Selected configuration: {optimization_result['selected_config']['id']}")
-    print("   • Architecture type: BWB with H₂ propulsion")
-    print(f"   • Objective value: ${optimization_result['objective_value']:,.0f}")
-    
-    selected_config = optimization_result['selected_config']['config']
-    print("\n🏗️  Architecture Details:")
-    for component, donor_id in selected_config.items():
-        print(f"   • {component}: Donor {donor_id}")
-    
-    print("\n📁 Generated Files:")
-    print("   • constraints/hard_constraints.yaml - TRL gates & compatibility rules")
-    print(f"   • data/candidates.yaml - AMPEL donor database")
-    print(f"   • feasible_set.json - Feasible configurations")
-    print(f"   • qnnn_optimization_result.json - Optimization results")
-    print(f"   • ampel360_config.json - Main configuration (updated)")
-    
-    print(f"\n🚀 Next Steps:")
-    print("   • Review optimization results in qnnn_optimization_result.json")
-    print("   • Customize constraints in constraints/hard_constraints.yaml")
-    print("   • Add more candidates to data/candidates.yaml")
-    print("   • Run detailed geometric integration analysis")
-    print("   • Proceed to P3 phase with BLI/DP and morphing capabilities")
 
 
 if __name__ == "__main__":
