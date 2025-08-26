@@ -50,7 +50,18 @@ diversity_limits:
 bwb_constraints:
   tail: "N/A"  # Tail not applicable for BWB configuration
   integrated_surfaces: true
-  note: "If geometry gates fail for TUW gear/avionics/cabin, select BWB-dedicated modules"
+  geometry_gates:
+    gear:
+      # Example: gear geometry gate fails if keel depth or gear bay span check fails
+      keel_depth_check: true
+      gear_bay_span_check: true
+    avionics:
+      # Example: avionics geometry gate fails if volume or integration check fails
+      integration_check: true
+    cabin:
+      # Example: cabin geometry gate fails if evacuation or passage check fails
+      evacuation_compliance: true
+  select_bwb_dedicated_modules_on_geometry_gate_failure: true
 
 # Geometric Integration Requirements
 geometry_requirements:
