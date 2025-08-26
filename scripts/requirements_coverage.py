@@ -181,7 +181,7 @@ def generate_traceability_matrix(ci_path, output_file=None):
     content = "\n".join(lines)
     
     if output_file:
-        with open(output_file, 'w') as f:
+        with open(output_file, 'w', encoding='utf_8') as f:
             f.write(content)
         print(f"📊 Traceability matrix written to {output_file}")
     else:
