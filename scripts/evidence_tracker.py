@@ -205,7 +205,7 @@ def main():
     
     # Export CSV if requested
     if args.export_csv and evidence_status is not None:
-        with open(args.export_csv, 'w') as f:
+        with open(args.export_csv, 'w', encoding='utf_8') as f:
             f.write("file,exists,size,is_placeholder,is_symlink,target\n")
             for status in evidence_status:
                 f.write(f"{status['file']},{status['exists']},{status['size']},{status['is_placeholder']},{status['is_symlink']},{status['target'] or ''}\n")
