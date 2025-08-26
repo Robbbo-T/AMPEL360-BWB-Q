@@ -78,7 +78,7 @@ def main():
         print("\n📊 Optimization Results:")
         print(f"   • Optimal passenger capacity (QNNN): {optimization_result['QNNN']}")
         print(f"   • Selected configuration: {optimization_result['selected_config']['id']}")
-        print(f"   • Architecture type: BWB with H₂ propulsion")
+        print("   • Architecture type: BWB with H₂ propulsion")
         print(f"   • Objective value: ${optimization_result['objective_value']:,.0f}")
         
         selected_config = optimization_result['selected_config']['config']
