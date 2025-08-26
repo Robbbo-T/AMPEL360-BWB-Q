@@ -1,0 +1,9 @@
+document_id: AMPEL360-AUDIT-FINDINGS-TRACKER
+version: '1.0'
+findings:
+- finding_id: AF-001
+  severity: Major
+  description: Requirements traceability gaps identified
+  status: Open
+  assigned_to: Requirements Team
+  due_date: '2025-02-28'

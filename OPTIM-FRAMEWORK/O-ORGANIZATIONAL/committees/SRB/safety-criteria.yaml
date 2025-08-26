@@ -1,0 +1,5 @@
+document_id: AMPEL360-SAFETY-CRITERIA-v1.0
+criteria:
+- criterion: Hydrogen Safety
+  description: "H\u2082 storage and handling safety requirements"
+  severity: Critical

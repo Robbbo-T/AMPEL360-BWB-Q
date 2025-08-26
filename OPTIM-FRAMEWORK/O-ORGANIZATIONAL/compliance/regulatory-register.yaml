@@ -1,0 +1,7 @@
+regulations:
+- regulation: FAR Part 25
+  applicability: Airworthiness standards
+  compliance_status: In progress
+- regulation: EASA CS-25
+  applicability: European certification
+  compliance_status: Planned

@@ -1,0 +1,17 @@
+document_id: AMPEL360-DELEGATION-AUTHORITY-v1.0
+version: '1.0'
+date: '2025-08-26'
+authority_levels:
+  program_board:
+    budget_approval: 10000000
+    contract_approval: 5000000
+    technical_decisions: strategic
+    gate_approval: all_gates
+  chief_architect:
+    budget_approval: 1000000
+    technical_decisions: architecture
+    design_approval: all_components
+  committee_chairs:
+    budget_approval: 100000
+    technical_decisions: domain_specific
+    review_authority: assigned_domain

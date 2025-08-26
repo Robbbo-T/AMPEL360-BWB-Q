@@ -1,0 +1,12 @@
+committee: Safety Review Board
+document_id: AMPEL360-SRB-MEMBERS-v1.0
+version: '1.0'
+members:
+- name: Chair Person
+  role: Chair
+  organization: Lead Organization
+  email: chair@ampel360.org
+- name: Technical Lead
+  role: Technical Member
+  organization: Technical Organization
+  email: tech.lead@ampel360.org

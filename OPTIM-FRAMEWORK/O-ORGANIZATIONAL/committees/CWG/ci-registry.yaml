@@ -1,0 +1,5 @@
+document_id: AMPEL360-CI-REGISTRY-v1.0
+configuration_items:
+- ci_id: CI-BWB-001
+  name: BWB Primary Structure
+  status: Under Development

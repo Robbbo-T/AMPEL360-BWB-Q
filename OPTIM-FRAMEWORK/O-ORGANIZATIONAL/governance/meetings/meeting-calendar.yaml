@@ -1,0 +1,18 @@
+calendar_2025:
+  document_id: AMPEL360-MEETING-CALENDAR-2025
+  recurring_meetings:
+  - meeting: Program Board
+    frequency: Monthly
+    day: First Tuesday
+    duration: 2 hours
+    chair: Program Director
+  - meeting: Architecture Review Board
+    frequency: Bi-weekly
+    day: Wednesday
+    duration: 1.5 hours
+    chair: Chief Architect
+  - meeting: Safety Review Board
+    frequency: Monthly
+    day: Third Thursday
+    duration: 2 hours
+    chair: Safety Officer

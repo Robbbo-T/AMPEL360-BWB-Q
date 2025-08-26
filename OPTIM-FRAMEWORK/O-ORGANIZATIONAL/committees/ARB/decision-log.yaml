@@ -1,0 +1,7 @@
+document_id: AMPEL360-ARB-DECISIONS-v1.0
+decisions:
+- decision_id: ARB-001
+  date: '2025-01-01'
+  topic: BWB Configuration Selection
+  decision: Approved baseline BWB configuration
+  rationale: Meets performance requirements with acceptable risk

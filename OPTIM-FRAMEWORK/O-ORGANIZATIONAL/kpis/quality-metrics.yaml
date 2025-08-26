@@ -1,0 +1,7 @@
+kpi: Quality Metrics
+defect_density:
+  target: 0.1
+  current: 0.08
+review_effectiveness:
+  target: 0.9
+  current: 0.92
