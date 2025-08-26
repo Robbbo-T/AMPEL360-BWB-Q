@@ -25,25 +25,16 @@ AMPEL360 H₂-BWB-Q is a comprehensive enterprise framework for aircraft configu
 
 ```mermaid
 flowchart TB
-    style AMEDEO fill:#e2e6fa,stroke:#2948d5,stroke-width:2px,font-weight:bold
-    style PIPELINE fill:#eaf4e2,stroke:#34a853,stroke-width:2px
-    style ENTERPRISE fill:#fef9e7,stroke:#da9600,stroke-width:2px
-    style ACTA fill:#fbeee6,stroke:#6e3a18,stroke-width:2px
-    style TWIN fill:#eaf4fa,stroke:#5b96db,stroke-width:2px,stroke-dasharray: 5 5
-
+    %% Main box nodes
     AMEDEO["**AMEDEO PELLICCIA Methodology**\n(Systemic Domain Decomposition)\nA·M·E·D·E·O·P·E·L·L·I·C·I·A\n(Defines order/structure)"]
-
     PIPELINE["AMPEL360 Framework\n(Executable Doctrine)"]
     FEA["Stage 1: Feasibility Enumeration\nMILP/CP-SAT | Hard Constraints\n`hard_constraints.yaml`\nOutput: `feasible_set.json`"]
     OPT["Stage 2: Risk-Optimal Selection\nQAOA/CVaR (Stochastic)\nObjective: `E[cost] + β·CVaR_α(cost)`"]
-
     ENTERPRISE["Enterprise Backbone:\nO-ORGANIZATIONAL\nP-PROCEDURAL\nT-TECHNOLOGICAL\nI-INTELLIGENT\nM-MACHINE\n(Structured, auditable folder/WBS)"]
-
     ACTA["**Digital Acta de Nacimiento**\n(Risk-Optimized BWB Configuration)\nAll traceable & justified\n`ampel360-config.yaml`\nQNNN assignment\n(End-to-end audit)"]
-
     TWIN["Digital Twin + Audit Trail\n(Git versioning, full traceability)\nFile structure = Engineering logic"]
 
-    %% Flow
+    %% Flow/logic
     AMEDEO --> PIPELINE
     PIPELINE --> FEA
     FEA --> OPT
@@ -54,19 +45,25 @@ flowchart TB
     ENTERPRISE -.-> TWIN
     FEA -.-> ENTERPRISE
 
-    %% Annotations
-    classDef doctrine fill:#e2e6fa,stroke:#2948d5,font-weight:bold
-    classDef pipeline fill:#eaf4e2,stroke:#34a853;
-    classDef backbone fill:#fef9e7,stroke:#da9600;
-    classDef outcome fill:#fbeee6,stroke:#6e3a18;
-    classDef twin fill:#eaf4fa,stroke:#5b96db,stroke-dasharray: 5 5;
+    %% Class styling (fills & DARK FONTS!)
+    classDef doctrine fill:#e2e6fa,stroke:#2948d5,stroke-width:2px,color:#222,font-weight:bold;
+    classDef pipeline fill:#eaf4e2,stroke:#34a853,stroke-width:2px,color:#222,font-weight:bold;
+    classDef backbone fill:#fff429,stroke:#b7950b,stroke-width:3px,color:#181818,font-weight:bold;
+    classDef outcome fill:#fbeee6,stroke:#6e3a18,stroke-width:2px,color:#222,font-weight:bold;
+    classDef twin fill:#eaf4fa,stroke:#5b96db,stroke-width:2px,stroke-dasharray: 5 5,color:#222,font-weight:bold;
+
     class AMEDEO doctrine;
     class PIPELINE pipeline;
+    class FEA pipeline;
+    class OPT pipeline;
     class ENTERPRISE backbone;
     class ACTA outcome;
     class TWIN twin;
 
-    %% Minor
+    %% All edges/links in TECHNOLOGICAL GREEN
+    linkStyle default stroke:#3cb371,stroke-width:2px;
+
+    %% Clickable Acta
     click ACTA "https://ampel360.com/docs/acta-nacimiento" "View Digital Acta"
 ```
 
@@ -233,6 +230,7 @@ donde **H_s** es el coste ecosistema (RD + MFG_INV + CERT_TIME·CAPITAL + INFRA 
 
 ```mermaid
 flowchart TD
+    %% ROOT & CONFIG FILES
     A[AMPEL360-H2-BWB-QNNN/]
     A --> R1[README.md]
     A --> GIT[.gitignore]
@@ -240,6 +238,7 @@ flowchart TD
     A --> CFG[ampel360-config.yaml]
     A --> OPTIM[OPTIM-FRAMEWORK/]
 
+    %% FRAMEWORK 1ST LAYER
     subgraph OFRM ["OPTIM-FRAMEWORK/"]
       direction TB
       OFRM_O["O-ORGANIZATIONAL/"]
@@ -340,9 +339,12 @@ flowchart TD
     OFRM_M --> COSIM
     OFRM_M --> HILSIL
 
-    %% "Faint" top-level and deep branch edges for readability
-    style A fill:#e2e6fa,stroke-width:2px,stroke:#526acc
-    style OPTIM fill:#fef9e7,stroke:#daa520,stroke-width:2px
+    %% Stylish yellow O/P/T/I/M nodes
+    classDef optimbone fill:#fff429,stroke:#b7950b,stroke-width:3px,color:#181818,font-weight:bold;
+    class OFRM_O,OFRM_P,OFRM_T,OFRM_I,OFRM_M optimbone;
+
+    %% Technological green links
+    linkStyle default stroke:#3cb371,stroke-width:2px;
 ```
 ### **directory**
 
@@ -855,62 +857,68 @@ AMPEL360-H2-BWB-QNNN/
 ## Technology Enablers
 
 ```mermaid
-block-beta
-  columns 4
+flowchart TB
+    %% DIGITAL LAYER COMPONENTS
+    subgraph DIGITAL_ECOSYSTEM ["Digital Ecosystem"]
+        PLM["PLM System<br/>(PDM, Change Control, BOM Mgmt)"]
+        CAD["CAD / CAM / CAE<br/>(Design & Simulation)"]
+        MBSE["MBSE<br/>(SysML, Requirements Trace)"]
+        TECHPUBS["Tech Publications<br/>(iPub, S1000D, Manuals)"]
+        QOPT["QAOA Optimizer<br/>(CVaR Analytics, Quantum/Classical)"]
+        SCADA["SCADA & IIOT<br/>(Plant, Test Bed, Real-Time)"]
+        RTOS["RTOS / Embedded<br/>(VxWorks, QNX, ARINC653)"]
+        AI["AI / ML / Analytics<br/>(Predictive Maint, Optimizer)"]
+        DATAHUB["Data Hub<br/>(JSON, YAML, DB, Big Data)"]
+    end
 
-  block:DIGITAL:4
-    columns 2
-    PLM[PLM System\n(PDM, Change Control, BOM Mgmt)]
-    CAD[CAD/CAM/CAE\n(Model-Based Design)]
-    MBSE[MBSE\n(SysML, Req Trace)]
-    QOPT[QAOA Optimizer\nCVaR Analytics]
-    TECHPUB[Tech Publications\n(ipub,s1000d, Manuals)]
-    SCADA[SCADA/Edge\nMES, IIOT]
-    RTOS[RTOS/Embedded\n(ARINC653, POSIX, VxWorks, QNX)]
-    AI[AI/Analytics\n(pred-maint, QNN, ML)]
-    DATA[Master/Big Data Hub\n(JSON/YAML/DB)]
-    PLM --> CAD
-    PLM --> MBSE
-    PLM --> TECHPUB
-    PLM --> QOPT
-    CAD --> MBSE
-    CAD --> TECHPUB
-    CAD --> QOPT
-    MBSE --> TECHPUB
-    QOPT --> AI
-    AI --> DATA
-    DATA --> PLM
-    QOPT --> DATA
-    TECHPUB --> DATA
-    CAD --> SCADA
-    SCADA --> RTOS
-    RTOS --> AI
-    style PLM fill:#eaf3fe,stroke:#3873b3
-    style CAD fill:#d1f8e7,stroke:#2e9d82
-    style MBSE fill:#fff7d7,stroke:#cfad3a
-    style QOPT fill:#ececfc,stroke:#7a59e0
-    style TECHPUB fill:#f8e5d1,stroke:#b8701f
-    style DATA fill:#fafbfc,stroke:#aaa
-    style SCADA fill:#fde4ea,stroke:#e23d6f
-    style RTOS fill:#f4e9f9,stroke:#ac63b0
-    style AI fill:#e6f8fd,stroke:#369ca4
-  end
+    %% ENTERPRISE DOMAINS - O/P/T/I/M (yellow, dark text)
+    O["O-ORGANIZATIONAL"]
+    P["P-PROCEDURAL"]
+    T["T-TECHNOLOGICAL"]
+    I["I-INTELLIGENT"]
+    M["M-MACHINE"]
 
-  block:OPTM
-    columns 1
-    O[O-ORGANIZATIONAL]
-    P[P-PROCEDURAL]
-    T[T-TECHNOLOGICAL]
-    I[I-INTELLIGENT]
-    M[M-MACHINE]
-    T -->|Design & Sim| CAD
-    P -->|Change/Mgmt| PLM
-    I -->|AI Models| AI
-    M -->|Sim & Twin| SCADA
-    M -->|Embedded Sim| RTOS
-  end
+    %% PRIMARY DATA & PROCESS FLOWS
+    PLM -- manages configs --> CAD
+    PLM -- traceability, controls --> MBSE
+    PLM -- change/issues --> TECHPUBS
+    PLM -- feeds BOM & structure --> DATAHUB
+    CAD -- design data --> MBSE
+    CAD -- engineering content --> TECHPUBS
+    CAD -- datasets --> SCADA
+    CAD -- geometry/config --> RTOS
+    MBSE -- orchestrates/requirements --> QOPT
+    MBSE -- model links --> TECHPUBS
+    MBSE -- exports/links --> DATAHUB
+    TECHPUBS -- digital docs/manuals --> DATAHUB
+    QOPT -- optimization results --> AI
+    QOPT -- risk/decision data --> DATAHUB
+    SCADA -- telemetry, ops data --> DATAHUB
+    SCADA -- test plant --> AI
+    RTOS -- embedded logs --> DATAHUB
+    RTOS -- real-time to AI --> AI
+    AI -- analytics/results --> DATAHUB
+    DATAHUB -- single source --> PLM
 
-  O space P space T space I space M
+    %% DOMAIN TO DIGITAL LINKS
+    O -- governance/approval --> PLM
+    P -- process definition --> PLM
+    T -- product definition --> CAD
+    T -- simulation/testing --> SCADA
+    T -- digital twin/sim --> RTOS
+    I -- predictive AI, analytics --> AI
+    I -- optimizer engine --> QOPT
+    M -- simulation models --> CAD
+    M -- digital twin, co-sim --> SCADA
+
+    %% Styling for emphasis (proper Mermaid syntax)
+    classDef digital fill:#eaf3fe,stroke:#3873b3,stroke-width:2px;
+    classDef op fill:#fff429,stroke:#b7950b,stroke-width:3px,color:#222,font-weight:bold;
+    class DIGITAL_ECOSYSTEM digital;
+    class O,P,T,I,M op;
+
+    %% Color all edges/links in technological green
+    linkStyle default stroke:#3cb371,stroke-width:2px;
 ```
 
 ### Executive Summary
