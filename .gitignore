@@ -59,3 +59,15 @@ tmp/
 # Uncomment if you want to exclude auto-generated results
 # feasible_set.json
 # qnnn_optimization_result.json
+
+# Ledger system temporary files
+audit.csv
+changed_artifacts.json
+awscliv2.zip
+aws/
+T-TECHNOLOGICAL/LEDGER/cli/ledger-plan.backup.json
+
+# Build and test artifacts
+.pytest_cache/
+.coverage
+node_modules/

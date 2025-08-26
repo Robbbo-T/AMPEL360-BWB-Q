@@ -1,0 +1,125 @@
+name: CI Ledger • Plan Validate (PR)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-ledger-validate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      RUNNER_DEBUG: 0
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+
+      - name: Install deps
+        run: pip install jsonschema pyyaml boto3
+
+      - name: Detect changed UTCS artifacts
+        id: detect
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os, subprocess, json, re, sys
+          base=os.environ["BASE"]; head=os.environ["HEAD"]
+          diff=subprocess.check_output(["git","diff","--name-only",f"{base}..{head}"],text=True).splitlines()
+          watch_ext={".yaml",".yml",".json",".csv",".xlsx",".md",".pdf"}
+          # Match CI directories and phase directories like CI-CA-*/01-Requirements/*
+          ci_phase_re=re.compile(r".*/CI-[^/]+/\d{2}-[^/]+/")
+          changed=[p for p in diff if ci_phase_re.search(p) and any(p.endswith(e) for e in watch_ext)]
+          open("changed_artifacts.json","w").write(json.dumps({"changed":changed}))
+          print("Detected",len(changed),"CI phase artifacts")
+          if not changed:
+            print("::notice ::No CI phase artifacts changed.")
+          PY
+
+      - name: Ensure plan file exists
+        run: test -f T-TECHNOLOGICAL/LEDGER/cli/ledger-plan.json
+
+      - name: Validate plan schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from jsonschema import Draft202012Validator
+          plan=json.load(open("T-TECHNOLOGICAL/LEDGER/cli/ledger-plan.json"))
+          schema=json.load(open("T-TECHNOLOGICAL/LEDGER/cli/plan.schema.json"))
+          Draft202012Validator.check_schema(schema)
+          Draft202012Validator(schema).validate(plan)
+          print("Plan schema ✓")
+          PY
+
+      - name: Check coverage (paths + streaming SHA256)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib, os, sys
+          def sha256_stream(p, chunk=8192):
+            h=hashlib.sha256()
+            with open(p,"rb") as f:
+              for b in iter(lambda:f.read(chunk), b""): h.update(b)
+            return h.hexdigest()
+          changed = json.load(open("changed_artifacts.json"))["changed"]
+          plan = json.load(open("T-TECHNOLOGICAL/LEDGER/cli/ledger-plan.json"))
+          idx={ p["artifact"]["path"]: p for p in plan["plans"] }
+          missing=[]; wrong=[]
+          for f in changed:
+            if f not in idx:
+              missing.append(f); continue
+            if os.path.isfile(f):
+              calc=sha256_stream(f)
+              if calc != idx[f]["artifact"]["sha256"]:
+                wrong.append((f, calc, idx[f]["artifact"]["sha256"]))
+          if missing:
+            print("::error ::Missing from plan:"); [print(" ",m) for m in missing]
+          if wrong:
+            [print(f"::error ::SHA mismatch {f}\n  calc={c}\n  plan={e}") for f,c,e in wrong]
+          if missing or wrong: sys.exit(1)
+          print("Coverage ✓")
+          PY
+
+      - name: (Optional) Validate S3 object existence
+        if: ${{ secrets.AWS_ROLE_TO_ASSUME != '' && secrets.AWS_REGION != '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: S3 HEAD checks (if AWS creds present)
+        if: ${{ secrets.AWS_ROLE_TO_ASSUME != '' && secrets.AWS_REGION != '' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, sys
+          import boto3
+          plan=json.load(open("T-TECHNOLOGICAL/LEDGER/cli/ledger-plan.json"))
+          s3=boto3.client("s3")
+          for p in plan["plans"]:
+            uri=p["artifact"]["storage_uri"]
+            if not uri.startswith("s3://"): continue
+            b,k=uri.replace("s3://","",1).split("/",1)
+            try: s3.head_object(Bucket=b, Key=k)
+            except Exception as e:
+              print(f"::error ::S3 object missing: {uri} ({e})"); sys.exit(1)
+          print("S3 objects ✓")
+          PY
