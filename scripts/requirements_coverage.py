@@ -10,6 +10,9 @@ from pathlib import Path
 import argparse
 import sys
 
+# Pattern to match requirement definitions
+REQUIREMENT_ID_PATTERN = r'(REQ-[A-Z]{3}-\d{3}[a-z]?): "([^"]+)"'
+
 def analyze_requirements_coverage(phase_md_path):
     """Analyze requirements coverage from phase.md."""
     

@@ -1,0 +1,9 @@
+# STR-AN-001: FEM Analysis
+## Requirement: REQ-STR-001
+Primary grid shall sustain limit load 2.5g and ultimate 3.75g without failure
+
+## Analysis Method
+Finite Element Method (FEM) analysis using industry-standard tools
+
+## Status
+Placeholder file - Analysis pending
