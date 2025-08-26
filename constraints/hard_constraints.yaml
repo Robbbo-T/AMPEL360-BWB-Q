@@ -1,0 +1,80 @@
+# AMPEL360 H₂-BWB Hard Constraints
+# Based on UTCS-MI v5.0 - P2 Phase Requirements
+
+# TRL Gates by Subsystem (P2 Requirements)
+trl_gates:
+  wing: 6
+  fuselage: 6
+  primary_structure: 7
+  propulsion: 6
+  energy: 6
+  flight_controls: 7
+  avionics: 8
+  landing_gear: 8
+  cabin: 7
+
+# Structural Compatibility - Allowed Pairs
+allowed_pairs:
+  wing_fuselage:
+    - [24, 24]  # BWB-BWB
+    - [34, 24]  # Advanced wing with BWB fuselage
+    - [24, 34]  # BWB wing with advanced fuselage
+  energy_fuselage:
+    - [38, 24]  # H₂ BWB rear-mounted with BWB fuselage
+    - [38, 34]  # H₂ BWB rear-mounted with advanced fuselage
+
+# Forbidden Combinations - Conflicts
+forbidden_pairs:
+  - [1, 24]   # Traditional wing with BWB fuselage
+  - [5, 38]   # Incompatible wing-energy combination
+  - [1, 37]   # Traditional wing with H₂ turbofan (compatibility issue)
+
+# Physics and Operation Constraints (Normalized Values)
+physics_constraints:
+  weight_max: 0.65        # Maximum normalized weight
+  twr_min: 0.55          # Minimum Thrust-to-Weight Ratio
+  noise_max: 0.65        # Maximum normalized noise level
+  evacuation_time_max: 90 # Maximum evacuation time in seconds
+
+# Hydrogen Policy Requirements
+hydrogen_policy:
+  propulsion_energy_type: "Hydrogen"
+  energy_storage_type: "Hydrogen"
+  # Both propulsion and energy subsystems must use Hydrogen
+
+# Diversity Constraints
+diversity_limits:
+  max_subsystems_per_donor: 4  # Maximum 4 subsystems from same donor
+
+# BWB-Specific Constraints
+bwb_constraints:
+  tail: "N/A"  # Tail not applicable for BWB configuration
+  integrated_surfaces: true
+  geometry_gates:
+    gear:
+      # Example: gear geometry gate fails if keel depth or gear bay span check fails
+      keel_depth_check: true
+      gear_bay_span_check: true
+    avionics:
+      # Example: avionics geometry gate fails if volume or integration check fails
+      integration_check: true
+    cabin:
+      # Example: cabin geometry gate fails if evacuation or passage check fails
+      evacuation_compliance: true
+  select_bwb_dedicated_modules_on_geometry_gate_failure: true
+
+# Geometric Integration Requirements
+geometry_requirements:
+  cryogenic_volume_margin: true    # Volume ≥ route demand + CG margin
+  gear_compatibility:
+    keel_depth_check: true
+    gear_bay_span_check: true
+  evacuation_compliance:
+    bwb_doors_passages: true
+    ninety_second_rule: true
+
+# Certification Requirements
+certification:
+  standard: "CS-25/FAR-25"
+  hydrogen_appendices: "preliminary_alignment"
+  phase: "P2"
