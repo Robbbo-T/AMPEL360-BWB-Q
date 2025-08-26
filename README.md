@@ -23,6 +23,53 @@ python3 scripts/qaoa_over_F.py --optimize
 
 AMPEL360 H₂-BWB-Q is a comprehensive enterprise framework for aircraft configuration optimization, integrating organizational governance, procedural standards, technological implementation, and machine learning capabilities.
 
+```mermaid
+flowchart TB
+    style AMEDEO fill:#e2e6fa,stroke:#2948d5,stroke-width:2px,font-weight:bold
+    style PIPELINE fill:#eaf4e2,stroke:#34a853,stroke-width:2px
+    style ENTERPRISE fill:#fef9e7,stroke:#da9600,stroke-width:2px
+    style ACTA fill:#fbeee6,stroke:#6e3a18,stroke-width:2px
+    style TWIN fill:#eaf4fa,stroke:#5b96db,stroke-width:2px,stroke-dasharray: 5 5
+
+    AMEDEO["**AMEDEO PELLICCIA Methodology**\n(Systemic Domain Decomposition)\nA·M·E·D·E·O·P·E·L·L·I·C·I·A\n(Defines order/structure)"]
+
+    PIPELINE["AMPEL360 Framework\n(Executable Doctrine)"]
+    FEA["Stage 1: Feasibility Enumeration\nMILP/CP-SAT | Hard Constraints\n`hard_constraints.yaml`\nOutput: `feasible_set.json`"]
+    OPT["Stage 2: Risk-Optimal Selection\nQAOA/CVaR (Stochastic)\nObjective: `E[cost] + β·CVaR_α(cost)`"]
+
+    ENTERPRISE["Enterprise Backbone:\nO-ORGANIZATIONAL\nP-PROCEDURAL\nT-TECHNOLOGICAL\nI-INTELLIGENT\nM-MACHINE\n(Structured, auditable folder/WBS)"]
+
+    ACTA["**Digital Acta de Nacimiento**\n(Risk-Optimized BWB Configuration)\nAll traceable & justified\n`ampel360-config.yaml`\nQNNN assignment\n(End-to-end audit)"]
+
+    TWIN["Digital Twin + Audit Trail\n(Git versioning, full traceability)\nFile structure = Engineering logic"]
+
+    %% Flow
+    AMEDEO --> PIPELINE
+    PIPELINE --> FEA
+    FEA --> OPT
+    PIPELINE --> ENTERPRISE
+    ENTERPRISE --> ACTA
+    OPT --> ACTA
+    ACTA -.-> TWIN
+    ENTERPRISE -.-> TWIN
+    FEA -.-> ENTERPRISE
+
+    %% Annotations
+    classDef doctrine fill:#e2e6fa,stroke:#2948d5,font-weight:bold
+    classDef pipeline fill:#eaf4e2,stroke:#34a853;
+    classDef backbone fill:#fef9e7,stroke:#da9600;
+    classDef outcome fill:#fbeee6,stroke:#6e3a18;
+    classDef twin fill:#eaf4fa,stroke:#5b96db,stroke-dasharray: 5 5;
+    class AMEDEO doctrine;
+    class PIPELINE pipeline;
+    class ENTERPRISE backbone;
+    class ACTA outcome;
+    class TWIN twin;
+
+    %% Minor
+    click ACTA "https://ampel360.com/docs/acta-nacimiento" "View Digital Acta"
+```
+
 ### Core Technical Components
 
 - **Configuration Management**: `ampel360_config.json` - Main framework configuration
@@ -181,6 +228,123 @@ donde **H_s** es el coste ecosistema (RD + MFG_INV + CERT_TIME·CAPITAL + INFRA 
 - Chief Architect (DT): AMEDEO PELLICCIA Fecha: 2025-08-26  
 - Chief Systems Engineer: _____________________  Fecha: 2025-08-26  
 - Certification Lead: _________________________  Fecha: 2025-08-26
+
+## Work Breakdown Structure 
+
+```mermaid
+flowchart TD
+    A[AMPEL360-H2-BWB-QNNN/]
+    A --> R1[README.md]
+    A --> GIT[.gitignore]
+    A --> ENV[.env.example]
+    A --> CFG[ampel360-config.yaml]
+    A --> OPTIM[OPTIM-FRAMEWORK/]
+
+    subgraph OFRM ["OPTIM-FRAMEWORK/"]
+      direction TB
+      OFRM_O["O-ORGANIZATIONAL/"]
+      OFRM_P["P-PROCEDURAL/"]
+      OFRM_T["T-TECHNOLOGICAL/"]
+      OFRM_I["I-INTELLIGENT/"]
+      OFRM_M["M-MACHINE/"]
+    end
+
+    OPTIM --> OFRM
+
+    %% O-ORGANIZATIONAL LAYER
+    subgraph ORG ["O-ORGANIZATIONAL/"]
+      GOV["governance/"]
+      FINCTRL["financial-control/"]
+      FINSTRAT["financial-strategy/"]
+      KPIS["kpis/"]
+      ART["artifacts/"]
+    end
+    OFRM_O --> GOV
+    OFRM_O --> FINCTRL
+    OFRM_O --> FINSTRAT
+    OFRM_O --> KPIS
+    OFRM_O --> ART
+
+    GOV --> CHA["charter/"]
+    GOV --> ORS["organizational-structure/"]
+    GOV --> COM["committees/"]
+
+    CHA --> CHA1["AMPEL360-CHARTER-v1.0.md"]
+
+    %% P-PROCEDURAL LAYER
+    subgraph PROC ["P-PROCEDURAL/"]
+      PROC_PR["processes/"]
+      PROC_WF["workflows/"]
+      PROC_G["gates/"]
+      PROC_STD["standards/"]
+    end
+    OFRM_P --> PROC_PR
+    OFRM_P --> PROC_WF
+    OFRM_P --> PROC_G
+    OFRM_P --> PROC_STD
+
+    %% T-TECHNOLOGICAL LAYER
+    subgraph TECH ["T-TECHNOLOGICAL/"]
+      AMEDEO["AMEDEO-PELLICCIA/"]
+    end
+    OFRM_T --> AMEDEO
+
+    subgraph AMPINT ["INTEGRATED/"]
+      INT_RM["README.md"]
+      AMP360["AMPEL360-H2-BWB-QNNN/"]
+    end
+    AMEDEO --> AMPINT
+
+    subgraph AMP360 ["AMPEL360-H2-BWB-QNNN/ (Tech)"]
+      AMP_README["README.md"]
+      AMP_CFG["ampel-config.yaml"]
+      ARCH["A-ARCHITECTURE/"]
+      MECH["M-MECHANICAL/"]
+      ENVV["E-ENVIRONMENTAL/"]
+      DIG["D-DIGITAL/"]
+      ENE["E2-ENERGY/"]
+      OPS["O-OPERATIONS/"]
+      PROP["P-PROPULSION/"]
+      ELEC["E3-ELECTRONICS/"]
+      LOG["L-LOGISTICS/"]
+      LINKS["L2-LINKS/"]
+      INFR["I-INFRASTRUCTURES/"]
+      CTRL["C-CONTROL/"]
+      CRYO["C2-CRYOGENICS/"]
+      INTEL["I2-INTELLIGENCE/"]
+      AIRPT["A2-AIRPORTS/"]
+    end
+    AMPINT --> AMP360
+
+    %% I-INTELLIGENT LAYER
+    subgraph INTELGRP ["I-INTELLIGENT/"]
+      AIMODELS["ai-models/"]
+      OPTIMZ["optimization/"]
+      PREDICT["predictive-analytics/"]
+      DSUPPORT["decision-support/"]
+    end
+    OFRM_I --> AIMODELS
+    OFRM_I --> OPTIMZ
+    OFRM_I --> PREDICT
+    OFRM_I --> DSUPPORT
+
+    %% M-MACHINE LAYER
+    subgraph MACH["M-MACHINE/"]
+      SIM["simulation-models/"]
+      DTWIN["digital-twin/"]
+      COSIM["co-simulation/"]
+      HILSIL["hil-sil/"]
+    end
+    OFRM_M --> SIM
+    OFRM_M --> DTWIN
+    OFRM_M --> COSIM
+    OFRM_M --> HILSIL
+
+    %% "Faint" top-level and deep branch edges for readability
+    style A fill:#e2e6fa,stroke-width:2px,stroke:#526acc
+    style OPTIM fill:#fef9e7,stroke:#daa520,stroke-width:2px
+```
+### **directory**
 
 ```bash
 AMPEL360-H2-BWB-QNNN/
@@ -686,6 +850,67 @@ AMPEL360-H2-BWB-QNNN/
         ├── digital-twin/
         ├── co-simulation/
         └── hil-sil/
+```
+
+## Technology Enablers
+
+```mermaid
+block-beta
+  columns 4
+
+  block:DIGITAL:4
+    columns 2
+    PLM[PLM System\n(PDM, Change Control, BOM Mgmt)]
+    CAD[CAD/CAM/CAE\n(Model-Based Design)]
+    MBSE[MBSE\n(SysML, Req Trace)]
+    QOPT[QAOA Optimizer\nCVaR Analytics]
+    TECHPUB[Tech Publications\n(ipub,s1000d, Manuals)]
+    SCADA[SCADA/Edge\nMES, IIOT]
+    RTOS[RTOS/Embedded\n(ARINC653, POSIX, VxWorks, QNX)]
+    AI[AI/Analytics\n(pred-maint, QNN, ML)]
+    DATA[Master/Big Data Hub\n(JSON/YAML/DB)]
+    PLM --> CAD
+    PLM --> MBSE
+    PLM --> TECHPUB
+    PLM --> QOPT
+    CAD --> MBSE
+    CAD --> TECHPUB
+    CAD --> QOPT
+    MBSE --> TECHPUB
+    QOPT --> AI
+    AI --> DATA
+    DATA --> PLM
+    QOPT --> DATA
+    TECHPUB --> DATA
+    CAD --> SCADA
+    SCADA --> RTOS
+    RTOS --> AI
+    style PLM fill:#eaf3fe,stroke:#3873b3
+    style CAD fill:#d1f8e7,stroke:#2e9d82
+    style MBSE fill:#fff7d7,stroke:#cfad3a
+    style QOPT fill:#ececfc,stroke:#7a59e0
+    style TECHPUB fill:#f8e5d1,stroke:#b8701f
+    style DATA fill:#fafbfc,stroke:#aaa
+    style SCADA fill:#fde4ea,stroke:#e23d6f
+    style RTOS fill:#f4e9f9,stroke:#ac63b0
+    style AI fill:#e6f8fd,stroke:#369ca4
+  end
+
+  block:OPTM
+    columns 1
+    O[O-ORGANIZATIONAL]
+    P[P-PROCEDURAL]
+    T[T-TECHNOLOGICAL]
+    I[I-INTELLIGENT]
+    M[M-MACHINE]
+    T -->|Design & Sim| CAD
+    P -->|Change/Mgmt| PLM
+    I -->|AI Models| AI
+    M -->|Sim & Twin| SCADA
+    M -->|Embedded Sim| RTOS
+  end
+
+  O space P space T space I space M
 ```
 
 ### Executive Summary
