@@ -78,6 +78,58 @@
         "storage_uri": "s3://TO-FILL/phase.md"
       },
       "refs": {}
+    },
+    {
+      "ci_id": "CI-CA-A2-002-002-TERMINALS",
+      "utcs_phase": "11-Sustainment-Recycle",
+      "freeze_after_link": false,
+      "artifact": {
+        "path": "OPTIM-FRAMEWORK/T-TECHNOLOGICAL/AMEDEO-PELLICCIA/INTEGRATED/AMPEL360-H2-BWB-QNNN/A2-AIRPORTS/CA-A2-002-FACILITIES/CI-CA-A2-002-002-TERMINALS/11-Sustainment-Recycle/phase.md",
+        "sha256": "bacdf5d77c1c7f58dc7e9d1c5a4c962a1d68a67ea8b243586f709205aca3b3cc",
+        "size_bytes": 1133,
+        "mime": "application/octet-stream",
+        "storage_uri": "s3://TO-FILL/phase.md"
+      },
+      "refs": {}
+    },
+    {
+      "ci_id": "CI-CA-A2-002-002-TERMINALS",
+      "utcs_phase": "09-Ops-Services",
+      "freeze_after_link": false,
+      "artifact": {
+        "path": "OPTIM-FRAMEWORK/T-TECHNOLOGICAL/AMEDEO-PELLICCIA/INTEGRATED/AMPEL360-H2-BWB-QNNN/A2-AIRPORTS/CA-A2-002-FACILITIES/CI-CA-A2-002-002-TERMINALS/09-Maintenance/phase.md",
+        "sha256": "3e15221d954a1630fee79c9ff53a54230d38f71dfbeac01278430ce12be45ad0",
+        "size_bytes": 1117,
+        "mime": "application/octet-stream",
+        "storage_uri": "s3://TO-FILL/phase.md"
+      },
+      "refs": {}
+    },
+    {
+      "ci_id": "CI-CA-A2-002-002-TERMINALS",
+      "utcs_phase": "01-Requirements",
+      "freeze_after_link": true,
+      "artifact": {
+        "path": "OPTIM-FRAMEWORK/T-TECHNOLOGICAL/AMEDEO-PELLICCIA/INTEGRATED/AMPEL360-H2-BWB-QNNN/A2-AIRPORTS/CA-A2-002-FACILITIES/CI-CA-A2-002-002-TERMINALS/01-Requirements/phase.md",
+        "sha256": "38625924f37355cb434e882134cc9e53b3a2ab20c9c218b7de0dce9554f659d3",
+        "size_bytes": 1121,
+        "mime": "application/octet-stream",
+        "storage_uri": "s3://TO-FILL/phase.md"
+      },
+      "refs": {}
+    },
+    {
+      "ci_id": "CI-CA-A2-002-002-TERMINALS",
+      "utcs_phase": "02-Design",
+      "freeze_after_link": false,
+      "artifact": {
+        "path": "OPTIM-FRAMEWORK/T-TECHNOLOGICAL/AMEDEO-PELLICCIA/INTEGRATED/AMPEL360-H2-BWB-QNNN/A2-AIRPORTS/CA-A2-002-FACILITIES/CI-CA-A2-002-002-TERMINALS/02-Architecture/phase.md",
+        "sha256": "f2447e16953be0f20b53fd2f74ac3fc2f14f94a3a69a9bcd35f238d9d49acd6f",
+        "size_bytes": 1121,
+        "mime": "application/octet-stream",
+        "storage_uri": "s3://TO-FILL/phase.md"
+      },
+      "refs": {}
     }
   ]
 }

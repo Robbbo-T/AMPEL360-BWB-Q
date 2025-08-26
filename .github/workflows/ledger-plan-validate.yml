@@ -41,12 +41,13 @@ jobs:
           base=os.environ["BASE"]; head=os.environ["HEAD"]
           diff=subprocess.check_output(["git","diff","--name-only",f"{base}..{head}"],text=True).splitlines()
           watch_ext={".yaml",".yml",".json",".csv",".xlsx",".md",".pdf"}
-          utcs_re=re.compile(r".*/UTCS-\d{2}-[A-Za-z-]+/")
-          changed=[p for p in diff if utcs_re.search(p) and any(p.endswith(e) for e in watch_ext)]
+          # Match CI directories and phase directories like CI-CA-*/01-Requirements/*
+          ci_phase_re=re.compile(r".*/CI-[^/]+/\d{2}-[^/]+/")
+          changed=[p for p in diff if ci_phase_re.search(p) and any(p.endswith(e) for e in watch_ext)]
           open("changed_artifacts.json","w").write(json.dumps({"changed":changed}))
-          print("Detected",len(changed),"UTCS artifacts")
+          print("Detected",len(changed),"CI phase artifacts")
           if not changed:
-            print("::notice ::No UTCS artifacts changed.")
+            print("::notice ::No CI phase artifacts changed.")
           PY
 
       - name: Ensure plan file exists
