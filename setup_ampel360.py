@@ -101,7 +101,7 @@ def main():
     print(f"   • ampel360_config.json - Main configuration (updated)")
     
     print(f"\n🚀 Next Steps:")
-    print(f"   • Review optimization results in qnnn_optimization_result.json")
+    print("   • Review optimization results in qnnn_optimization_result.json")
     print(f"   • Customize constraints in constraints/hard_constraints.yaml")
     print(f"   • Add more candidates to data/candidates.yaml")
     print(f"   • Run detailed geometric integration analysis")
