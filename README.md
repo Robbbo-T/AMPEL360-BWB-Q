@@ -1,6 +1,8 @@
 # AMPEL360-H2-BWB-Q
 Optimized BWB Aircraft Configuration Model. Born in Hydrogen and Quantum Simulation
 
+**Enterprise Framework for Quantum-Inspired Aircraft Configuration Optimization**
+
 ## Quick Start
 
 ```bash
@@ -17,7 +19,11 @@ python3 ampel360_utils.py --status --validate
 python3 scripts/qaoa_over_F.py --optimize
 ```
 
-## Framework Components
+## Framework Overview
+
+AMPEL360 H₂-BWB-Q is a comprehensive enterprise framework for aircraft configuration optimization, integrating organizational governance, procedural standards, technological implementation, and machine learning capabilities.
+
+### Core Technical Components
 
 - **Configuration Management**: `ampel360_config.json` - Main framework configuration
 - **Hard Constraints**: `constraints/hard_constraints.yaml` - TRL gates, compatibility rules
@@ -26,9 +32,18 @@ python3 scripts/qaoa_over_F.py --optimize
 - **Utilities**: `ampel360_utils.py` - Configuration management utilities
 - **Setup Script**: `setup_ampel360.py` - Complete framework setup and demonstration
 
+### Enterprise Framework Structure
+
+- **OPTIM-FRAMEWORK/O-ORGANIZATIONAL/** - Governance, financial control, and management
+- **OPTIM-FRAMEWORK/P-PROCEDURAL/** - Processes, workflows, gates, and standards
+- **OPTIM-FRAMEWORK/T-TECHNOLOGICAL/** - Detailed architectural component breakdown
+- **OPTIM-FRAMEWORK/M-MACHINE/** - Machine learning, simulation, and digital twin capabilities
+
 ## Architecture Overview
 
 The framework implements a **feasible-first pipeline** (MILP/CP-SAT + QAOA) for BWB aircraft configuration optimization with hydrogen propulsion and quantum-inspired risk management.
+
+### Current Configuration (P2 Phase)
 
 ```yaml
 {
@@ -38,44 +53,59 @@ The framework implements a **feasible-first pipeline** (MILP/CP-SAT + QAOA) for 
     "status": "P2-Approved-Pending-QNNN"
   },
   "architecture": {
-    "fuselage": 24,
-    "wing": 24,
-    "primary_structure": 24,
-    "flight_controls": 24,
-    "propulsion": 37,
-    "energy": 38,
-    "avionics": 1,
-    "landing_gear": 1,
-    "cabin": 1,
-    "tail": "N/A-BWB"
-  },
-  "constraints_paths": {
-    "hard_constraints": "constraints/hard_constraints.yaml",
-    "candidates": "data/candidates.yaml",
-    "feasible_set": "feasible_set.json",
-    "selector": "scripts/qaoa_over_F.py"
+    "fuselage": 24,         # BWB primary structure
+    "wing": 24,             # BWB wing (34 for advanced morphing)
+    "primary_structure": 24, # BWB structural framework
+    "flight_controls": 24,   # BWB-compatible control systems
+    "propulsion": 37,        # H₂ turbofan engines
+    "energy": 38,           # H₂ BWB rear-mounted storage
+    "avionics": 1,          # TUW mature systems
+    "landing_gear": 1,      # TUW systems (geometry-dependent)
+    "cabin": 1,             # TUW systems (BWB-adapted)
+    "tail": "N/A-BWB"       # Not applicable for BWB
   },
   "capacity": {
-    "QNNN": null,
-    "binning_range_pax": [
-      150,
-      220
-    ],
+    "QNNN": 150,            # Optimized passenger capacity
+    "binning_range_pax": [150, 220],
     "objective": "E[cost] + beta * CVaR_alpha(cost)"
   },
-  "corridors_seed": [
-    "LHR",
-    "FRA",
-    "DXB",
-    "SIN"
-  ],
   "risk": {
-    "cvar_alpha": 0.8,
-    "beta": 0.25
-  },
-  "notes": "Tail not applicable for BWB; if geometry gates fail for TUW gear/avionics/cabin, select BWB-dedicated modules."
+    "cvar_alpha": 0.8,      # Focus on tail risk (80th percentile)
+    "beta": 0.25            # Risk weight in objective function
+  }
 }
 ```
+
+### Enterprise Framework Integration
+
+The technical implementation is integrated within a comprehensive enterprise framework:
+
+#### Organizational Framework (O-ORGANIZATIONAL)
+- **Governance**: Program charter, stakeholder management, decision authority
+- **Financial Management**: Budget allocation, cost control, ROI analysis
+- **Performance Management**: KPIs, metrics tracking, success criteria
+
+#### Procedural Framework (P-PROCEDURAL)  
+- **Process Management**: Design reviews, change control, risk management
+- **Phase Gates**: P1 (Conservative), P2 (Introduce BWB), P3 (Full Optimal)
+- **Standards**: Coding standards, documentation, quality assurance
+
+#### Technological Framework (T-TECHNOLOGICAL)
+- **Architecture (A)**: Structural systems, aerodynamic components
+- **Mechanical (M)**: Landing gear, hydraulics, actuation systems
+- **Environmental (E)**: Life support, pressurization, ice protection
+- **Digital (D)**: Computing, software, quantum systems, cybersecurity
+- **Energy (E2)**: Power generation, distribution, hydrogen storage
+- **Operations (O)**: Cockpit, cabin, cargo, emergency systems
+- **Propulsion (P)**: Engines, fuel systems, nacelles, controls
+- **Electronics (E3)**: Communication, navigation, antennas
+- **Logistics (L)**: Maintenance, ground support, supply chain
+
+#### Machine Framework (M-MACHINE)
+- **Simulation Models**: Aerodynamics, structures, propulsion, cryogenics
+- **Digital Twin**: Real-time integration, predictive analytics
+- **Co-simulation**: Multi-physics integration, quantum-classical hybrid
+- **HIL/SIL**: Hardware/software-in-the-loop testing capabilities
 # Acta de Nacimiento Digital — **AMPEL360 H₂‑BWB QNNN**
 **UTCS‑MI v5.0 — Documento de Decisión de Arquitectura**  
 ID: UTCS‑MI/CS25‑H2/AMPEL360‑QNNN/2025-08-26/v1.0

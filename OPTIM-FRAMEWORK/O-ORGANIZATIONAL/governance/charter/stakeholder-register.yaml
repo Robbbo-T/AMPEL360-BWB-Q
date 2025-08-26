@@ -1,0 +1,152 @@
+# Stakeholder Register - AMPEL360 H₂-BWB-Q Program
+
+## Primary Stakeholders
+
+stakeholders:
+  primary:
+    - name: "Chief Architect (DT)"
+      individual: "Amedeo Pelliccia"
+      role: "Technical Leadership"
+      influence: "High"
+      interest: "High"
+      communication_preference: "Technical Reports"
+      decision_authority: "Architecture Decisions"
+      
+    - name: "Chief Systems Engineer"
+      role: "Systems Integration"
+      influence: "High"
+      interest: "High"
+      communication_preference: "Systems Reviews"
+      decision_authority: "Integration Decisions"
+      
+    - name: "Certification Lead"
+      role: "Regulatory Compliance"
+      influence: "High"
+      interest: "High"
+      communication_preference: "Compliance Reports"
+      decision_authority: "Certification Approach"
+      
+    - name: "H₂ Infrastructure Lead"
+      role: "Hydrogen Systems"
+      influence: "High"
+      interest: "High"
+      communication_preference: "Infrastructure Plans"
+      decision_authority: "H₂ Strategy"
+      
+    - name: "Safety of AI Officer"
+      role: "AI Safety & Ethics"
+      influence: "Medium"
+      interest: "High"
+      communication_preference: "Safety Reports"
+      decision_authority: "AI Usage Guidelines"
+
+  secondary:
+    - name: "Defense Liaison"
+      role: "Military Applications"
+      influence: "Medium"
+      interest: "Medium"
+      communication_preference: "Security Briefings"
+      
+    - name: "Space Operations Lead"
+      role: "Space Integration"
+      influence: "Low"
+      interest: "Medium"
+      communication_preference: "Technical Updates"
+      
+    - name: "Supply Chain Lead"
+      role: "Vendor Management"
+      influence: "Medium"
+      interest: "High"
+      communication_preference: "Supply Reports"
+
+## External Stakeholders
+
+external_stakeholders:
+  regulatory:
+    - name: "EASA"
+      type: "Certification Authority"
+      influence: "High"
+      interest: "High"
+      engagement_level: "Regular"
+      
+    - name: "FAA"
+      type: "Certification Authority"
+      influence: "High"
+      interest: "High"
+      engagement_level: "Regular"
+
+  industry:
+    - name: "Aircraft Manufacturers"
+      type: "Primary Customer"
+      influence: "High"
+      interest: "High"
+      engagement_level: "Continuous"
+      
+    - name: "Hydrogen Suppliers"
+      type: "Infrastructure Partner"
+      influence: "Medium"
+      interest: "High"
+      engagement_level: "Regular"
+      
+    - name: "Component Suppliers"
+      type: "Technology Partner"
+      influence: "Medium"
+      interest: "Medium"
+      engagement_level: "As Needed"
+
+  research:
+    - name: "Technical Universities"
+      type: "Research Partner"
+      influence: "Low"
+      interest: "High"
+      engagement_level: "Regular"
+      
+    - name: "Research Institutes"
+      type: "Technical Advisor"
+      influence: "Low"
+      interest: "Medium"
+      engagement_level: "Periodic"
+
+## Communication Matrix
+
+communication_schedule:
+  daily:
+    - "Technical team standups"
+    - "Risk monitoring"
+    
+  weekly:
+    - "Progress reviews with primary stakeholders"
+    - "Technical working group meetings"
+    
+  monthly:
+    - "Governance board meetings"
+    - "External stakeholder updates"
+    - "Performance metric reviews"
+    
+  quarterly:
+    - "Program review with all stakeholders"
+    - "Strategic planning sessions"
+    - "Risk assessment updates"
+
+## Escalation Matrix
+
+escalation_levels:
+  level_1:
+    stakeholders: ["Technical Teams", "Working Groups"]
+    issues: ["Technical problems", "Resource conflicts"]
+    resolution_time: "48 hours"
+    
+  level_2:
+    stakeholders: ["Chief Systems Engineer", "Technical Leads"]
+    issues: ["Integration challenges", "Design conflicts"]
+    resolution_time: "1 week"
+    
+  level_3:
+    stakeholders: ["Chief Architect", "Program Board"]
+    issues: ["Architecture decisions", "Major risks"]
+    resolution_time: "2 weeks"
+    
+  level_4:
+    stakeholders: ["Executive Leadership", "External Partners"]
+    issues: ["Program-level decisions", "Strategic changes"]
+    resolution_time: "1 month"

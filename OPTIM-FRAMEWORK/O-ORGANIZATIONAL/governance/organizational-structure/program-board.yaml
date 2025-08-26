@@ -1,0 +1,187 @@
+# Organizational Structure - AMPEL360 H₂-BWB-Q Program
+
+## Program Leadership
+
+program_board:
+  chair: "Chief Architect (DT)"
+  members:
+    - name: "Amedeo Pelliccia"
+      title: "Chief Architect (DT)"
+      responsibilities:
+        - "Overall technical architecture and design authority"
+        - "Technology roadmap and innovation strategy"
+        - "Integration of quantum optimization approaches"
+        - "BWB configuration validation and approval"
+      reporting: "Executive Leadership"
+      
+    - name: "Chief Systems Engineer"
+      title: "CSE"
+      responsibilities:
+        - "Systems integration and verification"
+        - "Requirements management and traceability"
+        - "Interface control and management"
+        - "Configuration control and change management"
+      reporting: "Chief Architect (DT)"
+      
+    - name: "Certification Lead"
+      title: "Cert Lead"
+      responsibilities:
+        - "Regulatory strategy and compliance"
+        - "Certification planning and execution"
+        - "Authority liaison and coordination"
+        - "Compliance verification and validation"
+      reporting: "Chief Architect (DT)"
+
+## Technical Leadership
+
+technical_leads:
+  h2_infrastructure_lead:
+    title: "H₂ Infrastructure Lead"
+    responsibilities:
+      - "Hydrogen storage and distribution systems"
+      - "Cryogenic system design and integration"
+      - "H₂ safety and handling procedures"
+      - "Infrastructure compatibility assessment"
+    reports_to: "Chief Systems Engineer"
+    
+  safety_of_ai_officer:
+    title: "Safety of AI Officer"
+    responsibilities:
+      - "AI/ML system safety and ethics"
+      - "Quantum optimization algorithm validation"
+      - "AI risk assessment and mitigation"
+      - "Ethical AI implementation guidelines"
+    reports_to: "Chief Architect (DT)"
+    
+  defense_liaison:
+    title: "Defense Liaison"
+    responsibilities:
+      - "Military requirements integration"
+      - "Security clearance coordination"
+      - "Defense technology transfer"
+      - "Multi-domain operations capability"
+    reports_to: "Program Board"
+    
+  space_ops_lead:
+    title: "Space Operations Lead"
+    responsibilities:
+      - "Space-based operations integration"
+      - "Satellite communication systems"
+      - "LEO constellation connectivity"
+      - "Deep space communication capability"
+    reports_to: "Defense Liaison"
+    
+  supply_chain_lead:
+    title: "Supply Chain Lead"
+    responsibilities:
+      - "Vendor management and qualification"
+      - "Supply chain risk assessment"
+      - "Component sourcing and procurement"
+      - "Supplier performance monitoring"
+    reports_to: "Chief Systems Engineer"
+
+## Working Groups and Committees
+
+committees:
+  arb:
+    name: "Architecture Review Board"
+    chair: "Chief Architect (DT)"
+    members: ["CSE", "Technical Leads", "Domain Experts"]
+    purpose: "Review and approve major architectural decisions"
+    meeting_frequency: "Bi-weekly"
+    
+  srb:
+    name: "Systems Review Board"
+    chair: "Chief Systems Engineer"
+    members: ["Subsystem Leads", "Integration Engineers", "Test Engineers"]
+    purpose: "Systems integration and verification oversight"
+    meeting_frequency: "Weekly"
+    
+  cwg:
+    name: "Configuration Working Group"
+    chair: "Chief Systems Engineer"
+    members: ["Configuration Engineers", "Change Control Board"]
+    purpose: "Configuration management and change control"
+    meeting_frequency: "Weekly"
+    
+  hcc:
+    name: "Hard Constraints Committee"
+    chair: "Certification Lead"
+    members: ["Requirements Engineers", "Compliance Officers", "Technical Experts"]
+    purpose: "Define and maintain hard constraints and compliance requirements"
+    meeting_frequency: "Monthly"
+    
+  dsc:
+    name: "Decision Support Committee"
+    chair: "Chief Architect (DT)"
+    members: ["Technical Leads", "Risk Managers", "Subject Matter Experts"]
+    purpose: "Provide decision support for complex technical and programmatic issues"
+    meeting_frequency: "As needed"
+
+## Technical Teams
+
+technical_teams:
+  architecture_team:
+    lead: "Chief Architect (DT)"
+    focus_areas:
+      - "BWB configuration design"
+      - "Hydrogen propulsion integration"
+      - "Quantum optimization implementation"
+      - "Multi-domain capability integration"
+    
+  systems_engineering_team:
+    lead: "Chief Systems Engineer"
+    focus_areas:
+      - "Requirements engineering"
+      - "Systems integration"
+      - "Verification and validation"
+      - "Configuration management"
+    
+  optimization_team:
+    lead: "Safety of AI Officer"
+    focus_areas:
+      - "QAOA algorithm development"
+      - "CVaR risk optimization"
+      - "Monte Carlo simulation"
+      - "Decision support systems"
+    
+  infrastructure_team:
+    lead: "H₂ Infrastructure Lead"
+    focus_areas:
+      - "Hydrogen storage systems"
+      - "Cryogenic technology"
+      - "Safety systems"
+      - "Ground support equipment"
+
+## Reporting Structure
+
+reporting_hierarchy:
+  level_1: "Executive Leadership"
+  level_2: "Program Board"
+  level_3: "Technical Leadership"
+  level_4: "Working Groups/Committees"
+  level_5: "Technical Teams"
+  level_6: "Individual Contributors"
+
+## Authority Matrix
+
+decision_authority:
+  architecture_decisions:
+    primary: "Chief Architect (DT)"
+    approval: "Program Board"
+    consultation: "ARB"
+    
+  systems_decisions:
+    primary: "Chief Systems Engineer"
+    approval: "Chief Architect (DT)"
+    consultation: "SRB"
+    
+  configuration_changes:
+    primary: "Configuration Working Group"
+    approval: "Chief Systems Engineer"
+    consultation: "Change Control Board"
+    
+  compliance_decisions:
+    primary: "Certification Lead"
+    approval: "Program Board"
+    consultation: "HCC"
