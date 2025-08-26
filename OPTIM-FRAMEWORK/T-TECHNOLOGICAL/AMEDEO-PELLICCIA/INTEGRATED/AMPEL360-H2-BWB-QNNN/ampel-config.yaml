@@ -1,0 +1,6 @@
+# AMPEL360 H₂-BWB-Q Configuration
+aircraft:
+  type: "BWB"
+  propulsion: "Hydrogen"
+  capacity: "QNNN"
+  version: "1.0"

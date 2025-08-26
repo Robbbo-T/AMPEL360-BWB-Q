@@ -1,0 +1,3 @@
+# Qaoa Selector
+
+Optimization component.
