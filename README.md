@@ -1,6 +1,8 @@
 # AMPEL360-H2-BWB-Q
 Optimized BWB Aircraft Configuration Model. Born in Hydrogen and Quantum Simulation
 
+**Enterprise Framework for Quantum-Inspired Aircraft Configuration Optimization**
+
 ## Quick Start
 
 ```bash
@@ -17,7 +19,55 @@ python3 ampel360_utils.py --status --validate
 python3 scripts/qaoa_over_F.py --optimize
 ```
 
-## Framework Components
+## Framework Overview
+
+AMPEL360 H₂-BWB-Q is a comprehensive enterprise framework for aircraft configuration optimization, integrating organizational governance, procedural standards, technological implementation, and machine learning capabilities.
+
+```mermaid
+flowchart TB
+    %% Main box nodes
+    AMEDEO["**AMEDEO PELLICCIA Methodology**\n(Systemic Domain Decomposition)\nA·M·E·D·E·O·P·E·L·L·I·C·I·A\n(Defines order/structure)"]
+    PIPELINE["AMPEL360 Framework\n(Executable Doctrine)"]
+    FEA["Stage 1: Feasibility Enumeration\nMILP/CP-SAT | Hard Constraints\n`hard_constraints.yaml`\nOutput: `feasible_set.json`"]
+    OPT["Stage 2: Risk-Optimal Selection\nQAOA/CVaR (Stochastic)\nObjective: `E[cost] + β·CVaR_α(cost)`"]
+    ENTERPRISE["Enterprise Backbone:\nO-ORGANIZATIONAL\nP-PROCEDURAL\nT-TECHNOLOGICAL\nI-INTELLIGENT\nM-MACHINE\n(Structured, auditable folder/WBS)"]
+    ACTA["**Digital Acta de Nacimiento**\n(Risk-Optimized BWB Configuration)\nAll traceable & justified\n`ampel360-config.yaml`\nQNNN assignment\n(End-to-end audit)"]
+    TWIN["Digital Twin + Audit Trail\n(Git versioning, full traceability)\nFile structure = Engineering logic"]
+
+    %% Flow/logic
+    AMEDEO --> PIPELINE
+    PIPELINE --> FEA
+    FEA --> OPT
+    PIPELINE --> ENTERPRISE
+    ENTERPRISE --> ACTA
+    OPT --> ACTA
+    ACTA -.-> TWIN
+    ENTERPRISE -.-> TWIN
+    FEA -.-> ENTERPRISE
+
+    %% Class styling (fills & DARK FONTS!)
+    classDef doctrine fill:#e2e6fa,stroke:#2948d5,stroke-width:2px,color:#222,font-weight:bold;
+    classDef pipeline fill:#eaf4e2,stroke:#34a853,stroke-width:2px,color:#222,font-weight:bold;
+    classDef backbone fill:#fff429,stroke:#b7950b,stroke-width:3px,color:#181818,font-weight:bold;
+    classDef outcome fill:#fbeee6,stroke:#6e3a18,stroke-width:2px,color:#222,font-weight:bold;
+    classDef twin fill:#eaf4fa,stroke:#5b96db,stroke-width:2px,stroke-dasharray: 5 5,color:#222,font-weight:bold;
+
+    class AMEDEO doctrine;
+    class PIPELINE pipeline;
+    class FEA pipeline;
+    class OPT pipeline;
+    class ENTERPRISE backbone;
+    class ACTA outcome;
+    class TWIN twin;
+
+    %% All edges/links in TECHNOLOGICAL GREEN
+    linkStyle default stroke:#3cb371,stroke-width:2px;
+
+    %% Clickable Acta
+    click ACTA "https://ampel360.com/docs/acta-nacimiento" "View Digital Acta"
+```
+
+### Core Technical Components
 
 - **Configuration Management**: `ampel360_config.json` - Main framework configuration
 - **Hard Constraints**: `constraints/hard_constraints.yaml` - TRL gates, compatibility rules
@@ -26,9 +76,18 @@ python3 scripts/qaoa_over_F.py --optimize
 - **Utilities**: `ampel360_utils.py` - Configuration management utilities
 - **Setup Script**: `setup_ampel360.py` - Complete framework setup and demonstration
 
+### Enterprise Framework Structure
+
+- **OPTIM-FRAMEWORK/O-ORGANIZATIONAL/** - Governance, financial control, and management
+- **OPTIM-FRAMEWORK/P-PROCEDURAL/** - Processes, workflows, gates, and standards
+- **OPTIM-FRAMEWORK/T-TECHNOLOGICAL/** - Detailed architectural component breakdown
+- **OPTIM-FRAMEWORK/M-MACHINE/** - Machine learning, simulation, and digital twin capabilities
+
 ## Architecture Overview
 
 The framework implements a **feasible-first pipeline** (MILP/CP-SAT + QAOA) for BWB aircraft configuration optimization with hydrogen propulsion and quantum-inspired risk management.
+
+### Current Configuration (P2 Phase)
 
 ```yaml
 {
@@ -38,44 +97,59 @@ The framework implements a **feasible-first pipeline** (MILP/CP-SAT + QAOA) for 
     "status": "P2-Approved-Pending-QNNN"
   },
   "architecture": {
-    "fuselage": 24,
-    "wing": 24,
-    "primary_structure": 24,
-    "flight_controls": 24,
-    "propulsion": 37,
-    "energy": 38,
-    "avionics": 1,
-    "landing_gear": 1,
-    "cabin": 1,
-    "tail": "N/A-BWB"
-  },
-  "constraints_paths": {
-    "hard_constraints": "constraints/hard_constraints.yaml",
-    "candidates": "data/candidates.yaml",
-    "feasible_set": "feasible_set.json",
-    "selector": "scripts/qaoa_over_F.py"
+    "fuselage": 24,         # BWB primary structure
+    "wing": 24,             # BWB wing (34 for advanced morphing)
+    "primary_structure": 24, # BWB structural framework
+    "flight_controls": 24,   # BWB-compatible control systems
+    "propulsion": 37,        # H₂ turbofan engines
+    "energy": 38,           # H₂ BWB rear-mounted storage
+    "avionics": 1,          # TUW mature systems
+    "landing_gear": 1,      # TUW systems (geometry-dependent)
+    "cabin": 1,             # TUW systems (BWB-adapted)
+    "tail": "N/A-BWB"       # Not applicable for BWB
   },
   "capacity": {
-    "QNNN": null,
-    "binning_range_pax": [
-      150,
-      220
-    ],
+    "QNNN": 150,            # Optimized passenger capacity
+    "binning_range_pax": [150, 220],
     "objective": "E[cost] + beta * CVaR_alpha(cost)"
   },
-  "corridors_seed": [
-    "LHR",
-    "FRA",
-    "DXB",
-    "SIN"
-  ],
   "risk": {
-    "cvar_alpha": 0.8,
-    "beta": 0.25
-  },
-  "notes": "Tail not applicable for BWB; if geometry gates fail for TUW gear/avionics/cabin, select BWB-dedicated modules."
+    "cvar_alpha": 0.8,      # Focus on tail risk (80th percentile)
+    "beta": 0.25            # Risk weight in objective function
+  }
 }
 ```
+
+### Enterprise Framework Integration
+
+The technical implementation is integrated within a comprehensive enterprise framework:
+
+#### Organizational Framework (O-ORGANIZATIONAL)
+- **Governance**: Program charter, stakeholder management, decision authority
+- **Financial Management**: Budget allocation, cost control, ROI analysis
+- **Performance Management**: KPIs, metrics tracking, success criteria
+
+#### Procedural Framework (P-PROCEDURAL)  
+- **Process Management**: Design reviews, change control, risk management
+- **Phase Gates**: P1 (Conservative), P2 (Introduce BWB), P3 (Full Optimal)
+- **Standards**: Coding standards, documentation, quality assurance
+
+#### Technological Framework (T-TECHNOLOGICAL)
+- **Architecture (A)**: Structural systems, aerodynamic components
+- **Mechanical (M)**: Landing gear, hydraulics, actuation systems
+- **Environmental (E)**: Life support, pressurization, ice protection
+- **Digital (D)**: Computing, software, quantum systems, cybersecurity
+- **Energy (E2)**: Power generation, distribution, hydrogen storage
+- **Operations (O)**: Cockpit, cabin, cargo, emergency systems
+- **Propulsion (P)**: Engines, fuel systems, nacelles, controls
+- **Electronics (E3)**: Communication, navigation, antennas
+- **Logistics (L)**: Maintenance, ground support, supply chain
+
+#### Machine Framework (M-MACHINE)
+- **Simulation Models**: Aerodynamics, structures, propulsion, cryogenics
+- **Digital Twin**: Real-time integration, predictive analytics
+- **Co-simulation**: Multi-physics integration, quantum-classical hybrid
+- **HIL/SIL**: Hardware/software-in-the-loop testing capabilities
 # Acta de Nacimiento Digital — **AMPEL360 H₂‑BWB QNNN**
 **UTCS‑MI v5.0 — Documento de Decisión de Arquitectura**  
 ID: UTCS‑MI/CS25‑H2/AMPEL360‑QNNN/2025-08-26/v1.0
@@ -151,6 +225,128 @@ donde **H_s** es el coste ecosistema (RD + MFG_INV + CERT_TIME·CAPITAL + INFRA 
 - Chief Architect (DT): AMEDEO PELLICCIA Fecha: 2025-08-26  
 - Chief Systems Engineer: _____________________  Fecha: 2025-08-26  
 - Certification Lead: _________________________  Fecha: 2025-08-26
+
+## Work Breakdown Structure 
+
+```mermaid
+flowchart TD
+    %% ROOT & CONFIG FILES
+    A[AMPEL360-H2-BWB-QNNN/]
+    A --> R1[README.md]
+    A --> GIT[.gitignore]
+    A --> ENV[.env.example]
+    A --> CFG[ampel360-config.yaml]
+    A --> OPTIM[OPTIM-FRAMEWORK/]
+
+    %% FRAMEWORK 1ST LAYER
+    subgraph OFRM ["OPTIM-FRAMEWORK/"]
+      direction TB
+      OFRM_O["O-ORGANIZATIONAL/"]
+      OFRM_P["P-PROCEDURAL/"]
+      OFRM_T["T-TECHNOLOGICAL/"]
+      OFRM_I["I-INTELLIGENT/"]
+      OFRM_M["M-MACHINE/"]
+    end
+
+    OPTIM --> OFRM
+
+    %% O-ORGANIZATIONAL LAYER
+    subgraph ORG ["O-ORGANIZATIONAL/"]
+      GOV["governance/"]
+      FINCTRL["financial-control/"]
+      FINSTRAT["financial-strategy/"]
+      KPIS["kpis/"]
+      ART["artifacts/"]
+    end
+    OFRM_O --> GOV
+    OFRM_O --> FINCTRL
+    OFRM_O --> FINSTRAT
+    OFRM_O --> KPIS
+    OFRM_O --> ART
+
+    GOV --> CHA["charter/"]
+    GOV --> ORS["organizational-structure/"]
+    GOV --> COM["committees/"]
+
+    CHA --> CHA1["AMPEL360-CHARTER-v1.0.md"]
+
+    %% P-PROCEDURAL LAYER
+    subgraph PROC ["P-PROCEDURAL/"]
+      PROC_PR["processes/"]
+      PROC_WF["workflows/"]
+      PROC_G["gates/"]
+      PROC_STD["standards/"]
+    end
+    OFRM_P --> PROC_PR
+    OFRM_P --> PROC_WF
+    OFRM_P --> PROC_G
+    OFRM_P --> PROC_STD
+
+    %% T-TECHNOLOGICAL LAYER
+    subgraph TECH ["T-TECHNOLOGICAL/"]
+      AMEDEO["AMEDEO-PELLICCIA/"]
+    end
+    OFRM_T --> AMEDEO
+
+    subgraph AMPINT ["INTEGRATED/"]
+      INT_RM["README.md"]
+      AMP360["AMPEL360-H2-BWB-QNNN/"]
+    end
+    AMEDEO --> AMPINT
+
+    subgraph AMP360 ["AMPEL360-H2-BWB-QNNN/ (Tech)"]
+      AMP_README["README.md"]
+      AMP_CFG["ampel-config.yaml"]
+      ARCH["A-ARCHITECTURE/"]
+      MECH["M-MECHANICAL/"]
+      ENVV["E-ENVIRONMENTAL/"]
+      DIG["D-DIGITAL/"]
+      ENE["E2-ENERGY/"]
+      OPS["O-OPERATIONS/"]
+      PROP["P-PROPULSION/"]
+      ELEC["E3-ELECTRONICS/"]
+      LOG["L-LOGISTICS/"]
+      LINKS["L2-LINKS/"]
+      INFR["I-INFRASTRUCTURES/"]
+      CTRL["C-CONTROL/"]
+      CRYO["C2-CRYOGENICS/"]
+      INTEL["I2-INTELLIGENCE/"]
+      AIRPT["A2-AIRPORTS/"]
+    end
+    AMPINT --> AMP360
+
+    %% I-INTELLIGENT LAYER
+    subgraph INTELGRP ["I-INTELLIGENT/"]
+      AIMODELS["ai-models/"]
+      OPTIMZ["optimization/"]
+      PREDICT["predictive-analytics/"]
+      DSUPPORT["decision-support/"]
+    end
+    OFRM_I --> AIMODELS
+    OFRM_I --> OPTIMZ
+    OFRM_I --> PREDICT
+    OFRM_I --> DSUPPORT
+
+    %% M-MACHINE LAYER
+    subgraph MACH["M-MACHINE/"]
+      SIM["simulation-models/"]
+      DTWIN["digital-twin/"]
+      COSIM["co-simulation/"]
+      HILSIL["hil-sil/"]
+    end
+    OFRM_M --> SIM
+    OFRM_M --> DTWIN
+    OFRM_M --> COSIM
+    OFRM_M --> HILSIL
+
+    %% Stylish yellow O/P/T/I/M nodes
+    classDef optimbone fill:#fff429,stroke:#b7950b,stroke-width:3px,color:#181818,font-weight:bold;
+    class OFRM_O,OFRM_P,OFRM_T,OFRM_I,OFRM_M optimbone;
+
+    %% Technological green links
+    linkStyle default stroke:#3cb371,stroke-width:2px;
+```
+### **directory**
 
 ```bash
 AMPEL360-H2-BWB-QNNN/
@@ -658,6 +854,73 @@ AMPEL360-H2-BWB-QNNN/
         └── hil-sil/
 ```
 
+## Technology Enablers
+
+```mermaid
+flowchart TB
+    %% DIGITAL LAYER COMPONENTS
+    subgraph DIGITAL_ECOSYSTEM ["Digital Ecosystem"]
+        PLM["PLM System<br/>(PDM, Change Control, BOM Mgmt)"]
+        CAD["CAD / CAM / CAE<br/>(Design & Simulation)"]
+        MBSE["MBSE<br/>(SysML, Requirements Trace)"]
+        TECHPUBS["Tech Publications<br/>(iPub, S1000D, Manuals)"]
+        QOPT["QAOA Optimizer<br/>(CVaR Analytics, Quantum/Classical)"]
+        SCADA["SCADA & IIOT<br/>(Plant, Test Bed, Real-Time)"]
+        RTOS["RTOS / Embedded<br/>(VxWorks, QNX, ARINC653)"]
+        AI["AI / ML / Analytics<br/>(Predictive Maint, Optimizer)"]
+        DATAHUB["Data Hub<br/>(JSON, YAML, DB, Big Data)"]
+    end
+
+    %% ENTERPRISE DOMAINS - O/P/T/I/M (yellow, dark text)
+    O["O-ORGANIZATIONAL"]
+    P["P-PROCEDURAL"]
+    T["T-TECHNOLOGICAL"]
+    I["I-INTELLIGENT"]
+    M["M-MACHINE"]
+
+    %% PRIMARY DATA & PROCESS FLOWS
+    PLM -- manages configs --> CAD
+    PLM -- traceability, controls --> MBSE
+    PLM -- change/issues --> TECHPUBS
+    PLM -- feeds BOM & structure --> DATAHUB
+    CAD -- design data --> MBSE
+    CAD -- engineering content --> TECHPUBS
+    CAD -- datasets --> SCADA
+    CAD -- geometry/config --> RTOS
+    MBSE -- orchestrates/requirements --> QOPT
+    MBSE -- model links --> TECHPUBS
+    MBSE -- exports/links --> DATAHUB
+    TECHPUBS -- digital docs/manuals --> DATAHUB
+    QOPT -- optimization results --> AI
+    QOPT -- risk/decision data --> DATAHUB
+    SCADA -- telemetry, ops data --> DATAHUB
+    SCADA -- test plant --> AI
+    RTOS -- embedded logs --> DATAHUB
+    RTOS -- real-time to AI --> AI
+    AI -- analytics/results --> DATAHUB
+    DATAHUB -- single source --> PLM
+
+    %% DOMAIN TO DIGITAL LINKS
+    O -- governance/approval --> PLM
+    P -- process definition --> PLM
+    T -- product definition --> CAD
+    T -- simulation/testing --> SCADA
+    T -- digital twin/sim --> RTOS
+    I -- predictive AI, analytics --> AI
+    I -- optimizer engine --> QOPT
+    M -- simulation models --> CAD
+    M -- digital twin, co-sim --> SCADA
+
+    %% Styling for emphasis (proper Mermaid syntax)
+    classDef digital fill:#eaf3fe,stroke:#3873b3,stroke-width:2px;
+    classDef op fill:#fff429,stroke:#b7950b,stroke-width:3px,color:#222,font-weight:bold;
+    class DIGITAL_ECOSYSTEM digital;
+    class O,P,T,I,M op;
+
+    %% Color all edges/links in technological green
+    linkStyle default stroke:#3cb371,stroke-width:2px;
+```
+
 ### Executive Summary
 
 #### **1. Synthesis: An Executable Systems Engineering Doctrine**
@@ -730,3 +993,47 @@ The outcome is not just an “optimal design” but a **provably optimal, risk-r
 
 
 
+
+### Investor Briefing: Strategic Overview
+
+#### **Vision: Redefining Aerospace Engineering for the Next Century**
+
+**AMPEL360-H2-BWB-Q** represents a fundamental shift from traditional aircraft development to **algorithmic aerospace engineering**. This is not just another aircraft project—it's the creation of a new paradigm that transforms how complex systems are designed, validated, and brought to market.
+
+#### **Market Opportunity: The $1.7 Trillion Aviation Transformation**
+
+The global aviation industry faces unprecedented pressure to decarbonize while meeting growing demand. **Hydrogen propulsion** and **Blended Wing Body (BWB)** architectures are recognized as the only viable path to zero-emission long-haul flight. AMPEL360 positions us at the intersection of these transformative technologies with a **provably optimal, risk-managed approach**.
+
+#### **Competitive Advantage: Mathematical Certainty in Uncertain Markets**
+
+Where competitors rely on intuition and iterative design, AMPEL360 delivers:
+
+* **Deterministic Architecture Selection**: Every design decision is mathematically justified and auditable
+* **Risk-Optimized Engineering**: CVaR (Conditional Value at Risk) methodology explicitly mitigates worst-case scenarios—hydrogen infrastructure delays, supply chain disruptions, quantum hardware maturity
+* **Accelerated Certification**: Complete traceability from requirements to implementation reduces regulatory risk and timeline uncertainty
+
+#### **Technology Differentiation: The AMEDEO PELLICCIA Framework**
+
+Our proprietary **AMEDEO PELLICCIA methodology** provides systematic domain decomposition across 15 critical engineering disciplines. This isn't just organization—it's **algorithmic completeness** that ensures no critical interaction is overlooked. Combined with **Quantum Approximate Optimization**, we achieve optimal configurations that would be impossible through traditional methods.
+
+#### **Financial Resilience: De-Risked ROI Through Systematic Optimization**
+
+* **Predictable Development Costs**: Algorithmic design reduces late-stage surprises
+* **Optimized Ecosystem Value**: CVaR methodology explicitly balances expected returns against tail risks
+* **Scalable Architecture**: Framework applies to entire product families, not just single aircraft
+* **IP Moat**: Mathematical optimization methods create defensible competitive advantages
+
+#### **Investment Thesis: First-Mover Advantage in Algorithmic Aerospace**
+
+AMPEL360 establishes the foundation for **model-based aerospace engineering**—the next evolution beyond traditional design methods. Early investment positions stakeholders in:
+
+1. **Technology Leadership**: First proven implementation of quantum-optimized aircraft design
+2. **Market Timing**: Hydrogen aviation inflection point with regulatory tailwinds
+3. **Ecosystem Control**: Framework becomes the standard for next-generation aerospace development
+4. **Risk Mitigation**: Mathematical optimization reduces traditional aerospace development risks
+
+#### **Strategic Outcome: Beyond Aircraft to Aerospace Intelligence**
+
+Success with AMPEL360-H2-BWB-Q establishes the platform for **Aerospace Engineering as a Service**—licensing our optimization framework to transform how the entire industry approaches complex system design. This positions us as the **intelligence layer** of next-generation aerospace development.
+
+**Bottom Line**: AMPEL360 is not competing in the aircraft market—we're creating the tools that will define how that market evolves. The question isn't whether hydrogen-powered BWB aircraft will be built, but whether they'll be optimized using our framework or inferior legacy methods.
