@@ -104,7 +104,7 @@ def generate_coverage_report(ci_path):
             print(f"    Evidence: {vm['evidence']}")
             print(f"    Criterion: {vm['criterion']}")
         else:
-            print(f"    ⚠️ No verification method defined")
+            print("    ⚠️ No verification method defined")
         print()
     
     # Coverage by category
