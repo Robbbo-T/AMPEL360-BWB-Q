@@ -1,0 +1,15 @@
+ID,Method,Medium,Evidence/Doc,Criterion
+REQ-STR-001,Analysis,FEM NL + handcalc,STR-AN-001;STR-CALC-001,MoS ≥ 0.0 (limit); ≥0.5 (ult)
+REQ-STR-002,Test,Pressure test,STR-TST-PP-001,No damage at proof; no failure at ultimate
+REQ-STR-003,Analysis,Loads+FEM,LOAD-341-VC-VD;STR-AN-002,Meet stress/deflection limits
+REQ-STR-004,Test/Analysis,GVT + Flutter,AEL-GVT-001;AEL-FLT-001,No flutter up to 1.15·VD
+REQ-STR-005,Analysis/Test,F&DT Analysis + Subcomponent,FDT-AN-001;FDT-SBCT-001,Residual ≥ Limit; stable growth; NDI justified
+REQ-STR-005a,Test,Impact + Residual Strength,BVID-TST-001,Residual strength ≥ limit after 35J
+REQ-STR-005b,Analysis,Crack Growth Analysis,FDT-CG-001,Two-bay crack meets limit load
+REQ-THR-001,Test,Cryo cycling rig,THR-TST-CRYO-001,No cracks >2 mm
+REQ-IFC-001,Test,Guarded-hot plate,THR-TST-HFX-001,q ≤ 5 W/m²
+REQ-IFC-002,Test/Analysis,Bench + NL-FEA,IFX-TST-MOUNT-001;STR-AN-003,Fx/Fy/Fz per rating
+REQ-MAT-001,Test,Coupons,MAT-ALW-CRYO-001,A/B-basis approved
+REQ-ENV-EMC-001,Test,Lightning Strike,LPS-TST-001,DO-160 §22 compliance
+REQ-ENV-EMC-002,Test,Bonding Resistance,EMC-TST-001,Resistance within limits
+REQ-ENV-EMC-003,Analysis,Current Distribution,EMC-AN-001,Path isolation verified

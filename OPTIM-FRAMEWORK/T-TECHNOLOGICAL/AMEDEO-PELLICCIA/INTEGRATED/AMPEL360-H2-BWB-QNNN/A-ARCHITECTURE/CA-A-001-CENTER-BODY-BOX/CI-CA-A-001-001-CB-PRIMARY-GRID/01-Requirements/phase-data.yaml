@@ -1,37 +1,51 @@
-phase:
-  name: 01-Requirements
-  ci: CI-CA-A-001-001-CB-PRIMARY-GRID
-  ca: CA-A-001-CENTER-BODY-BOX
-  status: Not Started
-  completion_percentage: 0
-  start_date: null
-  end_date: null
-  duration_days: null
-deliverables:
-- name: 01-Requirements Documentation
-  type: Document
-  status: Not Started
-  owner: TBD
-  due_date: null
-- name: 01-Requirements Technical Specifications
-  type: Technical
-  status: Not Started
-  owner: TBD
-  due_date: null
-metrics:
-  quality_score: null
-  cost_actual: null
-  cost_planned: null
-  effort_hours: null
-  defect_count: 0
-dependencies: []
-risks: []
-approvals:
-  technical_lead: false
-  phase_gate_review: false
-  configuration_control: false
+utcs_phase: "01"
+component_id: "CI-CA-A-001-001-CB-PRIMARY-GRID"
+status: "FROZEN"
+date: "2025-08-29"
+doc_id: "AMPEL360-REQ-CB-PG-001-v1.3"
+owner: "Amedeo Pelliccia"
+classification: "UNCLASSIFIED // For Official Use Only"
+
 metadata:
-  created_by: AMPEL360 Framework Generator
-  creation_date: '2024-01-01'
-  last_modified: '2024-01-01'
-  version: '1.0'
+  effective_date: "2025-08-26"
+  revision_date: "2025-08-29"
+  phase_gate: "01-APPROVED"
+  
+links:
+  - STR-AN-001.pdf
+  - STR-TST-PP-001.pdf
+  - LOAD-341-VC-VD.pdf
+  - AEL-GVT-001.pdf
+  - AEL-FLT-001.pdf
+  - FDT-AN-001.pdf
+  - FDT-SBCT-001.pdf
+  - BVID-TST-001.pdf
+  - FDT-CG-001.xlsx
+  - THR-TST-CRYO-001.pdf
+  - THR-TST-HFX-001.pdf
+  - IFX-TST-MOUNT-001.pdf
+  - STR-AN-003.pdf
+  - MAT-ALW-CRYO-001.pdf
+  - LPS-TST-001.pdf
+  - EMC-TST-001.pdf
+  - EMC-AN-001.pdf
+  - STR-CALC-001.xlsx
+  - STR-AN-002.pdf
+
+revision_history:
+  - version: "1.0"
+    date: "2025-08-26"
+    changes: "Initial Release"
+    author: "AMPEL360 Team"
+  - version: "1.1"
+    date: "2025-08-27"
+    changes: "Addressed RFAs from Validation Report"
+    author: "AMPEL360 Team"
+  - version: "1.2"
+    date: "2025-08-28"
+    changes: "Audit-ready compliance updates"
+    author: "AMPEL360 Team"
+  - version: "1.3"
+    date: "2025-08-29"
+    changes: "Final RFA resolution - FROZEN"
+    author: "AMPEL360 Team"
