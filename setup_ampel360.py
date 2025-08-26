@@ -86,7 +86,7 @@ def main():
         for component, donor_id in selected_config.items():
             print(f"   • {component}: Donor {donor_id}")
         
-        print(f"\n📁 Generated Files:")
+        print("\n📁 Generated Files:")
         print(f"   • constraints/hard_constraints.yaml - TRL gates & compatibility rules")
         print(f"   • data/candidates.yaml - AMPEL donor database")
         print(f"   • feasible_set.json - Feasible configurations")
