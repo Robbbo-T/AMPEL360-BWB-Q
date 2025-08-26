@@ -1,2 +1,33 @@
 # cert-readiness-index.yaml
-KPI definition and tracking.
+# KPI definition and tracking for Service Life Management
+
+cert_readiness_index:
+  value: 0.0
+  method: "weighted score of V&V closure, findings, DAL coverage"
+  target: 0.8
+  calculation:
+    vv_closure_weight: 0.4
+    findings_closure_weight: 0.3
+    dal_coverage_weight: 0.3
+  thresholds:
+    gate_m: 0.8
+    gate_x1: 0.8
+    gate_x2: 0.8
+  components:
+    - name: "V&V Closure Rate"
+      weight: 0.4
+      current_value: 0.0
+      target_value: 1.0
+    - name: "Findings Closure Rate"
+      weight: 0.3
+      current_value: 0.0
+      target_value: 1.0
+    - name: "DAL Coverage"
+      weight: 0.3
+      current_value: 0.0
+      target_value: 1.0
+  metadata:
+    last_updated: "TBD"
+    next_review: "TBD"
+    owner: "CSE Lead"
+    approval_status: "DRAFT"

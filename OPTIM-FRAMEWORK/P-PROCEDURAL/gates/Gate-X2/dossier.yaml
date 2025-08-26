@@ -1,0 +1,67 @@
+gate: "Gate-X2"
+lov_target: 45
+description: "Final life extension gate to achieve 45-year service life"
+timing:
+  eis_window: "33-36 years"
+  review_window: "T-6m to T-0"
+
+kpis:
+  safety:
+    hazards_mitigated: 1.0
+    target: 1.0
+    status: "TBD"
+  technical:
+    availability: 0.98
+    target: 0.98
+    status: "TBD"
+    criogenic_leak: "<=threshold"
+    lps_bonding: "<=2.5mOhm"
+    shm_stability: "24m stable"
+  structural:
+    mass_delta: "<=+3%"
+    cg_window: "±50mm"
+  
+npv:
+  discount_rate: 0.08
+  result: "TBD"
+  payback_years: "<=8"
+  sensitivity_analysis: "TBD"
+
+packages:
+  - name: "Second CRY Cycle"
+    description: "Second cryogenic system overhaul"
+    status: "PLANNED"
+  - name: "H₂ Sensors"
+    description: "Hydrogen detection system upgrade"
+    status: "PLANNED"
+  - name: "Sandwich Adhesives"
+    description: "Composite bond line renewal"
+    status: "PLANNED"
+  - name: "Cyber/CNS"
+    description: "Cybersecurity and CNS modernization"
+    status: "PLANNED"
+
+evidence_required:
+  - category: "V&V"
+    documents: ["V&V matrix extract", "UTCS evidence closure"]
+  - category: "Safety"
+    documents: ["FHA/PSSA/SSA updates", "Hazard analysis"]
+  - category: "Technical"
+    documents: ["Material aging analysis", "Sensor performance", "Cyber security assessment"]
+  - category: "Financial"
+    documents: ["NPV analysis", "Cost breakdown", "ROI projections"]
+  - category: "MRO"
+    documents: ["Heavy check planning", "EOL strategy"]
+
+decision: "TBD"
+approval:
+  program_board: "PENDING"
+  cse_lead: "PENDING"
+  safety_lead: "PENDING"
+  finance_lead: "PENDING"
+
+metadata:
+  created: "TBD"
+  last_updated: "TBD"
+  version: "1.0"
+  utcs_phase: "09-Maintenance"
