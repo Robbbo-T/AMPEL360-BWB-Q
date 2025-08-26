@@ -10,7 +10,7 @@ UTCS‑MI: An Executable Systems Engineering Doctrine for Quantum‑Inspired Air
 A. Pelliccia, et al.
 
 Affiliation: Aerospace & Quantum United Advanced Venture
-Contact: corresponding.author@ampel360.example
+Contact: amedeo.pelliccia@gaia-air.com
 
 ⸻
 
