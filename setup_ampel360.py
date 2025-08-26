@@ -105,7 +105,7 @@ def main():
     print(f"   • Customize constraints in constraints/hard_constraints.yaml")
     print(f"   • Add more candidates to data/candidates.yaml")
     print(f"   • Run detailed geometric integration analysis")
-    print(f"   • Proceed to P3 phase with BLI/DP and morphing capabilities")
+    print("   • Proceed to P3 phase with BLI/DP and morphing capabilities")
 
 
 if __name__ == "__main__":
