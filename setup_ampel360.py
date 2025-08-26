@@ -82,7 +82,7 @@ def main():
     print("🎉 AMPEL360 H₂-BWB-Q Framework Setup Complete!")
     print("=" * 60)
     
-    print(f"\n📊 Optimization Results:")
+    print("\n📊 Optimization Results:")
     print(f"   • Optimal passenger capacity (QNNN): {optimization_result['QNNN']}")
     print(f"   • Selected configuration: {optimization_result['selected_config']['id']}")
     print(f"   • Architecture type: BWB with H₂ propulsion")
