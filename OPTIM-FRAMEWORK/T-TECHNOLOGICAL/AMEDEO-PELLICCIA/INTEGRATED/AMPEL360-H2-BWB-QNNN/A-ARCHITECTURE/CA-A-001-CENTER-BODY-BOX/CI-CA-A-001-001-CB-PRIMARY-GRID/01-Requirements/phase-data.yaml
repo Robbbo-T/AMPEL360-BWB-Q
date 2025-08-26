@@ -12,25 +12,25 @@ metadata:
   phase_gate: "01-APPROVED"
   
 links:
-  - evidence/STR-AN-001.pdf
-  - evidence/STR-TST-PP-001.pdf
-  - evidence/LOAD-341-VC-VD.pdf
-  - evidence/AEL-GVT-001.pdf
-  - evidence/AEL-FLT-001.pdf
-  - evidence/FDT-AN-001.pdf
-  - evidence/FDT-SBCT-001.pdf
-  - evidence/BVID-TST-001.pdf
-  - evidence/FDT-CG-001.pdf
-  - evidence/THR-TST-CRYO-001.pdf
-  - evidence/THR-TST-HFX-001.pdf
-  - evidence/IFX-TST-MOUNT-001.pdf
-  - evidence/STR-AN-003.pdf
-  - evidence/MAT-ALW-CRYO-001.pdf
-  - evidence/LPS-TST-001.pdf
-  - evidence/EMC-TST-001.pdf
-  - evidence/EMC-AN-001.pdf
-  - evidence/STR-CALC-001.xlsx
-  - evidence/STR-AN-002.pdf
+  - STR-AN-001.pdf
+  - STR-TST-PP-001.pdf
+  - LOAD-341-VC-VD.pdf
+  - AEL-GVT-001.pdf
+  - AEL-FLT-001.pdf
+  - FDT-AN-001.pdf
+  - FDT-SBCT-001.pdf
+  - BVID-TST-001.pdf
+  - FDT-CG-001.xlsx
+  - THR-TST-CRYO-001.pdf
+  - THR-TST-HFX-001.pdf
+  - IFX-TST-MOUNT-001.pdf
+  - STR-AN-003.pdf
+  - MAT-ALW-CRYO-001.pdf
+  - LPS-TST-001.pdf
+  - EMC-TST-001.pdf
+  - EMC-AN-001.pdf
+  - STR-CALC-001.xlsx
+  - STR-AN-002.pdf
 
 revision_history:
   - version: "1.0"
