@@ -89,7 +89,7 @@ def main():
     print(f"   • Objective value: ${optimization_result['objective_value']:,.0f}")
     
     selected_config = optimization_result['selected_config']['config']
-    print(f"\n🏗️  Architecture Details:")
+    print("\n🏗️  Architecture Details:")
     for component, donor_id in selected_config.items():
         print(f"   • {component}: Donor {donor_id}")
     
