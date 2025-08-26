@@ -1,0 +1,233 @@
+# AMPEL360 H₂-BWB-Q Program Board Configuration
+
+program_board:
+  meta:
+    name: "AMPEL360 H₂-BWB-Q Program Board"
+    charter_version: "1.0"
+    last_updated: "2025-08-26"
+    next_review: "2025-12-15"
+    
+  leadership:
+    chair:
+      title: "Program Sponsor"
+      name: "TBD"
+      responsibilities:
+        - "Overall program accountability and success"
+        - "Strategic direction and decision making"
+        - "Resource allocation and budget approval"
+        - "Stakeholder engagement and communication"
+      
+    vice_chair:
+      title: "Chief Architect (DT)"
+      name: "TBD"
+      responsibilities:
+        - "Technical vision and architecture oversight"
+        - "Design review board leadership"
+        - "Technical risk assessment and mitigation"
+        - "Innovation and technology integration"
+
+  voting_members:
+    - title: "CSE Office Lead"
+      organization: "Systems Engineering"
+      voting_weight: 1.0
+      expertise: "Systems integration and verification"
+      
+    - title: "Certification Lead"
+      organization: "Regulatory Affairs"
+      voting_weight: 1.0
+      expertise: "Certification and regulatory compliance"
+      
+    - title: "H₂ Infrastructure Lead"
+      organization: "Energy Systems"
+      voting_weight: 1.0
+      expertise: "Hydrogen systems and safety"
+      
+    - title: "Safety of AI Officer"
+      organization: "AI/ML Safety"
+      voting_weight: 1.0
+      expertise: "AI algorithm safety and validation"
+      
+    - title: "Defense Liaison"
+      organization: "Defense Department"
+      voting_weight: 0.5
+      expertise: "Defense applications and requirements"
+      
+    - title: "Supply Chain Lead"
+      organization: "Procurement"
+      voting_weight: 0.5
+      expertise: "Supplier management and logistics"
+
+  advisory_members:
+    - title: "Space Operations Lead"
+      organization: "Space Systems"
+      expertise: "Space applications and orbital operations"
+      
+    - title: "Quantum Computing Advisor"
+      organization: "External Partner"
+      expertise: "Quantum algorithms and implementation"
+      
+    - title: "BWB Research Advisor"
+      organization: "Academic Institution"
+      expertise: "BWB aerodynamics and configuration"
+      
+    - title: "Regulatory Advisor"
+      organization: "FAA/EASA"
+      expertise: "Certification requirements and processes"
+
+  meeting_schedule:
+    regular_meetings:
+      frequency: "monthly"
+      duration: "4 hours"
+      format: "hybrid (in-person/virtual)"
+      
+    quarterly_reviews:
+      frequency: "quarterly"
+      duration: "full day"
+      format: "in-person preferred"
+      
+    phase_gate_reviews:
+      frequency: "by phase"
+      duration: "2-3 days"
+      format: "in-person required"
+      
+    emergency_meetings:
+      trigger: "critical issues or decisions"
+      notice_period: "24 hours minimum"
+      format: "virtual acceptable"
+
+  decision_making:
+    quorum_requirements:
+      regular_decisions: "50% voting members"
+      strategic_decisions: "75% voting members"
+      emergency_decisions: "3 voting members minimum"
+      
+    voting_process:
+      method: "majority vote of present voting members"
+      tie_breaking: "chair has deciding vote"
+      abstentions: "counted as non-votes"
+      
+    decision_categories:
+      administrative:
+        - "Meeting schedules and logistics"
+        - "Process improvements"
+        - "Reporting requirements"
+        authority: "program manager"
+        
+      technical:
+        - "Architecture decisions"
+        - "Design changes"
+        - "Technology selections"
+        authority: "chief architect with board consultation"
+        
+      strategic:
+        - "Phase gate approvals"
+        - "Budget allocations"
+        - "Major program changes"
+        authority: "program board majority vote"
+        
+      emergency:
+        - "Safety-critical issues"
+        - "Program suspension decisions"
+        - "Regulatory compliance actions"
+        authority: "chair with available members"
+
+  responsibilities:
+    governance:
+      - "Program oversight and strategic direction"
+      - "Phase gate review and approval"
+      - "Risk management and mitigation oversight"
+      - "Stakeholder alignment and communication"
+      
+    technical:
+      - "Architecture review and approval"
+      - "Technical risk assessment"
+      - "Design quality assurance"
+      - "Innovation and technology integration"
+      
+    financial:
+      - "Budget review and approval"
+      - "Resource allocation decisions"
+      - "Cost performance monitoring"
+      - "Investment strategy guidance"
+      
+    programmatic:
+      - "Schedule milestone approval"
+      - "Change control oversight"
+      - "Performance measurement"
+      - "Lessons learned capture"
+
+  authority_matrix:
+    budget_authority:
+      up_to_1M: "program manager"
+      up_to_5M: "chief architect"
+      up_to_25M: "program board majority"
+      above_25M: "sponsor approval required"
+      
+    technical_authority:
+      component_changes: "chief architect"
+      system_changes: "cse office with architect approval"
+      architecture_changes: "program board approval"
+      safety_changes: "safety officer with board approval"
+      
+    schedule_authority:
+      minor_adjustments: "program manager"
+      phase_delays: "program board approval"
+      milestone_changes: "sponsor approval"
+      program_restructure: "full stakeholder approval"
+
+  communication:
+    internal_reporting:
+      frequency: "monthly"
+      recipients: "all program stakeholders"
+      format: "dashboard and executive summary"
+      
+    external_reporting:
+      frequency: "quarterly"
+      recipients: "investors, regulatory bodies"
+      format: "formal reports and presentations"
+      
+    escalation_procedures:
+      technical_issues: "chief architect → board → sponsor"
+      safety_issues: "safety officer → board → regulatory"
+      financial_issues: "program manager → board → sponsor"
+      schedule_issues: "program manager → board → stakeholders"
+
+  performance_metrics:
+    program_health:
+      - "Schedule performance index"
+      - "Cost performance index"
+      - "Risk burn-down rate"
+      - "Stakeholder satisfaction"
+      
+    technical_progress:
+      - "TRL advancement rate"
+      - "Design maturity index"
+      - "Integration test success rate"
+      - "Requirement compliance percentage"
+      
+    decision_effectiveness:
+      - "Decision implementation rate"
+      - "Decision reversal frequency"
+      - "Time to decision"
+      - "Decision quality assessment"
+
+  charter_maintenance:
+    review_frequency: "annually"
+    update_triggers:
+      - "Major program changes"
+      - "Organizational restructuring"
+      - "Regulatory requirement changes"
+      - "Stakeholder feedback"
+      
+    approval_process:
+      - "Board member review and comment"
+      - "Stakeholder consultation"
+      - "Sponsor final approval"
+      - "Distribution and training"
+
+---
+
+**Approved By**: Program Sponsor  
+**Date**: August 26, 2025  
+**Version**: 1.0  
+**Next Review**: December 15, 2025

@@ -1,0 +1,178 @@
+# AMPEL360 H₂-BWB-Q Accountability Matrix
+
+accountability_matrix:
+  program_governance:
+    program_sponsor:
+      accountable: true
+      responsible: false
+      consulted: false
+      informed: false
+      description: "Overall program success and funding authorization"
+      
+    chief_architect:
+      accountable: true
+      responsible: true
+      consulted: false
+      informed: false
+      description: "Technical architecture and design decisions"
+      
+    program_manager:
+      accountable: false
+      responsible: true
+      consulted: false
+      informed: false
+      description: "Day-to-day program execution and coordination"
+
+  technical_decisions:
+    configuration_selection:
+      chief_architect: "A"
+      cse_office: "R"
+      hard_constraints_committee: "C"
+      program_board: "I"
+      
+    qaoa_optimization:
+      safety_of_ai_officer: "A"
+      chief_architect: "R"
+      quantum_partner: "C"
+      technical_team: "I"
+      
+    hydrogen_integration:
+      h2_infrastructure_lead: "A"
+      chief_architect: "R"
+      safety_review_board: "C"
+      certification_lead: "I"
+      
+    bwb_implementation:
+      chief_architect: "A"
+      cse_office: "R"
+      bwb_research_partner: "C"
+      architecture_review_board: "I"
+
+  quality_assurance:
+    design_reviews:
+      architecture_review_board: "A"
+      chief_architect: "R"
+      technical_leads: "C"
+      stakeholders: "I"
+      
+    safety_assessments:
+      safety_review_board: "A"
+      safety_of_ai_officer: "R"
+      h2_infrastructure_lead: "C"
+      certification_lead: "I"
+      
+    certification_readiness:
+      certification_lead: "A"
+      cse_office: "R"
+      regulatory_bodies: "C"
+      program_sponsor: "I"
+
+  financial_management:
+    budget_allocation:
+      program_sponsor: "A"
+      cfo: "R"
+      program_manager: "C"
+      functional_leads: "I"
+      
+    cost_tracking:
+      cfo: "A"
+      program_manager: "R"
+      functional_leads: "C"
+      program_sponsor: "I"
+      
+    investment_decisions:
+      program_sponsor: "A"
+      cfo: "R"
+      investors: "C"
+      program_board: "I"
+
+  risk_management:
+    risk_identification:
+      program_manager: "A"
+      functional_leads: "R"
+      technical_team: "C"
+      stakeholders: "I"
+      
+    risk_mitigation:
+      risk_owners: "A"
+      program_manager: "R"
+      chief_architect: "C"
+      program_sponsor: "I"
+      
+    cvar_analysis:
+      safety_of_ai_officer: "A"
+      chief_architect: "R"
+      program_manager: "C"
+      program_board: "I"
+
+  change_management:
+    change_requests:
+      configuration_working_group: "A"
+      change_requestor: "R"
+      affected_stakeholders: "C"
+      program_board: "I"
+      
+    impact_assessment:
+      chief_architect: "A"
+      cse_office: "R"
+      functional_leads: "C"
+      program_manager: "I"
+      
+    change_approval:
+      program_board: "A"
+      chief_architect: "R"
+      stakeholders: "C"
+      program_team: "I"
+
+  knowledge_management:
+    documentation:
+      technical_writers: "A"
+      subject_matter_experts: "R"
+      review_committees: "C"
+      program_team: "I"
+      
+    lessons_learned:
+      program_manager: "A"
+      functional_leads: "R"
+      team_members: "C"
+      stakeholders: "I"
+      
+    intellectual_property:
+      legal_counsel: "A"
+      chief_architect: "R"
+      inventors: "C"
+      management: "I"
+
+matrix_legend:
+  A: "Accountable - Ultimate accountability for the deliverable/decision"
+  R: "Responsible - Actually performs the work to complete the task"
+  C: "Consulted - Provides input and expertise before decisions are made"
+  I: "Informed - Kept informed of progress and decisions"
+
+escalation_procedures:
+  technical_disputes:
+    level_1: "Technical Lead discussion"
+    level_2: "Chief Architect decision"
+    level_3: "Architecture Review Board"
+    level_4: "Program Board"
+    
+  resource_conflicts:
+    level_1: "Program Manager coordination"
+    level_2: "Functional Lead negotiation"
+    level_3: "Chief Architect mediation"
+    level_4: "Program Sponsor decision"
+    
+  safety_concerns:
+    level_1: "Safety Officer assessment"
+    level_2: "Safety Review Board"
+    level_3: "Regulatory notification"
+    level_4: "Program suspension if required"
+
+review_schedule:
+  weekly: "Functional accountability reviews"
+  monthly: "Cross-functional alignment checks"
+  quarterly: "Matrix effectiveness assessment"
+  annually: "Complete matrix review and update"
+
+last_updated: "2025-08-26"
+version: "1.0"
