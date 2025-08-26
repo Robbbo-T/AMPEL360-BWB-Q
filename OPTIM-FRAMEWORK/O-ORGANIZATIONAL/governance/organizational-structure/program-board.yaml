@@ -1,87 +1,159 @@
-# Organizational Structure - AMPEL360 H₂-BWB-Q Program
+# AMPEL360 H₂-BWB-Q Program Board Configuration
 
-## Program Leadership
+**Document ID:** AMPEL360-PROGRAM-BOARD-v1.0  
+**Last Updated:** 2025-08-26  
+**Version:** 1.0 (Merged)  
+**Next Review:** 2025-12-15
 
+## Program Board Structure
+
+```yaml
 program_board:
-  chair: "Chief Architect (DT)"
-  members:
-    - name: "Amedeo Pelliccia"
+  meta:
+    name: "AMPEL360 H₂-BWB-Q Program Board"
+    charter_version: "1.0"
+    
+  leadership:
+    chair:
       title: "Chief Architect (DT)"
+      name: "Amedeo Pelliccia"
       responsibilities:
         - "Overall technical architecture and design authority"
         - "Technology roadmap and innovation strategy"
         - "Integration of quantum optimization approaches"
         - "BWB configuration validation and approval"
-      reporting: "Executive Leadership"
+        - "Technical risk assessment and mitigation"
+      links:
+        - "→ O-ORGANIZATIONAL/governance/organizational-structure/chief-architect-dt.yaml"
       
-    - name: "Chief Systems Engineer"
-      title: "CSE"
+    vice_chair:
+      title: "Program Sponsor"
+      name: "TBD"
       responsibilities:
-        - "Systems integration and verification"
-        - "Requirements management and traceability"
-        - "Interface control and management"
-        - "Configuration control and change management"
-      reporting: "Chief Architect (DT)"
-      
-    - name: "Certification Lead"
-      title: "Cert Lead"
-      responsibilities:
-        - "Regulatory strategy and compliance"
-        - "Certification planning and execution"
-        - "Authority liaison and coordination"
-        - "Compliance verification and validation"
-      reporting: "Chief Architect (DT)"
+        - "Overall program accountability and success"
+        - "Strategic direction and decision making"
+        - "Resource allocation and budget approval"
+        - "Stakeholder engagement and communication"
+```
 
-## Technical Leadership
+## Voting Members
 
-technical_leads:
-  h2_infrastructure_lead:
-    title: "H₂ Infrastructure Lead"
+```yaml
+voting_members:
+  - title: "Chief Systems Engineer"
+    organization: "Systems Engineering"
+    voting_weight: 1.0
+    expertise: "Systems integration and verification"
+    responsibilities:
+      - "Requirements management and traceability"
+      - "Interface control and management"
+      - "Configuration control and change management"
+    reporting: "Chief Architect (DT)"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/organizational-structure/cse-office.yaml"
+    
+  - title: "Certification Lead"
+    organization: "Regulatory Affairs"
+    voting_weight: 1.0
+    expertise: "Certification and regulatory compliance"
+    responsibilities:
+      - "Regulatory strategy and compliance"
+      - "Certification planning and execution"
+      - "Authority liaison and coordination"
+    reporting: "Chief Architect (DT)"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/organizational-structure/cert-lead.yaml"
+    
+  - title: "H₂ Infrastructure Lead"
+    organization: "Energy Systems"
+    voting_weight: 1.0
+    expertise: "Hydrogen systems and safety"
     responsibilities:
       - "Hydrogen storage and distribution systems"
       - "Cryogenic system design and integration"
       - "H₂ safety and handling procedures"
-      - "Infrastructure compatibility assessment"
-    reports_to: "Chief Systems Engineer"
+    reporting: "Chief Systems Engineer"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/organizational-structure/h2-infrastructure-lead.yaml"
+      - "→ C2-CRYOGENICS/"
+      - "→ I-INFRASTRUCTURES/CA-I-002-H2-VALUE-CHAIN/"
     
-  safety_of_ai_officer:
-    title: "Safety of AI Officer"
+  - title: "Safety of AI Officer"
+    organization: "AI/ML Safety"
+    voting_weight: 1.0
+    expertise: "AI algorithm safety and validation"
     responsibilities:
       - "AI/ML system safety and ethics"
       - "Quantum optimization algorithm validation"
       - "AI risk assessment and mitigation"
-      - "Ethical AI implementation guidelines"
-    reports_to: "Chief Architect (DT)"
+    reporting: "Chief Architect (DT)"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/organizational-structure/safety-of-ai-officer.yaml"
+      - "→ I2-INTELLIGENCE/"
     
-  defense_liaison:
-    title: "Defense Liaison"
+  - title: "Defense Liaison"
+    organization: "Defense Department"
+    voting_weight: 0.5
+    expertise: "Defense applications and requirements"
     responsibilities:
       - "Military requirements integration"
       - "Security clearance coordination"
       - "Defense technology transfer"
-      - "Multi-domain operations capability"
-    reports_to: "Program Board"
+    reporting: "Program Board"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/organizational-structure/defense-liaison.yaml"
+      - "→ CA-D-006-CYBER-DEFENSE/"
     
-  space_ops_lead:
-    title: "Space Operations Lead"
-    responsibilities:
-      - "Space-based operations integration"
-      - "Satellite communication systems"
-      - "LEO constellation connectivity"
-      - "Deep space communication capability"
-    reports_to: "Defense Liaison"
-    
-  supply_chain_lead:
-    title: "Supply Chain Lead"
+  - title: "Supply Chain Lead"
+    organization: "Procurement"
+    voting_weight: 0.5
+    expertise: "Supplier management and logistics"
     responsibilities:
       - "Vendor management and qualification"
       - "Supply chain risk assessment"
       - "Component sourcing and procurement"
-      - "Supplier performance monitoring"
-    reports_to: "Chief Systems Engineer"
+    reporting: "Chief Systems Engineer"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/organizational-structure/supply-chain-lead.yaml"
+      - "→ L-LOGISTICS/CA-L-003-SUPPLY-CHAIN/"
+```
 
-## Working Groups and Committees
+## Advisory Members
 
+```yaml
+advisory_members:
+  - title: "Space Operations Lead"
+    organization: "Space Systems"
+    expertise: "Space applications and orbital operations"
+    responsibilities:
+      - "Space-based operations integration"
+      - "Satellite communication systems"
+      - "LEO constellation connectivity"
+    reporting: "Defense Liaison"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/organizational-structure/space-ops-lead.yaml"
+      - "→ CA-E3-006-SPACE-COMM/"
+    
+  - title: "Quantum Computing Advisor"
+    organization: "External Partner - Quantum Systems Inc."
+    expertise: "Quantum algorithms and implementation"
+    links:
+      - "→ CA-D-005-QUANTUM-COMPUTE/"
+    
+  - title: "BWB Research Advisor"
+    organization: "Advanced Aerodynamics University"
+    expertise: "BWB aerodynamics and configuration"
+    links:
+      - "→ A-ARCHITECTURE/CA-A-001-CENTER-BODY-BOX/"
+    
+  - title: "Regulatory Advisor"
+    organization: "FAA/EASA"
+    expertise: "Certification requirements and processes"
+```
+
+## Committees and Working Groups
+
+```yaml
 committees:
   arb:
     name: "Architecture Review Board"
@@ -89,13 +161,17 @@ committees:
     members: ["CSE", "Technical Leads", "Domain Experts"]
     purpose: "Review and approve major architectural decisions"
     meeting_frequency: "Bi-weekly"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/committees/ARB/"
     
   srb:
-    name: "Systems Review Board"
-    chair: "Chief Systems Engineer"
-    members: ["Subsystem Leads", "Integration Engineers", "Test Engineers"]
-    purpose: "Systems integration and verification oversight"
+    name: "Safety Review Board"
+    chair: "Safety of AI Officer"
+    members: ["H₂ Infrastructure Lead", "Certification Lead", "Safety Engineers"]
+    purpose: "Safety assessment and risk mitigation"
     meeting_frequency: "Weekly"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/committees/SRB/"
     
   cwg:
     name: "Configuration Working Group"
@@ -103,85 +179,223 @@ committees:
     members: ["Configuration Engineers", "Change Control Board"]
     purpose: "Configuration management and change control"
     meeting_frequency: "Weekly"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/committees/CWG/"
     
   hcc:
-    name: "Hard Constraints Committee"
-    chair: "Certification Lead"
-    members: ["Requirements Engineers", "Compliance Officers", "Technical Experts"]
-    purpose: "Define and maintain hard constraints and compliance requirements"
+    name: "Hydrogen Corridor Council"
+    chair: "H₂ Infrastructure Lead"
+    members: ["Infrastructure Partners", "Airport Representatives", "Energy Suppliers"]
+    purpose: "H₂ infrastructure planning and coordination"
     meeting_frequency: "Monthly"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/committees/HCC/"
     
   dsc:
-    name: "Decision Support Committee"
-    chair: "Chief Architect (DT)"
-    members: ["Technical Leads", "Risk Managers", "Subject Matter Experts"]
-    purpose: "Provide decision support for complex technical and programmatic issues"
+    name: "Defense & Security Council"
+    chair: "Defense Liaison"
+    members: ["Security Officers", "Cyber Defense Team", "Space Ops Lead"]
+    purpose: "Multi-domain operations and security"
     meeting_frequency: "As needed"
+    links:
+      - "→ O-ORGANIZATIONAL/governance/committees/DSC/"
+```
 
-## Technical Teams
+## Meeting Schedule
 
-technical_teams:
-  architecture_team:
-    lead: "Chief Architect (DT)"
-    focus_areas:
-      - "BWB configuration design"
-      - "Hydrogen propulsion integration"
-      - "Quantum optimization implementation"
-      - "Multi-domain capability integration"
+```yaml
+meeting_schedule:
+  regular_meetings:
+    frequency: "monthly"
+    duration: "4 hours"
+    format: "hybrid (in-person/virtual)"
     
-  systems_engineering_team:
-    lead: "Chief Systems Engineer"
-    focus_areas:
-      - "Requirements engineering"
-      - "Systems integration"
-      - "Verification and validation"
-      - "Configuration management"
+  quarterly_reviews:
+    frequency: "quarterly"
+    duration: "full day"
+    format: "in-person preferred"
+    topics:
+      - "Phase progress assessment"
+      - "Risk review and mitigation"
+      - "Financial performance"
+      - "Stakeholder satisfaction"
     
-  optimization_team:
-    lead: "Safety of AI Officer"
-    focus_areas:
-      - "QAOA algorithm development"
-      - "CVaR risk optimization"
-      - "Monte Carlo simulation"
-      - "Decision support systems"
+  phase_gate_reviews:
+    frequency: "by phase"
+    duration: "2-3 days"
+    format: "in-person required"
+    participants: "Full board + external reviewers"
     
-  infrastructure_team:
-    lead: "H₂ Infrastructure Lead"
-    focus_areas:
-      - "Hydrogen storage systems"
-      - "Cryogenic technology"
-      - "Safety systems"
-      - "Ground support equipment"
+  emergency_meetings:
+    trigger: "critical issues or decisions"
+    notice_period: "24 hours minimum"
+    format: "virtual acceptable"
+```
 
-## Reporting Structure
+## Decision Making
 
-reporting_hierarchy:
-  level_1: "Executive Leadership"
-  level_2: "Program Board"
-  level_3: "Technical Leadership"
-  level_4: "Working Groups/Committees"
-  level_5: "Technical Teams"
-  level_6: "Individual Contributors"
+```yaml
+decision_making:
+  quorum_requirements:
+    regular_decisions: "50% voting members"
+    strategic_decisions: "75% voting members"
+    emergency_decisions: "3 voting members minimum"
+    
+  voting_process:
+    method: "weighted majority vote"
+    tie_breaking: "chair has deciding vote"
+    abstentions: "counted as non-votes"
+    documentation: "all decisions recorded in decision log"
+    
+  decision_categories:
+    administrative:
+      examples: ["Meeting schedules", "Process improvements", "Reporting requirements"]
+      authority: "Program manager"
+      
+    technical:
+      examples: ["Architecture decisions", "Design changes", "Technology selections"]
+      authority: "Chief Architect with board consultation"
+      links:
+        - "→ O-ORGANIZATIONAL/artifacts/decision-log.yaml"
+      
+    strategic:
+      examples: ["Phase gate approvals", "Budget allocations", "Major program changes"]
+      authority: "Program board majority vote"
+      
+    emergency:
+      examples: ["Safety-critical issues", "Program suspension", "Regulatory compliance actions"]
+      authority: "Chair with available members"
+```
 
 ## Authority Matrix
 
-decision_authority:
-  architecture_decisions:
-    primary: "Chief Architect (DT)"
-    approval: "Program Board"
-    consultation: "ARB"
+```yaml
+authority_matrix:
+  budget_authority:
+    up_to_1M: "Program Manager"
+    up_to_5M: "Chief Architect"
+    up_to_25M: "Program Board majority"
+    above_25M: "Sponsor approval required"
     
-  systems_decisions:
-    primary: "Chief Systems Engineer"
-    approval: "Chief Architect (DT)"
-    consultation: "SRB"
+  technical_authority:
+    component_changes: "Chief Architect"
+    system_changes: "CSE Office with Architect approval"
+    architecture_changes: "Program Board approval"
+    safety_changes: "Safety Officer with Board approval"
     
-  configuration_changes:
-    primary: "Configuration Working Group"
-    approval: "Chief Systems Engineer"
-    consultation: "Change Control Board"
+  schedule_authority:
+    minor_adjustments: "Program Manager"
+    phase_delays: "Program Board approval"
+    milestone_changes: "Sponsor approval"
+    program_restructure: "Full stakeholder approval"
     
-  compliance_decisions:
-    primary: "Certification Lead"
-    approval: "Program Board"
-    consultation: "HCC"
+  configuration_authority:
+    ci_changes: "Configuration Working Group"
+    ca_changes: "Chief Systems Engineer"
+    segment_changes: "Chief Architect"
+    methodology_changes: "Program Board unanimous"
+```
+
+## Performance Metrics
+
+```yaml
+performance_metrics:
+  program_health:
+    - metric: "Schedule Performance Index"
+      target: "> 0.95"
+      frequency: "Weekly"
+    - metric: "Cost Performance Index"
+      target: "> 0.90"
+      frequency: "Monthly"
+    - metric: "Risk Burn-down Rate"
+      target: "< 5 high risks"
+      frequency: "Continuous"
+    - metric: "Stakeholder Satisfaction"
+      target: "> 85%"
+      frequency: "Quarterly"
+    
+  technical_progress:
+    - metric: "TRL Advancement Rate"
+      target: "Per phase plan"
+      frequency: "Monthly"
+    - metric: "Design Maturity Index"
+      target: "> 80% by phase gate"
+      frequency: "Monthly"
+    - metric: "Integration Test Success Rate"
+      target: "> 90%"
+      frequency: "Per test campaign"
+    - metric: "Requirement Compliance"
+      target: "100% hard constraints"
+      frequency: "Continuous"
+    
+  decision_effectiveness:
+    - metric: "Decision Implementation Rate"
+      target: "> 95%"
+      frequency: "Monthly"
+    - metric: "Decision Reversal Frequency"
+      target: "< 5%"
+      frequency: "Quarterly"
+    - metric: "Time to Decision"
+      target: "< 2 weeks average"
+      frequency: "Monthly"
+```
+
+## Communication Protocols
+
+```yaml
+communication:
+  internal_reporting:
+    frequency: "Monthly"
+    recipients: "All program stakeholders"
+    format: "Dashboard and executive summary"
+    links:
+      - "→ O-ORGANIZATIONAL/kpis/"
+    
+  external_reporting:
+    frequency: "Quarterly"
+    recipients: "Investors, regulatory bodies"
+    format: "Formal reports and presentations"
+    
+  escalation_procedures:
+    technical_issues: "Chief Architect → Board → Sponsor"
+    safety_issues: "Safety Officer → Board → Regulatory"
+    financial_issues: "Program Manager → Board → Sponsor"
+    schedule_issues: "Program Manager → Board → Stakeholders"
+```
+
+## Charter Maintenance
+
+```yaml
+charter_maintenance:
+  review_frequency: "Annually"
+  update_triggers:
+    - "Major program changes"
+    - "Organizational restructuring"
+    - "Regulatory requirement changes"
+    - "Stakeholder feedback"
+    
+  approval_process:
+    - "Board member review and comment"
+    - "Stakeholder consultation"
+    - "Sponsor final approval"
+    - "Distribution and training"
+```
+
+---
+
+**Approval Signatures:**
+
+- **Chief Architect (DT)**: Amedeo Pelliccia  
+  Date: 2025-08-26  
+  _[Digital Signature Applied]_
+
+- **Program Sponsor**: _________________  
+  Date: ____________
+
+- **Chief Systems Engineer**: _________________  
+  Date: ____________
+
+**Document Control:**
+- Version: 1.0
+- Classification: UNCLASSIFIED // For Official Use Only
+- Repository: [→ O-ORGANIZATIONAL/governance/organizational-structure/program-board.yaml](../O-ORGANIZATIONAL/governance/organizational-structure/)

@@ -1,114 +1,315 @@
-# Stakeholder Register - AMPEL360 H₂-BWB-Q Program
+# AMPEL360 H₂-BWB-Q Stakeholder Register
+
+**Document ID:** AMPEL360-STAKEHOLDER-REGISTER-v1.0  
+**Last Updated:** 2025-08-26  
+**Version:** 1.0 (Merged)
 
 ## Primary Stakeholders
 
+```yaml
 stakeholders:
   primary:
-    - name: "Chief Architect (DT)"
+    - id: "SPONSOR-001"
+      name: "Program Sponsor"
+      organization: "Executive Leadership"
+      role: "Overall program accountability and funding authorization"
+      influence: "High"
+      interest: "High"
+      communication_preference: "Executive dashboards"
+      decision_authority: "Program-level decisions, funding"
+      engagement_strategy: "Monthly reviews, quarterly strategic sessions"
+      contact: "sponsor@ampel360.org"
+      
+    - id: "ARCH-001"
+      name: "Chief Architect (DT)"
       individual: "Amedeo Pelliccia"
-      role: "Technical Leadership"
+      organization: "Technical Leadership"
+      role: "Technical vision and architecture decisions"
       influence: "High"
       interest: "High"
       communication_preference: "Technical Reports"
       decision_authority: "Architecture Decisions"
+      engagement_strategy: "Daily technical oversight, weekly program reviews"
+      contact: "chief.architect@ampel360.org"
+      links:
+        - "→ O-ORGANIZATIONAL/governance/organizational-structure/chief-architect-dt.yaml"
       
-    - name: "Chief Systems Engineer"
-      role: "Systems Integration"
+    - id: "CSE-001"
+      name: "Chief Systems Engineer"
+      organization: "Systems Engineering"
+      role: "Systems integration and verification"
       influence: "High"
       interest: "High"
       communication_preference: "Systems Reviews"
       decision_authority: "Integration Decisions"
+      engagement_strategy: "Weekly technical meetings, phase gate reviews"
+      contact: "cse.office@ampel360.org"
+      links:
+        - "→ O-ORGANIZATIONAL/governance/organizational-structure/cse-office.yaml"
       
-    - name: "Certification Lead"
-      role: "Regulatory Compliance"
+    - id: "CERT-001"
+      name: "Certification Lead"
+      organization: "Regulatory Affairs"
+      role: "Certification readiness and regulatory compliance"
       influence: "High"
       interest: "High"
       communication_preference: "Compliance Reports"
       decision_authority: "Certification Approach"
+      engagement_strategy: "Bi-weekly compliance reviews, regulatory updates"
+      contact: "cert.lead@ampel360.org"
+      links:
+        - "→ O-ORGANIZATIONAL/governance/organizational-structure/cert-lead.yaml"
+        - "→ P-PROCEDURAL/processes/certification-process.bpmn"
       
-    - name: "H₂ Infrastructure Lead"
-      role: "Hydrogen Systems"
+    - id: "H2-001"
+      name: "H₂ Infrastructure Lead"
+      organization: "Energy Systems"
+      role: "Hydrogen systems integration and safety"
       influence: "High"
       interest: "High"
       communication_preference: "Infrastructure Plans"
       decision_authority: "H₂ Strategy"
+      engagement_strategy: "Weekly technical coordination, safety reviews"
+      contact: "h2.lead@ampel360.org"
+      links:
+        - "→ O-ORGANIZATIONAL/governance/organizational-structure/h2-infrastructure-lead.yaml"
+        - "→ C2-CRYOGENICS/CA-C2-005-H2-SAFETY/"
+        - "→ I-INFRASTRUCTURES/CA-I-002-H2-VALUE-CHAIN/"
       
-    - name: "Safety of AI Officer"
-      role: "AI Safety & Ethics"
+    - id: "AI-001"
+      name: "Safety of AI Officer"
+      organization: "AI/ML Safety"
+      role: "AI/ML algorithm safety and validation"
       influence: "Medium"
       interest: "High"
       communication_preference: "Safety Reports"
       decision_authority: "AI Usage Guidelines"
+      engagement_strategy: "Bi-weekly AI safety reviews, algorithm validation"
+      contact: "ai.safety@ampel360.org"
+      links:
+        - "→ O-ORGANIZATIONAL/governance/organizational-structure/safety-of-ai-officer.yaml"
+        - "→ I2-INTELLIGENCE/CA-I2-001-AI-SYSTEMS/"
 
   secondary:
-    - name: "Defense Liaison"
-      role: "Military Applications"
+    - id: "DEF-001"
+      name: "Defense Liaison"
+      organization: "Defense Department"
+      role: "Defense applications and requirements"
       influence: "Medium"
       interest: "Medium"
       communication_preference: "Security Briefings"
+      engagement_strategy: "Monthly briefings, quarterly requirements review"
+      contact: "defense.liaison@ampel360.org"
+      links:
+        - "→ O-ORGANIZATIONAL/governance/organizational-structure/defense-liaison.yaml"
+        - "→ CA-D-006-CYBER-DEFENSE/"
+        - "→ CA-I-003-DEFENSE-INFRASTRUCTURE/"
       
-    - name: "Space Operations Lead"
-      role: "Space Integration"
+    - id: "SPACE-001"
+      name: "Space Operations Lead"
+      organization: "Space Systems"
+      role: "Space applications and orbital operations"
       influence: "Low"
       interest: "Medium"
       communication_preference: "Technical Updates"
+      engagement_strategy: "Quarterly space applications review"
+      contact: "space.ops@ampel360.org"
+      links:
+        - "→ O-ORGANIZATIONAL/governance/organizational-structure/space-ops-lead.yaml"
+        - "→ CA-E3-006-SPACE-COMM/"
+        - "→ CA-O-005-MULTI-DOMAIN-OPS/"
       
-    - name: "Supply Chain Lead"
-      role: "Vendor Management"
+    - id: "SUPPLY-001"
+      name: "Supply Chain Lead"
+      organization: "Procurement"
+      role: "Supplier management and logistics"
       influence: "Medium"
       interest: "High"
       communication_preference: "Supply Reports"
+      engagement_strategy: "Weekly supply chain updates, monthly supplier reviews"
+      contact: "supply.chain@ampel360.org"
+      links:
+        - "→ O-ORGANIZATIONAL/governance/organizational-structure/supply-chain-lead.yaml"
+        - "→ L-LOGISTICS/CA-L-003-SUPPLY-CHAIN/"
+```
 
 ## External Stakeholders
 
+```yaml
 external_stakeholders:
   regulatory:
-    - name: "EASA"
+    - id: "FAA-001"
+      name: "FAA Representative"
+      organization: "Federal Aviation Administration"
       type: "Certification Authority"
+      role: "Airworthiness certification oversight"
       influence: "High"
       interest: "High"
       engagement_level: "Regular"
+      engagement_strategy: "Quarterly certification readiness reviews"
+      contact: "faa.liaison@faa.gov"
       
-    - name: "FAA"
+    - id: "EASA-001"
+      name: "EASA Representative"
+      organization: "European Aviation Safety Agency"
       type: "Certification Authority"
+      role: "European certification requirements"
       influence: "High"
       interest: "High"
       engagement_level: "Regular"
+      engagement_strategy: "Semi-annual international compliance reviews"
+      contact: "easa.liaison@easa.europa.eu"
+
+  technical_partners:
+    - id: "TECH-001"
+      name: "Quantum Computing Partner"
+      organization: "Quantum Systems Inc."
+      type: "Technology Partner"
+      role: "Quantum algorithm development and validation"
+      influence: "Medium"
+      interest: "High"
+      engagement_level: "Continuous"
+      engagement_strategy: "Weekly technical collaboration, monthly progress reviews"
+      contact: "quantum.partner@quantumsys.com"
+      links:
+        - "→ CA-D-005-QUANTUM-COMPUTE/"
+      
+    - id: "TECH-002"
+      name: "Hydrogen Systems Partner"
+      organization: "H₂ Technologies Ltd."
+      type: "Infrastructure Partner"
+      role: "Hydrogen infrastructure and safety systems"
+      influence: "Medium"
+      interest: "High"
+      engagement_level: "Regular"
+      engagement_strategy: "Bi-weekly technical meetings, safety protocol reviews"
+      contact: "h2.partner@h2tech.com"
+      links:
+        - "→ C2-CRYOGENICS/"
+        - "→ CA-E2-005-HYDROGEN-STORAGE/"
+      
+    - id: "TECH-003"
+      name: "BWB Research Institution"
+      organization: "Advanced Aerodynamics University"
+      type: "Research Partner"
+      role: "BWB configuration research and validation"
+      influence: "Low"
+      interest: "High"
+      engagement_level: "Regular"
+      engagement_strategy: "Monthly research collaboration, quarterly academic reviews"
+      contact: "bwb.research@aero.edu"
 
   industry:
-    - name: "Aircraft Manufacturers"
+    - id: "IND-001"
+      name: "Aircraft Manufacturers"
       type: "Primary Customer"
       influence: "High"
       interest: "High"
       engagement_level: "Continuous"
+      engagement_strategy: "Monthly technical updates, quarterly business reviews"
       
-    - name: "Hydrogen Suppliers"
+    - id: "IND-002"
+      name: "Hydrogen Suppliers"
       type: "Infrastructure Partner"
       influence: "Medium"
       interest: "High"
       engagement_level: "Regular"
+      engagement_strategy: "Monthly infrastructure planning, quarterly capability reviews"
       
-    - name: "Component Suppliers"
+    - id: "IND-003"
+      name: "Component Suppliers"
       type: "Technology Partner"
       influence: "Medium"
       interest: "Medium"
       engagement_level: "As Needed"
+      engagement_strategy: "Quarterly supplier reviews, annual partnership assessment"
 
   research:
-    - name: "Technical Universities"
+    - id: "RES-001"
+      name: "Technical Universities"
       type: "Research Partner"
       influence: "Low"
       interest: "High"
       engagement_level: "Regular"
+      engagement_strategy: "Quarterly research updates, annual conferences"
       
-    - name: "Research Institutes"
+    - id: "RES-002"
+      name: "Research Institutes"
       type: "Technical Advisor"
       influence: "Low"
       interest: "Medium"
       engagement_level: "Periodic"
+      engagement_strategy: "Semi-annual technical reviews"
+
+  financial:
+    - id: "FIN-001"
+      name: "Primary Investor"
+      organization: "Aerospace Ventures Capital"
+      role: "Primary funding and ROI oversight"
+      influence: "High"
+      interest: "High"
+      engagement_strategy: "Quarterly investor meetings, annual strategic reviews"
+      contact: "investor@aerovc.com"
+      
+    - id: "FIN-002"
+      name: "Government Funding Agency"
+      organization: "Department of Energy"
+      role: "Government grant oversight and compliance"
+      influence: "Medium"
+      interest: "Medium"
+      engagement_strategy: "Quarterly grant compliance reviews"
+      contact: "grants@doe.gov"
+```
+
+## Engagement Schedule
+
+```yaml
+engagement_schedule:
+  daily:
+    - "Chief Architect technical oversight"
+    - "Core team standups"
+    - "Risk monitoring"
+  
+  weekly:
+    - "Technical leadership team meetings"
+    - "Supply chain updates"
+    - "Quantum computing partner collaboration"
+    - "Progress reviews with primary stakeholders"
+    - "Technical working group meetings"
+  
+  bi_weekly:
+    - "Certification compliance reviews"
+    - "AI safety reviews"
+    - "Hydrogen systems coordination"
+  
+  monthly:
+    - "Program sponsor reviews"
+    - "Defense liaison briefings"
+    - "Supplier reviews"
+    - "BWB research collaboration"
+    - "Governance board meetings"
+    - "External stakeholder updates"
+    - "Performance metric reviews"
+  
+  quarterly:
+    - "Investor meetings"
+    - "Regulatory reviews (FAA/EASA)"
+    - "Space applications review"
+    - "Grant compliance reviews"
+    - "Phase gate reviews"
+    - "Program review with all stakeholders"
+    - "Strategic planning sessions"
+    - "Risk assessment updates"
+  
+  annually:
+    - "Strategic planning sessions"
+    - "Stakeholder satisfaction surveys"
+    - "Contract renewals"
+```
 
 ## Communication Matrix
 
+```yaml
 communication_schedule:
   daily:
     - "Technical team standups"
@@ -128,8 +329,24 @@ communication_schedule:
     - "Strategic planning sessions"
     - "Risk assessment updates"
 
+communication_channels:
+  primary: 
+    - "email"
+    - "video conferencing"
+  collaboration: 
+    - "shared workspaces"
+    - "document repositories"
+  reporting: 
+    - "dashboard systems"
+    - "automated reports"
+  escalation: 
+    - "direct phone"
+    - "emergency procedures"
+```
+
 ## Escalation Matrix
 
+```yaml
 escalation_levels:
   level_1:
     stakeholders: ["Technical Teams", "Working Groups"]
@@ -150,3 +367,11 @@ escalation_levels:
     stakeholders: ["Executive Leadership", "External Partners"]
     issues: ["Program-level decisions", "Strategic changes"]
     resolution_time: "1 month"
+```
+
+---
+
+**Document Control:**
+- Last Updated: 2025-08-26
+- Version: 1.0
+- Repository: [→ O-ORGANIZATIONAL/governance/charter/stakeholder-register.yaml](../O-ORGANIZATIONAL/governance/charter/)
