@@ -182,7 +182,7 @@ Applied to AMPEL360-H₂-BWB-Q, the doctrine yields a certifiable, risk-optimize
 
 ## Acknowledgments
 
-We acknowledge AMPEL360 multi-disciplinary teams across structures, cryogenics, propulsion, digital systems, and certification.
+all future contributors
 
 ---
 
