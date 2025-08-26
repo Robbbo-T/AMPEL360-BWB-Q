@@ -104,7 +104,7 @@ def main():
     print("   • Review optimization results in qnnn_optimization_result.json")
     print("   • Customize constraints in constraints/hard_constraints.yaml")
     print("   • Add more candidates to data/candidates.yaml")
-    print(f"   • Run detailed geometric integration analysis")
+    print("   • Run detailed geometric integration analysis")
     print("   • Proceed to P3 phase with BLI/DP and morphing capabilities")
 
 
