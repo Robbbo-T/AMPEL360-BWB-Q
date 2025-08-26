@@ -1,0 +1,50 @@
+# AMPEL360 H₂-BWB-Q Cost Performance KPIs
+# Document ID: KPI-COST-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Financial Controller"
+  classification: "Internal"
+
+cost_metrics:
+  cost_performance_index:
+    description: "CPI = Earned Value / Actual Cost"
+    current_value: 1.03
+    target: ">= 1.0"
+    trend: "Stable"
+    status: "Green"
+    
+  budget_variance:
+    description: "Percentage variance from approved budget"
+    current_value: -2.8
+    target: "Within ±5%"
+    trend: "Improving"
+    status: "Green"
+    
+  burn_rate:
+    description: "Monthly expenditure rate (millions)"
+    current_value: 2.85
+    planned: 2.78
+    variance: 0.07
+    status: "Yellow"
+
+cost_breakdown:
+  personnel: 
+    budget: 2.5
+    actual: 2.65
+    variance: -0.15
+  h2_infrastructure:
+    budget: 1.8
+    actual: 1.92
+    variance: -0.12
+  digital_twin:
+    budget: 1.2
+    actual: 1.15
+    variance: 0.05
+
+forecasts:
+  q2_projected_spend: 9.47
+  annual_projection: 39.6
+  budget_at_completion: 39.81
+  variance_at_completion: 0.21

@@ -1,0 +1,54 @@
+# AMPEL360 H₂-BWB-Q Schedule Performance KPIs
+# Document ID: KPI-SCHED-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Program Management Office"
+  classification: "Internal"
+
+schedule_metrics:
+  schedule_performance_index:
+    description: "SPI = Earned Value / Planned Value"
+    current_value: 0.95
+    target: ">= 1.0"
+    trend: "Declining"
+    status: "Yellow"
+    
+  critical_path_performance:
+    description: "Percentage of critical path activities on schedule"
+    current_value: 85
+    target: ">= 90%"
+    trend: "Stable"
+    status: "Yellow"
+    
+  milestone_achievement_rate:
+    description: "Percentage of milestones achieved on time"
+    current_value: 78
+    target: ">= 85%"
+    trend: "Improving"
+    status: "Yellow"
+
+key_milestones:
+  phase_gate_01:
+    planned_date: "2025-03-31"
+    current_forecast: "2025-04-07"
+    variance_days: 7
+    status: "At Risk"
+    
+  h2_infrastructure_baseline:
+    planned_date: "2025-02-28"
+    current_forecast: "2025-03-05"
+    variance_days: 5
+    status: "Delayed"
+    
+  digital_twin_deployment:
+    planned_date: "2025-03-15"
+    current_forecast: "2025-03-12"
+    variance_days: -3
+    status: "Ahead"
+
+corrective_actions:
+  - "Accelerate H₂ infrastructure design activities"
+  - "Add resources to critical path activities"
+  - "Implement parallel development where possible"

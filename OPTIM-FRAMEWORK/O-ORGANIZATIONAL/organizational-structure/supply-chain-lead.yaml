@@ -1,0 +1,42 @@
+# AMPEL360 H₂-BWB-Q Supply Chain Lead
+# Document ID: ORG-SC-LEAD-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Program Board"
+  classification: "Internal"
+
+position_details:
+  title: "Supply Chain Lead"
+  grade: "Senior Manager"
+  reports_to: "Program Board"
+  location: "Program Office"
+  security_clearance: "Secret"
+
+responsibilities:
+  primary:
+    - "Lead supply chain strategy and execution for H₂-BWB program"
+    - "Manage supplier relationships and performance"
+    - "Ensure supply chain resilience and risk mitigation"
+    - "Coordinate with procurement and quality teams"
+    
+  secondary:
+    - "Support cost management and budget planning"
+    - "Participate in risk assessment activities"
+    - "Contribute to program planning and scheduling"
+
+authority:
+  financial: "$250,000 procurement authority"
+  technical: "Supply chain technical requirements approval"
+  personnel: "Supply chain team management"
+  
+current_incumbent:
+  name: "Ms. Jennifer Walsh"
+  background: "15 years aerospace supply chain experience"
+  education: "MBA Supply Chain Management, MS Industrial Engineering"
+  certifications: ["APICS SCOR", "Six Sigma Black Belt"]
+  
+key_relationships:
+  internal: ["Program Board", "Financial Controller", "Quality Manager"]
+  external: ["Key Suppliers", "Industry Partners", "Regulatory Bodies"]

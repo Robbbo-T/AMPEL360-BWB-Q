@@ -1,0 +1,61 @@
+# AMPEL360 H₂-BWB-Q Organizational Chart
+# Note: This represents a Visio diagram file (VSDX format)
+# This is a placeholder - actual file would be created in Microsoft Visio
+
+AMPEL360 H₂-BWB-Q ORGANIZATIONAL CHART
+
+Program Board
+├── Program Director
+├── Chief Architect DT
+├── CSE Office Lead
+├── Financial Controller
+└── External Advisors
+
+Chief Architect DT
+├── Digital Twin Team
+├── AI/ML Specialists
+└── Architecture Review Board (Chair)
+
+CSE Office
+├── Systems Engineers
+├── Integration Specialists
+└── Change Control Board (Chair)
+
+H₂ Infrastructure Lead
+├── H₂ Systems Engineers
+├── H₂ Safety Specialists
+└── H₂ Corridor Committee (Chair)
+
+Cert Lead
+├── Certification Engineers
+├── Regulatory Specialists
+└── Compliance Team
+
+Safety AI Officer
+├── Safety Engineers
+├── AI Safety Researchers
+└── Safety Review Board (Chair)
+
+Defense Liaison
+├── Security Specialists
+├── Export Control Officers
+└── Defense Security Committee (Chair)
+
+Space Ops Lead
+├── Space Systems Engineers
+├── Operations Specialists
+└── Mission Planning Team
+
+Supply Chain Lead
+├── Procurement Specialists
+├── Supplier Management
+└── Quality Assurance
+
+Supporting Functions
+├── HR Lead
+├── IT Support
+├── Legal Counsel
+└── Communications
+
+Note: This is a simplified representation. 
+Full organizational chart available in org-chart.vsdx file.

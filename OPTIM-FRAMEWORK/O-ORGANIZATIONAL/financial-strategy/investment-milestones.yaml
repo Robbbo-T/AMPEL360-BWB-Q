@@ -1,0 +1,63 @@
+# AMPEL360 H₂-BWB-Q Investment Milestones
+# Document ID: INV-MILE-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Financial Controller"
+  classification: "Internal"
+
+investment_phases:
+  phase_1_foundation:
+    period: "Q1-Q2 2025"
+    investment: "$18.26M"
+    milestones:
+      - "Complete organizational setup and governance"
+      - "Establish H₂ infrastructure baseline"
+      - "Deploy digital twin framework"
+      - "Pass Phase Gate 01 - Requirements"
+    roi_target: "Foundation for future returns"
+    
+  phase_2_development:
+    period: "Q3-Q4 2025"
+    investment: "$21.55M"
+    milestones:
+      - "Complete preliminary design"
+      - "Develop H₂ integration prototypes"
+      - "Validate digital twin models"
+      - "Pass Phase Gate 02 - Design"
+    roi_target: "Technology validation and risk reduction"
+    
+  phase_3_implementation:
+    period: "2026"
+    investment: "$45M (estimated)"
+    milestones:
+      - "Build and test integrated systems"
+      - "Complete certification activities"
+      - "Demonstrate operational capability"
+    roi_target: "Market entry preparation"
+
+funding_tranches:
+  tranche_1:
+    amount: "$15M"
+    release_date: "2025-01-01"
+    conditions: ["Program Board approval", "Governance established"]
+    status: "Released"
+    
+  tranche_2:
+    amount: "$12M"
+    release_date: "2025-04-01"
+    conditions: ["Phase Gate 01 passed", "Q1 milestones achieved"]
+    status: "Pending"
+    
+  tranche_3:
+    amount: "$12.81M"
+    release_date: "2025-07-01"
+    conditions: ["Phase Gate 02 passed", "Technical feasibility demonstrated"]
+    status: "Future"
+
+return_projections:
+  year_1: "Investment phase - no returns"
+  year_2: "Early revenue from partnerships - $5M"
+  year_3: "Commercial deployment - $25M"
+  year_4_5: "Full operational returns - $60M annually"

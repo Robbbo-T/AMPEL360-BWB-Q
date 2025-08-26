@@ -1,0 +1,68 @@
+# AMPEL360 H₂-BWB-Q Reporting Structure
+# Document ID: ORG-RPT-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Program Board"
+  classification: "Internal"
+
+executive_level:
+  program_board:
+    level: "Executive"
+    reports_to: "External Stakeholders"
+    direct_reports:
+      - "Program Director"
+      - "Chief Architect DT" 
+      - "CSE Office Lead"
+      - "Financial Controller"
+
+senior_management:
+  chief_architect_dt:
+    level: "Senior Management"
+    reports_to: "Program Board"
+    direct_reports:
+      - "Digital Twin Lead"
+      - "AI/ML Architects"
+      - "Architecture Team"
+      
+  cse_office_lead:
+    level: "Senior Management"
+    reports_to: "Program Board"
+    direct_reports:
+      - "Systems Engineers"
+      - "Configuration Manager"
+      - "Integration Lead"
+
+operational_leads:
+  h2_infrastructure_lead:
+    level: "Operational Lead"
+    reports_to: "CSE Office Lead"
+    direct_reports:
+      - "H₂ Systems Engineers"
+      - "H₂ Safety Specialists"
+      
+  cert_lead:
+    level: "Operational Lead"
+    reports_to: "CSE Office Lead"
+    direct_reports:
+      - "Certification Engineers"
+      - "Regulatory Specialists"
+      
+  safety_ai_officer:
+    level: "Operational Lead"
+    reports_to: "Program Board"
+    direct_reports:
+      - "Safety Engineers"
+      - "AI Safety Researchers"
+
+matrix_relationships:
+  committees:
+    - "All committee chairs report functionally to their respective boards"
+    - "Technical staff may have matrix reporting to multiple leads"
+    - "Safety personnel report both to line managers and Safety AI Officer"
+
+reporting_frequency:
+  weekly: ["Status reports to immediate supervisor"]
+  monthly: ["Formal progress reports to Program Board"]
+  quarterly: ["Executive reviews and performance assessments"]

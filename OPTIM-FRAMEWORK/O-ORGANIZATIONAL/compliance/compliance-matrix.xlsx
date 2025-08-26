@@ -1,0 +1,16 @@
+Requirement,Category,Standard,Compliance Status,Evidence,Gap Analysis,Action Required,Target Date,Owner
+ITAR Export Control,Regulatory,ITAR 121.1,Compliant,Export control procedures in place,None,Maintain current compliance,Ongoing,Defense Liaison
+Hydrogen Safety Standards,Safety,ISO 14687,Partial,H2 safety procedures draft,Testing protocols needed,Complete testing procedures,2025-03-15,Safety AI Officer
+Aviation Certification,Regulatory,14 CFR Part 25,Planning,Certification plan approved,Detailed compliance matrix needed,Develop detailed matrix,2025-02-28,Cert Lead
+Quality Management,Quality,AS9100D,Compliant,QMS manual and procedures,Annual audit due,Schedule AS9100 audit,2025-06-30,Quality Manager
+Environmental Impact,Environmental,NEPA,Planning,Environmental assessment initiated,Impact analysis needed,Complete impact analysis,2025-04-30,Environmental Officer
+Cybersecurity,Security,NIST CSF,Partial,Basic cybersecurity controls,Advanced controls needed,Implement advanced controls,2025-03-31,IT Security Manager
+Data Protection,Privacy,GDPR,Compliant,Data protection procedures,Privacy impact assessment needed,Complete PIA,2025-02-15,Legal Counsel
+Workplace Safety,Safety,OSHA 1910,Compliant,Safety procedures and training,H2-specific training needed,Develop H2 safety training,2025-03-01,Safety Manager
+Software Development,Technical,DO-178C,Planning,Software development plan,Tool qualification needed,Complete tool qualification,2025-04-15,Software Lead
+Hardware Development,Technical,DO-254,Planning,Hardware development plan,Verification procedures needed,Develop verification procedures,2025-04-30,Hardware Lead
+Risk Management,Process,ISO 31000,Partial,Risk management framework,Risk assessment completion needed,Complete risk assessments,2025-02-28,Risk Manager
+Document Control,Quality,ISO 9001,Compliant,Document control system,Electronic signature implementation,Implement e-signatures,2025-03-15,Document Controller
+Training Management,HR,ISO 10015,Partial,Training procedures,Competency matrix needed,Develop competency matrix,2025-03-31,HR Lead
+Supplier Management,Quality,ISO 9001,Partial,Supplier quality procedures,Supplier audits needed,Conduct supplier audits,2025-05-31,Supply Chain Lead
+Configuration Management,Process,IEEE 828,Compliant,CM procedures and tools,Automated CM implementation,Implement automated CM,2025-04-15,Configuration Manager

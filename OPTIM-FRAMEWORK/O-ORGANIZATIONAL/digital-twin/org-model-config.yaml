@@ -1,0 +1,72 @@
+# AMPEL360 H₂-BWB-Q Organizational Model Configuration
+# Digital Twin Configuration for Organizational Structure
+# Document ID: DT-ORG-CONFIG-001
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Chief Architect DT"
+  classification: "Internal"
+
+organizational_model:
+  structure_type: "Matrix Organization"
+  reporting_levels: 4
+  decision_nodes: 12
+  communication_channels: 28
+  
+  entities:
+    program_board:
+      type: "Executive Entity"
+      decision_authority: "Strategic"
+      update_frequency: "Weekly"
+      data_sources: ["Financial", "Schedule", "Risk", "Quality"]
+      
+    functional_leads:
+      type: "Management Entity"
+      decision_authority: "Tactical"
+      update_frequency: "Daily"
+      data_sources: ["Team Status", "Resource Utilization", "Technical Progress"]
+      
+    working_teams:
+      type: "Operational Entity"
+      decision_authority: "Operational"
+      update_frequency: "Real-time"
+      data_sources: ["Task Completion", "Issue Reports", "Quality Metrics"]
+
+decision_flows:
+  strategic_decisions:
+    trigger: "Budget variance > 5% OR schedule slip > 2 weeks"
+    flow: "Team → Functional Lead → Program Board"
+    timeout: "72 hours"
+    
+  technical_decisions:
+    trigger: "Architecture change OR safety impact"
+    flow: "Technical Lead → ARB → Program Board"
+    timeout: "1 week"
+    
+  operational_decisions:
+    trigger: "Resource conflict OR process issue"
+    flow: "Team Lead → Functional Lead"
+    timeout: "48 hours"
+
+performance_metrics:
+  decision_velocity:
+    target: "< 48 hours for operational decisions"
+    current: "52 hours average"
+    trend: "Improving"
+    
+  communication_effectiveness:
+    target: "> 85% stakeholder satisfaction"
+    current: "87%"
+    trend: "Stable"
+    
+  organizational_agility:
+    target: "< 1 week for process changes"
+    current: "6.2 days average"
+    trend: "Improving"
+
+simulation_parameters:
+  time_step: "1 hour"
+  simulation_horizon: "6 months"
+  monte_carlo_runs: 1000
+  confidence_interval: 95

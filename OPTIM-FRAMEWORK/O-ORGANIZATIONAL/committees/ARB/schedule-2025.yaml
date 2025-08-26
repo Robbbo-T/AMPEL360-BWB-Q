@@ -1,0 +1,33 @@
+# ARB Schedule 2025
+# Document ID: ARB-SCHED-2025
+
+metadata:
+  version: "1.0"
+  last_updated: "2025-01-27"
+  owner: "Chief Architect DT"
+  classification: "Internal"
+
+monthly_meetings:
+  january: "2025-01-15"
+  february: "2025-02-19"
+  march: "2025-03-19"
+  april: "2025-04-16"
+  may: "2025-05-21"
+  june: "2025-06-18"
+  july: "2025-07-16"
+  august: "2025-08-20"
+  september: "2025-09-17"
+  october: "2025-10-15"
+  november: "2025-11-19"
+  december: "2025-12-17"
+
+meeting_details:
+  duration: "1.5 hours"
+  frequency: "Bi-weekly"
+  location: "Engineering Conference Room / Teams"
+  chair: "Dr. Sarah Chen"
+  time: "14:00-15:30 UTC"
+
+special_sessions:
+  quarterly_reviews: "Extended 3-hour sessions for major architecture decisions"
+  emergency_meetings: "As required within 24 hours for critical issues"

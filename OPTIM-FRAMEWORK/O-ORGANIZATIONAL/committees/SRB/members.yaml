@@ -1,0 +1,21 @@
+# SRB Members
+# Document ID: SRB-MEMBERS-001
+
+chairman:
+  name: "Dr. Maria Santos"
+  role: "Safety AI Officer"
+  email: "m.santos@ampel360.org"
+
+members:
+  - name: "Dr. Robert Kim"
+    role: "H2 Safety Specialist"
+    specialization: "Hydrogen Safety Systems"
+  - name: "Prof. Elena Volkov"
+    role: "Aviation Safety Expert"
+    specialization: "Aircraft Safety Certification"
+  - name: "Dr. James Mitchell"
+    role: "AI Safety Researcher"
+    specialization: "AI Safety and Ethics"
+  - name: "Mr. Carlos Rodriguez"
+    role: "Systems Safety Engineer"
+    specialization: "System Safety Analysis"
