@@ -25,8 +25,7 @@ def analyze_requirements_coverage(phase_md_path):
         return None
     
     # Extract requirements index
-    req_pattern = r'(REQ-[A-Z]{3}-\d{3}[a-z]?):\s*"([^"]+)"'
-    requirements = dict(re.findall(req_pattern, content))
+    requirements = dict(re.findall(REQUIREMENT_ID_PATTERN, content))
     
     # Extract verification matrix entries
     verification_section = re.search(r'### \d+\. Verification Matrix(.*?)(?=###|\Z)', content, re.DOTALL)
