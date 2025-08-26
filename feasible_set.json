@@ -1,0 +1,44 @@
+[
+  {
+    "id": "REF_BWB_H2",
+    "config": {
+      "fuselage": 24,
+      "wing": 24,
+      "primary_structure": 24,
+      "flight_controls": 24,
+      "propulsion": 37,
+      "energy": 38,
+      "avionics": 1,
+      "landing_gear": 1,
+      "cabin": 1
+    },
+    "complexity_factor": 1.2,
+    "manufacturing_complexity": 1.3,
+    "certification_risk": 1.4,
+    "infrastructure_need": 1.5,
+    "training_complexity": 1.1,
+    "maintenance_factor": 0.9,
+    "h2_consumption_kg_per_hour": 145
+  },
+  {
+    "id": "ADV_WING_BWB_H2",
+    "config": {
+      "fuselage": 24,
+      "wing": 34,
+      "primary_structure": 24,
+      "flight_controls": 24,
+      "propulsion": 37,
+      "energy": 38,
+      "avionics": 1,
+      "landing_gear": 1,
+      "cabin": 1
+    },
+    "complexity_factor": 1.4,
+    "manufacturing_complexity": 1.5,
+    "certification_risk": 1.6,
+    "infrastructure_need": 1.5,
+    "training_complexity": 1.2,
+    "maintenance_factor": 0.85,
+    "h2_consumption_kg_per_hour": 138
+  }
+]

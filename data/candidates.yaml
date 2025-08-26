@@ -1,0 +1,171 @@
+# AMPEL360 Donor Candidates Database
+# 43 AMPEL configurations with normalized metrics, TRL by subsystem, and geometry
+
+candidates:
+  # BWB Primary Donors (Donor 24)
+  - id: 24
+    name: "BWB_Primary"
+    type: "BWB"
+    subsystems:
+      fuselage:
+        trl: 6
+        weight_normalized: 0.45
+        geometry:
+          volume_cryogenic: 850
+          keel_depth: 3.2
+          gear_bay_span: 4.8
+      wing:
+        trl: 6
+        weight_normalized: 0.38
+        ld_ratio: 22.5
+        noise_normalized: 0.42
+      primary_structure:
+        trl: 7
+        weight_normalized: 0.52
+        crashworthiness: 0.85
+      flight_controls:
+        trl: 7
+        cg_control_capability: true
+        load_alleviation: true
+
+  # Advanced Wing/Morphing Donor (Donor 34)  
+  - id: 34
+    name: "Advanced_Morphing"
+    type: "Advanced"
+    subsystems:
+      wing:
+        trl: 6
+        weight_normalized: 0.41
+        ld_ratio: 24.8
+        morphing_capability: true
+        noise_normalized: 0.38
+      fuselage:
+        trl: 6
+        weight_normalized: 0.48
+        volume_cryogenic: 780
+
+  # H₂ Turbofan Propulsion (Donor 37)
+  - id: 37
+    name: "H2_Turbofan"
+    type: "Hydrogen_Propulsion"
+    subsystems:
+      propulsion:
+        trl: 6
+        energy_type: "Hydrogen"
+        twr: 0.58
+        noise_normalized: 0.45
+        efficiency: 0.78
+
+  # H₂ BWB Energy Storage (Donor 38)
+  - id: 38
+    name: "H2_BWB_Storage"
+    type: "Hydrogen_Energy"
+    subsystems:
+      energy:
+        trl: 6
+        energy_type: "Hydrogen"
+        storage_capacity: 12500  # kg H₂
+        weight_normalized: 0.35
+        rear_mounted: true
+        cryogenic_capability: true
+
+  # TUW Mature Systems (Donor 1)
+  - id: 1
+    name: "TUW_Baseline"
+    type: "Traditional"
+    subsystems:
+      avionics:
+        trl: 8
+        weight_normalized: 0.25
+        io_bus_compatibility: true
+      landing_gear:
+        trl: 8
+        weight_normalized: 0.31
+        gear_type: "retractable"
+        bwb_compatible: true  # Subject to geometry check
+      cabin:
+        trl: 7
+        weight_normalized: 0.42
+        evacuation_time: 85  # seconds
+        passenger_capacity: 180
+        bwb_adaptable: true
+
+  # Additional representative candidates for feasible set generation
+  - id: 5
+    name: "Alternative_Wing"
+    type: "Traditional"
+    subsystems:
+      wing:
+        trl: 5  # Below P2 threshold
+        weight_normalized: 0.55
+        ld_ratio: 18.2
+        energy_compatibility: false  # Forbidden with H₂ storage
+
+  - id: 12
+    name: "Hybrid_Config"
+    type: "Hybrid"
+    subsystems:
+      fuselage:
+        trl: 5  # Below threshold
+        weight_normalized: 0.58
+
+  # Additional donors to reach 43 total (abbreviated for space)
+  - id: 15
+    name: "Regional_Config"
+    subsystems:
+      cabin:
+        trl: 6
+        passenger_capacity: 120
+        
+  - id: 18
+    name: "Heavy_Freight"
+    subsystems:
+      primary_structure:
+        trl: 8
+        weight_normalized: 0.61
+
+# Passenger Capacity Binning for QNNN Optimization
+passenger_binning:
+  range: [150, 220]
+  bins:
+    - capacity: 150
+      cabin_modules: 2
+      doors: 4
+    - capacity: 180
+      cabin_modules: 3
+      doors: 6
+    - capacity: 200
+      cabin_modules: 3
+      doors: 6
+    - capacity: 220
+      cabin_modules: 4
+      doors: 8
+
+# Cost Ecosystem Components for Optimization
+cost_components:
+  rd: "Research and Development"
+  mfg_inv: "Manufacturing Investment"
+  cert_time: "Certification Time × Capital"
+  infra: "Infrastructure"
+  train: "Training"
+  maint: "Maintenance × Fleet × Lifetime"
+  fuel: "Fuel × Block Hours × Price"
+
+# Route Corridors for Initial Analysis
+corridors:
+  - origin: "LHR"
+    destination: "FRA"
+    distance_km: 658
+    h2_demand_kg: 2400
+  - origin: "LHR"
+    destination: "DXB"
+    distance_km: 5499
+    h2_demand_kg: 8200
+  - origin: "FRA"
+    destination: "SIN"
+    distance_km: 10760
+    h2_demand_kg: 12800
+  - origin: "DXB"
+    destination: "SIN"
+    distance_km: 5926
+    h2_demand_kg: 8900

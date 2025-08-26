@@ -1,0 +1,44 @@
+{
+  "utcs_mi": {
+    "version": "5.0",
+    "doc_id": "UTCS-MI/CS25-H2/AMPEL360-QNNN/2025-08-26/v1.0",
+    "status": "P2-Approved-Pending-QNNN"
+  },
+  "architecture": {
+    "fuselage": 24,
+    "wing": 24,
+    "primary_structure": 24,
+    "flight_controls": 24,
+    "propulsion": 37,
+    "energy": 38,
+    "avionics": 1,
+    "landing_gear": 1,
+    "cabin": 1,
+    "tail": "N/A-BWB"
+  },
+  "constraints_paths": {
+    "hard_constraints": "constraints/hard_constraints.yaml",
+    "candidates": "data/candidates.yaml",
+    "feasible_set": "feasible_set.json",
+    "selector": "scripts/qaoa_over_F.py"
+  },
+  "capacity": {
+    "QNNN": 150,
+    "binning_range_pax": [
+      150,
+      220
+    ],
+    "objective": "E[cost] + beta * CVaR_alpha(cost)"
+  },
+  "corridors_seed": [
+    "LHR",
+    "FRA",
+    "DXB",
+    "SIN"
+  ],
+  "risk": {
+    "cvar_alpha": 0.8,
+    "beta": 0.25
+  },
+  "notes": "Tail not applicable for BWB; if geometry gates fail for TUW gear/avionics/cabin, select BWB-dedicated modules."
+}

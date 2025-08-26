@@ -1,6 +1,35 @@
 # AMPEL360-H2-BWB-Q
 Optimized BWB Aircraft Configuration Model. Born in Hydrogen and Quantum Simulation
 
+## Quick Start
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Run the complete setup and optimization
+python3 setup_ampel360.py
+
+# 3. Check configuration status
+python3 ampel360_utils.py --status --validate
+
+# 4. Run QAOA optimization manually (optional)
+python3 scripts/qaoa_over_F.py --optimize
+```
+
+## Framework Components
+
+- **Configuration Management**: `ampel360_config.json` - Main framework configuration
+- **Hard Constraints**: `constraints/hard_constraints.yaml` - TRL gates, compatibility rules
+- **Donor Database**: `data/candidates.yaml` - AMPEL aircraft subsystem donors
+- **Optimization Engine**: `scripts/qaoa_over_F.py` - QAOA-based CVaR optimization
+- **Utilities**: `ampel360_utils.py` - Configuration management utilities
+- **Setup Script**: `setup_ampel360.py` - Complete framework setup and demonstration
+
+## Architecture Overview
+
+The framework implements a **feasible-first pipeline** (MILP/CP-SAT + QAOA) for BWB aircraft configuration optimization with hydrogen propulsion and quantum-inspired risk management.
+
 ```yaml
 {
   "utcs_mi": {
