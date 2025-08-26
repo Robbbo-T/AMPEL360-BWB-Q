@@ -1,0 +1,144 @@
+name: CI Ledger • Link Evidence (push to main)
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write   # rollback needs this
+  actions: read
+
+concurrency:
+  group: ledger-link-main
+  cancel-in-progress: false   # serialize merges through this job
+
+jobs:
+  link-evidence:
+    runs-on: ubuntu-latest
+    env:
+      RUNNER_DEBUG: 0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      - name: Setup jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Acquire ledger lock (mutex)
+        uses: ben-z/gh-action-mutex@v1.0.0-alpha.9
+        with:
+          branch: ledger-lock
+
+      - name: Restore MSP material (secure temp)
+        env:
+          MSP_B64: ${{ secrets.FABRIC_MSP_PATH }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "${{ runner.temp }}/msp"
+          echo "$MSP_B64" | base64 -d > "${{ runner.temp }}/msp.tar.gz"
+          tar -xzf "${{ runner.temp }}/msp.tar.gz" -C "${{ runner.temp }}/msp"
+          rm -f "${{ runner.temp }}/msp.tar.gz"
+
+      - name: Export Fabric env
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "ORDERER=${{ secrets.FABRIC_ORDERER }}" >> $GITHUB_ENV
+          echo "CC_CHANNEL=${{ secrets.FABRIC_CC_CHANNEL }}" >> $GITHUB_ENV
+          echo "CC_NAME=${{ secrets.FABRIC_CC_NAME }}" >> $GITHUB_ENV
+          echo "CORE_PEER_ADDRESS=${{ secrets.FABRIC_PEER_ADDR }}" >> $GITHUB_ENV
+          echo "CORE_PEER_LOCALMSPID=${{ secrets.FABRIC_MSPID }}" >> $GITHUB_ENV
+          echo "CORE_PEER_MSPCONFIGPATH=${{ runner.temp }}/msp" >> $GITHUB_ENV
+          if [ -n "${{ secrets.FABRIC_TLS_CERT }}" ]; then
+            echo "${{ secrets.FABRIC_TLS_CERT }}" > "${{ runner.temp }}/tls.crt"
+            echo "CORE_PEER_TLS_ROOTCERT_FILE=${{ runner.temp }}/tls.crt" >> $GITHUB_ENV
+          fi
+
+      - name: Create rollback point
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp T-TECHNOLOGICAL/LEDGER/cli/ledger-plan.json T-TECHNOLOGICAL/LEDGER/cli/ledger-plan.backup.json || true
+          echo "ROLLBACK_SHA=${{ github.event.before }}" >> $GITHUB_ENV
+
+      - name: Invoke ledger link (timed, retry, audit)
+        env:
+          PUSHGATEWAY_URL: ${{ secrets.PUSHGATEWAY_URL }}
+          AUDIT_S3_BUCKET: ${{ secrets.AUDIT_S3_BUCKET }}
+          AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          chmod +x T-TECHNOLOGICAL/LEDGER/cli/ci-ledger.sh
+          PLAN="T-TECHNOLOGICAL/LEDGER/cli/ledger-plan.json"
+          [ -f "$PLAN" ] || { echo "No plan; exiting gracefully."; exit 0; }
+
+          if [ -n "$AWS_ROLE_TO_ASSUME" ] && [ -n "$AWS_REGION" ]; then
+            aws --version >/dev/null 2>&1 || (curl -sL https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip && unzip -qq awscliv2.zip && sudo ./aws/install)
+            aws configure set region "$AWS_REGION"
+            echo "Using AWS (region=$AWS_REGION) for audit."
+          fi
+
+          touch audit.csv
+          jq -c '.plans[]' "$PLAN" | while read -r item; do
+            CIID=$(echo "$item" | jq -r '.ci_id')
+            PHASE=$(echo "$item" | jq -r '.utcs_phase')
+            SHA=$(echo "$item" | jq -r '.artifact.sha256')
+            ART=$(echo "$item" | jq -c '.artifact')
+            START=$(date +%s)
+            # retry w/ backoff (up to 3 attempts)
+            for attempt in 1 2 3; do
+              if T-TECHNOLOGICAL/LEDGER/cli/ci-ledger.sh linkEvidence "$CIID" "$PHASE" "$ART"; then
+                break
+              fi
+              sleep $((attempt*5))
+              [ $attempt -eq 3 ] && { echo "::error ::linkEvidence failed for $CIID"; exit 1; }
+            done
+            if [ "$(echo "$item" | jq -r '.freeze_after_link // false')" = "true" ]; then
+              for attempt in 1 2 3; do
+                if T-TECHNOLOGICAL/LEDGER/cli/ci-ledger.sh freezeBaseline "$CIID" "$PHASE"; then
+                  break
+                fi
+                sleep $((attempt*5))
+                [ $attempt -eq 3 ] && { echo "::error ::freezeBaseline failed for $CIID"; exit 1; }
+              done
+            fi
+            END=$(date +%s); DUR=$((END-START))
+            echo "$(date -Iseconds),${GITHUB_ACTOR},linkEvidence,${CIID},${PHASE},${SHA},${DUR}s" >> audit.csv
+
+            # push metrics (optional)
+            if [ -n "$PUSHGATEWAY_URL" ]; then
+              cat <<METRICS | curl -s --data-binary @- "$PUSHGATEWAY_URL/metrics/job/ledger_link/ci/${CIID}"
+ledger_link_duration_seconds{ci="${CIID}",phase="${PHASE}"} $DUR
+METRICS
+            fi
+          done
+
+          # ship audit.csv to S3 (optional)
+          if [ -n "$AUDIT_S3_BUCKET" ] && [ -n "$AWS_ROLE_TO_ASSUME" ]; then
+            aws sts get-caller-identity >/dev/null 2>&1 || aws configure set region "$AWS_REGION"
+            aws s3 cp audit.csv "s3://${AUDIT_S3_BUCKET}/ledger/$(date +%Y-%m)/audit-${GITHUB_SHA}.csv"
+          fi
+
+      - name: Rollback on failure
+        if: failure()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ledger-bot"
+          git config user.email "ledger-bot@users.noreply.github.com"
+          git revert --no-edit ${{ github.sha }} || true
+          git push origin HEAD:main --force-with-lease || true
+
+      - name: Notify on failure (Slack)
+        if: failure() && env.SLACK_WEBHOOK_URL != ''
+        uses: 8398a7/action-slack@v3
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          status: failure
+          text: "⚠️ Ledger link failed for ${{ github.sha }}"
+          fields: repo,author,commit,message,ref

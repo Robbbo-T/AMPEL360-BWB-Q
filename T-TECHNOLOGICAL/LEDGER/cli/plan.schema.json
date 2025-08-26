@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "title": "Ledger Plan Schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Plan format version"
+    },
+    "plans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ci_id": {
+            "type": "string",
+            "pattern": "^CI-[A-Z0-9-]+$",
+            "description": "Configuration Item identifier"
+          },
+          "utcs_phase": {
+            "type": "string",
+            "enum": [
+              "01-Requirements",
+              "02-Design", 
+              "03-Building-Prototyping",
+              "04-Executables-Packages",
+              "05-Verification-Validation",
+              "06-Integration-Qualification",
+              "07-Certification-Security",
+              "08-Production-Scale",
+              "09-Ops-Services",
+              "10-MRO",
+              "11-Sustainment-Recycle"
+            ]
+          },
+          "freeze_after_link": {
+            "type": "boolean",
+            "description": "Whether to freeze baseline after linking evidence"
+          },
+          "artifact": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Relative path to artifact file"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$",
+                "description": "SHA256 hash of artifact"
+              },
+              "size_bytes": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "File size in bytes"
+              },
+              "mime": {
+                "type": "string",
+                "description": "MIME type of the artifact"
+              },
+              "storage_uri": {
+                "type": "string",
+                "format": "uri",
+                "description": "Storage location URI (e.g., s3://bucket/key)"
+              }
+            },
+            "required": ["path", "sha256", "size_bytes", "mime", "storage_uri"]
+          },
+          "refs": {
+            "type": "object",
+            "description": "Additional references and metadata"
+          }
+        },
+        "required": ["ci_id", "utcs_phase", "freeze_after_link", "artifact", "refs"]
+      }
+    }
+  },
+  "required": ["version", "plans"]
+}
