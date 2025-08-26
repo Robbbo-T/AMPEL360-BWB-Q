@@ -1,0 +1,105 @@
+# AMPEL360 Stakeholder Register
+
+stakeholders:
+  primary:
+    - name: "Program Board"
+      type: "governance"
+      role: "Strategic oversight and decision making"
+      influence: "high"
+      interest: "high"
+      contact: "program-board@ampel360.org"
+      
+    - name: "Chief Architect DT"
+      type: "technical_leadership"
+      role: "Technical architecture and design authority"
+      influence: "high" 
+      interest: "high"
+      contact: "chief-architect@ampel360.org"
+      
+    - name: "Certification Lead"
+      type: "regulatory"
+      role: "Certification strategy and compliance"
+      influence: "high"
+      interest: "high"
+      contact: "cert-lead@ampel360.org"
+      
+  secondary:
+    - name: "Launch Customers"
+      type: "customer"
+      role: "Commercial requirements and validation"
+      influence: "high"
+      interest: "high"
+      contact: "customer-relations@ampel360.org"
+      
+    - name: "Regulatory Authorities"
+      type: "regulatory"
+      role: "Certification approval and oversight"
+      influence: "high"
+      interest: "medium"
+      contact: "regulatory-affairs@ampel360.org"
+      
+    - name: "Supply Chain Partners"
+      type: "supplier"
+      role: "Component delivery and support"
+      influence: "medium"
+      interest: "high"
+      contact: "supply-chain@ampel360.org"
+      
+  tertiary:
+    - name: "Environmental Groups"
+      type: "advocacy"
+      role: "Environmental impact assessment"
+      influence: "medium"
+      interest: "high"
+      contact: "environmental@ampel360.org"
+      
+    - name: "Industry Associations"
+      type: "industry"
+      role: "Standards development and advocacy"
+      influence: "medium"
+      interest: "medium"
+      contact: "industry-relations@ampel360.org"
+      
+    - name: "Academic Partners"
+      type: "research"
+      role: "Research collaboration and validation"
+      influence: "low"
+      interest: "medium"
+      contact: "research@ampel360.org"
+
+engagement_strategy:
+  high_influence_high_interest:
+    - "Manage closely with regular updates and involvement in key decisions"
+    - "Monthly steering committee meetings"
+    - "Direct escalation path for issues"
+    
+  high_influence_low_interest:
+    - "Keep satisfied with regular briefings"
+    - "Quarterly executive summaries"
+    - "Proactive issue management"
+    
+  low_influence_high_interest:
+    - "Keep informed through regular communications"
+    - "Monthly progress newsletters"
+    - "Open forum for feedback"
+    
+  low_influence_low_interest:
+    - "Monitor with minimal effort"
+    - "Annual summary reports"
+    - "Reactive engagement only"
+
+communication_channels:
+  formal:
+    - "Program review meetings"
+    - "Steering committee sessions"
+    - "Quarterly business reviews"
+    
+  informal:
+    - "Technical working groups"
+    - "Industry conferences"
+    - "One-on-one meetings"
+    
+  digital:
+    - "Program portal"
+    - "Email distributions"
+    - "Collaboration platforms"

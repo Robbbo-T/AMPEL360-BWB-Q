@@ -1,0 +1,116 @@
+# AMPEL360 Accountability Matrix
+
+accountability_matrix:
+  program_governance:
+    program_board:
+      accountable: "Program Board Chair"
+      responsible: "Program Board Members"
+      consulted: "Stakeholder Representatives"
+      informed: "All Stakeholders"
+      
+    strategic_direction:
+      accountable: "Program Board"
+      responsible: "Chief Architect DT"
+      consulted: "Technical Leads"
+      informed: "Program Team"
+      
+  technical_leadership:
+    architecture_decisions:
+      accountable: "Chief Architect DT"
+      responsible: "System Architects"
+      consulted: "Domain Experts"
+      informed: "Development Teams"
+      
+    design_reviews:
+      accountable: "Chief Architect DT"
+      responsible: "Review Board"
+      consulted: "Subject Matter Experts"
+      informed: "Stakeholders"
+      
+  certification_compliance:
+    certification_strategy:
+      accountable: "Certification Lead"
+      responsible: "Compliance Team"
+      consulted: "Regulatory Authorities"
+      informed: "Program Board"
+      
+    safety_assessment:
+      accountable: "Safety of AI Officer"
+      responsible: "Safety Team"
+      consulted: "Independent Assessors"
+      informed: "Certification Authority"
+      
+  financial_management:
+    budget_control:
+      accountable: "Program Board"
+      responsible: "Financial Controller"
+      consulted: "Cost Center Managers"
+      informed: "Program Team"
+      
+    investment_decisions:
+      accountable: "Program Board"
+      responsible: "Investment Committee"
+      consulted: "Financial Advisors"
+      informed: "Stakeholders"
+      
+  operational_delivery:
+    h2_infrastructure:
+      accountable: "H2 Infrastructure Lead"
+      responsible: "Infrastructure Team"
+      consulted: "Supply Chain Partners"
+      informed: "Operations Team"
+      
+    space_operations:
+      accountable: "Space Ops Lead"
+      responsible: "Space Team"
+      consulted: "Defense Liaison"
+      informed: "Program Board"
+      
+    supply_chain:
+      accountable: "Supply Chain Lead"
+      responsible: "Procurement Team"
+      consulted: "Vendor Partners"
+      informed: "Program Team"
+
+decision_authority:
+  level_1_strategic:
+    - "Program continuation/termination"
+    - "Major architecture changes"
+    - "Certification approach modifications"
+    - "Investment >$10M"
+    authority: "Program Board"
+    
+  level_2_tactical:
+    - "Technical design decisions"
+    - "Resource allocation"
+    - "Schedule adjustments"
+    - "Investment $1M-$10M"
+    authority: "Chief Architect DT"
+    
+  level_3_operational:
+    - "Implementation details"
+    - "Day-to-day operations"
+    - "Process improvements"
+    - "Investment <$1M"
+    authority: "Functional Leads"
+
+escalation_paths:
+  technical_issues:
+    level_1: "System Architect"
+    level_2: "Chief Architect DT"
+    level_3: "Program Board"
+    
+  safety_concerns:
+    level_1: "Safety Team"
+    level_2: "Safety of AI Officer"
+    level_3: "Certification Authority"
+    
+  financial_issues:
+    level_1: "Cost Center Manager"
+    level_2: "Financial Controller"
+    level_3: "Program Board"
+    
+  schedule_risks:
+    level_1: "Project Manager"
+    level_2: "Program Manager"
+    level_3: "Program Board"
