@@ -35,6 +35,56 @@ EstándarUniversal\:Documento-Diseno-ARP5412-00.00-LightningReturnPathIsolation-
 
 ---
 
+```mermaid
+flowchart TD
+    %% Main artifacts and compliance flow
+    DOC["Lightning Return Path<br/>Isolation Analysis<br/>(EMC-AN-001)<br/><b>v1.5 FINAL</b>"]
+    CI["Config. Item:<br/><b>CI-CA-A-001-001<br/>CB-PRIMARY-GRID</b>"]
+    REQ["Requirement:<br/><b>REQ-ENV-003</b>"]
+    STD["Standards:<br/>ARP5412 / 5414 / 5416<br/>DO-160G §22<br/>MIL-STD-464C"]
+    MODEL["Numerical Model:<br/>3D EM (ANSYS Maxwell)<br/>Thermal (Icepak)<br/>Statistical (LHS 1000-run)"]
+    WAVEFORM["Lightning Waveforms<br/>SAE ARP5412 (A/B/C/D)"]
+    MATERIALS["Materials Data:<br/>Al-Li 2099, Ti-6Al-4V, CFRP, Cu Mesh"]
+    EVIDENCE["Evidence Chain"]
+    E_ANALYSIS["Analysis Files:<br/>.dat, .pdf, .xlsx (runs, calibration, advanced)"]
+    E_TEST["Test Data:<br/>10 kA inject., Pin Injection,<br/>Bundle WF, Bonding resistances"]
+    E_COMP["Compliance:<br/>Material/H2 comp., Struct., Cert."]
+    E_CONFIG["Config:<br/>.yaml (params),<br/>.step (CAD),<br/>.ans (mesh)"]
+    TRACE["Traceability:<br/>Statistical, numerical, thermal"]
+    CONFORM["Compliance Matrix<br/>Results:<br/>PASS"]
+    APPROVAL["Approval & Digital Signoff"]
+
+    %% Compliance graph
+    DOC --> CI
+    CI --> REQ
+    CI --> STD
+    DOC --> TRACE
+    TRACE --> MODEL
+    MODEL --> WAVEFORM
+    MODEL --> MATERIALS
+    MODEL --> EVIDENCE
+    EVIDENCE --> E_ANALYSIS
+    EVIDENCE --> E_TEST
+    EVIDENCE --> E_COMP
+    EVIDENCE --> E_CONFIG
+    DOC --> CONFORM
+    CONFORM --> APPROVAL
+
+    %% Style guides
+    classDef purple fill:#e2e6fa,stroke:#2948d5,stroke-width:2px,color:#222,font-weight:bold;
+    classDef green fill:#eaf4e2,stroke:#34a853,stroke-width:2px,color:#222,font-weight:bold;
+    classDef blue fill:#eaf4fa,stroke:#0056b6,stroke-width:2px,color:#222,font-weight:bold;
+    classDef gold fill:#fff429,stroke:#b7950b,stroke-width:2px,color:#181818,font-weight:bold;
+
+    class DOC,CI,CONFORM purple;
+    class REQ,STD,APPROVAL gold;
+    class MODEL,EVIDENCE,TRACE green;
+    class WAVEFORM,MATERIALS,E_ANALYSIS,E_TEST,E_COMP,E_CONFIG blue;
+
+    %% Tech-green arrows
+    linkStyle default stroke:#3cb371,stroke-width:2px;
+```
+
 ## 1. Executive Summary
 
 Protección por **no-spark multibarrera**, con verificación estadística y ensayos escalados:
@@ -408,3 +458,4 @@ evidence_chain:
 ---
 
 **Nota:** Este **v1.5** incorpora íntegramente las correcciones numéricas y editoriales propuestas en la revisión técnica del 2025-08-29, cerrando trazabilidad de $Q$/$E$, márgenes de altitud, coherencia térmica con 22.8 kJ, mapa de $R_\text{eff}$ serie-paralelo y terminología **DO-160G §22**.
+
