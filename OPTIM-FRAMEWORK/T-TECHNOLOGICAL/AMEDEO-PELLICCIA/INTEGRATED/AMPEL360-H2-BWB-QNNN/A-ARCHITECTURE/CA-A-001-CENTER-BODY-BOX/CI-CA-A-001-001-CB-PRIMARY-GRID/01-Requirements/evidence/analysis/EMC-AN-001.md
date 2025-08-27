@@ -163,6 +163,10 @@ Protección por **no-spark multibarrera**, con verificación estadística y ensa
 \* **Resistencias locales** de tramo cercano al acoplamiento (no el lazo completo).
 **Nota:** Las fracciones representan **paralelo en la entrada**; la suma de retorno se mantiene en **200 kA** (KCL).
 
+<img width="2048" height="1365" alt="image" src="https://github.com/user-attachments/assets/13387e75-67b8-4c56-a98d-5180f0ede0e9" />
+Fig. CB Primary Grid Structure Distribution
+
+
 ### 4.2 Tensión de pico
 
 $$
@@ -172,6 +176,12 @@ $$
 ---
 
 ## 5. Acoplamiento transitorio
+
+<img width="2048" height="1365" alt="image" src="https://github.com/user-attachments/assets/a43c7865-bc07-4586-95a8-5592f9a771ee" />
+fig. Aircraft Lightning Zones
+
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/e3862c61-03d7-4ac6-89db-a12901015931" />
+Fig. EMC Lightning Analysis Process
 
 ### 5.1 Modelo RLC de interfaz
 
@@ -226,6 +236,9 @@ $$
 |    300 |   26.5 |        3.99 |                          1 559× |
 
 **Implicación:** energía >> MIE H₂; la **seguridad depende del no-spark** (no de limitar energía).
+
+<img width="2048" height="1365" alt="image" src="https://github.com/user-attachments/assets/7dc36753-6c62-4211-85e6-8aa4fd072cab" />
+Fig. H₂ Safety Energy Analysis
 
 ---
 
@@ -285,6 +298,10 @@ $\int i^2 dt \approx 10^4~\text{A}^2\text{s}$; $E=R\int i^2 dt\approx \mathbf{0.
 
 ### 8.2 Distribución de temperatura (promedios **coherentes con 22.8 kJ**)
 
+<img width="2048" height="1365" alt="image" src="https://github.com/user-attachments/assets/023975a1-c234-44ed-ae9a-fe7c6c2b58b0" />
+Fig. Thermal Analysis Results
+
+
 |        Componente | Masa (kg) | ΔT\_avg (°C) **(ajustado)** | ΔT\_peak local (°C) | Límite (°C) | Nota de localización                   |
 | ----------------: | --------: | --------------------------: | ------------------: | ----------: | -------------------------------------- |
 | Longerons (Al-Li) |        12 |                     **1.8** |                  47 |         180 | Hot-spot en empalme (≈ 40 cm³, 200 μs) |
@@ -296,6 +313,9 @@ $\int i^2 dt \approx 10^4~\text{A}^2\text{s}$; $E=R\int i^2 dt\approx \mathbf{0.
 ---
 
 ## 9. Estadística (N=1000, LHS)
+
+<img width="2048" height="1365" alt="image" src="https://github.com/user-attachments/assets/1999e432-71f6-4214-a671-55d7728f58cc" />
+Fig. Monte Carlo Parameter Distribution
 
 ### 9.1 Distribuciones
 
@@ -321,6 +341,9 @@ $\int i^2 dt \approx 10^4~\text{A}^2\text{s}$; $E=R\int i^2 dt\approx \mathbf{0.
 | $V_{\text{isol}}$ (pk) |   665 V |   692 V | +4.1% |
 | $i_C$ (pk)             | 17.1 mA | 18.3 mA | +7.0% |
 | $Q_\text{transfer}$    |   84 nC |   89 nC | +6.0% |
+
+<img width="2048" height="1365" alt="image" src="https://github.com/user-attachments/assets/5601d87e-af20-4ef4-b894-696f2a1e326a" />
+Fig. Predicted vs Measured
 
 ### 10.2 Flashover superficial
 
@@ -458,4 +481,5 @@ evidence_chain:
 ---
 
 **Nota:** Este **v1.5** incorpora íntegramente las correcciones numéricas y editoriales propuestas en la revisión técnica del 2025-08-29, cerrando trazabilidad de $Q$/$E$, márgenes de altitud, coherencia térmica con 22.8 kJ, mapa de $R_\text{eff}$ serie-paralelo y terminología **DO-160G §22**.
+
 
