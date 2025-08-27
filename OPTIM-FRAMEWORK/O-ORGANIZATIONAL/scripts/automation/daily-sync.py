@@ -13,11 +13,16 @@ import datetime
 import yaml
 import json
 from pathlib import Path
+import os
+import argparse
 
 class DailySync:
-    def __init__(self):
+    def __init__(self, config_path=None):
         self.sync_date = datetime.date.today()
-        self.config_path = Path("config/daily-sync-config.yaml")
+        if config_path is not None:
+            self.config_path = Path(config_path)
+        else:
+            self.config_path = Path("config/daily-sync-config.yaml")
         
     def collect_status_updates(self):
         """Collect status from all program areas"""
