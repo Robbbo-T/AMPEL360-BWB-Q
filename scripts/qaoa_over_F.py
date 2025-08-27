@@ -7,6 +7,7 @@ Implementation of the ecosystem cost optimization:
 QNNN = argmin_N E[H_s(N)] + β·CVaR_α(H_s(N))
 
 This is a stub implementation that can be replaced with full QAOA one-hot encoding.
+Enhanced with CAD-AI Convert integration for parametric design optimization.
 """
 
 import json
@@ -15,6 +16,18 @@ import numpy as np
 from typing import Dict, List, Tuple, Optional
 import argparse
 from pathlib import Path
+import sys
+import os
+
+# Add current directory to path for CAD-AI Convert import
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+try:
+    from cad_ai_convert import CADAIConvert, ConstraintLayer
+    CAD_AI_AVAILABLE = True
+except ImportError:
+    CAD_AI_AVAILABLE = False
+    print("Warning: CAD-AI Convert not available. Running in legacy mode.")
 
 
 class CVaROptimizer:
@@ -63,6 +76,11 @@ class QAOASelector:
         self.constraints = self._load_constraints(constraints_path)
         self.candidates = self._load_candidates(candidates_path)
         self.cvar_optimizer = CVaROptimizer()
+        # Initialize CAD-AI Convert integration
+        self.cad_ai_converter = None
+        if CAD_AI_AVAILABLE:
+            self.cad_ai_converter = CADAIConvert()
+            print("✅ CAD-AI Convert integration enabled")
         
     def _load_constraints(self, path: str) -> Dict:
         """Load hard constraints from YAML file"""
@@ -239,6 +257,120 @@ class QAOASelector:
             scenarios.append(scenario)
         
         return scenarios
+    
+    def run_cad_ai_workflow(self, selected_config: Dict) -> Optional[Dict]:
+        """Run CAD-AI Convert workflow with selected configuration"""
+        if not self.cad_ai_converter:
+            print("❌ CAD-AI Convert not available")
+            return None
+        
+        print("\n🎨 Initializing CAD-AI Convert workflow for selected configuration")
+        
+        # Convert QAOA config to CAD-AI constraints
+        constraint_layers = self._convert_config_to_constraints(selected_config)
+        
+        # Run CAD-AI workflow
+        try:
+            result = self.cad_ai_converter.run_complete_workflow()
+            
+            # Integrate results back into QAOA optimization
+            integration_data = {
+                "qaoa_config": selected_config,
+                "cad_ai_result": result,
+                "parametric_model": result.get('parametric_model'),
+                "collaboration_metrics": {
+                    "design_iterations": len(result.get('collaboration_log', [])),
+                    "problem_resolution_time": result.get('problem_solving', {}).get('resolution_time'),
+                    "optimization_status": result.get('design_status')
+                }
+            }
+            
+            return integration_data
+            
+        except Exception as e:
+            print(f"❌ CAD-AI workflow failed: {e}")
+            return None
+    
+    def _convert_config_to_constraints(self, config: Dict) -> Dict:
+        """Convert QAOA configuration to CAD-AI constraint layers"""
+        # Map QAOA donor IDs to CAD-AI constraint specifications
+        propulsion_systems = {
+            37: "H2_FuelCell_Hybrid_Electric",
+            38: "Battery_Electric_Enhanced",
+            39: "Hybrid_Turbofan_Electric"
+        }
+        
+        energy_storage = {
+            37: "Cryo_H2_Tanks + Li-S_Battery_Buffer",
+            38: "Li-Ion_Battery_Primary",
+            39: "Hybrid_Battery_Fuel"
+        }
+        
+        wing_types = {
+            24: "Conventional_BWB_Optimized",
+            34: "Advanced_BWB_Morphing",
+            44: "Ultra_Efficient_Laminar"
+        }
+        
+        # Create constraint layers based on configuration
+        propulsion_id = config['config'].get('propulsion', 37)
+        energy_id = config['config'].get('energy', 38)
+        wing_id = config['config'].get('wing', 24)
+        
+        constraints = {
+            "physics": {
+                "propulsion_system": propulsion_systems.get(propulsion_id, "H2_FuelCell_Hybrid_Electric"),
+                "energy_storage": energy_storage.get(energy_id, "Cryo_H2_Tanks + Li-S_Battery_Buffer"),
+                "structural_paradigm": "Quantum_Optimized_Lattice",
+                "material_base": "Carbon-Metamaterial_Composite",
+                "flight_envelope": {"max_mach": 0.95, "service_ceiling": 41000},
+                "target_laminar_flow": 0.85 if wing_id >= 34 else 0.80
+            },
+            "integration": {
+                "manufacturing_complexity": config.get('manufacturing_complexity', 1.3),
+                "certification_risk": config.get('certification_risk', 1.4),
+                "infrastructure_need": config.get('infrastructure_need', 1.5),
+                "passenger_capacity": config.get('id', 'UNKNOWN').split('_')[-1] if 'passengers' in str(config.get('id', '')) else 150
+            }
+        }
+        
+        return constraints
+    
+    def optimize_with_cad_ai(self) -> Dict:
+        """Enhanced optimization with CAD-AI Convert integration"""
+        print("🚀 Running Enhanced QAOA + CAD-AI Optimization")
+        
+        # Run standard QAOA optimization first
+        qaoa_result = self.optimize_qnnn()
+        
+        # Run CAD-AI workflow with optimal configuration
+        if self.cad_ai_converter:
+            cad_ai_result = self.run_cad_ai_workflow(qaoa_result['selected_config'])
+            
+            if cad_ai_result:
+                # Enhanced result with CAD-AI integration
+                enhanced_result = qaoa_result.copy()
+                enhanced_result['cad_ai_integration'] = cad_ai_result
+                enhanced_result['workflow_status'] = 'integrated'
+                
+                # Safely extract design artifacts
+                parametric_model = cad_ai_result.get('cad_ai_result', {}) if cad_ai_result else {}
+                enhanced_result['design_artifacts'] = {
+                    "parametric_model": "cad_ai_session.json",
+                    "quantum_lattice": parametric_model.get('structural_lattice', {}),
+                    "collaboration_log": parametric_model.get('collaboration_log', [])
+                }
+                
+                print("✅ Enhanced optimization with CAD-AI integration complete")
+                return enhanced_result
+            else:
+                print("⚠️  CAD-AI integration failed, returning QAOA-only result")
+                qaoa_result['workflow_status'] = 'qaoa_only'
+                return qaoa_result
+        else:
+            print("ℹ️  CAD-AI not available, using QAOA-only optimization")
+            qaoa_result['workflow_status'] = 'qaoa_only'
+            return qaoa_result
 
 
 def main():
@@ -252,11 +384,25 @@ def main():
                        help='Output file for feasible set')
     parser.add_argument('--optimize', action='store_true',
                        help='Run QNNN optimization')
+    parser.add_argument('--enhanced', action='store_true',
+                       help='Run enhanced optimization with CAD-AI Convert')
+    parser.add_argument('--cad-ai-only', action='store_true',
+                       help='Run CAD-AI Convert workflow only')
     
     args = parser.parse_args()
     
     # Initialize selector
     selector = QAOASelector(args.constraints, args.candidates)
+    
+    if args.cad_ai_only:
+        # Run CAD-AI workflow only
+        if CAD_AI_AVAILABLE:
+            converter = CADAIConvert()
+            result = converter.run_complete_workflow()
+            print("✅ CAD-AI Convert workflow completed independently")
+        else:
+            print("❌ CAD-AI Convert not available")
+        return
     
     # Generate feasible set
     feasible_set = selector.generate_feasible_set()
@@ -268,8 +414,30 @@ def main():
     print(f"Generated feasible set with {len(feasible_set)} configurations")
     print(f"Saved to {args.output}")
     
-    if args.optimize:
-        # Run QNNN optimization
+    if args.enhanced:
+        # Run enhanced optimization with CAD-AI integration
+        result = selector.optimize_with_cad_ai()
+        
+        print("\n=== Enhanced QAOA + CAD-AI Optimization Results ===")
+        print(f"Optimal QNNN: {result['QNNN']} passengers")
+        print(f"Objective value: ${result['objective_value']:,.0f}")
+        print(f"Selected configuration: {result['selected_config']['id']}")
+        print(f"Workflow status: {result.get('workflow_status', 'standard')}")
+        
+        if 'cad_ai_integration' in result:
+            cad_metrics = result['cad_ai_integration']['collaboration_metrics']
+            print(f"Design iterations: {cad_metrics['design_iterations']}")
+            print(f"Problem resolution: {cad_metrics['problem_resolution_time']}")
+            print(f"Design status: {cad_metrics['optimization_status']}")
+        
+        # Save enhanced result
+        result_file = 'enhanced_optimization_result.json'
+        with open(result_file, 'w') as f:
+            json.dump(result, f, indent=2, default=str)
+        print(f"Enhanced result saved to {result_file}")
+        
+    elif args.optimize:
+        # Run standard QNNN optimization
         result = selector.optimize_qnnn()
         
         print("\n=== QNNN Optimization Results ===")
