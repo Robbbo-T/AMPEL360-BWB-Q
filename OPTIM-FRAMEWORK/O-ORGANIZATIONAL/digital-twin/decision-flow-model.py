@@ -111,7 +111,8 @@ class OrganizationalDecisionModel:
             'route': route,
             'estimated_time': total_time,
             'bottlenecks': bottlenecks,
-            'efficiency_score': len(route) / total_time if total_time > 0 else 0
+            # Average time spent per node in the route; lower is more efficient.
+            'average_time_per_node': total_time / len(route) if len(route) > 0 else 0
         }
         
     def analyze_organizational_performance(self) -> Dict:
