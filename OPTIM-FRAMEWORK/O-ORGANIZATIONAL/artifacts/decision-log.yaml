@@ -1,1 +1,145 @@
+# OPTIM-FRAMEWORK/O-ORGANIZATIONAL/artifacts/decision-log.yaml
+# Registro de decisiones de arquitectura y programa (audit-ready)
+# UTCS-MI v5.0 compliant · Machine-checkable · Listo para anclar en ledger
+
+meta:
+  version: "1.0"
+  standard: "UTCS-MI v5.0"
+  program_portfolio: "AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum"   # sin acrónimos
+  owner: "Program Board"
+  governance_roles:
+    - ARB     # Architecture Review Board
+    - SRB     # Safety Review Board
+    - DSC     # Security Review Committee
+    - CCB     # Change Control Board
+  enums:                        # guía (no vinculante)
+    status: ["Draft","Proposed","Approved","Conditional","Superseded","Rejected"]
+    category: ["Architecture","Process","Compliance","Risk","Funding","Technology","Security","Safety"]
+    utcs_gates: ["SRR","PDR","CDR","IRR","QR","CR","ASR","ORR"]
+  hashing:
+    file_sha256: "⟦ RELLENAR_SHA256_DEL_FICHERO ⟧"
+  links:
+    acta_path: "OPTIM-FRAMEWORK/O-ORGANIZATIONAL/artifacts/ACTA-UTCS-MI-v5.0.md"
+    constraints: "constraints/hard_constraints.yaml"
+    ampel_config: "T-TECHNOLOGICAL/AMEDEO-PELLICCIA/INTEGRATED/AMPEL360-H2-BWB-QNNN/ampel-config.yaml"
+  last_updated: "2025-08-27T00:00:00Z"
+
+# Anclas útiles
+anchors:
+  committees: &committees
+    required:
+      - "ARB"
+      - "SRB"
+      - "DSC"
+  endorsement_policies:
+    freeze_baseline_design: &freeze_baseline_design "Chief Architect (DT) AND Certification Lead"
+    change_approval_default: &change_approval_default "CCB>=3of5"
+  utcs_map:
+    official_phases: &utcs_phases
+      - "01-Requirements"
+      - "02-Design"
+      - "03-Building-Prototyping"
+      - "04-Executables-Packages"
+      - "05-Verification-Validation"
+      - "06-Integration-Qualification"
+      - "07-Certification-Security"
+      - "08-Production-Scale"
+      - "09-Ops-Services"
+      - "10-MRO"
+      - "11-Sustainment-Recycle"
+
+decisions:
+
+  - id: "ACTA-0001"
+    category: "Architecture"
+    title: "Baseline P2 BWB + Cadena Energía 100% H₂ con Quantum-Onboard"
+    status: "Approved"
+    date: "2025-08-28"
+    utcs:
+      phases: ["02-Design","07-Certification-Security"]
+      gates: ["SRR","PDR","CDR"]
+    scope:
+      domains: ["A-ARCHITECTURE","E2-ENERGY","P-PROPULSION","C2-CRYOGENICS","D-DIGITAL"]
+      cis_roots:
+        - "A-ARCHITECTURE/CA-A-001-CENTER-BODY-BOX/"
+        - "E2-ENERGY/CA-E2-005-HYDROGEN-STORAGE/"
+    context: >
+      Consolidación de la configuración base H₂-BWB con volumetría para LH₂, integración de
+      Quantum-Onboard (QPU rack, timing y enlaces cuánticos) y plan V&V alineado a CS-25/ARP4754A.
+    options:
+      - key: "BWB-H2-rear"
+        desc: "Tanques LH₂ traseros + HVDC taxi/peak shave; Q-Onboard para optimización misión."
+      - key: "BWB-H2-wing"
+        desc: "Tanques en transición alar (descartado por integración cryo/egress)."
+    decision: >
+      Seleccionada opción BWB-H2-rear; se fija baseline P2 y se activa preparación PDR/CDR con
+      building-block tests (cryo/estructural/EMC) y maximización de margen egress 90 s.
+    consequences:
+      positive: ["Volumen utilizable ↑","Gestión CG sobre consumo LH₂","Arquitectura preparada para Q-Onboard"]
+      negative: ["Mayor complejidad cryo en penetraciones","Bays tren condicionados por keel depth"]
+    references:
+      acta: "OPTIM-FRAMEWORK/O-ORGANIZATIONAL/artifacts/ACTA-UTCS-MI-v5.0.md"
+      constraints: "constraints/hard_constraints.yaml"
+      ampel_config: "T-TECHNOLOGICAL/AMEDEO-PELLICCIA/INTEGRATED/AMPEL360-H2-BWB-QNNN/ampel-config.yaml"
+    compliance:
+      primary: ["ARP4754A","ARP4761","CS-25","DO-160G"]
+      hydrogen: ["ISO 11114-4","ISO 19880"]
+    ledger:
+      event_kind: "BaselineFreeze"
+      utcs_phase: "02-Design"
+      endorsement_policy: *freeze_baseline_design
+      event_id: "⟦ cievt-2025-08-28-000001 ⟧"
+      file_sha256: "⟦ RELLENAR_SHA256_ACTA ⟧"
+      merkle_anchor: "T-TECHNOLOGICAL/LEDGER/anchors/anchor-2025-08-28.json"
+    signoff:
+      required_committees: *committees
+      approvals:
+        - role: "Chief Architect (DT)"
+          name: "Amedeo Pelliccia"
+          signature: "⟦ firma ⟧"
+          date: "2025-08-28"
+        - role: "Certification Lead"
+          name: "⟦ nombre ⟧"
+          signature: "⟦ firma ⟧"
+          date: "2025-08-28"
+
+  - id: "DEC-0002"
+    category: "Process"
+    title: "Normalización de nombres de fases a UTCS oficiales (carpetas 01–11)"
+    status: "Approved"
+    date: "2025-08-27"
+    utcs:
+      phases: *utcs_phases
+      gates: ["SRR"]
+    context: >
+      Sustitución de variantes locales (02-Architecture, 04-Implementation, 07-Deployment, 10-Enhancement)
+      por las fases UTCS oficiales para garantizar trazabilidad, automatización de pipelines y conformidad UTCS-MI v5.0.
+    decision: "Renombrado global y actualización de índices README para CA→CI→fase."
+    consequences:
+      positive: ["Pipelines CI/CD simplificados","Validación automática de fases","Menos errores de enlace"]
+    ledger:
+      event_kind: "ChangeApproval"
+      endorsement_policy: *change_approval_default
+      cr_id: "CR-2201"
+      event_id: "⟦ cievt-2025-08-27-000215 ⟧"
+
+  - id: "DEC-0003"
+    category: "Security"
+    title: "Política de anclaje trimestral a cadena pública de Merkle root (ledger de CIs)"
+    status: "Approved"
+    date: "2025-08-27"
+    utcs:
+      phases: ["07-Certification-Security"]
+      gates: ["CR","ASR"]
+    context: >
+      Reducir coste operativo manteniendo valor probatorio: anclaje interno diario y anclaje público trimestral.
+    decision: "Mantener Merkle root diario interno; publicar trimestralmente en red pública (txid referenciado)."
+    ledger:
+      event_kind: "GateDecision"
+      event_id: "⟦ cievt-2025-08-27-000342 ⟧"
+    references:
+      policies: "T-TECHNOLOGICAL/LEDGER/policies/endorsement.yaml"
+      anchors_dir: "T-TECHNOLOGICAL/LEDGER/anchors/"
+
+# Fin de decision-log.yaml
 # Decision Log
