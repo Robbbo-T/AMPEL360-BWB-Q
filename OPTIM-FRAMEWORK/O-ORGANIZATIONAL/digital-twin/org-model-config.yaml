@@ -1,0 +1,7 @@
+model_config:
+  organization_structure: hierarchical
+  decision_nodes:
+  - program_board
+  - architect
+  - committees
+  communication_channels: matrix

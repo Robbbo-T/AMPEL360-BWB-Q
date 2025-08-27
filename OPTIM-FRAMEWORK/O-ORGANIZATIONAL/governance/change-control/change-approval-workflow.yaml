@@ -1,0 +1,19 @@
+workflow_id: CCB-APPROVAL-WORKFLOW-v1.0
+version: '1.0'
+stages:
+- stage: submission
+  description: Change request submitted
+  approver: submitter
+  duration_days: 1
+- stage: technical_review
+  description: Technical impact assessment
+  approver: chief_architect
+  duration_days: 5
+- stage: ccb_review
+  description: CCB formal review
+  approver: ccb_chair
+  duration_days: 10
+- stage: implementation
+  description: Approved change implementation
+  approver: assigned_engineer
+  duration_days: 30

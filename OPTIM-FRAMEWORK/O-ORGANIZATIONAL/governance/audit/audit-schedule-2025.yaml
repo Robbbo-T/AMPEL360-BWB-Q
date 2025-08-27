@@ -1,0 +1,20 @@
+audit_plan_2025:
+  document_id: AMPEL360-AUDIT-SCHEDULE-2025
+  version: '1.0'
+  schedule:
+  - audit_type: Design Review Audit
+    date: '2025-03-15'
+    scope: Requirements Gate
+    auditor: External QA Team
+  - audit_type: Configuration Audit
+    date: '2025-06-15'
+    scope: Design Gate
+    auditor: Internal Audit Team
+  - audit_type: Process Audit
+    date: '2025-09-15'
+    scope: Implementation Gate
+    auditor: External Process Auditor
+  - audit_type: Final Audit
+    date: '2025-12-15'
+    scope: Certification Gate
+    auditor: Certification Body

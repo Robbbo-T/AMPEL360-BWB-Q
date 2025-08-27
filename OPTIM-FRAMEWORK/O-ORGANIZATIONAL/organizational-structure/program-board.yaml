@@ -1,0 +1,22 @@
+document_id: AMPEL360-PROGRAM-BOARD-v1.0
+version: '1.0'
+board_composition:
+  chair:
+    position: Program Director
+    responsibilities:
+    - Strategic oversight
+    - Resource allocation
+    - Executive decisions
+  members:
+  - position: Chief Architect
+    responsibilities:
+    - Technical architecture
+    - Design oversight
+  - position: Chief Engineer
+    responsibilities:
+    - Engineering excellence
+    - Technical delivery
+  - position: Program Manager
+    responsibilities:
+    - Schedule management
+    - Cost control

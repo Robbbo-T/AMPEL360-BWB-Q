@@ -1,0 +1,21 @@
+gate_id: 06-certification
+gate_name: Certification Gate
+utcs_reference: CR/ASR - Certification/Airworthiness Review
+version: '1.0'
+criteria:
+- criterion: Documentation Complete
+  description: All required documentation for Certification Gate completed
+  verification: Document review checklist
+  mandatory: true
+- criterion: Technical Review Complete
+  description: Technical review completed by ARB
+  verification: ARB approval signature
+  mandatory: true
+- criterion: Risk Assessment
+  description: Risk assessment updated and approved
+  verification: Risk register review
+  mandatory: true
+approvers:
+- Program Director
+- Chief Architect
+- Quality Assurance Lead

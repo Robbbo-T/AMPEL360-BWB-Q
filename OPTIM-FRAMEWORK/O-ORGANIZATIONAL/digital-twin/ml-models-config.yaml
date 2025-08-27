@@ -1,0 +1,7 @@
+models:
+- name: schedule_prediction
+  type: time_series
+  framework: tensorflow
+- name: risk_classification
+  type: classification
+  framework: scikit_learn

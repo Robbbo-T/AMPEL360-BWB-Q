@@ -1,0 +1,4 @@
+evidence_items:
+- item_id: EV-001
+  description: Requirements verification
+  status: Complete

@@ -1,0 +1,7 @@
+endpoints:
+- path: /api/v1/kpis
+  method: GET
+  description: Retrieve current KPI values
+- path: /api/v1/risks
+  method: GET
+  description: Get risk register data

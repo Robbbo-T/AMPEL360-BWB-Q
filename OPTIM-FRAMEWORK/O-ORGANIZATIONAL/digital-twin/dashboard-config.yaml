@@ -1,0 +1,7 @@
+dashboards:
+- name: executive_summary
+  refresh_rate: 1_hour
+  widgets:
+  - kpi_summary
+  - risk_heatmap
+  - schedule_gantt

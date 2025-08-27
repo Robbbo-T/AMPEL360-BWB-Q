@@ -1,0 +1,7 @@
+connectors:
+- name: schedule_data
+  source: project_management_tool
+  frequency: daily
+- name: financial_data
+  source: erp_system
+  frequency: weekly

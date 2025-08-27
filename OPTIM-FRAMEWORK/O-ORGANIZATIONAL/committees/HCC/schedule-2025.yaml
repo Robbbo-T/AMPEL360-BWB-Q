@@ -1,0 +1,9 @@
+committee: Hydrogen Coordination Committee
+year: 2025
+schedule:
+- date: '2025-01-15'
+  type: Regular Meeting
+  agenda: Q1 Planning Review
+- date: '2025-04-15'
+  type: Regular Meeting
+  agenda: Q2 Progress Review
