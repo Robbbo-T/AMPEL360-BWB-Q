@@ -40,7 +40,7 @@ class ConstraintLayer:
         return asdict(self)
 
 
-@dataclass
+@dataclass(frozen=True)
 class ParametricVolume:
     """Parametric volume definition for aircraft components"""
     name: str
