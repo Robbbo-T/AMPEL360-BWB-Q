@@ -58,7 +58,7 @@ class TestCADAIConvert(unittest.TestCase):
         )
         
         scaled_volume = volume.scale_volume(1.1)
-        self.assertAlmostEqual(scaled_volume, 27.5, places=6)  # 25.0 * 1.1
+        self.assertAlmostEqual(scaled_volume, 25.0 * 1.1, places=6)
     
     def test_multi_modal_prompt_generation(self):
         """Test AI prompt generation with technical constraints"""
