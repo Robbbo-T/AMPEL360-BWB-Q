@@ -273,7 +273,7 @@ def main():
     print("   • Design methodology: Revolutionary ✨")
     print("   • Implementation status: Complete ✅")
     print("   • Use case validation: Successful 🎯")
-    print(f"   • Next-generation design: Achieved 🚀")
+    print("   • Next-generation design: Achieved 🚀")
     
     # Save demonstration results
     demo_results = {
