@@ -125,8 +125,11 @@ class OrganizationalDecisionModel:
                           if score > 0.3]
                           
         # Performance metrics
-        avg_decision_time = sum(node['node'].decision_time_limit 
-                              for node in self.decision_graph.nodes.values()) / len(self.decision_graph.nodes)
+        if len(self.decision_graph.nodes) > 0:
+            avg_decision_time = sum(node['node'].decision_time_limit 
+                                  for node in self.decision_graph.nodes.values()) / len(self.decision_graph.nodes)
+        else:
+            avg_decision_time = 0
                               
         return {
             'network_efficiency': nx.efficiency(self.decision_graph),
