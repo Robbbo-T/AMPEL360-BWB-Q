@@ -25,7 +25,9 @@ class KPIMetric:
     trend: str
 
 class KPICollector:
+    def __init__(self):
         self.kpi_data = {}
+        self.collection_time = datetime.datetime.now()
         
     def collect_schedule_kpis(self) -> Dict:
         """Collect schedule performance KPIs"""
