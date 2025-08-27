@@ -11,7 +11,7 @@ import os
 from pathlib import Path
 
 # Add project root to path
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from cad_ai_convert import (
     CADAIConvert, ConstraintLayer, ParametricVolume, AircraftConcept,
