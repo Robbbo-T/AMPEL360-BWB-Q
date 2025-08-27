@@ -1,0 +1,29 @@
+openapi: 3.1.0
+info:
+  title: "AMPEL360 Model Interface"
+  version: "1.0.0"
+servers: [{ url: "https://models.ampel360.local/api" }]
+paths:
+  /v1/models/{id}/run:
+    post:
+      summary: "Execute a model with inputs"
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                inputs: { type: object }
+                metadata: { type: object }
+      responses:
+        "200": { description: "OK" }
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer }
+security: [{ bearerAuth: [] }]

@@ -1,0 +1,10 @@
+policy:
+  min-reviewers: 2
+  required-roles: ["Module Owner", "Security Champion"]
+checks:
+  - type: "lint"
+  - type: "unit-tests"
+  - type: "coverage>=85%"
+  - type: "threat-model-diff"
+blocking:
+  files: ["*.bpmn", "*.yaml", "UTCS-*/**"]

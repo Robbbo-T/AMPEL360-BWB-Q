@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+  <bpmn:process id="SecurityScanning" name="Security Scanning Process" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Code Commit">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_StaticAnalysis" name="Static Code Analysis">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_DependencyCheck" name="Dependency Vulnerability Check">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_ContainerScan" name="Container Image Scan">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_VulnerabilitiesFound" name="Vulnerabilities?">
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_CreateSecurityIssue" name="Create Security Issue">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_NotifyTeam" name="Notify Development Team">
+      <bpmn:incoming>Flow_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_Blocked" name="Deployment Blocked">
+      <bpmn:incoming>Flow_8</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="EndEvent_Approved" name="Security Approved">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_StaticAnalysis" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_StaticAnalysis" targetRef="Task_DependencyCheck" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_DependencyCheck" targetRef="Task_ContainerScan" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_ContainerScan" targetRef="Gateway_VulnerabilitiesFound" />
+    <bpmn:sequenceFlow id="Flow_5" name="No" sourceRef="Gateway_VulnerabilitiesFound" targetRef="EndEvent_Approved" />
+    <bpmn:sequenceFlow id="Flow_6" name="Yes" sourceRef="Gateway_VulnerabilitiesFound" targetRef="Task_CreateSecurityIssue" />
+    <bpmn:sequenceFlow id="Flow_7" sourceRef="Task_CreateSecurityIssue" targetRef="Task_NotifyTeam" />
+    <bpmn:sequenceFlow id="Flow_8" sourceRef="Task_NotifyTeam" targetRef="EndEvent_Blocked" />
+  </bpmn:process>
+</bpmn:definitions>

@@ -1,0 +1,15 @@
+integration:
+  tool: "ANSYS"
+  utcs.phase: ["02-Design", "05-Verification-Validation"]
+  interfaces:
+    geometry: "STEP/IGES"
+    materials: "MMPDS/CMH-17 refs"
+workflow:
+  steps:
+    - import-geometry
+    - material-assign
+    - boundary-setup
+    - solve
+    - export-results
+artifacts:
+  results: ["stress_maps.vtk", "margin_table.csv"]

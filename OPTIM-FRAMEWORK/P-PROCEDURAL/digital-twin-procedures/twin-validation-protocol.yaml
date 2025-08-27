@@ -1,0 +1,32 @@
+meta:
+  id: "DTP-TVP-0001"
+  title: "Twin Validation Protocol — AMPEL360 H2-BWB-Q"
+  utcs:
+    phase: ["05-Verification-Validation", "06-Integration-Qualification"]
+  owners: ["Digital Twin Lead", "Chief Architect (DT)"]
+scope:
+  models: ["aero-structural", "thermal-cryogenic", "energy", "ops"]
+  datasets:
+    - name: "GVT_2025Q3"
+      provenance: "Test Rig A"
+      checksum: "<sha256>"
+validation:
+  alignment:
+    metrics:
+      - name: "MAC_flex_error"
+        threshold: "<= 5%"
+      - name: "Temp_gradient_LH2_mounts"
+        threshold: "<= 3 K"
+  procedures:
+    - id: "VAL-001"
+      desc: "Correlate FEM vs GVT modes 1–10"
+      method: "analysis"
+      evidence: ["../processes/design-review-process.bpmn#task-validate-fem"]
+acceptance:
+  criteria: ["All metrics within thresholds", "No Cat II anomalies open"]
+traceability:
+  requirements: ["CI-CA-A-001-001 structural dynamics", "C2-cryogenic thermal barrier"]
+  standards: ["ARP4754A", "DO-160 sections 20/21"]
+signoff:
+  authority: "SRB"
+  signatures: []

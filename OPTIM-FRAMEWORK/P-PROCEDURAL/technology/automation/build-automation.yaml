@@ -1,0 +1,18 @@
+build:
+  utcs.phase: ["04-Executables-Packages"]
+  matrix:
+    os: ["linux"]
+    python: ["3.11"]
+  steps:
+    - checkout
+    - setup-python
+    - cache-deps
+    - install: ["pip -r requirements.txt"]
+    - compile: ["make all"]
+    - package: ["make dist"]
+artifacts:
+  sbom: "dist/sbom.json"
+  checksums: ["dist/*.sha256"]
+compliance:
+  sbom_scan: true
+  license_check: true

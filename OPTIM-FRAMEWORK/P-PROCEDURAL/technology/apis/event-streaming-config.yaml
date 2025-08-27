@@ -1,0 +1,53 @@
+streaming:
+  platform: "Apache Kafka"
+  utcs.phase: ["08-Operations", "09-Ops-Services"]
+  brokers: ["kafka-01:9092", "kafka-02:9092", "kafka-03:9092"]
+
+topics:
+  - name: "ampel.telemetry.flight"
+    partitions: 12
+    replication: 3
+    retention: "7d"
+    compression: "snappy"
+  
+  - name: "ampel.alerts.system"
+    partitions: 6
+    replication: 3
+    retention: "30d"
+    compression: "gzip"
+  
+  - name: "ampel.models.updates"
+    partitions: 3
+    replication: 3
+    retention: "90d"
+    compression: "lz4"
+
+producers:
+  - id: "flight-data-collector"
+    topics: ["ampel.telemetry.flight"]
+    batch_size: 1000
+    linger_ms: 100
+    acks: "all"
+  
+  - id: "system-monitor"
+    topics: ["ampel.alerts.system"]
+    batch_size: 100
+    linger_ms: 50
+    acks: "1"
+
+consumers:
+  - id: "digital-twin-updater"
+    group: "twin-processing"
+    topics: ["ampel.telemetry.flight", "ampel.models.updates"]
+    auto_offset_reset: "earliest"
+  
+  - id: "alert-processor"
+    group: "alerting"
+    topics: ["ampel.alerts.system"]
+    auto_offset_reset: "latest"
+
+security:
+  sasl_mechanism: "SCRAM-SHA-512"
+  security_protocol: "SASL_SSL"
+  ssl_check_hostname: true
+  ssl_ca_location: "/etc/kafka/ca-cert"

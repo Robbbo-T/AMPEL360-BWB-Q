@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+  <bpmn:process id="DataIngestionPipeline" name="Data Ingestion Pipeline" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Data Available">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_ValidateData" name="Validate Data Quality">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_TransformData" name="Transform Data">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_LoadData" name="Load to Twin Model">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_1" name="Data Ingested">
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_ValidateData" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_ValidateData" targetRef="Task_TransformData" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_TransformData" targetRef="Task_LoadData" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_LoadData" targetRef="EndEvent_1" />
+  </bpmn:process>
+</bpmn:definitions>

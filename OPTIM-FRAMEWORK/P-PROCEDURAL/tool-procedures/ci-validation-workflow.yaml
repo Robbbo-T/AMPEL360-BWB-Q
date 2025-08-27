@@ -1,0 +1,16 @@
+pipeline:
+  name: "CI Validation on PR"
+  triggers: ["pull_request", "manual"]
+jobs:
+  - id: "lint-standards"
+    run: "docs-lint && schema-validate"
+  - id: "simulate-fast"
+    run: "pytest -m fast && make sim-smoke"
+  - id: "traceability-check"
+    run: "python tools/validators/requirement-validator.py --all"
+artifacts:
+  publish: ["reports/lint.html", "reports/tests.xml", "traceability.json"]
+gates:
+  required: ["lint-standards", "traceability-check"]
+approvals:
+  required_roles: ["Chief Architect (DT)"]

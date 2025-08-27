@@ -1,0 +1,12 @@
+procedure:
+  utcs.phase: ["09-Ops-Services", "10-MRO", "11-Sustainment-Recycle"]
+  monitors:
+    - name: "data-drift"
+      method: "PSI"
+      threshold: ">=0.2"
+    - name: "perf-drift"
+      method: "windowed-metrics"
+      threshold: "AUC drop >= 0.03"
+actions:
+  - on: "drift-detected"
+    do: ["alert-mlops", "auto-retrain-candidate", "open-change-request"]
