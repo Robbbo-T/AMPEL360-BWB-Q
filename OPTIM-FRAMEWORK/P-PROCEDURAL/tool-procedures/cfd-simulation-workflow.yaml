@@ -1,0 +1,20 @@
+workflow:
+  name: "CFD Simulation — BWB External Flow"
+  utcs:
+    phase: ["02-Design", "03-Building-Prototyping"]
+  triggers: ["PR change", "geometry update"]
+stages:
+  - name: "Pre-process"
+    steps: ["mesh-gen", "bc-setup", "case-param"]
+  - name: "Solve"
+    steps: ["steady-RANS", "unsteady-LES(optional)"]
+  - name: "Post-process"
+    steps: ["coeffs", "flowfield", "loads-export"]
+artifacts:
+  inputs: ["geometry.igs", "mesh.msh", "bc.yaml"]
+  outputs: ["ClCdCurve.csv", "pressureMaps.paraview", "loads.json"]
+qa:
+  checks: ["mesh-quality>0.3", "yPlus<1 on target zones"]
+  reproducibility: ["container: ghcr.io/ampel360/cfd:2025.08"]
+signoff:
+  reviewers: ["Aero Lead", "DT Verification"]

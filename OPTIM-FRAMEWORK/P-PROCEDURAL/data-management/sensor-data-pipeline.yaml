@@ -1,0 +1,19 @@
+pipeline:
+  name: "Flight Sensor Data Ingest"
+  utcs.phase: ["09-Ops-Services", "10-MRO"]
+sources:
+  - name: "aircraft-telem"
+    protocol: "MQTT"
+    topic: "ampel/telemetry/+"
+schema:
+  format: "parquet"
+  versioning: "delta-lake"
+quality:
+  checks: ["ts_monotonic", "range_valid", "missing<0.5%"]
+retention:
+  hot: "90d"
+  warm: "24m"
+  cold: "7y"
+security:
+  classification: "CONFIDENTIAL"
+  access_roles: ["Ops", "MRO"]

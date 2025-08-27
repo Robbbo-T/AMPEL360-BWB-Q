@@ -1,0 +1,14 @@
+registry:
+  type: "mlflow"
+  uri: "mlruns://registry"
+versioning:
+  semantic: true
+  stages: ["Dev", "Staging", "Prod"]
+promotion:
+  criteria:
+    - metric: "AUC"
+      threshold: ">=0.90"
+    - metric: "latency_ms"
+      threshold: "<=50"
+governance:
+  signoff_roles: ["MLOps Lead", "Safety of AI Officer"]

@@ -1,0 +1,16 @@
+execution:
+  utcs.phase: ["03-Building-Prototyping", "04-Executables-Packages"]
+  solver_pool: ["CFD", "FEM", "Thermal", "QAOA"]
+  orchestration: "k8s"
+steps:
+  - queue
+  - provision
+  - run
+  - collect
+  - archive
+artifacts:
+  logs: "runs/{id}/logs/"
+  results: "runs/{id}/results/"
+  provenance:
+    image: "ghcr.io/ampel360/sim-orchestrator:2025.08"
+    commit: "<git-sha>"

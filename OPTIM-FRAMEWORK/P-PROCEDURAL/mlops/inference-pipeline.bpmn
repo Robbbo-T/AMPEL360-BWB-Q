@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+  <bpmn:process id="InferencePipeline" name="ML Inference Pipeline" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Inference Request">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_ValidateInput" name="Validate Input">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_PreprocessData" name="Preprocess Data">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_ModelInference" name="Model Inference">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_PostprocessOutput" name="Postprocess Output">
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_LogMetrics" name="Log Metrics">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_1" name="Return Prediction">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_ValidateInput" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_ValidateInput" targetRef="Task_PreprocessData" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_PreprocessData" targetRef="Task_ModelInference" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_ModelInference" targetRef="Task_PostprocessOutput" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Task_PostprocessOutput" targetRef="Task_LogMetrics" />
+    <bpmn:sequenceFlow id="Flow_6" sourceRef="Task_LogMetrics" targetRef="EndEvent_1" />
+  </bpmn:process>
+</bpmn:definitions>

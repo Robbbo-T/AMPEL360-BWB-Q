@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+  <bpmn:process id="CatiaIntegration" name="CATIA Integration Process" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Design Change">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_ExportGeometry" name="Export Geometry">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_ValidateGeometry" name="Validate Geometry">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_UpdateDigitalTwin" name="Update Digital Twin">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_TriggerAnalysis" name="Trigger Analysis">
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_1" name="Integration Complete">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_ExportGeometry" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_ExportGeometry" targetRef="Task_ValidateGeometry" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_ValidateGeometry" targetRef="Task_UpdateDigitalTwin" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_UpdateDigitalTwin" targetRef="Task_TriggerAnalysis" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Task_TriggerAnalysis" targetRef="EndEvent_1" />
+  </bpmn:process>
+</bpmn:definitions>
