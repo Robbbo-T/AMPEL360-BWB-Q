@@ -111,8 +111,9 @@ class OrganizationalDecisionModel:
             'route': route,
             'estimated_time': total_time,
             'bottlenecks': bottlenecks,
-            # Average time spent per node in the route; lower is more efficient.
-            'average_time_per_node': total_time / len(route) if len(route) > 0 else 0
+            # Average estimated time a decision spends at each node in the route.
+            # This metric helps identify process inefficiencies and supports organizational optimization; lower values indicate higher efficiency.
+            'average_estimated_decision_time_per_node': total_time / len(route) if len(route) > 0 else 0
         }
         
     def analyze_organizational_performance(self) -> Dict:
