@@ -293,7 +293,7 @@ def main():
     with open("use_case_demonstration_results.json", "w") as f:
         json.dump(demo_results, f, indent=2, default=str)
     
-    print(f"\n💾 Demonstration results saved to: use_case_demonstration_results.json")
+    print("\n💾 Demonstration results saved to: use_case_demonstration_results.json")
     print(f"🔗 CAD-AI session data available in: cad_ai_session.json")
 
 
