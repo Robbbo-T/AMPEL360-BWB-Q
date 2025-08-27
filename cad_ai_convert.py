@@ -55,7 +55,7 @@ class ParametricVolume:
         return self.base_volume * factor
 
 
-@dataclass
+@dataclass(frozen=True)
 class AircraftConcept:
     """AI-generated aircraft concept with metadata"""
     concept_id: str
