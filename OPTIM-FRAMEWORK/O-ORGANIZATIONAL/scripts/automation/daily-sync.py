@@ -75,9 +75,9 @@ Program status: On track with minor schedule adjustments
         report = self.generate_daily_report(status)
         
         # Save report
-        report_path = f"reports/daily/{self.sync_date}-daily-report.md"
-        Path(report_path).parent.mkdir(parents=True, exist_ok=True)
-        with open(report_path, 'w') as f:
+        report_path = Path("reports") / "daily" / f"{self.sync_date}-daily-report.md"
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        with report_path.open('w') as f:
             f.write(report)
             
         print(f"Daily sync completed. Report saved to {report_path}")
