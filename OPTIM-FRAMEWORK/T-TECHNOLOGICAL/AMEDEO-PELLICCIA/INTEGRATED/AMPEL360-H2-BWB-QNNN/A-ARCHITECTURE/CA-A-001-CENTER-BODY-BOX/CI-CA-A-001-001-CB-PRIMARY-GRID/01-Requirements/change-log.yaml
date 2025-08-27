@@ -1,0 +1,142 @@
+# change-log.yaml — CI-CA-A-001-001 · 01-Requirements
+# Registro controlado de cambios (UTCS-MI v5.0 · audit-ready)
+
+meta:
+  doc_id: "AMPEL360/CI-CA-A-001-001/01-Requirements/change-log"
+  classification: "INTERNAL"
+  utcs:
+    phase: "01-Requirements"
+    gate: "SRR"        # SRR/PDR/CDR/... (cuando aplique)
+  governance:
+    owner: "Chief Systems Engineer"
+    boards: ["ARB","SRB","DSC","CCB"]   # comités potencialmente implicados
+  references:
+    vv_matrix: "./verification-matrix.csv"
+    requirements: "./requirements.yaml"
+
+policies:
+  change_types: ["add","update","remove","rename","fix","normalize"]
+  impact_levels: ["none","low","medium","high"]
+  evidence_required_for: ["update","remove","rename","fix","normalize"]
+
+changes:
+  - id: "CL-2025-08-27-001"
+    date: "2025-08-27"
+    author: "Amedeo Pelliccia"
+    type: "normalize"
+    title: "Conversión de evidencias PDF a Markdown y actualización de trazas"
+    scope:
+      files_added:
+        - "./evidence/analysis/EMC-AN-001.md"
+        - "./evidence/analysis/STR-AN-001.md"
+        - "./evidence/test/LPS-TST-001.md"
+      files_renamed:
+        - from: "./evidence/analysis/EMC-AN-001.pdf"
+          to:   "./evidence/_archive/EMC-AN-001.pdf"
+        - from: "./evidence/analysis/STR-AN-001.pdf"
+          to:   "./evidence/_archive/STR-AN-001.pdf"
+      files_updated:
+        - "./verification-matrix.csv"
+        - "./requirements.yaml"
+    rationale: >
+      Unificar formato navegable (.md) y mantener PDFs como histórico en _archive/;
+      alinear rutas de evidencias con la matriz V&V.
+    impacts:
+      level: "low"
+      requirements_touched: ["REQ-CB-PG-004-Lightning-Bonding","REQ-CB-PG-001-Loads-Ultimate"]
+      vv_updates:
+        - row: "REQ-CB-PG-004 → analysis"
+          change: "artefacto → ./evidence/analysis/EMC-AN-001.md"
+        - row: "REQ-CB-PG-001 → analysis"
+          change: "artefacto → ./evidence/analysis/STR-AN-001.md"
+    ledger:
+      plan_required: true
+      event_kind: "EvidenceLink"
+      status: "planned"   # planned|linked|skipped
+      notes: "Actualizar ledger-plan.json en PR; anchaje al merge."
+    signoff:
+      requested_by: "Chief Systems Engineer"
+      approvals:
+        - role: "Chief Architect (DT)"
+          status: "approved"
+          date: "2025-08-27"
+        - role: "Certification Lead"
+          status: "approved"
+          date: "2025-08-27"
+
+  - id: "CL-2025-08-27-002"
+    date: "2025-08-27"
+    author: "EMC Analysis Team"
+    type: "fix"
+    title: "Corrección de unidades y márgenes en aislamiento frente a LH₂"
+    scope:
+      files_updated:
+        - "./evidence/analysis/EMC-AN-001.md"
+        - "./requirements.yaml"
+        - "./verification-matrix.csv"
+    rationale: >
+      Ajuste de fuga de corriente (0.84 mA en vez de 0.84 µA) y
+      reencuadre ‘no-ruptura’ en análisis de chispa; actualización de aceptación y
+      de enlaces en V&V.
+    impacts:
+      level: "medium"
+      requirements_touched: ["REQ-CB-PG-009-H2-Isolation","REQ-CB-PG-004-Lightning-Bonding"]
+      acceptance_updated:
+        - req_id: "REQ-CB-PG-009-H2-Isolation"
+          field: "isolation_min_megaohm"
+          from: 10
+          to: 10
+          note: "Sin cambio en límite; se corrige cálculo de fuga y criterio de evidencia."
+      vv_updates:
+        - row: "REQ-CB-PG-009 → analysis"
+          change: "artefacto → ./evidence/analysis/EMC-AN-001.md; criterio: no-ruptura (Paschen)"
+    risks:
+      linked: ["CERT-003"]
+      residual_effect: "none"
+    ledger:
+      plan_required: true
+      event_kind: "ChangeApproval"
+      cr_id: "CR-2201"
+      status: "planned"
+    signoff:
+      requested_by: "EMC Team Lead"
+      approvals:
+        - role: "Certification Lead"
+          status: "approved"
+          date: "2025-08-27"
+
+  - id: "CL-2025-08-28-003"
+    date: "2025-08-28"
+    author: "Documentation PMO"
+    type: "rename"
+    title: "Normalización nombres de fase a UTCS oficiales"
+    scope:
+      files_renamed:
+        - from: "../02-Architecture"
+          to:   "../02-Design"
+        - from: "../04-Implementation"
+          to:   "../04-Executables-Packages"
+      indices_updated:
+        - "../README.md"
+        - "../../CA-A-001-CENTER-BODY-BOX/README.md"
+    rationale: "Alinear carpetas con las fases UTCS (01–11) para validaciones automáticas."
+    impacts:
+      level: "low"
+      requirements_touched: []
+      vv_updates: []
+    ledger:
+      plan_required: false
+      event_kind: "InterfaceUpdate"
+      status: "skipped"
+    signoff:
+      requested_by: "Architecture PMO"
+      approvals:
+        - role: "Chief Architect (DT)"
+          status: "approved"
+          date: "2025-08-28"
+
+# Campos sugeridos para futuras entradas:
+# - attachments: [paths]                     # anexos (capturas, diffs)
+# - sha256_before/after: "…"                 # hash de artefactos clave
+# - rollback: {allowed: true, howto: "…"}    # plan de reversión
+# - notes: "…"                               # observaciones adicionales
