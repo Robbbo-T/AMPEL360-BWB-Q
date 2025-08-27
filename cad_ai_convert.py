@@ -25,7 +25,7 @@ class DesignPhase(Enum):
     OPTIMIZATION = "04-optimization"
 
 
-@dataclass
+@dataclass(frozen=True)
 class ConstraintLayer:
     """Physics-based constraint layer for 2D to 3D conversion"""
     propulsion_system: str
