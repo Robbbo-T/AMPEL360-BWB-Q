@@ -1,0 +1,246 @@
+meta:
+  estandar_universal: "EstándarUniversal:Documento-Requisitos-ARP4754A-00.00-PrimaryGridSystemRequirements-0001-v1.5-AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum-GeneracionHumana-AIR-AmedeoPelliccia-7f3c9a2b-01-Requirements→07-Certification-Security"
+  doc_id: "AMPEL360/CI-CA-A-001-001/REQ/v1.5"
+  classification: "INTERNAL"
+  ci_id: "CI-CA-A-001-001"
+  ci_name: "CB-PRIMARY-GRID"
+  version: "v1.5"
+  status: "FROZEN"          # DRAFT | FROZEN
+  utcs:
+    phase: "01-Requirements"
+    gate: "SRR"
+  owners:
+    - role: "Chief Architect (DT)"
+    - role: "Certification Lead"
+    - role: "Chief Systems Engineer"
+  units_policy:
+    system: "SI"
+    length: "m"
+    mass: "kg"
+    force: "N"
+    stress: "MPa"
+    temperature: "K"
+    resistance: "mΩ"
+  standards:
+    development: ["ARP4754A","ARP4761"]
+    airworthiness: ["CS-25"]
+    environmental: ["DO-160G"]
+    lightning: ["SAE ARP5412","SAE ARP5416","SAE ARP5414"]
+    hydrogen: ["ISO 11114-4","ISO 19880"]
+    materials: ["MMPDS","CMH-17"]
+  references:
+    vv_matrix: "./verification-matrix.csv"
+    change_log: "./change-log.yaml"
+
+glossary:
+  - term: "Ultimate Load (UL)"
+    def: "Limit load × 1.5 (salvo justificación)."
+  - term: "Z-bond"
+    def: "Red de uniones equipotenciales que garantizan continuidad para retornos de corriente."
+
+# ---------------------------------------------------------------------
+# REQUISITOS (cada bloque incluye ‘shall’, aceptación y trazas)
+# Nota: enlazamos a evidencias en .md (no PDF) dentro de ./evidence/…
+# ---------------------------------------------------------------------
+requirements:
+
+  - id: REQ-CB-PG-001-Loads-Ultimate
+    title: Resistencia a cargas últimas
+    shall: >
+      Los elementos del grid primario deberán sostener todos los casos de carga
+      hasta Carga Última sin fallo, con márgenes de seguridad (MS) ≥ 0.00 usando
+      allowables certificados y factores de minoración aplicables.
+    rationale: Cumplimiento de resistencia estructural para estructura primaria.
+    verification:
+      method: ["analysis","test"]
+      evidence:
+        - path: "./evidence/analysis/STR-AN-001.md"
+        - path: "./evidence/test/STR-TST-002_Pressure-Test.md"
+    acceptance:
+      ms_min: 0.00
+      ultimate_factor: 1.5
+    trace:
+      standards: ["CS-25.301","CS-25.303","MMPDS"]
+      interfaces: ["IF-A-STRUCT-JOINTS","IF-A-001-KEEL-ATTACH"]
+      risks: ["CERT-003","STR-002"]
+      allocation:
+        ca: "CA-A-001-CENTER-BODY-BOX"
+        ci_children: ["CI-CA-A-001-002","CI-CA-A-001-003"]
+
+  - id: REQ-CB-PG-002-Aeroelastic
+    title: Margen aeroelástico
+    shall: >
+      El grid primario y su integración con el center-body deberán garantizar
+      ausencia de flutter/divergencia con márgenes ≥ 15% respecto a V_D en todos
+      los estados de masa/combustible certificados.
+    rationale: Evitar inestabilidades estructurales.
+    verification:
+      method: ["analysis","test"]
+      evidence:
+        - path: "./evidence/test/STR-TST-004_GVT-Flutter.md"
+        - path: "./evidence/test/PRF-TST-003_Modal-Test.md"
+    acceptance:
+      flutter_margin_percent_min: 15
+      divergence_margin_percent_min: 15
+    trace:
+      standards: ["CS-25.629"]
+      interfaces: ["IF-A-OUTBOARD-WING","IF-C-CONTROL-SURF"]
+      risks: ["OPS-004"]
+
+  - id: REQ-CB-PG-003-Cryogenic-Compatibility
+    title: Compatibilidad criogénica y gradientes
+    shall: >
+      Los miembros estructurales adyacentes a soportes LH₂ deberán mantener
+      gradientes térmicos dentro de límites: ΔT_steady ≤ 30 K y ΔT_transient ≤ 50 K
+      en rutas de carga, sin fisuras por choque térmico tras 20k ciclos.
+    rationale: Evitar tensiones térmicas y degradación en servicio.
+    verification:
+      method: ["analysis","test","inspection"]
+      evidence:
+        - path: "./evidence/analysis/THR-AN-003_Thermal-FEM.md"
+        - path: "./evidence/test/THR-TST-CRYO-001.md"
+    acceptance:
+      deltaT_steady_K_max: 30
+      deltaT_transient_K_max: 50
+      cracks_max_mm: 0
+    trace:
+      standards: ["ISO 11114-4"]
+      interfaces: ["IF-C2-H2-MOUNTS","IF-C2-THERMAL-BARRIERS"]
+      risks: ["THERM-001"]
+
+  - id: REQ-CB-PG-004-Lightning-Bonding
+    title: Equipotencialidad y retorno de rayo
+    shall: >
+      El grid primario deberá proporcionar rutas equipotenciales con resistencia de
+      unión ≤ 2.5 mΩ en bonds designados y continuidad de retorno verificada desde
+      el punto de impacto hasta las referencias de puesta a tierra.
+    rationale: Control de efectos directos/indirectos de rayo y protección EMC.
+    verification:
+      method: ["test","inspection"]
+      evidence:
+        - path: "./evidence/analysis/EMC-AN-001.md"
+        - path: "./evidence/test/LPS-TST-001.md"
+        - path: "./evidence/test/EMC-TST-001.md"
+    acceptance:
+      bond_resistance_milliohm_max: 2.5
+      continuity_verified: true
+    trace:
+      standards: ["SAE ARP5412","SAE ARP5416","DO-160G Sec 22"]
+      interfaces: ["IF-A-LPS-BONDING","IF-E3-NETWORKS-GND"]
+      risks: ["CERT-003"]
+
+  - id: REQ-CB-PG-005-EMC-Shielding
+    title: Blindaje EMC de la envolvente estructural
+    shall: >
+      Las discontinuidades de piel y uniones deberán mantener continuidad de
+      blindaje para lograr atenuación ≥ 40 dB en las bandas definidas por la
+      clasificación de peligro del sistema instalado.
+    rationale: Mitigar acoplos EMI en sistemas críticos.
+    verification:
+      method: ["analysis","test"]
+      evidence:
+        - path: "./evidence/analysis/SEC-AN-003_Cyber-Analysis.md"
+        - path: "./evidence/test/EMC-TST-001.md"
+    acceptance:
+      attenuation_db_min: 40
+    trace:
+      standards: ["DO-160G Sec 20/21"]
+      interfaces: ["IF-E3-HARNESS-ROUTES","IF-L2-DATABUS-REF"]
+      risks: ["CERT-003"]
+
+  - id: REQ-CB-PG-006-Cutout-Integrity
+    title: Integridad en aberturas (cutouts)
+    shall: >
+      Las aberturas necesarias (egress/puertas/pasajes) deberán conservar resistencia
+      residual ≥ UL con concentraciones de tensión consideradas; distancias a borde y
+      refuerzos locales conforme a allowables.
+    rationale: Mantener integridad estructural alrededor de aperturas.
+    verification:
+      method: ["analysis","test"]
+      evidence:
+        - path: "./evidence/analysis/STR-AN-003_Loads-Analysis.md"
+        - path: "./evidence/test/MFG-TST-003_Metrology-Test.md"
+    acceptance:
+      residual_strength_margin_min: 0.00
+    trace:
+      standards: ["CS-25.365","MMPDS"]
+      interfaces: ["IF-A-ACCESS-DOORS","IF-A-PASSAGEWAYS"]
+      risks: ["STR-002"]
+
+  - id: REQ-CB-PG-007-Inspectability
+    title: Inspeccionabilidad y MRO
+    shall: >
+      El diseño deberá permitir inspección NDI de ≥ 95% de zonas críticas del grid
+      mediante accesos definidos (borescope/doors) y rutas de mantenimiento seguras.
+    rationale: Habilitar mantenimiento eficaz y detección temprana de daño.
+    verification:
+      method: ["inspection"]
+      evidence:
+        - path: "./evidence/inspection/MNT-INS-002_Borescope-Access.md"
+        - path: "./evidence/inspection/MFG-INS-002_Access-Inspection.md"
+    acceptance:
+      ndi_coverage_percent_min: 95
+    trace:
+      standards: ["CS-25 Subp. C (sustentación y estructura)"]
+      interfaces: ["IF-A-ACCESS-DOORS","IF-M-MRO-PANELS"]
+      risks: ["OPS-004"]
+
+  - id: REQ-CB-PG-008-Weight-CG
+    title: Peso y control de CG
+    shall: >
+      El grid primario deberá ajustarse a la asignación de masa y contribuir al
+      control de CG en consumo de LH₂ según envelope de misión, manteniendo
+      márgenes de performance y operación.
+    rationale: Cumplir metas de masa y estabilidad global.
+    verification:
+      method: ["analysis"]
+      evidence:
+        - path: "./evidence/analysis/PRF-AN-001_Weight-Analysis.md"
+        - path: "./evidence/analysis/PRF-AN-002_CG-Analysis.md"
+    acceptance:
+      mass_allocation_margin_kg_min: 0
+    trace:
+      standards: ["ARP4754A (asignación de requisitos)"]
+      interfaces: ["IF-P-PROP-INTEGRATION","IF-E2-ENERGY-MOUNTS"]
+
+  - id: REQ-CB-PG-009-H2-Isolation
+    title: Aislamiento eléctrico frente a LH₂
+    shall: >
+      El grid primario deberá mantener aislamiento ≥ 10 MΩ respecto a interfaces LH₂
+      en condiciones nominales, evitando corrientes de fuga peligrosas bajo escenarios
+      de retorno de rayo.
+    rationale: Seguridad frente a ignición y compatibilidad con sistemas LH₂.
+    verification:
+      method: ["analysis","test"]
+      evidence:
+        - path: "./evidence/analysis/EMC-AN-001.md"
+        - path: "./evidence/test/ENV-TST-001_Lightning-Protection.md"
+    acceptance:
+      isolation_min_megaohm: 10
+    trace:
+      standards: ["SAE ARP5412/5416","ISO 11114-4"]
+      interfaces: ["IF-C2-H2-MOUNTS","IF-C2-DIELECTRIC-BARRIERS"]
+      risks: ["THERM-001","CERT-003"]
+
+# ---------------------------------------------------------------------
+# Semillas de matriz V&V (opcional): ayuda a poblar verification-matrix.csv
+# ---------------------------------------------------------------------
+vv_matrix_seed:
+  - req_id: REQ-CB-PG-001-Loads-Ultimate
+    method: analysis
+    artifact: "./evidence/analysis/STR-AN-001.md"
+    pass_criteria: "MS >= 0.00 (limit & ultimate)"
+  - req_id: REQ-CB-PG-004-Lightning-Bonding
+    method: test
+    artifact: "./evidence/test/LPS-TST-001.md"
+    pass_criteria: "Rbond <= 2.5 mΩ y continuidad OK"
+
+# ---------------------------------------------------------------------
+# Control de cambios (resumen)
+# ---------------------------------------------------------------------
+changes:
+  - id: CL-2025-08-27-001
+    summary: "Conversión de evidencias a .md y actualización de trazas."
+    impact: "nulo"
+    reviewer: "Certification Lead"
+    date: "2025-08-27"
