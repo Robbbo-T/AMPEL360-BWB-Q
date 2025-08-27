@@ -84,6 +84,7 @@ Procedures, workflows, gates, and standards governing execution across UTCS 01â€
 
 - [`./tool-procedures/fem-analysis-procedure.md`](./tool-procedures/fem-analysis-procedure.md)  
 - [`./tool-procedures/cfd-simulation-workflow.yaml`](./tool-procedures/cfd-simulation-workflow.yaml)  
+- [`./tool-procedures/emc-lightning-analysis-workflow.yaml`](./tool-procedures/emc-lightning-analysis-workflow.yaml)  
 - [`./tool-procedures/qaoa-optimization-protocol.md`](./tool-procedures/qaoa-optimization-protocol.md)  
 - [`./tool-procedures/monte-carlo-execution.bpmn`](./tool-procedures/monte-carlo-execution.bpmn)  
 - [`./tool-procedures/test-automation-procedure.md`](./tool-procedures/test-automation-procedure.md)  

@@ -1,0 +1,289 @@
+workflow:
+  name: "EMC Lightning Analysis Process — CB Primary Grid"
+  id: "EMC-LTG-PROC-001"
+  utcs:
+    phase: ["02-Design", "05-Verification-Validation", "07-Certification-Security"]
+  triggers: ["design change", "configuration update", "certification milestone"]
+  version: "1.5"
+  
+meta:
+  description: "Lightning Return Path Isolation Analysis workflow for CB Primary Grid"
+  configuration_item: "CI-CA-A-001-001-CB-PRIMARY-GRID"
+  requirement: "REQ-ENV-003"
+  standards: ["SAE ARP5412", "SAE ARP5414", "SAE ARP5416", "RTCA DO-160G §22", "MIL-STD-464C"]
+  classification: "INTERNAL"
+
+stages:
+  - name: "Define System Parameters"
+    id: "stage-001"
+    description: "Establish system parameters and design constraints"
+    steps:
+      - id: "param-geometry"
+        desc: "Import 3D geometry model (STEP/IGES)"
+        inputs: ["CAD_model.step", "assembly_config.yaml"]
+        tools: ["ANSYS Maxwell", "CAD viewer"]
+      - id: "param-materials"
+        desc: "Define material properties and variations"
+        inputs: ["material_database.yaml", "supplier_certs.pdf"]
+        materials:
+          - "Al-Li 2099: σ=2.3×10⁷ S/m ±15%"
+          - "Ti-6Al-4V: σ=5.8×10⁵ S/m ±10%"
+          - "CFRP (L/T/Z): 5×10⁴/50/10 S/m ±20/30/40%"
+          - "Cu mesh: σ=5.96×10⁷ S/m ±5%"
+      - id: "param-environment"
+        desc: "Set environmental conditions and altitude"
+        conditions:
+          altitude: "up to 51,000 ft"
+          pressure: "11.3 kPa at 51 kft"
+          temperature: "ambient 20°C"
+          contamination: "surface conditions per spec"
+
+  - name: "Identify Lightning Threats"
+    id: "stage-002"
+    description: "Define lightning environment and threat scenarios"
+    steps:
+      - id: "threat-zones"
+        desc: "Lightning zoning per SAE ARP5414"
+        zones: ["Zone 1A", "Zone 1B", "Zone 2A", "Zone 2B", "Zone 3"]
+        primary_zone: "Zone 1A"
+      - id: "threat-waveforms"
+        desc: "Define ARP5412 lightning waveforms"
+        waveforms:
+          - component: "A"
+            peak_current: "200 kA ±10%"
+            rise_time: "6.4 μs"
+            duration: "69 μs"
+            action_integral: "2.0×10⁶ A²s"
+            usage: "First return stroke"
+          - component: "B"
+            peak_current: "2 kA"
+            rise_time: "150 μs"
+            duration: "6.5 ms"
+            action_integral: "2.5×10⁴ A²s"
+            usage: "Intermediate current"
+          - component: "C"
+            peak_current: "200-800 A"
+            duration: "0.25-1 s"
+            charge: "0.2-6 C"
+            usage: "Continuing current"
+          - component: "D"
+            peak_current: "100 kA ±10%"
+            rise_time: "6.4 μs"
+            duration: "69 μs"
+            action_integral: "0.5×10⁶ A²s"
+            usage: "Subsequent stroke"
+      - id: "threat-multiplicity"
+        desc: "Multiple stroke and continuing current effects"
+        parameters:
+          strokes: "up to 24"
+          stroke_interval: "0.5 s"
+          cooling_time: "2.8 s"
+
+  - name: "Model Lightning Current Paths"
+    id: "stage-003"
+    description: "Create numerical model of current distribution"
+    steps:
+      - id: "model-mesh"
+        desc: "Generate 3D electromagnetic mesh"
+        mesh_parameters:
+          elements: "2.4M tetrahedra"
+          element_type: "second-order Nédélec edge"
+          refinement: "interfaces/bonds"
+          skin_depth_layers: "≥5 layers"
+      - id: "model-boundaries"
+        desc: "Set boundary conditions and injection points"
+        boundaries:
+          injection: "forward-longeron junction"
+          returns: "4 Cu MLG straps (95 mm²)"
+          h2_interface: "R-C model (10 MΩ || 100-300 pF)"
+          local_inductance: "50 nH"
+      - id: "model-paths"
+        desc: "Identify primary current paths"
+        paths:
+          - path: "Longerons fwd"
+            fraction: "35%"
+            inductance: "120 nH"
+            resistance: "0.8 mΩ"
+          - path: "Longerons aft"
+            fraction: "30%"
+            inductance: "180 nH"
+            resistance: "1.2 mΩ"
+          - path: "Cu mesh"
+            fraction: "18%"
+            inductance: "60 nH"
+            resistance: "0.3 mΩ"
+          - path: "Rib caps"
+            fraction: "12%"
+            inductance: "240 nH"
+            resistance: "1.5 mΩ"
+          - path: "Screw clusters"
+            fraction: "5%"
+            inductance: "40 nH"
+            resistance: "0.2 mΩ"
+
+  - name: "Perform Electromagnetic Simulation"
+    id: "stage-004"
+    description: "Execute transient EM simulation"
+    steps:
+      - id: "sim-setup"
+        desc: "Configure ANSYS Maxwell simulation"
+        parameters:
+          solver: "ANSYS Maxwell 2024 R2"
+          analysis: "3D transient electromagnetic"
+          time_step: "0.1 μs"
+          time_window: "500 μs"
+          convergence: "residual < 1×10⁻⁶"
+      - id: "sim-statistical"
+        desc: "Monte Carlo statistical analysis"
+        statistical:
+          method: "Latin Hypercube Sampling (LHS)"
+          samples: "1000"
+          variables: ["materials", "contacts", "isolation", "waveform"]
+          distributions: "Normal, lognormal, uniform per spec"
+      - id: "sim-execute"
+        desc: "Run simulation and collect results"
+        outputs:
+          - "voltage peaks: V_peak(t)"
+          - "current coupling: i_C(t)"
+          - "field distributions: E(x,y,z,t)"
+          - "energy dissipation: Joule heating"
+          - "statistical distributions"
+
+  - name: "Analyze Results"
+    id: "stage-005"
+    description: "Process simulation results and assess safety"
+    steps:
+      - id: "analyze-coupling"
+        desc: "Transient coupling analysis"
+        results:
+          peak_voltage: "13.3 kV (μ)"
+          peak_current: "341 mA (P50), 498 mA (P99.9)"
+          charge_transfer: "2.66 μC (max)"
+          energy_stored: "17.7 mJ @ 200 pF"
+      - id: "analyze-fields"
+        desc: "Electric field analysis"
+        field_analysis:
+          bulk_insulators: "67 kV/m (μ), 92 kV/m (P99.9)"
+          surface_insulators: "106 kV/m"
+          air_gaps: "106 kV/m @ 125 mm"
+      - id: "analyze-thermal"
+        desc: "Thermal analysis"
+        thermal_results:
+          total_energy: "22.8 kJ (A+B+C+D)"
+          avg_temp_rise: "1.8°C (longerons)"
+          peak_local_temp: "47°C (hot spots)"
+          thermal_margins: "within limits"
+
+  - name: "Implement Mitigation Measures"
+    id: "stage-006"
+    description: "Design and verify safety margins"
+    steps:
+      - id: "margin-air"
+        desc: "Air breakdown margin analysis"
+        margins:
+          air_free_space: "7.6× (μ), 6.0× (P99.9)"
+          altitude_adjusted: "100.6 kV @ 51 kft"
+          breakdown_field: "~3 MV/m (STP)"
+      - id: "margin-surface"
+        desc: "Surface flashover margin analysis"
+        margins:
+          surface_flashover: "2.9× (μ), 2.3× (P99.9)"
+          creepage_distance: "250 mm"
+          withstand_voltage: "38 kV"
+          derating_factors: "altitude, contamination, surface"
+      - id: "margin-design"
+        desc: "No-spark design assurance"
+        assurance:
+          approach: "multi-barrier no-spark"
+          separation: "adequate clearances"
+          field_control: "< 3 MV/m bulk breakdown"
+          surface_treatment: "CTI>600, clean surfaces"
+
+  - name: "Verify Compliance"
+    id: "stage-007"
+    description: "Validate against requirements and standards"
+    steps:
+      - id: "compliance-matrix"
+        desc: "Generate compliance matrix"
+        requirements:
+          - req: "Direct effects (SAE ARP5412)"
+            criterion: "200 kA"
+            result: "PASS"
+          - req: "Zoning (SAE ARP5414)" 
+            criterion: "Zone 1A"
+            result: "PASS"
+          - req: "No ignition (NASA-STD-4003A)"
+            criterion: "No-spark"
+            result: "PASS"
+          - req: "Indirect effects (DO-160G §22)"
+            criterion: "Level 3"
+            result: "PASS"
+          - req: "Thermal limits"
+            criterion: "< Tg-50°C"
+            result: "PASS"
+      - id: "test-validation"
+        desc: "Validate with test data"
+        validation:
+          coupling_test: "10 kA injection, error <7%"
+          flashover_test: "1.2/50 μs impulse, no tracking"
+          pin_injection: "Level 3, Cat A performance"
+      - id: "final-assessment"
+        desc: "Overall safety assessment"
+        assessment:
+          status: "PASS"
+          safety_approach: "no-spark multi-barrier"
+          dominant_risk: "surface flashover in altitude/contamination"
+          recommendations: "quarterly bonding resistance monitoring"
+
+artifacts:
+  inputs:
+    - "EMC-MDL-001.step: CAD 3D FEM model"
+    - "EMC-CFG-001.yaml: Analysis parameters"
+    - "EMC-MSH-001.ans: ANSYS mesh"
+    - "EMC-WAV-001.dat: ARP5412 A waveform (200 kA)"
+  outputs:
+    - "EMC-AN-001.pdf: Lightning Return Path Isolation Analysis"
+    - "EMC-MON-001.xlsx: LHS 1000-run database"
+    - "EMC-CAL-001.pdf: Model calibration vs test"
+    - "stress_maps.vtk: Field distribution maps"
+    - "margin_table.csv: Safety margin summary"
+    - "compliance_matrix.json: Requirements compliance"
+  test_data:
+    - "EMC-TST-001.pdf: 10 kA injection test report"
+    - "EMC-IND-001.csv: Pin injection DO-160 §22"
+    - "EMC-CBL-001.csv: Bundle waveform 5A"
+    - "EMC-BON-001.xlsx: Bonding resistances"
+  compliance:
+    - "MAT-H2C-001.pdf: H₂ material compatibility"
+    - "STR-AN-001.pdf: Structural analysis"
+    - "CRT-RPT-001.pdf: Certification summary"
+
+qa:
+  checks:
+    - "mesh convergence: GCI < 1%"
+    - "energy balance: ±1%"
+    - "statistical sampling: N=1000 LHS"
+    - "model validation: test error <10%"
+  reproducibility:
+    - "container: ghcr.io/ampel360/emc:2024r2"
+    - "ANSYS Maxwell 2024 R2"
+    - "material database v1.5"
+  traceability:
+    - "requirements: REQ-ENV-003"
+    - "standards: ARP5412/5414/5416, DO-160G, MIL-STD-464C"
+    - "evidence: EMC-AN-001 v1.5 FINAL"
+
+approval:
+  technical_reviewers:
+    - "EMC Analysis Team"
+    - "Chief Systems Engineer"
+    - "Lightning Protection Specialist"
+  certification:
+    - "Certification Lead"
+    - "Safety Assessment Lead"
+  final_authority: "Program Manager"
+
+signoff:
+  authority: "Chief Systems Engineer"
+  required_roles: ["EMC Lead", "Safety Lead", "Certification Lead"]
+  evidence_hash: "sha256:EMC-AN-001-v1.5-final"
