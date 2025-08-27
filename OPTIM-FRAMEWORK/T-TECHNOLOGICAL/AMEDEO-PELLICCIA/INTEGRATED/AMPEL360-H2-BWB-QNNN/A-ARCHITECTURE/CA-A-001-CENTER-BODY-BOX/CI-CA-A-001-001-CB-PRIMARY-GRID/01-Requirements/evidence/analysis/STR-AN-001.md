@@ -24,12 +24,71 @@
 
 | Ver       | Date           | Changes                                                                                                                                                                                                                                                                                                                            |
 | --------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0       | 2025-08-30     | Initial issue for certification baseline review                                                                                                                                                                                                                                                                                    |
+| 1.0       | 2025-08-26    | Initial issue for certification baseline review                                                                                                                                                                                                                                                                                    |
 | 1.0.1     | 2025-08-27     | Corrected ultimate margins in §7.1; updated Compliance Matrix; added H₂ Special Conditions hook; LPS bonding note; integration actions; clarified standards (MMPDS-2025).                                                                                                                                                          |
-| 1.1       | 2025-08-28     | Added H₂ failure/crash load cases (App. G), formal STR↔FDT change process (App. H), and Q\&A Annex on sensitivities (App. I). Updated test plan, compliance matrix, and optimization priorities.                                                                                                                                   |
-| **1.1.1** | **2025-08-29** | **§11.x Integración ampliado (aisladores GFRP, solapes Cu, jumpers, pads de bonding y limit-stops/vía secundaria); §12 fija objetivos MS\_ult ≥ +0.50 (shear-tie) y FI\_RT/D ≤ 0.90 (P95 hot/wet ≤ 0.95); §13 añade filas H₂ leak/jet, crash-deform, single-fail; §14 añade puntos de validación; App. E detalla medidas/ohmios.** |
+| 1.1       | 2025-08-27     | Added H₂ failure/crash load cases (App. G), formal STR↔FDT change process (App. H), and Q\&A Annex on sensitivities (App. I). Updated test plan, compliance matrix, and optimization priorities.                                                                                                                                   |
+| **1.1.1** | **2025-08-27** | **§11.x Integración ampliado (aisladores GFRP, solapes Cu, jumpers, pads de bonding y limit-stops/vía secundaria); §12 fija objetivos MS\_ult ≥ +0.50 (shear-tie) y FI\_RT/D ≤ 0.90 (P95 hot/wet ≤ 0.95); §13 añade filas H₂ leak/jet, crash-deform, single-fail; §14 añade puntos de validación; App. E detalla medidas/ohmios.** |
 
 ---
+
+```
+flowchart TD
+    %% Main Document Artifact
+    STR["Structural Analysis<br/>CB Primary Grid<br/>STR-AN-001<br/><b>v1.1.1 FINAL</b>"]
+
+    %% Trace Chain
+    CI["Config Item:<br/><b>CI-CA-A-001-001-CB-PRIMARY-GRID</b>"]
+    REQ["Key Requirements<br/>REQ-STR-001…005,<br/>REQ-ENV-H2"]
+    STD["Standards:<br/>CS-25.301, .305, .307, .561<br/>MMPDS-2025,<br/>AC 25.571-1D,<br/>AC 20-107B"]
+    MAT["Materials:<br/>Al-Li 2099-T8X,\nTi-6Al-4V,<br/>CFRP IM7/8552"]
+    ANALYSIS["FE Model Chain:<br/>Nastran, ABAQUS,\nBuckling/Modal/Thermal"]
+    EVIDENCE["Evidence Chain"]
+    COMP["Compliance Matrix<br/>Results"]
+    APPROVAL["Approval & Digital Signoff"]
+
+    %% Linked Analysis & Related Docs
+    EMC["EMC-AN-001<br/>(Lightning Analysis)"]
+    FDT["FDT-AN-001<br/>(Fatigue/DT)"]
+
+    %% Evidence types
+    TESTS["Physical Tests<br/>Coupons, Sub-comp., Full-scale"]
+    OPT["Optimization & Sensitivity<br/>(DOE, LHS, App. F/I)"]
+    INTEG["Integration & LPS<br/>(Bond, Isolation, App. E)"]
+    CONFIG["Config Files:<br/>Loadcards, FEM, Spec, .md"]
+    
+    %% Flow
+    STR --> CI
+    CI --> REQ
+    CI --> STD
+    STR --> EMC
+    STR --> FDT
+    STR --> ANALYSIS
+    ANALYSIS --> MAT
+    ANALYSIS --> EVIDENCE
+    EVIDENCE --> TESTS
+    EVIDENCE --> OPT
+    EVIDENCE --> INTEG
+    EVIDENCE --> CONFIG
+    STR --> COMP
+    COMP --> APPROVAL
+
+    %% Styling
+    classDef purple fill:#e2e6fa,stroke:#2948d5,stroke-width:2px,color:#222,font-weight:bold;
+    classDef green fill:#eaf4e2,stroke:#34a853,stroke-width:2px,color:#222,font-weight:bold;
+    classDef blue fill:#eaf4fa,stroke:#0056b6,stroke-width:2px,color:#222,font-weight:bold;
+    classDef gold fill:#fff429,stroke:#b7950b,stroke-width:2px,color:#181818,font-weight:bold;
+
+    class STR,CI,COMP purple;
+    class REQ,STD gold;
+    class MAT green;
+    class ANALYSIS,EVIDENCE green;
+    class APPROVAL gold;
+    class EMC,FDT blue;
+    class TESTS,OPT,INTEG,CONFIG blue;
+
+    %% Tech-green arrows
+    linkStyle default stroke:#3cb371,stroke-width:2px;
+```
 
 ## 1. Executive Summary
 
@@ -629,4 +688,305 @@ Proceso formal **Apéndice H**: cualquier cambio H₂ en FDT dispara re-evaluaci
 
 ---
 
-**SHA-256 (v1.1.1):** to be generated at release
+**SHA-256 (v1.1.1):** to be generated at releaseAquí tienes un **catálogo curado de diagramas/figuras embebibles** para **STR-AN-001 v1.1.1**, con IDs, propósito, formato sugerido, nombre de archivo, texto alternativo y **captión listo en Markdown**. Están ordenadas por secciones del documento (incluye Apéndices A–I). Todas las rutas son relativas a:
+`.../CI-CA-A-001-001-CB-PRIMARY-GRID/01-Requirements/fig/`
+
+> **Formatos recomendados:** vector **SVG** (maestro) + **PDF** para impresión, **PNG 300 dpi** como derivado.
+> **Paleta:** grises + acentos (#1F77B4 azul, #DB4545 rojo, #2E8B57 verde).
+> **Dimensiones:** A4 horizontal (3508×2480 px @300 dpi) o 1920×1080 px.
+
+---
+
+## 1) Resumen / Sistema
+
+### Fig. STR-FIG-001 — CB Primary Grid, vista explotada
+
+* **Propósito:** contexto global (frames, longerones, skins CFRP con malla Cu, straps MLG).
+* **Archivo:** `STR-FIG-001_CB-Overview.svg`
+* **Alt:** “Vista explotada del CB Primary Grid con rutas de carga y salidas LPS”
+* **Markdown:**
+
+```markdown
+![CB Primary Grid — vista explotada](fig/STR-FIG-001_CB-Overview.svg "Figura 1 — CB Primary Grid, vista explotada")
+```
+
+### Fig. STR-FIG-002 — Mapa de rutas de carga (estático)
+
+* **Propósito:** mostrar transferencia skin→stringers→frames→straps.
+* **Archivo:** `STR-FIG-002_Load-Paths.svg`
+* **Markdown:**
+
+```markdown
+![Mapa de rutas de carga](fig/STR-FIG-002_Load-Paths.svg "Figura 2 — Rutas de carga estática en el CB bay")
+```
+
+---
+
+## 2) Casos de carga (LC)
+
+### Fig. STR-FIG-003 — Mapa LC-01…LC-12
+
+* **Propósito:** ficha visual de aceleraciones/pares/ΔP aplicados.
+* **Archivo:** `STR-FIG-003_LC-Map.svg`
+
+```markdown
+![Mapa de casos de carga LC-01…12](fig/STR-FIG-003_LC-Map.svg "Figura 3 — Resumen de LC-01…LC-12")
+```
+
+### Fig. STR-FIG-004 — Casos H₂ (LC-H2-LEAK / CRASH / SFAIL)
+
+* **Propósito:** representar ΔT local, vector de jet, stops/plasticidad y path fail-safe.
+* **Archivo:** `STR-FIG-004_H2-Cases.svg`
+
+```markdown
+![Casos H₂ específicos](fig/STR-FIG-004_H2-Cases.svg "Figura 4 — LC-H2-LEAK, LC-H2-CRASH-DEFORM y LC-H2-SINGLE-FAIL")
+```
+
+### Fig. STR-FIG-005 — Case Control Nastran (diagrama)
+
+* **Propósito:** flujo SUBCASE/LOAD/TEMPP1 y sets clave.
+* **Archivo:** `STR-FIG-005_Nastran-CaseControl.svg`
+
+```markdown
+![Case Control Nastran](fig/STR-FIG-005_Nastran-CaseControl.svg "Figura 5 — Topología de subcasos y cargas (MSC Nastran)")
+```
+
+---
+
+## 3) Calidad FEM (Apéndice A)
+
+### Fig. STR-A-001 — Convergencia de malla (hot-spots)
+
+* **Propósito:** Δσ vs nivel de malla para 4 ubicaciones.
+* **Archivo:** `STR-A-001_Mesh-Convergence.png`
+
+```markdown
+![Convergencia de malla](fig/STR-A-001_Mesh-Convergence.png "Ap. A-1 — Δσ < 2% en hot-spots")
+```
+
+### Fig. STR-A-002 — Balance energía/trabajo
+
+* **Propósito:** |W\_ext−U|/W\_ext por caso (barras).
+* **Archivo:** `STR-A-002_Energy-Balance.png`
+
+```markdown
+![Balance energía-trabajo](fig/STR-A-002_Energy-Balance.png "Ap. A-2 — Normas de energía por LC")
+```
+
+### Fig. STR-A-003 — Robustez a imperfecciones
+
+* **Propósito:** λ\_cr base vs 0.1·t/0.2·t.
+* **Archivo:** `STR-A-003_Imperfection-Robustness.png`
+
+```markdown
+![Robustez a imperfecciones](fig/STR-A-003_Imperfection-Robustness.png "Ap. A-3 — λ_cr mínimo con imperfecciones")
+```
+
+### Fig. STR-A-004 — Modos 1–3 (formas modales)
+
+* **Archivo:** `STR-A-004_Modal-Shapes.png`
+
+```markdown
+![Modos 1–3](fig/STR-A-004_Modal-Shapes.png "Ap. A-4 — Formas modales f1–f3")
+```
+
+---
+
+## 4) Pandeo / ABD (Apéndice C)
+
+### Fig. STR-C-001 — ABD del laminado
+
+* **Propósito:** tabla gráfica A/B/D y equivalentes QI.
+* **Archivo:** `STR-C-001_ABD-Laminate.svg`
+
+```markdown
+![ABD laminado CFRP](fig/STR-C-001_ABD-Laminate.svg "Ap. C-1 — Matrices ABD del laminado IM7/8552")
+```
+
+### Fig. STR-C-002 — Interacción compresión–corte
+
+* **Archivo:** `STR-C-002_Buckling-Interaction.svg`
+
+```markdown
+![Interacción compresión-corte](fig/STR-C-002_Buckling-Interaction.svg "Ap. C-2 — Curvas de interacción N_x–N_y–N_xy")
+```
+
+---
+
+## 5) Detalles de uniones e interfaces
+
+### Fig. STR-FIG-006 — Shear-tie MLG (antes/después)
+
+* **Propósito:** comparación σ y geometría (doubler vs rediseño).
+* **Archivo:** `STR-FIG-006_ShearTie-Before-After.png`
+
+```markdown
+![Shear-tie MLG](fig/STR-FIG-006_ShearTie-Before-After.png "Figura 6 — Shear-tie: estado actual y objetivo ≥ +0.50 MS_ult")
+```
+
+### Fig. STR-FIG-007 — Lug de tanque con keeper y vía secundaria
+
+* **Propósito:** mostrar limit-stop, strap redundante y zonas de crush.
+* **Archivo:** `STR-FIG-007_Tank-Lug-Keeper-Crush.svg`
+
+```markdown
+![Lug con keeper y vía secundaria](fig/STR-FIG-007_Tank-Lug-Keeper-Crush.svg "Figura 7 — Retención y filosofía crash en interfaces H₂")
+```
+
+### Fig. STR-FIG-008 — Stack-up aislado Ti/Al-Li/CFRP
+
+* **Propósito:** aislamientos GFRP/G10, sleeves y arandelas.
+* **Archivo:** `STR-FIG-008_Isolated-Stackup.svg`
+
+```markdown
+![Stack-up aislado](fig/STR-FIG-008_Isolated-Stackup.svg "Figura 8 — Aisladores GFRP/G10 y clearances/creepage")
+```
+
+---
+
+## 6) LPS / Bonding (Apéndice E)
+
+### Fig. STR-E-001 — Red de retorno LPS
+
+* **Propósito:** continuidad malla Cu, longerones/frames, straps MLG.
+* **Archivo:** `STR-E-001_LPS-Network.svg`
+
+```markdown
+![Red de retorno LPS](fig/STR-E-001_LPS-Network.svg "Ap. E-1 — Continuidad de retorno y puntos de medición")
+```
+
+### Fig. STR-E-002 — Solapes de malla Cu y jumpers
+
+* **Propósito:** detalle de solape 25–35 mm y jumper 95 mm²; pads con metas ohm.
+* **Archivo:** `STR-E-002_Overlaps-Jumpers-BondPads.svg`
+
+```markdown
+![Solapes y jumpers LPS](fig/STR-E-002_Overlaps-Jumpers-BondPads.svg "Ap. E-2 — Solapes Cu-mesh, jumpers y pads de bonding")
+```
+
+### Fig. STR-E-003 — Medición Kelvin & pulso strap
+
+* **Propósito:** método de cuatro hilos y prueba 10 kA escalada.
+* **Archivo:** `STR-E-003_Bond-Measurement-Kelvin.png`
+
+```markdown
+![Medición Kelvin](fig/STR-E-003_Bond-Measurement-Kelvin.png "Ap. E-3 — Ensayos de resistencia de bond y strap")
+```
+
+---
+
+## 7) Validación (Sección 14)
+
+### Fig. STR-FIG-009 — Rig sub-componente e instrumentación
+
+* **Propósito:** panel 2-bay + frame + shear-tie + lug con rosetas, FBG, DIC, AE.
+* **Archivo:** `STR-FIG-009_Subcomponent-Rig-Instrumentation.png`
+
+```markdown
+![Rig sub-componente](fig/STR-FIG-009_Subcomponent-Rig-Instrumentation.png "Figura 9 — Montaje, cargas y sensores del sub-componente")
+```
+
+### Fig. STR-FIG-010 — Configuración full-scale CB box
+
+* **Propósito:** puntos de aplicación de 1.5× y survey modal.
+* **Archivo:** `STR-FIG-010_Full-Scale-Setup.png`
+
+```markdown
+![Full-scale CB box](fig/STR-FIG-010_Full-Scale-Setup.png "Figura 10 — Ensayo full-scale y modal")
+```
+
+---
+
+## 8) Optimización (Apéndice F)
+
+### Fig. STR-F-001 — Flujo DOE → SOL200 → Robustez
+
+* **Propósito:** pipeline con gates y métricas (Δmasa, MS\_min, λ\_cr\_min...).
+* **Archivo:** `STR-F-001_Optimization-Flow.svg`
+
+```markdown
+![Flujo de optimización](fig/STR-F-001_Optimization-Flow.svg "Ap. F-1 — DOE, SOL200 y robustez (LHS)")
+```
+
+### Fig. STR-F-002 — Objetivos y constraints (radar)
+
+* **Propósito:** radar con MS\_ult, λ\_cr, W\_max, f1, Hashin, CAI, peel.
+* **Archivo:** `STR-F-002_Targets-Constraints.png`
+
+```markdown
+![Radar de objetivos/constraints](fig/STR-F-002_Targets-Constraints.png "Ap. F-2 — Estado contra metas/gates")
+```
+
+---
+
+## 9) Cumplimiento (Sección 13)
+
+### Fig. STR-FIG-011 — Matriz de conformidad (visión semafórica)
+
+* **Propósito:** estado PASS/PENDING por requisito, incluyendo filas H₂.
+* **Archivo:** `STR-FIG-011_Compliance-Matrix-Status.svg`
+
+```markdown
+![Matriz de conformidad](fig/STR-FIG-011_Compliance-Matrix-Status.svg "Figura 11 — Resumen de cumplimiento y SC de H₂")
+```
+
+---
+
+## 10) Gestión de cambios (Apéndice H)
+
+### Fig. STR-H-001 — Flujo STR↔FDT↔EMC (Mermaid)
+
+* **Propósito:** proceso de impacto con firmas y CN.
+* **Archivo:** `STR-H-001_Change-Impact-Flow.svg`
+* **(Opcional Mermaid para doc vivo):**
+
+```mermaid
+flowchart LR
+  FDT[[FDT change: K_H/C,m/K_IC/POD]] -->|Trigger| STR[STR impact]
+  STR --> R1[Recalc S-N/LEFM & MS/λ/W/f]
+  R1 --> CM[Update matrices & evidence_chain]
+  CM --> CN{CN & approvals}
+  CN -->|OK| Merge[Re-issue STR]
+  CN -->|Hold| Iterate[Mitigate/redo]
+  EMC[[EMC change: LPS/zoning/bond]] -->|Trigger| STR
+```
+
+```markdown
+![Flujo de cambio](fig/STR-H-001_Change-Impact-Flow.svg "Ap. H-1 — Proceso de impacto de cambios STR↔FDT↔EMC")
+```
+
+---
+
+## 11) Casos H₂ (detalle térmico/jet)
+
+### Fig. STR-G-001 — Huella térmica ΔT y vector de jet
+
+* **Propósito:** footprint −200 °C y dirección de carga; zonas de peel.
+* **Archivo:** `STR-G-001_H2-Leak-Jet-Footprint.svg`
+
+```markdown
+![Huella térmica y jet](fig/STR-G-001_H2-Leak-Jet-Footprint.svg "Ap. G-1 — LC-H2-LEAK: ΔT local y fuerza tipo jet")
+```
+
+### Fig. STR-G-002 — Curvas F–δ y energía (crash)
+
+* **Propósito:** respuesta no lineal con disipación en *crush features*.
+* **Archivo:** `STR-G-002_Crash-Force-Displacement.png`
+
+```markdown
+![Respuesta crash](fig/STR-G-002_Crash-Force-Displacement.png "Ap. G-2 — LC-H2-CRASH-DEFORM: F–δ y energía")
+```
+
+---
+
+### Notas de integración
+
+* Inserta cada figura justo tras el primer párrafo de la subsección relevante (o tablas), referenciándola en el texto (“véase **Figura X** / **Ap. Y-Z**”).
+* Mantén consistencia de numeración (reinicia por bloque: Fig. STR-FIG-XXX para secciones, STR-A/C/E/F/G/H-XXX para apéndices).
+* Exporta **SVG + PDF** y deriva **PNG 300 dpi**; añade `title`/`desc` en SVG para accesibilidad.
+
+Si quieres, preparo una **carpeta de proyecto** con plantillas (SVG base, estilos, rejilla, tipografías) y archivos Mermaid/PlantUML para que el equipo solo tenga que completar datos y exportar.
+
+
+
+
