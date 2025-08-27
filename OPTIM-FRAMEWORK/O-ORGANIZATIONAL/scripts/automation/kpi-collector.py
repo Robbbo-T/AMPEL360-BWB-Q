@@ -74,8 +74,11 @@ class KPICollector:
         
     def save_kpi_data(self, data: Dict, filepath: str):
         """Save KPI data to file"""
-        with open(filepath, 'w') as f:
-            json.dump(data, f, indent=2)
+        try:
+            with open(filepath, 'w') as f:
+                json.dump(data, f, indent=2)
+        except (OSError, TypeError, ValueError) as e:
+            print(f"Error saving KPI data to {filepath}: {e}")
             
     def run_collection(self):
         """Execute KPI collection process"""
