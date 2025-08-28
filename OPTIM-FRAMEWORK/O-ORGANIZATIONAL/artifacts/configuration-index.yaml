@@ -1,5 +1,4 @@
-utcs_mi_header: EstándarUniversal:IndiceDeConfiguracion:Desarrollo:ARP4754A:00.00:RegistroCentralDeConfiguracion:0001:v1.0:AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum:GeneracionHumana:CROSS:Amedeo
-  Pelliccia:8f2ad9c1:01-Requirements→11-Sustainment-Recycle
+utcs_mi_header: "EstándarUniversal:IndiceDeConfiguracion:Desarrollo:ARP4754A:00.00:RegistroCentralDeConfiguracion:0001:v1.0:AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum:GeneracionHumana:CROSS:AmedeoPelliccia:8f2ad9c1:01-Requirements→11-Sustainment-Recycle"
 meta:
   version: 1.0.0
   last_updated: '2025-08-28'
