@@ -1,0 +1,150 @@
+{
+  "components": {
+    "atom_bolt_001": {
+      "component_id": "atom_bolt_001",
+      "name": "Titanium Bolt M8",
+      "level": "atom",
+      "component_type": "structural",
+      "status": "concept",
+      "properties": {
+        "mass": 0.011250000000000001,
+        "volume": 0.0,
+        "cost": 15.0,
+        "reliability": 1.0,
+        "performance_metrics": {},
+        "material_properties": {
+          "density": 4500,
+          "yield_strength": 880000000.0,
+          "elastic_modulus": 114000000000.0
+        },
+        "environmental_limits": {}
+      },
+      "interfaces": [],
+      "metadata": {
+        "created_date": "2025-08-28",
+        "modified_date": "2025-08-28",
+        "version": "1.0.0",
+        "author": "AMPEL360-System",
+        "description": "",
+        "tags": [],
+        "certifications": [],
+        "test_results": [],
+        "utcs_phase": "01-Requirements"
+      },
+      "children": [],
+      "dependencies": []
+    },
+    "atom_cf_ply_001": {
+      "component_id": "atom_cf_ply_001",
+      "name": "Carbon Fiber Ply 0.125mm",
+      "level": "atom",
+      "component_type": "structural",
+      "status": "concept",
+      "properties": {
+        "mass": 0.2,
+        "volume": 0.0,
+        "cost": 50.0,
+        "reliability": 1.0,
+        "performance_metrics": {},
+        "material_properties": {
+          "density": 1600,
+          "yield_strength": 1500000000.0,
+          "elastic_modulus": 230000000000.0
+        },
+        "environmental_limits": {}
+      },
+      "interfaces": [],
+      "metadata": {
+        "created_date": "2025-08-28",
+        "modified_date": "2025-08-28",
+        "version": "1.0.0",
+        "author": "AMPEL360-System",
+        "description": "",
+        "tags": [],
+        "certifications": [],
+        "test_results": [],
+        "utcs_phase": "01-Requirements"
+      },
+      "children": [],
+      "dependencies": []
+    },
+    "mol_fuel_cell_001": {
+      "component_id": "mol_fuel_cell_001",
+      "name": "H2 Fuel Cell 50kW",
+      "level": "molecule",
+      "component_type": "propulsion",
+      "status": "concept",
+      "properties": {
+        "mass": 25.0,
+        "volume": 0.0,
+        "cost": 75000.0,
+        "reliability": 1.0,
+        "performance_metrics": {
+          "power_rating": 50000,
+          "efficiency": 0.88,
+          "specific_power": 2000.0
+        },
+        "material_properties": {},
+        "environmental_limits": {}
+      },
+      "interfaces": [],
+      "metadata": {
+        "created_date": "2025-08-28",
+        "modified_date": "2025-08-28",
+        "version": "1.0.0",
+        "author": "AMPEL360-System",
+        "description": "",
+        "tags": [],
+        "certifications": [],
+        "test_results": [],
+        "utcs_phase": "01-Requirements"
+      },
+      "children": [],
+      "dependencies": []
+    },
+    "org_wing_001": {
+      "component_id": "org_wing_001",
+      "name": "BWB Main Wing",
+      "level": "organism",
+      "component_type": "structural",
+      "status": "concept",
+      "properties": {
+        "mass": 8000.0,
+        "volume": 0.0,
+        "cost": 2500000.0,
+        "reliability": 1.0,
+        "performance_metrics": {
+          "wingspan": 60.0,
+          "area": 500.0,
+          "aspect_ratio": 7.2,
+          "lift_coefficient": 0.0,
+          "drag_coefficient": 0.0
+        },
+        "material_properties": {},
+        "environmental_limits": {}
+      },
+      "interfaces": [],
+      "metadata": {
+        "created_date": "2025-08-28",
+        "modified_date": "2025-08-28",
+        "version": "1.0.0",
+        "author": "AMPEL360-System",
+        "description": "",
+        "tags": [],
+        "certifications": [],
+        "test_results": [],
+        "utcs_phase": "01-Requirements"
+      },
+      "children": [],
+      "dependencies": []
+    }
+  },
+  "metadata": {
+    "last_updated": "2025-08-28 15:23:25",
+    "total_components": 4,
+    "component_types": {
+      "structural": 3,
+      "propulsion": 1
+    }
+  }
+}

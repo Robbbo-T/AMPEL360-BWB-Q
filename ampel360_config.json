@@ -24,10 +24,18 @@
   },
   "capacity": {
     "QNNN": 150,
-    "binning_range_pax": [150, 220],
+    "binning_range_pax": [
+      150,
+      220
+    ],
     "objective": "E[cost] + beta * CVaR_alpha(cost)"
   },
-  "corridors_seed": ["LHR", "FRA", "DXB", "SIN"],
+  "corridors_seed": [
+    "LHR",
+    "FRA",
+    "DXB",
+    "SIN"
+  ],
   "risk": {
     "cvar_alpha": 0.8,
     "beta": 0.25
