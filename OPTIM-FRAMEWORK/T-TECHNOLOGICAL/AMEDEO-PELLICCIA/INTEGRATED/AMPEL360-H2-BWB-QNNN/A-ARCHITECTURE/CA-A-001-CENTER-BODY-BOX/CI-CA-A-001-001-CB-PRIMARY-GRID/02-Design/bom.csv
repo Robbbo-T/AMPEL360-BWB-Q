@@ -1,0 +1,11 @@
+node_id,name,ci_ref,level,qty,uom,make_buy,external,link
+PG,CB-PRIMARY-GRID,CI-CA-A-001-001,0,1,asm,Make,false,
+KEEL,Keel Members Assy,CI-CA-A-001-001,1,1,asm,Make,false,
+LON,Longerons Assy,CI-CA-A-001-001,1,1,asm,Make,false,
+FRM,Frames Assy,CI-CA-A-001-001,1,1,asm,Make,false,
+LGR,LG Reinforcements,CI-CA-A-001-001,1,1,asm,Make,false,
+LPS,LPS Bonding Network,CI-CA-A-001-001,1,1,kit,Buy/Make,false,
+BRK,Systems Brackets,CI-CA-A-001-001,1,1,kit,Make,false,
+ACC,Access Doors & Panels,CI-CA-A-001-001,1,1,kit,Make,false,
+RIBS,CB Ribs/Bulkheads,CI-CA-A-001-002,1,1,asm,Make,true,../../CI-CA-A-001-002-CB-RIBS-BULKHEADS/
+SKIN,CB Skin Panels,CI-CA-A-001-003,1,1,asm,Make,true,../../CI-CA-A-001-003-CB-SKIN-PANELS/

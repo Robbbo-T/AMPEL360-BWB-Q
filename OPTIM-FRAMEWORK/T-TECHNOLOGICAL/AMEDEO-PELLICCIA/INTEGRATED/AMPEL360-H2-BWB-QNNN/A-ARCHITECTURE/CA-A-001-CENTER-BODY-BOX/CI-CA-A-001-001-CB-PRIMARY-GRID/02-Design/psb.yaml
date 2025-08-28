@@ -1,0 +1,80 @@
+psb:
+  id: "PSB-001"
+  ci_id: "CI-CA-A-001-001"
+  version: "v1.0"
+  utcs_phase: "02-Design"
+  nodes:
+    - node_id: "PG"
+      name: "CB-PRIMARY-GRID"
+      level: 0
+      ci_ref: "CI-CA-A-001-001"
+      make_buy: "Make"
+      children: ["KEEL","LON","FRM","LGR","LPS","BRK","ACC","RIBS","SKIN"]
+    - node_id: "KEEL"
+      name: "Keel Members Assy"
+      level: 1
+      ci_ref: "CI-CA-A-001-001"
+      qty: 1
+      uom: "asm"
+      make_buy: "Make"
+    - node_id: "LON"
+      name: "Longerons Assy"
+      level: 1
+      ci_ref: "CI-CA-A-001-001"
+      qty: 1
+      uom: "asm"
+      make_buy: "Make"
+    - node_id: "FRM"
+      name: "Frames Assy"
+      level: 1
+      ci_ref: "CI-CA-A-001-001"
+      qty: 1
+      uom: "asm"
+      make_buy: "Make"
+    - node_id: "LGR"
+      name: "LG Reinforcements"
+      level: 1
+      ci_ref: "CI-CA-A-001-001"
+      qty: 1
+      uom: "asm"
+      make_buy: "Make"
+    - node_id: "LPS"
+      name: "LPS Bonding Network"
+      level: 1
+      ci_ref: "CI-CA-A-001-001"
+      qty: 1
+      uom: "kit"
+      make_buy: "Buy/Make"
+    - node_id: "BRK"
+      name: "Systems Brackets"
+      level: 1
+      ci_ref: "CI-CA-A-001-001"
+      qty: 1
+      uom: "kit"
+      make_buy: "Make"
+    - node_id: "ACC"
+      name: "Access Doors & Panels"
+      level: 1
+      ci_ref: "CI-CA-A-001-001"
+      qty: 1
+      uom: "kit"
+      make_buy: "Make"
+    - node_id: "RIBS"
+      name: "CB Ribs/Bulkheads"
+      level: 1
+      ci_ref: "CI-CA-A-001-002"
+      external: true
+      link: "../../CI-CA-A-001-002-CB-RIBS-BULKHEADS/"
+    - node_id: "SKIN"
+      name: "CB Skin Panels"
+      level: 1
+      ci_ref: "CI-CA-A-001-003"
+      external: true
+      link: "../../CI-CA-A-001-003-CB-SKIN-PANELS/"
+interfaces:
+  - id: "IF-A-STRUCT-JOINTS"
+    nodes: ["PG","RIBS","SKIN"]
+  - id: "IF-A-LPS-BONDING"
+    nodes: ["PG","LPS"]
+  - id: "IF-C2-H2-MOUNTS"
+    nodes: ["PG"]

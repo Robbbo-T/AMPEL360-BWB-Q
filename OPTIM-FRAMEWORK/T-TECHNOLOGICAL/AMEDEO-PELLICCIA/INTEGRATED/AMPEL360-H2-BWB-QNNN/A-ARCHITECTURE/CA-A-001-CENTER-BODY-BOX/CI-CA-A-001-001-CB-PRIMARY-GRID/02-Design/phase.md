@@ -1,14 +1,14 @@
-# 02-Architecture - CI-CA-A-001-001-CB-PRIMARY-GRID
+# 02-Design - CI-CA-A-001-001-CB-PRIMARY-GRID
 
 ## Component Architecture: CA-A-001-CENTER-BODY-BOX
 ## Configuration Item: CI-CA-A-001-001-CB-PRIMARY-GRID
-## UTCS Phase: 02-Architecture
+## UTCS Phase: 02-Design
 
 ### Overview
-This document outlines the architecture phase activities for the CI-CA-A-001-001-CB-PRIMARY-GRID configuration item within the CA-A-001-CENTER-BODY-BOX component architecture.
+This document outlines the design phase activities for the CI-CA-A-001-001-CB-PRIMARY-GRID configuration item within the CA-A-001-CENTER-BODY-BOX component architecture.
 
 ### Objectives
-- Define architecture phase deliverables
+- Define design phase deliverables
 - Establish phase completion criteria
 - Document phase-specific requirements and constraints
 
