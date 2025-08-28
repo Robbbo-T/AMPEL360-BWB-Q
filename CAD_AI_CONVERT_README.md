@@ -51,13 +51,13 @@ python cad_ai_convert.py --phase 4  # Problem Solving
 
 ```bash
 # Run enhanced optimization with CAD-AI integration
-python scripts/qaoa_over_F.py --enhanced
+python OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py --enhanced
 
 # Run CAD-AI workflow independently
-python scripts/qaoa_over_F.py --cad-ai-only
+python OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py --cad-ai-only
 
 # Standard QAOA optimization (legacy mode)
-python scripts/qaoa_over_F.py --optimize
+python OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py --optimize
 ```
 
 ### Use Case Demonstration
