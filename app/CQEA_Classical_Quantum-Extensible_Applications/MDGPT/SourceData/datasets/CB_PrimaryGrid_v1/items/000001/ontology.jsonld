@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "ampel": "https://aqua-v/ontology/",
+    "type": "@type",
+    "id": "@id"
+  },
+  "id": "ampel:ci-CA-A-001-001-PG-0001",
+  "type": "ampel:PrimaryStructureMember",
+  "label": "CB Primary Grid — Frame F5",
+  "material": {
+    "type": "ampel:Material", 
+    "name": "Al-Li 2195",
+    "grade": "T8",
+    "treatment": "T8"
+  },
+  "geometry": {
+    "type": "ampel:ParametricProfile",
+    "profile": "HatStringer",
+    "params": {
+      "t": 2.0,
+      "w": 40.0, 
+      "h": 18.0,
+      "r": 2.0,
+      "units": "mm"
+    }
+  },
+  "interfaces": [
+    {
+      "type": "ampel:BondedInterface",
+      "to": "ampel:Stringer S14"
+    },
+    {
+      "type": "ampel:FastenedInterface", 
+      "to": "ampel:Skin Panel CP-12",
+      "spec": "NAS1097AD6"
+    }
+  ],
+  "tolerances": [
+    {
+      "axis": "z",
+      "value": 0.2,
+      "units": "mm"
+    }
+  ],
+  "standards": ["CS-25.305", "AC 25.571-1D"],
+  "utcs_phase": "01-Requirements→07-Certification-Security",
+  "generated_by": "MDGPT_v1.0",
+  "timestamp": "2025-08-28T07:40:00Z"
+}
