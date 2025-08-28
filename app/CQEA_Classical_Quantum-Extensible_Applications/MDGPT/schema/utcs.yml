@@ -1,0 +1,119 @@
+# UTCS-MI v5.0 Ontology Schema for MDGPT
+# Defines entity types, properties, and validation rules for engineering ontologies
+
+Entity:
+  required: [id, type, label]
+  properties:
+    id:
+      type: string
+      pattern: "^ampel:.*"
+      description: "AMPEL namespace identifier"
+    type:
+      type: string
+      enum: 
+        - PrimaryStructureMember
+        - SystemBracket
+        - SkinPanel
+        - Fastener
+        - BondingStrap
+        - ServiceLine
+        - AccessPanel
+        - Stiffener
+        - LPSBus
+        - ElectricalConnector
+      description: "Engineering entity classification"
+    label:
+      type: string
+      description: "Human-readable component identifier"
+    material:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+          enum: ["Al-Li 2195", "CFRP", "Ti-6Al-4V", "Inconel 625", "Steel 15-5PH"]
+        grade:
+          type: string
+        treatment:
+          type: string
+          enum: ["T8", "T84", "Annealed", "SolutionTreated"]
+    geometry:
+      type: object
+      properties:
+        profile:
+          type: string
+          enum: [HatStringer, ZStringer, LAngle, TBeam, Box, Plate, Tube, Wire]
+        params:
+          type: object
+          properties:
+            t: {type: number, minimum: 0.1, maximum: 50.0}  # thickness mm
+            w: {type: number, minimum: 1.0, maximum: 500.0}  # width mm  
+            h: {type: number, minimum: 1.0, maximum: 200.0}  # height mm
+            r: {type: number, minimum: 0.0, maximum: 10.0}   # radius mm
+            units: {type: string, enum: [mm, in]}
+    interfaces:
+      type: array
+      items:
+        type: object
+        required: [type, to]
+        properties:
+          type:
+            type: string
+            enum: [BondedInterface, FastenedInterface, WeldedInterface, BondingInterface]
+          to:
+            type: string
+            pattern: "^ampel:.*"
+          spec:
+            type: string
+            pattern: "^(NAS|MS|AN|ASNA|DIN).*"
+    tolerances:
+      type: array
+      items:
+        type: object
+        required: [axis, value, units]
+        properties:
+          axis: {type: string, enum: [x, y, z, flatness, perpendicularity, parallelism]}
+          value: {type: number, minimum: 0.0, maximum: 10.0}
+          units: {type: string, enum: [mm, in]}
+    standards:
+      type: array
+      items:
+        type: string
+        pattern: "^(CS|FAR|AC|DO|ARP|RTCA|AS|SAE).*"
+
+Relationship:
+  required: [from, to, type]
+  properties:
+    from:
+      type: string
+      pattern: "^ampel:.*"
+    to:
+      type: string  
+      pattern: "^ampel:.*"
+    type:
+      type: string
+      enum: 
+        - supports
+        - fastened_to
+        - grounds_to
+        - routes_through
+        - connects_to
+        - mounted_on
+    properties:
+      type: object
+      properties:
+        resistance: {type: number, maximum: 5.0}  # mΩ for LPS
+        torque: {type: number}  # Nm for fasteners
+        clamp_spec: {type: string}
+
+ValidationRules:
+  structural_integrity:
+    - "Every PrimaryStructureMember must have at least one 'supports' relationship"
+    - "Fasteners must specify torque or grip length"
+  lps_continuity:
+    - "Every BondingStrap must have 'grounds_to' relationship with resistance ≤ 2.5mΩ"
+  material_compatibility:
+    - "No direct contact between Al-Li and Steel without barrier"
+  geometric_constraints:
+    - "Thickness values must be realistic for material and application"
+    - "Fastener patterns must conform to minimum edge distances"

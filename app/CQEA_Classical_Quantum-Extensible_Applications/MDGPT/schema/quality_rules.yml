@@ -1,0 +1,110 @@
+# Quality Rules for MDGPT Source Data Validation
+# Ensures physical plausibility and engineering correctness
+
+rules:
+  - id: "LPS-001"
+    category: "electrical"
+    description: "Toda correa de bonding debe conectarse a un bus LPS en el grafo"
+    severity: "warning"
+    applies_to: ["SyntheticLM", "RealPhoto", "RenderCAD", "SyntheticParametric"]
+    check: "graph_has_edge_type('grounds_to') or flag('lps_continuity','warn')"
+    remediation: "Verificar continuidad eléctrica y añadir missing bonding straps"
+
+  - id: "FAST-002"
+    category: "fasteners"
+    description: "Patrones de fijación deben corresponder a especificación NAS/MS válida"
+    severity: "error"
+    applies_to: ["all"]
+    check: "validate_fastener_pattern(metadata, image)"
+    remediation: "Corregir patrones de fasteners según standards aeronáuticos"
+
+  - id: "GDNT-003"
+    category: "tolerances"
+    description: "Mínimo esquema GD&T (flatness/perpendicularity) si hay callouts de mecanizado"
+    severity: "info"
+    applies_to: ["TechnicalDrawing", "RenderCAD"]
+    check: "has_gdnt_minimum(metadata)"
+    remediation: "Añadir geometric tolerances mínimas según AS9100"
+
+  - id: "PHYS-004"
+    category: "physics"
+    description: "Espesores de material deben estar en rango válido para aplicación estructural"
+    severity: "error"
+    applies_to: ["all"]
+    check: "validate_thickness_range(material_type, thickness, application)"
+    remediation: "Verificar thickness vs. material properties y loads"
+
+  - id: "GEOM-005"
+    category: "geometry"
+    description: "No geometrías imposibles (non-manifold, intersecciones no intencionadas)"
+    severity: "error"
+    applies_to: ["SyntheticLM", "SyntheticParametric"]
+    check: "validate_geometric_consistency(geometry)"
+    remediation: "Revisar topology y corregir intersecciones imposibles"
+
+  - id: "OCR-006"
+    category: "text"
+    description: "Callouts de materiales/dimensiones deben ser legibles y consistentes"
+    severity: "warning"
+    applies_to: ["all"]
+    check: "validate_ocr_consistency(text_annotations)"
+    remediation: "Mejorar quality de texto o añadir metadata manual"
+
+  - id: "SYNT-007"
+    category: "synthetic"
+    description: "Imágenes SyntheticLM deben incluir metadata completo de generación"
+    severity: "error"
+    applies_to: ["SyntheticLM"]
+    check: "has_required_synthetic_metadata(metadata)"
+    remediation: "Añadir model_name, prompt, seed, y generator_hash"
+
+  - id: "CONN-008"
+    category: "connectivity"
+    description: "Componentes estructurales deben tener path de cargas hasta fuselaje"
+    severity: "warning"
+    applies_to: ["all"]
+    check: "validate_load_path_connectivity(graph)"
+    remediation: "Verificar que todos los elementos tienen load path completo"
+
+  - id: "MAT-009"
+    category: "materials"
+    description: "Combinaciones de materiales deben ser compatibles galvánicamente"
+    severity: "error"
+    applies_to: ["all"]
+    check: "validate_material_compatibility(materials_in_contact)"
+    remediation: "Añadir isolation o cambiar materials para evitar corrosión"
+
+  - id: "SCALE-010"
+    category: "dimensions"
+    description: "Escalas y dimensiones deben ser coherentes en toda la imagen"
+    severity: "warning"
+    applies_to: ["all"]
+    check: "validate_dimensional_consistency(scale_references)"
+    remediation: "Verificar y corregir references dimensionales"
+
+thresholds:
+  error_max: 0      # No errors allowed for certification evidence
+  warning_max: 2    # Max 2 warnings for T2 trust tier
+  info_max: 10      # Unlimited info messages
+
+trust_tier_requirements:
+  T0:
+    max_errors: 0
+    max_warnings: 0
+    required_checks: ["all"]
+  T1:
+    max_errors: 0
+    max_warnings: 1
+    required_checks: ["PHYS-004", "GEOM-005", "MAT-009"]
+  T2:
+    max_errors: 0
+    max_warnings: 2
+    required_checks: ["PHYS-004", "CONN-008"]
+  T3:
+    max_errors: 1
+    max_warnings: 3
+    required_checks: ["PHYS-004", "SYNT-007"]
+  T4:
+    max_errors: 2
+    max_warnings: 5
+    required_checks: ["PHYS-004"]

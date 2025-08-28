@@ -1,0 +1,54 @@
+utcs_mi_header: "EstándarUniversal:Datos-Desarrollo-ARP4754A-00.00-ImagenDeOrigen-0001-v1.0-AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum-GeneracionHumana-AIR-AmedeoPelliccia-1f2e3d4c-01-Requirements→07-Certification-Security"
+
+id: "cbpg_v1_000001"
+origin_type: "SyntheticParametric"
+trust_tier: "T0"
+
+provenance:
+  source: "internal_gen_parametric"
+  license: "AQUA-Internal-Use"
+  rights_holder: "AQUA Technologies S.L."
+  uri: "s3://aqua-datasets/cbpg_v1/000001/"
+  generator: "FreeCAD_ParametricRenderer_v2.1"
+
+parametric:
+  base_model: "CB_PrimaryGrid_Master.FCStd"
+  parameters:
+    stringer_spacing: 400  # mm
+    frame_spacing: 500     # mm
+    hat_width: 60          # mm
+    hat_height: 18         # mm
+    skin_thickness: 2.0    # mm
+    material: "Al-Li 2195"
+  render_settings:
+    lighting: "studio_three_point"
+    camera_angle: "iso_30deg"
+    resolution: [2048, 2048]
+    anti_aliasing: 4x
+    background: "neutral_gray"
+
+quality:
+  geometric_accuracy: 1.0   # perfect from CAD
+  ocr_readability: 0.95     # dimensions clearly visible
+  blur_metric: 0.02         # crisp render
+  lighting_ok: true
+  material_representation: true
+
+gt_links:
+  ontology_jsonld: "ontology.jsonld"
+  graph_graphml: "graph.graphml"
+  geom_glb: "geom.glb"
+  parameters_yaml: "parameters.yml"
+
+qa_checks:
+  physical_plausibility: pass
+  lps_continuity: pass
+  fastener_pattern: pass
+  gdnt_minimal: pass
+  geometric_consistency: pass
+  dimensional_consistency: pass
+
+notes: "Baseline parametric render for CB Primary Grid training set - gold standard GT"
+timestamp: "2025-08-28T07:30:00Z"
+validator: "MDGPT_QA_Pipeline_v1.0"
+checksum: "sha256:def456789abc..."

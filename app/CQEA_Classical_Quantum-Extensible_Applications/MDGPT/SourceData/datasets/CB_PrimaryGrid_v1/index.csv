@@ -1,0 +1,6 @@
+id,origin_type,trust_tier,filename,resolution,filesize_mb,timestamp,qa_status,gt_available,prompt_hash
+cbpg_v1_000001,SyntheticParametric,T0,000001/image.png,2048x2048,3.2,2025-08-28T07:30:00Z,validated,true,
+cbpg_v1_000002,RenderCAD,T1,000002/image.png,2048x2048,4.1,2025-08-28T07:32:00Z,validated,true,
+cbpg_v1_000003,RealPhoto,T2,000003/image.jpg,2048x2048,2.8,2025-08-28T07:35:00Z,validated,false,
+cbpg_v1_000004,SyntheticLM,T3,000004/image.png,2048x2048,3.5,2025-08-28T07:38:00Z,pending_review,false,sha256:ab12cd34
+cbpg_v1_000005,TechnicalDrawing,T2,000005/image.pdf,A3_vector,1.2,2025-08-28T07:40:00Z,validated,true,
