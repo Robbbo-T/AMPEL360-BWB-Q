@@ -3,6 +3,18 @@
 Enterprise-grade framework for the AMPEL360 H₂-BWB-Q aircraft configuration optimization system.  
 This index links into each section and the deeper technological/AMEDEO-PELLICCIA structure.
 
+## 🚀 **Interactive Framework Index**
+
+**[Launch Interactive Navigator →](./index.html)**
+
+Experience the OPTIM Framework through our new interactive web interface:
+- 🗺️ **Visual navigation** through all framework sections
+- 🔍 **Smart search** across domains, documentation, and tools  
+- 📱 **Mobile-responsive** design for access anywhere
+- ⚡ **Real-time exploration** of technological domains and components
+
+> **Quick Access**: Open `index.html` in your browser or serve locally with `python -m http.server 8000`
+
 ---
 
 ## Quick Links
