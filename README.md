@@ -81,7 +81,7 @@ OPTIME-FRAMEWORK/
 │   ├── L1-LOGISTICS/
 │   ├── L2-LINKS/
 │   ├── I-INFRASTRUCTURES/
-│   ├── C1-COMPUTING/
+│   ├── C1-COCKPIT.CABIN,CARGO/
 │   ├── C2-CRYOGENICS/
 │   ├── I2-INTELLIGENCE/
 │   └── A2-AIRPORTS/
@@ -114,7 +114,7 @@ OPTIME-FRAMEWORK/
 |     **L1-LOGISTICS**     | Logistics, Manufacturing & Supply                        |      13 |
 |       **L2-LINKS**       | Links, Communications & Navigation                       |      10 |
 |   **I-INFRASTRUCTURES**  | Infrastructures (ATM, hangars, facilities, corobotics)   |       8 |
-|     **C1-COMPUTING**     | Computing & Control                                      |      10 |
+|     **C1-COCKPIT, CABIN, CARGO**     | COCKPIT, CABIN  AND CARGO                                      |      10 |
 |     **C2-CRYOGENICS**    | Cryogenics, Quantum & Hydrogen Interfaces                |       8 |
 |    **I2-INTELLIGENCE**   | Intelligence                                             |       8 |
 |      **A2-AIRPORTS**     | Airports Adaptation                                      |       5 |
