@@ -29,7 +29,7 @@ configurations:
     status: ENFORCED
   optimization:
   - id: QAOA-SELECTOR
-    file: ../../I-.INTELLIGENT/scripts/qaoa_over_F.py
+    file: ../../I-INTELLIGENT/scripts/qaoa_over_F.py
     description: QAOA optimization selector with CVaR objective
     status: OPERATIONAL
   - id: FEASIBLE-SET
@@ -40,7 +40,7 @@ configurations:
     sha256: 30b035f08e505ec195fb9d8e70a54ee352604f98cacf82117d4dedfb2edce6f3
   donor_database:
   - id: AMPEL-CANDIDATES
-    file: ../../I-.INTELLIGENT/data/candidates.yaml
+    file: ../../I-INTELLIGENT/data/candidates.yaml
     description: 43 AMPEL aircraft subsystem donors
     status: VALIDATED
     count: 43

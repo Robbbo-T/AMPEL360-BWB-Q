@@ -5,7 +5,7 @@
 
 ## 1. Entradas/Salidas
 **Entradas:**  
-- `constraints/hard_constraints.yaml`, `OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml`, `ampel360-config.yaml`.  
+- `constraints/hard_constraints.yaml`, `OPTIM-FRAMEWORK/I-INTELLIGENT/data/candidates.yaml`, `ampel360-config.yaml`.  
 - KPIs O-ORGANIZATIONAL, packs técnicos por segmento (ARC/CRY/ENR/PRO/ELE/INF/CTL).  
 - Safety (FHA/PSSA/SSA), MRO plan y costos.
 

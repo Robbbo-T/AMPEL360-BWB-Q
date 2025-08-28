@@ -243,17 +243,17 @@ Governance, finance, decision records, committees, org structure, KPIs, automati
 <details><summary>Show folders & files</summary>
 
 ```text
-./OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/automation/
+./OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/automation/
 ```
 
-* [`daily-sync.py`](./OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/automation/daily-sync.py)
-* [`weekly-rollup.py`](./OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/automation/weekly-rollup.py)
-* [`monthly-report.py`](./OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/automation/monthly-report.py)
-* [`kpi-collector.py`](./OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/automation/kpi-collector.py)
-* [`risk-updater.py`](./OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/automation/risk-updater.py)
-* [`action-notifier.py`](./OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/automation/action-notifier.py)
-* [`compliance-checker.py`](./OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/automation/compliance-checker.py)
-* [`schedule-analyzer.py`](./OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/automation/schedule-analyzer.py)
+* [`daily-sync.py`](./OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/automation/daily-sync.py)
+* [`weekly-rollup.py`](./OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/automation/weekly-rollup.py)
+* [`monthly-report.py`](./OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/automation/monthly-report.py)
+* [`kpi-collector.py`](./OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/automation/kpi-collector.py)
+* [`risk-updater.py`](./OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/automation/risk-updater.py)
+* [`action-notifier.py`](./OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/automation/action-notifier.py)
+* [`compliance-checker.py`](./OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/automation/compliance-checker.py)
+* [`schedule-analyzer.py`](./OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/automation/schedule-analyzer.py)
 
 ```text
 ./tools/calculators/
