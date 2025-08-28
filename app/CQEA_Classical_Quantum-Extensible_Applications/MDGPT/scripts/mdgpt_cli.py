@@ -225,7 +225,7 @@ Examples:
     # Dataset validate
     dataset_validate = dataset_subparsers.add_parser('validate', help='Validate dataset')
     dataset_validate.add_argument('--in', dest='input', required=True, help='Dataset directory')
-    dataset_validate.add_argument('--schema', required=True, help='Schema file')
+    dataset_validate.add_argument('--schema', help='Schema file (optional)')
     dataset_validate.add_argument('--rules', required=True, help='Quality rules file')
     dataset_validate.add_argument('--report', help='Output report file')
     

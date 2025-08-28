@@ -6,6 +6,27 @@ EstándarUniversal:Documento-Especificacion-ARP4754A-00.00-SourceDataSpecificati
 ---
 
 ## 0) Propósito
+
+**IMPLEMENTADO**: Datos de origen materializados con trazabilidad UTCS-MI v5.0 completa, incluyendo:
+
+- ✅ `dataset.card.md` — Ficha formal con EstándarUniversal (13 campos)
+- ✅ `index.csv` — Índice navegable con origen, trust tier, metadatos de generación
+- ✅ `metadata.yml` — Metadatos completos por ítem para T0/T2/T3
+- ✅ `schema/quality_rules.yml` — Reglas de calidad (LPS, fijación, GD&T)
+- ✅ CLI integrado para ingesta y validación automática
+
+### Ejemplo de uso rápido:
+```bash
+# Ingestar dataset
+mdgpt dataset ingest --src ./SourceData/datasets/CB_PrimaryGrid_v1 --out ./processed --strict
+
+# Validar con reglas de calidad
+mdgpt dataset validate --in ./SourceData/datasets/CB_PrimaryGrid_v1 \
+  --rules ./schema/quality_rules.yml --report QA_REPORT.md
+
+# Demo completo
+python3 demo_source_data.py
+```
 Establecer **estructura, metadatos, proveniencia, licencias y validación** de los datos de entrada. Distinguir **SyntheticLM** (hiperrealista) del resto y asegurar que su uso sea **trazable y seguro** para decisiones de ingeniería.
 
 ## 1) Estructura de carpetas
