@@ -354,8 +354,8 @@ flowchart TD
 # AMPEL360-H2-BWB-QNNN — Árbol completo (CAs y **todos** los CIs)
 > Nota: **cada CI contiene las 11 fases UTCS** (`01-Requirements` … `11-Sustainment-Recycle`) con `phase.md` y `phase-data.yaml`.
 
-``
-AMPEL360-H2-BWB-QNNN/
+
+```AMPEL360-H2-BWB-QNNN/
 ├── README.md
 ├── .gitignore
 ├── .env.example
