@@ -38,13 +38,13 @@ This implementation brings to life the exact use case scenario described in the 
 
 ```bash
 # Run the complete CAD-AI Convert workflow
-python cad_ai_convert.py --workflow
+python -m app.CQEA_Classical_Quantum_Extensible_Applications.CAD_AI_CONVERT.cad_ai_convert --workflow
 
 # Run specific phases
-python cad_ai_convert.py --phase 1  # Conceptualization
-python cad_ai_convert.py --phase 2  # Conversion
-python cad_ai_convert.py --phase 3  # Collaboration
-python cad_ai_convert.py --phase 4  # Problem Solving
+python -m app.CQEA_Classical_Quantum_Extensible_Applications.CAD_AI_CONVERT.cad_ai_convert --phase 1  # Conceptualization
+python -m app.CQEA_Classical_Quantum_Extensible_Applications.CAD_AI_CONVERT.cad_ai_convert --phase 2  # Conversion
+python -m app.CQEA_Classical_Quantum_Extensible_Applications.CAD_AI_CONVERT.cad_ai_convert --phase 3  # Collaboration
+python -m app.CQEA_Classical_Quantum_Extensible_Applications.CAD_AI_CONVERT.cad_ai_convert --phase 4  # Problem Solving
 ```
 
 ### Enhanced QAOA + CAD-AI Integration
@@ -64,14 +64,14 @@ python scripts/qaoa_over_F.py --optimize
 
 ```bash
 # Experience the complete use case scenario
-python demonstrate_use_case.py
+python -m app.CQEA_Classical_Quantum_Extensible_Applications.CAD_AI_CONVERT.demonstrate_use_case
 ```
 
 ### Validation Testing
 
 ```bash
 # Run comprehensive test suite
-python test_cad_ai_convert.py
+python -m app.CQEA_Classical_Quantum_Extensible_Applications.CAD_AI_CONVERT.test_cad_ai_convert
 ```
 
 ## Architecture

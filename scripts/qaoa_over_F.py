@@ -23,7 +23,7 @@ import os
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 try:
-    from cad_ai_convert import CADAIConvert, ConstraintLayer
+    from app.CQEA_Classical_Quantum_Extensible_Applications.CAD_AI_CONVERT import CADAIConvert, ConstraintLayer
     CAD_AI_AVAILABLE = True
 except ImportError:
     CAD_AI_AVAILABLE = False

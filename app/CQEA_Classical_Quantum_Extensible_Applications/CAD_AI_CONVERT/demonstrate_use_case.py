@@ -14,7 +14,7 @@ This script implements the exact use case scenario described with the team of:
 import json
 import time
 from pathlib import Path
-from cad_ai_convert import CADAIConvert, ConstraintLayer
+from .cad_ai_convert import CADAIConvert, ConstraintLayer
 
 
 def print_section(title, char="="):
