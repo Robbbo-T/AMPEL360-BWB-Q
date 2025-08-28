@@ -86,8 +86,8 @@ def main():
         for component, donor_id in selected_config.items():
             print(f"   • {component}: Donor {donor_id}")
         
-        print("\n📁 Generated Files:")
-        print(f"   • constraints/hard_constraints.yaml - TRL gates & compatibility rules")
+        print("📁 Generated Files:")
+        print(f"   • ../../constraints/hard_constraints.yaml - TRL gates & compatibility rules")
         print(f"   • data/candidates.yaml - AMPEL donor database")
         print(f"   • feasible_set.json - Feasible configurations")
         print(f"   • qnnn_optimization_result.json - Optimization results")
@@ -95,7 +95,7 @@ def main():
         
         print(f"\n🚀 Next Steps:")
         print(f"   • Review optimization results in qnnn_optimization_result.json")
-        print(f"   • Customize constraints in constraints/hard_constraints.yaml")
+        print(f"   • Customize constraints in ../../constraints/hard_constraints.yaml")
         print(f"   • Add more candidates to data/candidates.yaml")
         print(f"   • Run detailed geometric integration analysis")
         print(f"   • Proceed to P3 phase with BLI/DP and morphing capabilities")

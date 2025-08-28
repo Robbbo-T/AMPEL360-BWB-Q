@@ -17,7 +17,7 @@
     "tail": "N/A-BWB"
   },
   "constraints_paths": {
-    "hard_constraints": "constraints/hard_constraints.yaml",
+    "hard_constraints": "../../constraints/hard_constraints.yaml",
     "candidates": "data/candidates.yaml",
     "feasible_set": "feasible_set.json",
     "selector": "scripts/qaoa_over_F.py"

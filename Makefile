@@ -2,6 +2,7 @@
 
 # Configuration
 CI_PATH = OPTIM-FRAMEWORK/T-TECHNOLOGICAL/AMEDEO-PELLICCIA/INTEGRATED/AMPEL360-H2-BWB-QNNN/A-ARCHITECTURE/CA-A-001-CENTER-BODY-BOX/CI-CA-A-001-001-CB-PRIMARY-GRID
+SCRIPTS_PATH = OPTIM-FRAMEWORK/I-INTELLIGENT/scripts
 PYTHON = python3
 
 # Help target
@@ -30,39 +31,39 @@ help:
 .PHONY: validate
 validate:
 	@echo "🔍 Running CI Artifact Validation..."
-	$(PYTHON) scripts/validate_artifacts.py --path $(CI_PATH) --check-links
+	$(PYTHON) $(SCRIPTS_PATH)/validate_artifacts.py --path $(CI_PATH) --check-links
 
 .PHONY: validate-json
 validate-json:
 	@echo "🔍 Running CI Artifact Validation (JSON output)..."
-	$(PYTHON) scripts/validate_artifacts.py --path $(CI_PATH) --check-links --output-format json
+	$(PYTHON) $(SCRIPTS_PATH)/validate_artifacts.py --path $(CI_PATH) --check-links --output-format json
 
 .PHONY: evidence-status
 evidence-status:
 	@echo "📊 Checking Evidence Status..."
-	$(PYTHON) scripts/evidence_tracker.py $(CI_PATH)
+	$(PYTHON) $(SCRIPTS_PATH)/evidence_tracker.py $(CI_PATH)
 
 .PHONY: evidence-csv
 evidence-csv:
 	@echo "📊 Exporting Evidence Status to CSV..."
-	$(PYTHON) scripts/evidence_tracker.py $(CI_PATH) --export-csv evidence-status.csv
+	$(PYTHON) $(SCRIPTS_PATH)/evidence_tracker.py $(CI_PATH) --export-csv evidence-status.csv
 	@echo "📄 Evidence status exported to evidence-status.csv"
 
 .PHONY: evidence-checklist
 evidence-checklist:
 	@echo "📋 Generating Evidence Checklist..."
-	$(PYTHON) scripts/evidence_tracker.py $(CI_PATH) --checklist evidence-checklist.md
+	$(PYTHON) $(SCRIPTS_PATH)/evidence_tracker.py $(CI_PATH) --checklist evidence-checklist.md
 	@echo "📄 Evidence checklist generated: evidence-checklist.md"
 
 .PHONY: requirements
 requirements:
 	@echo "📋 Analyzing Requirements Coverage..."
-	$(PYTHON) scripts/requirements_coverage.py $(CI_PATH)
+	$(PYTHON) $(SCRIPTS_PATH)/requirements_coverage.py $(CI_PATH)
 
 .PHONY: traceability
 traceability:
 	@echo "🔗 Generating Requirements Traceability Matrix..."
-	$(PYTHON) scripts/requirements_coverage.py $(CI_PATH) --traceability traceability-matrix.md
+	$(PYTHON) $(SCRIPTS_PATH)/requirements_coverage.py $(CI_PATH) --traceability traceability-matrix.md
 	@echo "📄 Traceability matrix generated: traceability-matrix.md"
 
 # Combined reports
@@ -101,7 +102,7 @@ check-deps:
 .PHONY: test-scripts
 test-scripts: check-deps
 	@echo "🧪 Testing validation scripts..."
-	$(PYTHON) scripts/validate_artifacts.py --help > /dev/null && echo "✅ validate_artifacts.py OK"
-	$(PYTHON) scripts/evidence_tracker.py --help > /dev/null && echo "✅ evidence_tracker.py OK"
-	$(PYTHON) scripts/requirements_coverage.py --help > /dev/null && echo "✅ requirements_coverage.py OK"
+	$(PYTHON) $(SCRIPTS_PATH)/validate_artifacts.py --help > /dev/null && echo "✅ validate_artifacts.py OK"
+	$(PYTHON) $(SCRIPTS_PATH)/evidence_tracker.py --help > /dev/null && echo "✅ evidence_tracker.py OK"
+	$(PYTHON) $(SCRIPTS_PATH)/requirements_coverage.py --help > /dev/null && echo "✅ requirements_coverage.py OK"
 	@echo "✅ All scripts tested successfully"

@@ -116,7 +116,7 @@ Design space \(\mathcal{X}\) filtered by hard constraints (certifiability, physi
 \[
 \mathcal{F} = \{ x\in\mathcal{X}\mid C_{\text{hard}}(x)=\text{true} \}
 \]  
-Enumerated via **MILP/CP-SAT** → `feasible_set.json`.
+Enumerated via **MILP/CP-SAT** → `../../I-INTELLIGENT/feasible_set.json`.
 
 ### 6.2 Risk-Aware Selection
 Scenario cost \(H_s(x)\). Select:
@@ -230,10 +230,10 @@ control:
 ## Appendix C — Optimization Data Interfaces
 
    •   constraints/hard_constraints.yaml
-   •   data/candidates.yaml
-   •   feasible_set.json
-   •   scripts/qaoa_over_F.py
-   •   qnnn_optimization_result.json
+   •   ../../I-INTELLIGENT/data/candidates.yaml
+   •   ../../I-INTELLIGENT/feasible_set.json
+   •   ../../I-INTELLIGENT/scripts/qaoa_over_F.py
+   •   ../../I-INTELLIGENT/qnnn_optimization_result.json
 
 ⸻
 
