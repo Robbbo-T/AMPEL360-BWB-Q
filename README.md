@@ -16,7 +16,7 @@ python3 setup_ampel360.py
 python3 ampel360_utils.py --status --validate
 
 # 4. Run QAOA optimization manually (optional)
-python3 scripts/qaoa_over_F.py --optimize
+python3 OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py --optimize
 ```
 
 ## Framework Overview
@@ -71,8 +71,8 @@ flowchart TB
 
 - **Configuration Management**: `ampel360_config.json` - Main framework configuration
 - **Hard Constraints**: `constraints/hard_constraints.yaml` - TRL gates, compatibility rules
-- **Donor Database**: `data/candidates.yaml` - AMPEL aircraft subsystem donors
-- **Optimization Engine**: `scripts/qaoa_over_F.py` - QAOA-based CVaR optimization
+- **Donor Database**: `OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml` - AMPEL aircraft subsystem donors
+- **Optimization Engine**: `OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py` - QAOA-based CVaR optimization
 - **Utilities**: `ampel360_utils.py` - Configuration management utilities
 - **Setup Script**: `setup_ampel360.py` - Complete framework setup and demonstration
 

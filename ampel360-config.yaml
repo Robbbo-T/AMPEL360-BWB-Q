@@ -87,8 +87,8 @@ machine_learning:
 integration:
   existing_config: "ampel360_config.json"
   constraints: "constraints/hard_constraints.yaml"
-  candidates: "data/candidates.yaml"
-  optimization_engine: "scripts/qaoa_over_F.py"
+  candidates: "OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml"
+  optimization_engine: "OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py"
 
 # Performance Metrics
 metrics:
