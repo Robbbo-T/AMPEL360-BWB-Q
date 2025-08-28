@@ -49,7 +49,7 @@ def main():
         sys.exit(1)
     
     # Step 3: Generate feasible set and optimize
-    if not run_command("python3 OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py --optimize", 
+    if not run_command("python3 OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/qaoa_over_F.py --optimize", 
                       "Running QAOA optimization to determine QNNN"):
         sys.exit(1)
     
@@ -88,7 +88,7 @@ def main():
         
         print("\n📁 Generated Files:")
         print(f"   • constraints/hard_constraints.yaml - TRL gates & compatibility rules")
-        print(f"   • OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml - AMPEL donor database")
+        print(f"   • OPTIM-FRAMEWORK/I-INTELLIGENT/data/candidates.yaml - AMPEL donor database")
         print(f"   • feasible_set.json - Feasible configurations")
         print(f"   • qnnn_optimization_result.json - Optimization results")
         print(f"   • ampel360_config.json - Main configuration (updated)")
@@ -96,7 +96,7 @@ def main():
         print(f"\n🚀 Next Steps:")
         print(f"   • Review optimization results in qnnn_optimization_result.json")
         print(f"   • Customize constraints in constraints/hard_constraints.yaml")
-        print(f"   • Add more candidates to OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml")
+        print(f"   • Add more candidates to OPTIM-FRAMEWORK/I-INTELLIGENT/data/candidates.yaml")
         print(f"   • Run detailed geometric integration analysis")
         print(f"   • Proceed to P3 phase with BLI/DP and morphing capabilities")
 

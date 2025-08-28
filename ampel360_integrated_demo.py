@@ -14,7 +14,7 @@ from typing import Dict, Any
 
 # Add framework paths
 sys.path.append(os.path.join(os.path.dirname(__file__), 'OPTIM-FRAMEWORK', 'T-TECHNOLOGICAL', 'AQUA-OS'))
-sys.path.append(os.path.join(os.path.dirname(__file__), 'OPTIM-FRAMEWORK', 'I-.INTELLIGENT', 'quantum-ml'))
+sys.path.append(os.path.join(os.path.dirname(__file__), 'OPTIM-FRAMEWORK', 'I-INTELLIGENT', 'quantum-ml'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'OPTIM-FRAMEWORK', 'T-TECHNOLOGICAL', 'ATOMIC-DESIGN'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'OPTIM-FRAMEWORK', 'M-MACHINE', 'digital-twin-sync'))
 

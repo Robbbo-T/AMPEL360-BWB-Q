@@ -11,6 +11,26 @@ import argparse
 import sys
 from datetime import datetime
 
+# Evidence type categorization
+EVIDENCE_TYPE_PREFIXES = {
+    "Structural": ["STR-"],
+    "Thermal": ["THR-"],
+    "Interface": ["IFC-"],
+    "Materials": ["MAT-"],
+    "Environmental": ["ENV-"],
+    "Manufacturing": ["MFG-"],
+    "Testing": ["TST-"],
+    "Certification": ["CRT-"],
+    "Compliance": ["CMP-"],
+    "Operations": ["OPS-"],
+    "Performance": ["PRF-"],
+    "Maintenance": ["MNT-"],
+    "Reliability": ["REL-"],
+    "Safety": ["SAF-"],
+    "Security": ["SEC-"],
+    "End of Life": ["EOL-"]
+}
+
 def check_evidence_status(ci_path):
     """Check evidence document status for a CI."""
     phase_data_path = Path(ci_path) / '01-Requirements' / 'phase-data.yaml'

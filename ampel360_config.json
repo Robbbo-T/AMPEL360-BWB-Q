@@ -18,9 +18,9 @@
   },
   "constraints_paths": {
     "hard_constraints": "constraints/hard_constraints.yaml",
-    "candidates": "OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml",
+    "candidates": "OPTIM-FRAMEWORK/I-INTELLIGENT/data/candidates.yaml",
     "feasible_set": "feasible_set.json",
-    "selector": "OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py"
+    "selector": "OPTIM-FRAMEWORK/I-INTELLIGENT/scripts/qaoa_over_F.py"
   },
   "capacity": {
     "QNNN": 150,

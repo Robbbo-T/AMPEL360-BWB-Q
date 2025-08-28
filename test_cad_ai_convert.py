@@ -15,7 +15,7 @@ repo_root = Path(__file__).parent
 sys.path.insert(0, str(repo_root))
 
 # Ensure moved scripts/ are importable as 'scripts.*'
-scripts_parent = repo_root / "OPTIM-FRAMEWORK" / "I-.INTELLIGENT"
+scripts_parent = repo_root / "OPTIM-FRAMEWORK" / "I-INTELLIGENT"
 if scripts_parent.exists():
     sys.path.insert(0, str(scripts_parent))
 
@@ -277,7 +277,7 @@ class TestQAOAIntegration(unittest.TestCase):
             from scripts.qaoa_over_F import QAOASelector
             
             # Create test QAOA selector (will fail gracefully if files don't exist)
-            selector = QAOASelector("constraints/hard_constraints.yaml", "OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml")
+            selector = QAOASelector("constraints/hard_constraints.yaml", "OPTIM-FRAMEWORK/I-INTELLIGENT/data/candidates.yaml")
             
             test_config = {
                 "id": "TEST_BWB_H2", 
