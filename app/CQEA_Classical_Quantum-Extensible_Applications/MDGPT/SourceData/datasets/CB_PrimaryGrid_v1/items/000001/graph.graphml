@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  
+  <key id="nodeType" for="node" attr.name="type" attr.type="string"/>
+  <key id="nodeMaterial" for="node" attr.name="material" attr.type="string"/>
+  <key id="edgeType" for="edge" attr.name="connectionType" attr.type="string"/>
+  <key id="edgeSpec" for="edge" attr.name="specification" attr.type="string"/>
+  
+  <graph id="CB_PrimaryGrid_000001" edgedefault="undirected">
+    
+    <!-- Structural Components -->
+    <node id="frame_F5">
+      <data key="nodeType">Frame</data>
+      <data key="nodeMaterial">Al-Li_2195</data>
+    </node>
+    
+    <node id="stringer_S14">
+      <data key="nodeType">Stringer</data>
+      <data key="nodeMaterial">Al-Li_2195</data>
+    </node>
+    
+    <node id="skin_panel_CP12">
+      <data key="nodeType">SkinPanel</data>
+      <data key="nodeMaterial">Al-Li_2195</data>
+    </node>
+    
+    <node id="lps_bus_main">
+      <data key="nodeType">LPS_Bus</data>
+      <data key="nodeMaterial">Copper</data>
+    </node>
+    
+    <!-- Connections -->
+    <edge id="bond_F5_S14" source="frame_F5" target="stringer_S14">
+      <data key="edgeType">BondedConnection</data>
+      <data key="edgeSpec">structural_adhesive</data>
+    </edge>
+    
+    <edge id="fasten_F5_CP12" source="frame_F5" target="skin_panel_CP12">
+      <data key="edgeType">FastenedConnection</data>
+      <data key="edgeSpec">NAS1097AD6</data>
+    </edge>
+    
+    <edge id="fasten_S14_CP12" source="stringer_S14" target="skin_panel_CP12">
+      <data key="edgeType">FastenedConnection</data>
+      <data key="edgeSpec">NAS1097AD4</data>
+    </edge>
+    
+    <edge id="ground_F5_LPS" source="frame_F5" target="lps_bus_main">
+      <data key="edgeType">ElectricalBonding</data>
+      <data key="edgeSpec">bonding_strap_6AWG</data>
+    </edge>
+    
+    <edge id="ground_S14_LPS" source="stringer_S14" target="lps_bus_main">
+      <data key="edgeType">ElectricalBonding</data>
+      <data key="edgeSpec">bonding_strap_6AWG</data>
+    </edge>
+    
+  </graph>
+</graphml>

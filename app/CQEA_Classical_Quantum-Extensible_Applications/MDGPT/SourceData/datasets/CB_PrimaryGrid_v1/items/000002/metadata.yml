@@ -1,0 +1,45 @@
+utcs_mi_header: "EstándarUniversal:Datos-Desarrollo-ARP4754A-00.00-ImagenDeOrigen-0002-v1.0-AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum-FotoReal-AIR-AmedeoPelliccia-2e3f4a5b-01-Requirements→07-Certification-Security"
+
+id: "cbpg_v1_000002"
+origin_type: "RealPhoto"
+trust_tier: "T2"
+
+provenance:
+  source: "field_photography"
+  license: "AQUA-Internal-Use"
+  rights_holder: "AQUA Technologies S.L."
+  uri: "s3://aqua-datasets/cbpg_v1/000002/"
+  photographer: "Technical Documentation Team"
+  camera_system: "Canon EOS R5 + RF 24-70mm f/2.8L"
+  photo_conditions:
+    lighting: "natural_daylight + LED_panels"
+    environment: "assembly_hangar_controlled"
+    distance: "3m isometric view"
+
+real_photo:
+  subject: "CB_PrimaryGrid_physical_mockup"
+  assembly_stage: "preliminary_assembly"
+  location: "AQUA_Hangar_B_Station_3"
+  consent_documentation: true
+  personnel_clearance: true
+  export_control_cleared: true
+
+quality:
+  ocr_readability: 0.88     # some callouts visible but not all
+  blur_metric: 0.15         # slight motion blur in background
+  lighting_quality: 0.85    # good but not perfect lighting
+  depth_of_field: "adequate"
+  color_accuracy: "calibrated"
+
+qa_checks:
+  physical_plausibility: pass
+  lps_continuity: warn      # some bonding straps not clearly visible
+  fastener_pattern: pass
+  gdnt_minimal: pass
+  geometric_consistency: pass
+  assembly_correctness: pass
+
+notes: "Real photo of CB Primary Grid mockup during assembly - good reference for real-world conditions"
+timestamp: "2025-08-28T07:32:00Z"
+validator: "MDGPT_QA_Pipeline_v1.0"
+checksum: "sha256:abc123def456..."
