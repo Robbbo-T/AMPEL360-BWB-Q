@@ -67,7 +67,13 @@ traceability:
 
 # Combined reports
 .PHONY: all-reports
-all-reports: validate evidence-status requirements
+all-reports: validate evidence-status requirements validate-config-index
+
+# Configuration Index validation
+.PHONY: validate-config-index
+validate-config-index:
+	@echo "🔍 Validating Configuration Index..."
+	$(PYTHON) tools/validate_config_index.py
 	@echo ""
 	@echo "✅ All validation reports completed!"
 
@@ -104,4 +110,5 @@ test-scripts: check-deps
 	$(PYTHON) OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/validate_artifacts.py --help > /dev/null && echo "✅ validate_artifacts.py OK"
 	$(PYTHON) OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/evidence_tracker.py --help > /dev/null && echo "✅ evidence_tracker.py OK"
 	$(PYTHON) OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/requirements_coverage.py --help > /dev/null && echo "✅ requirements_coverage.py OK"
+	$(PYTHON) tools/validate_config_index.py > /dev/null && echo "✅ validate_config_index.py OK"
 	@echo "✅ All scripts tested successfully"
