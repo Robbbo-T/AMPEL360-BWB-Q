@@ -1,5 +1,5 @@
 phase:
-  name: 02-Architecture
+  name: 02-Design
   ci: CI-CA-A-001-001-CB-PRIMARY-GRID
   ca: CA-A-001-CENTER-BODY-BOX
   status: Not Started
@@ -8,12 +8,12 @@ phase:
   end_date: null
   duration_days: null
 deliverables:
-- name: 02-Architecture Documentation
+- name: 02-Design Documentation
   type: Document
   status: Not Started
   owner: TBD
   due_date: null
-- name: 02-Architecture Technical Specifications
+- name: 02-Design Technical Specifications
   type: Technical
   status: Not Started
   owner: TBD
