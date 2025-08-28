@@ -1,0 +1,20 @@
+{
+  "workflow_id": "ampel360_1756396218",
+  "timestamp": "2025-08-28T15:50:18.503074",
+  "configuration": {
+    "id": "REF_BWB_H2",
+    "config": {
+      "fuselage": 24,
+      "wing": 24,
+      "propulsion": 37,
+      "energy": 38
+    },
+    "complexity_factor": 1.2,
+    "certification_risk": 1.4,
+    "optimization_score": 0.85,
+    "cvar_alpha": 0.95,
+    "expected_cost": 125.5
+  },
+  "status": "deployed",
+  "validation_passed": true
+}
