@@ -2,6 +2,15 @@
 
 **Ámbito**: Estructura primaria (Center Body), vistas isométricas y ortográficas del primary grid framework para AMPEL360 BWB.
 
+```**prompt**
+EstándarUniversal:Datos-Desarrollo-ARP4754A-00.00-ImagenDeOrigen-0003-v1.0-AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum-GeneracionSintetica-AIR-AmedeoPelliccia-3a4b5c6d-01-Requirements→07-Certification-Security	cbpg_v1_000003	items/000003/image.png	SyntheticLM	T3	stable-diffusion-xl	1.0	detailed technical drawing of aircraft primary grid structure, center body frame, aluminum construction, isometric view, engineering blueprint style	42	ddim	invisible	0.92	0.08				pass	pass	pass	info	2025-08-28T07:35:00Z
+```
+
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/1e42708e-21c9-4a17-8c7d-7c9a08ac6439" />
+
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/9d3fbef6-9919-468c-a5f6-f34ec1abce86" />
+
+
 ## Composición del Dataset
 - **Total**: 2,000 imágenes de alta resolución (2048x2048 px mínimo)
 - **Distribución por trust tier**:
@@ -88,3 +97,4 @@
 **Contact**: mdgpt-dataset@aqua-technologies.es  
 **Last Updated**: 2025-08-28T07:40:00Z  
 **Review Cycle**: Quarterly (Q1, Q2, Q3, Q4)
+
