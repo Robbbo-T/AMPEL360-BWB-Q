@@ -230,9 +230,9 @@ control:
 ## Appendix C — Optimization Data Interfaces
 
    •   constraints/hard_constraints.yaml
-   •   data/candidates.yaml
+   •   OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml
    •   feasible_set.json
-   •   scripts/qaoa_over_F.py
+   •   OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py
    •   qnnn_optimization_result.json
 
 ⸻

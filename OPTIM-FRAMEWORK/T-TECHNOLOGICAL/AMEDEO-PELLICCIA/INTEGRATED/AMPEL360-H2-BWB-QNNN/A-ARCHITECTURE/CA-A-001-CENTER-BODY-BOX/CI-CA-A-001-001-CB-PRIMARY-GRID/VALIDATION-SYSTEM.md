@@ -27,13 +27,13 @@ make export-all
 
 ## Validation Tools
 
-### 1. Artifact Validator (`scripts/validate_artifacts.py`)
+### 1. Artifact Validator (`OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/validate_artifacts.py`)
 
 Validates CI artifacts for compliance with phase requirements.
 
 **Usage:**
 ```bash
-python3 scripts/validate_artifacts.py --path CI_PATH [--check-links] [--output-format json]
+python3 OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/validate_artifacts.py --path CI_PATH [--check-links] [--output-format json]
 ```
 
 **Features:**
@@ -43,13 +43,13 @@ python3 scripts/validate_artifacts.py --path CI_PATH [--check-links] [--output-f
 - ✅ Detects v1.3 FROZEN compliance
 - ✅ JSON and text output formats
 
-### 2. Evidence Tracker (`scripts/evidence_tracker.py`)
+### 2. Evidence Tracker (`OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/evidence_tracker.py`)
 
 Tracks evidence document status and completeness.
 
 **Usage:**
 ```bash
-python3 scripts/evidence_tracker.py CI_PATH [--checklist FILE] [--export-csv FILE]
+python3 OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/evidence_tracker.py CI_PATH [--checklist FILE] [--export-csv FILE]
 ```
 
 **Features:**
@@ -59,13 +59,13 @@ python3 scripts/evidence_tracker.py CI_PATH [--checklist FILE] [--export-csv FIL
 - 📄 Checklist generation for evidence completion
 - 💾 CSV export capability
 
-### 3. Requirements Coverage Analyzer (`scripts/requirements_coverage.py`)
+### 3. Requirements Coverage Analyzer (`OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/requirements_coverage.py`)
 
 Analyzes requirements coverage and generates traceability reports.
 
 **Usage:**
 ```bash
-python3 scripts/requirements_coverage.py CI_PATH [--traceability FILE]
+python3 OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/requirements_coverage.py CI_PATH [--traceability FILE]
 ```
 
 **Features:**
@@ -199,7 +199,7 @@ The CI/CD pipeline will automatically validate changes.
 
 **Validation script errors:**
 - Check Python dependencies: `make check-deps`
-- Verify file permissions: `chmod +x scripts/*.py`
+- Verify file permissions: `chmod +x OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/*.py`
 - Check YAML syntax in phase-data.yaml
 
 ### Support
