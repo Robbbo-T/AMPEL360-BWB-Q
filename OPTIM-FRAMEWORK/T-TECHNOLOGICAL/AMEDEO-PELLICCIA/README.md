@@ -1,12 +1,7 @@
-# AMEDEO-PELLICCIA
-
-**Amedeo Pelliccia methodology**
-
 # UTCS-MI: An Executable Systems Engineering Doctrine for Quantum-Inspired Aircraft Configuration
 
 **A. Pelliccia, et al.**  
-Affiliation: Aerospace & Quantum United Advanced Venture  
-
+Affiliation: Aerospace & Quantum United Advanced Venture
 
 ---
 
@@ -54,8 +49,7 @@ With these foundations, optimization becomes tractable: we enumerate feasible, c
 2. **Canonical life-cycle.** UTCS—11 phases, each with code-representable inputs, artifacts, and exit criteria.  
 3. **Optimization over certifiability.** Feasible-first pipeline:
    \[
-   \mathcal{F}=\{x\in\mathcal{X}\mid \texttt{hard\_constraints}(x)=\text{true}\}
-   \quad\rightarrow\quad
+   \mathcal{F}=\{x\in\mathcal{X}\mid \texttt{hard\_constraints}(x)=\text{true}\},\quad
    x^*=\arg\min_{x\in\mathcal{F}} \ \mathbb{E}[H(x)] + \beta\,\mathrm{CVaR}_\alpha\!\big(H(x)\big)
    \]
    Implemented with QAOA or classical surrogates.  
@@ -65,15 +59,7 @@ With these foundations, optimization becomes tractable: we enumerate feasible, c
 
 ## 3. Background and Related Norms
 
-Our doctrine interfaces with aerospace standards:  
-- Development & safety: **ARP4754A, ARP4761**  
-- Airworthiness: **CS/FAR-25** families  
-- Environmental: **DO-160**  
-- Lightning: **ARP5412/5414/5416**  
-- Hydrogen: **ISO-19880, ISO-11114-4**  
-- Materials: **CMH-17, MMPDS**
-
-We do not replace these norms; we bind them into an executable pipeline with explicit artifacts and acceptance criteria.
+The doctrine binds—not replaces—industry norms: **ARP4754A, ARP4761, CS/FAR-25, DO-160, ARP5412/5414/5416, ISO-19880, ISO-11114-4, CMH-17, MMPDS**. These are referenced from artifacts and gates to make compliance machine-checkable.
 
 ---
 
@@ -91,21 +77,21 @@ Each domain contains **Configuration Architectures (CAs)** decomposed into **Con
 
 ## 5. UTCS—11 Canonical Phases (Process Semantics)
 
-| Phase | Name                     | Primary Objective                            | Gate   | Exit Artifacts                                               |
-|:-----:|--------------------------|----------------------------------------------|:------:|--------------------------------------------------------------|
-| 01    | Requirements             | Stakeholder needs → requirements              |  SRR   | Baseline REQs (YAML), standards mapping, V&V seed            |
-| 02    | Design                   | Functional/logical/physical design            | PDR/CDR| Models, ICDs, FEM/CFD, item REQs                             |
-| 03    | Building-Prototyping     | Prototypes, coupons, rigs, breadboards        |  BRR   | Build records, test rigs, prototype BoMs                     |
-| 04    | Executables-Packages     | Software/firmware/data packages               | SW/HW PR | Builds, binaries, containers, SBOMs                          |
-| 05    | Verification-Validation  | Evidence vs. requirements                     | TR/VR  | Test reports, validation evidence                            |
-| 06    | Integration-Qualification| System integration & qualification            | IRR/QR | Integrated test logs, qual evidence                          |
-| 07    | Certification-Security   | Compliance, safety & cyber cases              | CR/ASR | Compliance matrix, safety/cyber case                         |
-| 08    | Production-Scale         | Industrialization, rate readiness             |  PRR   | Process FMEAs, SPC plans, configs                            |
-| 09    | Ops-Services             | Entry into service, operations                |  ORR   | Ops manuals, training packs                                  |
-| 10    | MRO                      | Maintenance, repair, overhaul                 |  MRR   | Maintenance specs, IPC                                       |
-| 11    | Sustainment-Recycle      | End-of-life, circularity                      |   DR   | Recycling plans, material passports                          |
+| Phase | Name                      | Primary Objective                           | Gate   | Exit Artifacts                                                |
+|:----:|---------------------------|---------------------------------------------|:------:|---------------------------------------------------------------|
+| 01   | Requirements              | Stakeholder needs → requirements             |  SRR   | Baseline REQs (YAML), standards mapping, V&V seed             |
+| 02   | Design                    | Functional/logical/physical design           | PDR/CDR| Models, ICDs, FEM/CFD, item REQs                              |
+| 03   | Building-Prototyping      | Prototypes, coupons, rigs, breadboards       |  BRR   | Build records, test rigs, prototype BoMs                      |
+| 04   | Executables-Packages      | Software/firmware/data packages              | SW/HW PR | Builds, binaries, containers, SBOMs                           |
+| 05   | Verification-Validation   | Evidence vs. requirements                    | TR/VR  | Test reports, validation evidence                             |
+| 06   | Integration-Qualification | System integration & qualification           | IRR/QR | Integrated test logs, qual evidence                           |
+| 07   | Certification-Security    | Compliance, safety & cyber cases             | CR/ASR | Compliance matrix, safety/cyber case                          |
+| 08   | Production-Scale          | Industrialization, rate readiness            |  PRR   | Process FMEAs, SPC plans, configs                             |
+| 09   | Ops-Services              | Entry into service, operations               |  ORR   | Ops manuals, training packs                                   |
+| 10   | MRO                       | Maintenance, repair, overhaul                |  MRR   | Maintenance specs, IPC                                        |
+| 11   | Sustainment-Recycle       | End-of-life, circularity                     |   DR   | Recycling plans, material passports                           |
 
-Formal rule: A phase transition \(k \to k+1\) is allowed iff all exit predicates \(E_k(\mathcal{A}_k)=\text{true}\). Concurrency allowed across CIs if interfaces are frozen.
+A phase transition \(k \to k+1\) is allowed iff all exit predicates \(E_k(\mathcal{A}_k)=\text{true}\). Concurrency is allowed across CIs if interfaces are frozen.
 
 ---
 
@@ -147,7 +133,7 @@ Stored in **WBS-backed file trees**: Domains → CAs → CIs.
 - Optimization: Feasible-first + CVaR-aware selection.
 
 ### 8.2 Requirements Example
-`CI-CA-A-001-001 — CB-PRIMARY-GRID`: Structural, cryogenic, aeroelastic, EMC requirements frozen with audit-ready V&V matrices.
+`CI-CA-A-001-001 — CB-PRIMARY-GRID`: structural, cryogenic, aeroelastic, EMC requirements frozen with audit-ready V&V matrices.
 
 ### 8.3 Phase Progression
 - **02-Design:** FEM, ICDs, thermal barrier interfaces.  
@@ -167,7 +153,7 @@ Stored in **WBS-backed file trees**: Domains → CAs → CIs.
 
 ## 10. Discussion and Limitations
 
-Doctrine assumes disciplined artifact curation; re-enumeration costly if requirements pivot. QAOA optional. Certification authority integration program-specific.
+Doctrine assumes disciplined artifact curation; re-enumeration is costly if requirements pivot. QAOA optional; surrogates acceptable when quantum backends are unavailable. Certification authority integration is program-specific.
 
 ---
 
@@ -205,7 +191,7 @@ All future contributors.
 
 ## Appendix A — UTCS Phase Details
 
-(Inputs, outputs, and exit checks expanded for all 11 phases)
+(Inputs, outputs, and exit checks expanded for all 11 phases.)
 
 ---
 
@@ -223,24 +209,39 @@ wbs:
 control:
   doc_id: "AMPEL360-UTCS01-REQ-CB-PG-001-v1.3"
   checksum: "<sha256>"
-```
+````
 
-⸻
+---
 
 ## Appendix C — Optimization Data Interfaces
 
-   •   constraints/hard_constraints.yaml
-  •   OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml
-   •   feasible_set.json
-  •   OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py
-   •   qnnn_optimization_result.json
+* `constraints/hard_constraints.yaml`
+* `OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml`
+* `feasible_set.json`
+* `OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py`
+* `qnnn_optimization_result.json`
 
-⸻
+---
 
 ## Appendix D — Certification & Security Case (Phase 07)
 
-   •   Compliance Matrix (REQ ↔ Test/Analysis ↔ Result ↔ Standard)
-   •   Safety Case (FHA/PSSA/SSA)
-   •   Security Case (threat model, pen-tests, SBOM attestations)
-   •   EMC/lightning artifacts
+* Compliance Matrix (REQ ↔ Test/Analysis ↔ Result ↔ Standard)
+* Safety Case (FHA/PSSA/SSA)
+* Security Case (threat model, pen-tests, SBOM attestations)
+* EMC/lightning artifacts
+
+````
+
+---
+
+### Git conflict cleanup (quick commands)
+
+```bash
+# open the file and remove all <<<<<<, =======, >>>>>>> markers (already done above)
+git add docs/UTCS-MI_Executable_Doctrine_APelliccia_v1.0.md
+git commit -m "docs: finalize UTCS-MI executable doctrine paper, resolve Appendix C conflict, add EstándarUniversal header"
+````
+
+
+
 
