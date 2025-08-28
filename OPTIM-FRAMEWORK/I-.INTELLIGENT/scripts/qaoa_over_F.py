@@ -378,7 +378,7 @@ def main():
     parser = argparse.ArgumentParser(description='QAOA Selector for AMPEL360 H₂-BWB-Q')
     parser.add_argument('--constraints', default='constraints/hard_constraints.yaml',
                        help='Path to hard constraints file')
-    parser.add_argument('--candidates', default='data/candidates.yaml',
+    parser.add_argument('--candidates', default='OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml',
                        help='Path to candidates file')
     parser.add_argument('--output', default='feasible_set.json',
                        help='Output file for feasible set')

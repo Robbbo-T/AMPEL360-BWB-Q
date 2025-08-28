@@ -268,7 +268,7 @@ class TestQAOAIntegration(unittest.TestCase):
         
         # Create test QAOA selector (will fail gracefully if files don't exist)
         try:
-            selector = QAOASelector("constraints/hard_constraints.yaml", "data/candidates.yaml")
+            selector = QAOASelector("constraints/hard_constraints.yaml", "OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml")
             
             test_config = {
                 "id": "TEST_BWB_H2", 
