@@ -88,7 +88,7 @@ def main():
         
         print("\n📁 Generated Files:")
         print(f"   • constraints/hard_constraints.yaml - TRL gates & compatibility rules")
-        print(f"   • OPTIM-FRAMEWORK/I-INTELLIGENT/data/candidates.yaml - AMPEL donor database")
+        print("   • OPTIM-FRAMEWORK/I-INTELLIGENT/data/candidates.yaml - AMPEL donor database")
         print(f"   • feasible_set.json - Feasible configurations")
         print(f"   • qnnn_optimization_result.json - Optimization results")
         print(f"   • ampel360_config.json - Main configuration (updated)")
