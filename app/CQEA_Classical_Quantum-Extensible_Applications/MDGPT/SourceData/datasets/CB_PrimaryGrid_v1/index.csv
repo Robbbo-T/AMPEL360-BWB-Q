@@ -1,6 +1,4 @@
-id,origin_type,trust_tier,filename,resolution,filesize_mb,timestamp,qa_status,gt_available,prompt_hash
-cbpg_v1_000001,SyntheticParametric,T0,000001/image.png,2048x2048,3.2,2025-08-28T07:30:00Z,validated,true,
-cbpg_v1_000002,RenderCAD,T1,000002/image.png,2048x2048,4.1,2025-08-28T07:32:00Z,validated,true,
-cbpg_v1_000003,RealPhoto,T2,000003/image.jpg,2048x2048,2.8,2025-08-28T07:35:00Z,validated,false,
-cbpg_v1_000004,SyntheticLM,T3,000004/image.png,2048x2048,3.5,2025-08-28T07:38:00Z,pending_review,false,sha256:ab12cd34
-cbpg_v1_000005,TechnicalDrawing,T2,000005/image.pdf,A3_vector,1.2,2025-08-28T07:40:00Z,validated,true,
+utcs_mi_header,id,rel_path,origin_type,trust_tier,model_name,model_version,prompt,seed,sampler,watermark,ocr_readability,blur_metric,gt_ontology_jsonld,gt_graph_graphml,gt_geom_glb,qa_physical_plausibility,qa_lps_continuity,qa_fastener_pattern,qa_gdnt_minimal,timestamp
+"EstándarUniversal:Datos-Desarrollo-ARP4754A-00.00-ImagenDeOrigen-0001-v1.0-AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum-GeneracionParametrica-AIR-AmedeoPelliccia-1f2e3d4c-01-Requirements→07-Certification-Security",cbpg_v1_000001,items/000001/image.png,SyntheticParametric,T0,,,,,,,0.95,0.02,items/000001/ontology.jsonld,items/000001/graph.graphml,items/000001/geom.glb,pass,pass,pass,pass,2025-08-28T07:30:00Z
+"EstándarUniversal:Datos-Desarrollo-ARP4754A-00.00-ImagenDeOrigen-0002-v1.0-AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum-FotoReal-AIR-AmedeoPelliccia-2e3f4a5b-01-Requirements→07-Certification-Security",cbpg_v1_000002,items/000002/image.jpg,RealPhoto,T2,,,,,,,0.88,0.15,,,,pass,warn,pass,pass,2025-08-28T07:32:00Z
+"EstándarUniversal:Datos-Desarrollo-ARP4754A-00.00-ImagenDeOrigen-0003-v1.0-AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum-GeneracionSintetica-AIR-AmedeoPelliccia-3a4b5c6d-01-Requirements→07-Certification-Security",cbpg_v1_000003,items/000003/image.png,SyntheticLM,T3,stable-diffusion-xl,1.0,"detailed technical drawing of aircraft primary grid structure, center body frame, aluminum construction, isometric view, engineering blueprint style",42,ddim,invisible,0.92,0.08,,,,pass,pass,pass,info,2025-08-28T07:35:00Z

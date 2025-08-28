@@ -1,0 +1,58 @@
+utcs_mi_header: "EstándarUniversal:Datos-Desarrollo-ARP4754A-00.00-ImagenDeOrigen-0003-v1.0-AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum-GeneracionSintetica-AIR-AmedeoPelliccia-3a4b5c6d-01-Requirements→07-Certification-Security"
+
+id: "cbpg_v1_000003"
+origin_type: "SyntheticLM"
+trust_tier: "T3"
+
+provenance:
+  source: "synthetic_generation"
+  license: "AQUA-Internal-Use"
+  rights_holder: "AQUA Technologies S.L."
+  uri: "s3://aqua-datasets/cbpg_v1/000003/"
+  generator_system: "AQUA_MDGPT_SyntheticLM_Pipeline_v1.2"
+
+synthetic_lm:
+  model_name: "stable-diffusion-xl"
+  model_version: "1.0"
+  prompt: "detailed technical drawing of aircraft primary grid structure, center body frame, aluminum construction, isometric view, engineering blueprint style"
+  negative_prompt: "blurry, distorted, impossible geometry, non-engineering style"
+  seed: 42
+  sampler: "ddim"
+  steps: 50
+  cfg_scale: 7.5
+  watermark: "invisible"
+  safety_filter: "enabled"
+  generation_timestamp: "2025-08-28T07:33:15Z"
+
+quality:
+  ocr_readability: 0.92     # AI-generated text is crisp
+  blur_metric: 0.08         # sharp synthetic render
+  hyperrealism_score: 0.94  # very realistic looking
+  prompt_adherence: 0.89    # follows prompt well
+  technical_accuracy: 0.76  # mostly accurate but some impossible details
+
+watermark:
+  type: "invisible_steganographic"
+  algorithm: "tree_ring_watermark"
+  detection_confidence: 0.998
+  payload: "AQUA_MDGPT_T3_cbpg_v1_000003"
+
+qa_checks:
+  physical_plausibility: pass
+  lps_continuity: pass
+  fastener_pattern: pass
+  gdnt_minimal: info        # some GD&T symbols generated but not verified
+  geometric_consistency: pass
+  ai_artifact_detection: pass
+  synthetic_metadata_complete: pass
+
+validation:
+  human_review_required: true
+  certification_usage: "illustration_only"
+  training_weight: 0.3      # reduced weight for T3 content
+  evidence_class: "informative"
+
+notes: "High-quality synthetic image for training augmentation - realistic but marked as T3 for traceability"
+timestamp: "2025-08-28T07:35:00Z"
+validator: "MDGPT_QA_Pipeline_v1.0"
+checksum: "sha256:fed789abc012..."
