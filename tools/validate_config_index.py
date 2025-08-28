@@ -80,7 +80,7 @@ def main():
 
         # Report results
         if missing_files:
-            print(f"❌ Missing artifacts:", file=sys.stderr)
+            print("❌ Missing artifacts:", file=sys.stderr)
             for f in missing_files:
                 print(f"   - {f}", file=sys.stderr)
             return 2
