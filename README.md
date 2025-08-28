@@ -30,7 +30,7 @@ flowchart TB
     PIPELINE["AMPEL360 Framework\n(Executable Doctrine)"]
     FEA["Stage 1: Feasibility Enumeration\nMILP/CP-SAT | Hard Constraints\n`hard_constraints.yaml`\nOutput: `feasible_set.json`"]
     OPT["Stage 2: Risk-Optimal Selection\nQAOA/CVaR (Stochastic)\nObjective: `E[cost] + β·CVaR_α(cost)`"]
-    ENTERPRISE["Enterprise Backbone:\nO-ORGANIZATIONAL\nP-PROCEDURAL\nT-TECHNOLOGICAL\nI-INTELLIGENT\nM-MACHINE\n(Structured, auditable folder/WBS)"]
+    ENTERPRISE["Enterprise Backbone:\nO-ORGANIZATIONAL\nP-PROCEDURAL\nT-TECHNOLOGICAL\nI-INTELLIGENT\nM-MACHINE\nE-EXECUTING\n(Structured, auditable folder/WBS)"]
     ACTA["**Digital Acta de Nacimiento**\n(Risk-Optimized BWB Configuration)\nAll traceable & justified\n`ampel360-config.yaml`\nQNNN assignment\n(End-to-end audit)"]
     TWIN["Digital Twin + Audit Trail\n(Git versioning, full traceability)\nFile structure = Engineering logic"]
 
@@ -81,7 +81,9 @@ flowchart TB
 - **OPTIM-FRAMEWORK/O-ORGANIZATIONAL/** - Governance, financial control, and management
 - **OPTIM-FRAMEWORK/P-PROCEDURAL/** - Processes, workflows, gates, and standards
 - **OPTIM-FRAMEWORK/T-TECHNOLOGICAL/** - Detailed architectural component breakdown
+- **OPTIM-FRAMEWORK/I-INTELLIGENT/** - AI models, optimization algorithms, and decision support
 - **OPTIM-FRAMEWORK/M-MACHINE/** - Machine learning, simulation, and digital twin capabilities
+- **OPTIM-FRAMEWORK/E-EXECUTING/** - Execution orchestration, deployment automation, and runtime monitoring
 
 ## Architecture Overview
 
@@ -352,8 +354,8 @@ flowchart TD
 # AMPEL360-H2-BWB-QNNN — Árbol completo (CAs y **todos** los CIs)
 > Nota: **cada CI contiene las 11 fases UTCS** (`01-Requirements` … `11-Sustainment-Recycle`) con `phase.md` y `phase-data.yaml`.
 
-``
-AMPEL360-H2-BWB-QNNN/
+
+```AMPEL360-H2-BWB-QNNN/
 ├── README.md
 ├── .gitignore
 ├── .env.example
