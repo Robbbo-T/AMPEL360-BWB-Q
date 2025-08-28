@@ -705,6 +705,7 @@ Proceso formal **Apéndice H**: cualquier cambio H₂ en FDT dispara re-evaluaci
 * **Archivo:** `STR-FIG-001_CB-Overview.svg`
 * **Alt:** “Vista explotada del CB Primary Grid con rutas de carga y salidas LPS”
 * **Markdown:**
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9b546b19-3435-4a5d-9972-5055683ce163" />
 
 ```markdown
 ![CB Primary Grid — vista explotada](fig/STR-FIG-001_CB-Overview.svg "Figura 1 — CB Primary Grid, vista explotada")
@@ -986,6 +987,7 @@ flowchart LR
 * Exporta **SVG + PDF** y deriva **PNG 300 dpi**; añade `title`/`desc` en SVG para accesibilidad.
 
 Si quieres, preparo una **carpeta de proyecto** con plantillas (SVG base, estilos, rejilla, tipografías) y archivos Mermaid/PlantUML para que el equipo solo tenga que completar datos y exportar.
+
 
 
 
