@@ -1,129 +1,163 @@
 # O-OPERATING_SYSTEMS
 
-Operating Systems (RTOS, Digital-Twin runtimes, OS, UIs).
+Sistemas operativos y runtimes para aeroespacio: **RTOS**, **Digital-Twin runtimes**, **OS kernels**, **HMI runtimes**, **middleware de integración**.
 
-## Configuration Architectures
-
-- **CA-O-001-COCKPIT** - Cockpit systems and components (UIs, Navigation, Communication, Links)
-- **CA-O-002-CABIN** - Passenger cabin systems (enterteinment, personalization, AI memory) 
-- **CA-O-003-CARGO** - Cargo handling systems (robotics collaboration, HMI)
-- **CA-O-004-EMERGENCY** - Emergency equipment and systems 
-- **CA-O-005-MULTI-DOMAIN-OPS** - Multi-domain operational capabilities
-- **CA-O-006-OPERATING-SYSTEMS** - Aerospace and Quantum United Applications OS (AQUA-OS)
-
-## One-liner (mission)
-
-**Unify the whole aerospace lifecycle—design (CAD/CAM/CAE/PLM), production (SCADA/ROS/NC), and operations/services (ATM, cockpit/FBW, nav/comm, MRO/EOL/procurement)—under a single, time-synchronized, evidence-producing, quantum-extensible operating fabric.**
+> CA = **Constituent Assembly** por entorno.  
+> Base de enlaces:  
+> `OPTIM-FRAMEWORK/T-TECHNOLOGICAL/AMEDEO-PELLICCIA/INTEGRATED/AMPEL360-H2-BWB-QNNN/O-OPERATING_SYSTEMS/`
 
 ---
 
-## Elevator pitch
+## CA-O-001 — COCKPIT
+**Ámbito:** UIs/HMIs de cabina, front-ends NAV/COM, datalink y evidencias (DET).  
+**Seguridad:** Sin control FBW/flight-laws; aviónica certificada en sus particiones.
 
-AQUA-OS BRIDGE v22.0 is a **mixed operating system (MOS)** and **integration fabric** that stitches together engineering tools, shop-floor systems, and flight/ground operations. It provides a **deterministic control plane** (ARINC-style partitioning + TSN), a **data/model fabric** with digital-twin contracts, **security & provenance by default** (DET evidence packs), and a **quantum abstraction layer (QAL)** for compute-heavy optimization—without replacing best-in-class domain tools.
-
----
-
-## The unification model (what “under one OS” means)
-
-* **Control plane:** Tri-modal MOS (Electronic/Photonic/Organic R\&D) with **time sync (TSP/PTP)** and **2oo3** voting for deterministic tasks.
-* **Data & model fabric:** Typed schemas (Protobuf/Cap’n Proto), UTCS-MI traceability, versioned twins (engineering → manufacturing → ops).
-* **Adapters, not rip-and-replace:** Canonical adapters for **CAD/CAM/CAE/PLM**, **SCADA/OPC UA**, **ROS 2**, **ARINC 429/653/AFDX/TSN**, **ATM/AOC**, **ERP/MES/MRO/Procurement**.
-* **Security & evidence:** Zero-Trust, mTLS, signed artifacts, **Digital Evidence Twin (DET)** WORM logs.
-* **Quantum-extensible:** **QAL** offloads non-RT optimization/scheduling to QPUs/simulators; *flight-critical remains classical DAL-A*.
-
----
-
-## Layered view (concise)
-
-```
-[ Services & Ops ]  MRO • EOL • Procurement • ATM • EFB/Cockpit • FBW I/O (partitioned) • AOC
-        ↑
-[ Production Exec ] SCADA/OPC UA • ROS 2 workcells • NC/CNC • Test rigs • MES/QA
-        ↑
-[ Eng. Platforms ]  CAD • CAM • CAE • PLM • MBSE • Config/Reqs • V&V
-        ↑
-[ AQUA-OS BRIDGE v22.0 ]
-  Control Plane:  ARINC-like partitions • TSN Photonic Backplane • 2oo3 voter • TSP/PTP sync
-  Data/Model Fabric: Digital Twin APIs • UTCS-MI IDs • Schema registry • Policy/DET
-  Security & Provenance: Zero-Trust • mTLS • SBOM • WORM evidence (DET)
-  Quantum Abstraction Layer (QAL): opt/plan/sim offload (non-RT)
-  Adapters: CAD/CAM/CAE/PLM • OPC UA/ROS 2 • ARINC/AFDX • ERP/MES/MRO
-```
+**CIs (OS-centrados)**
+- HMI Runtime —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-001-COCKPIT/CI-CA-O-001-001-HMI-RUNTIME/`
+- NAV/COMM Gateway —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-001-COCKPIT/CI-CA-O-001-002-NAV-COMM-GATEWAY/`
+- Datalink AOC/CPDLC —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-001-COCKPIT/CI-CA-O-001-003-DATALINK-AOC-CPDLC/`
+- FBW I/O Gateway (RO/particionado) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-001-COCKPIT/CI-CA-O-001-004-FBW-IO-GATEWAY-RO/`
+- EFB Apps Runtime —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-001-COCKPIT/CI-CA-O-001-005-EFB-APPS-RUNTIME/`
+- DET Ops Logger —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-001-COCKPIT/CI-CA-O-001-006-DET-OPS-LOGGER/`
+- README del CA —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-001-COCKPIT/README.md`
 
 ---
 
-## What gets unified (scope)
+## CA-O-002 — CABIN
+**Ámbito:** IFE/IFC, personalización, control de cabina, privacidad/consentimiento, KPIs de servicio.  
+**Seguridad:** Aislamiento duro frente a sistemas de vuelo.
 
-* **Development & Engineering:** CAD/PLM baselines become **versioned digital twins** that drive CAM toolpaths, CAE loads/cases, and test plans; changes propagate with **deterministic builds** and **traceable evidence**.
-* **Production:** **SCADA/OPC UA** and **ROS 2** cells subscribe to the same twin contracts; schedules are optimized (optionally via QAL), and **DET** captures every run with signed telemetry.
-* **Operations:** Cockpit/FBW interfaces remain **partitioned**; non-DAL services (EFB/maintenance, AOC, ATM data links) integrate through the bridge; **MRO/EOL** consume as-flown evidence for smarter workpack generation and recycling paths.
-
----
-
-## Key capabilities
-
-* **Time-synchronized, deterministic integration** across design→build→fly.
-* **End-to-end provenance (DET):** every artifact/action is hash-anchored and audit-ready.
-* **Model-centric APIs:** contract-first twins for geometry, processes, and states.
-* **Policy-driven orchestration:** Energy-as-Policy, safety gates, and RBAC everywhere.
-* **Quantum-ready optimization:** fleet-level scheduling, routing, inventory, layout—**offboard, non-RT**.
-
----
-
-## Non-goals (explicit)
-
-* Replacing CAD/CAM/CAE/PLM or avionics stacks.
-* Hosting **flight-critical** control on quantum hardware.
-* Bypassing certification boundaries: **DAL-A stays classical and partitioned**.
+**CIs (OS-centrados)**
+- IFE Runtime —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-002-CABIN/CI-CA-O-002-001-IFE-RUNTIME/`
+- Personalization Profiles —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-002-CABIN/CI-CA-O-002-002-PERSONALIZATION-PROFILES/`
+- Cabin-Bus Gateway —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-002-CABIN/CI-CA-O-002-003-CABIN-BUS-GATEWAY/`
+- Privacy & Consent Engine —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-002-CABIN/CI-CA-O-002-004-PRIVACY-CONSENT-ENGINE/`
+- Content OTA —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-002-CABIN/CI-CA-O-002-005-CONTENT-OTA/`
+- DET Service (Cabin) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-002-CABIN/CI-CA-O-002-006-DET-SERVICE/`
+- README del CA —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-002-CABIN/README.md`
 
 ---
 
-## Example cross-lifecycle flows
+## CA-O-003 — CARGO
+**Ámbito:** Orquestación ULD/carga, celdas ROS 2, puente SCADA/PLC, visión, evidencias de ejecución.  
+**Seguridad:** Interlocks físicos / e-stop por encima del software.
 
-1. **Design change → Shop floor → MRO**
-   PLM change (CAD/CAE) → twin diff → CAM & ROS cells updated → run captured in DET → as-built config sync → MRO workpack auto-generated with actual TORQUE/LOT evidence.
-
-2. **Ops feedback → Engineering**
-   In-service defects (MRO/DET) → analytics → CAE model update → new design & process plan → controlled rollout with SBOM + evidence.
-
----
-
-## KPIs (measurable)
-
-* **Lead time** concept→first article: −30–50% (repeatable pipelines).
-* **Evidence latency:** DET pack available **< T+5 min** after run.
-* **Sync quality:** TSP phase RMS **≤ 500 ps** across nodes (p99).
-* **Energy/CO₂** vs baseline: −20–40% via **Energy-as-Policy** scheduling.
-* **Mean plan reproducibility:** 100% with same seed & inputs (hash-stable).
-
----
-
-## v22.0 deliverables (what’s in this release)
-
-* **Control plane** (particionamiento, TSN profile, TSP sync) for ground/industrial domains; avionics integrations via **partitioned gateways**.
-* **Data/model fabric** (schemas, twin APIs, registry) + **UTCS-MI** traceability.
-* **DET** (WORM evidence, signed logs) integrated CI/CD and shop-floor.
-* **Adapter set**: CAD/PLM, OPC UA/SCADA, ROS 2, ERP/MES/MRO, ARINC/AFDX gateways.
-* **QAL (non-RT)** for optimization workloads (planning/scheduling/layout).
-
-> **Out-of-scope v22.0:** Organic substrate in flight, DAL certification of quantum components, and replacement of proprietary CAD/PLM/ATM stacks.
+**CIs (OS-centrados)**
+- ROS 2 Cell Runtime —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-003-CARGO/CI-CA-O-003-001-ROS2-CELL-RUNTIME/`
+- OPC UA Bridge (SCADA/PLC) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-003-CARGO/CI-CA-O-003-002-OPC-UA-BRIDGE/`
+- Safety Interlocks Kernel —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-003-CARGO/CI-CA-O-003-003-SAFETY-INTERLOCKS-KERNEL/`
+- Vision Pipeline Runtime —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-003-CARGO/CI-CA-O-003-004-VISION-PIPELINE-RUNTIME/`
+- ULD Planner Adapter —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-003-CARGO/CI-CA-O-003-005-ULD-PLANNER-ADAPTER/`
+- DET Run Packer —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-003-CARGO/CI-CA-O-003-006-DET-RUN-PACKER/`
+- README del CA —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-003-CARGO/README.md`
 
 ---
 
-## Why it matters (strategic)
+## CA-O-004 — EMERGENCY
+**Ámbito:** Readiness/monitorización, drills/checklists, pasarelas RO a iluminación/EMERG, evidencias.  
+**Seguridad:** Asesoría/evidencia; no modifica lógicas certificadas.
 
-* **Single source of truth:** the twin and its evidence, not the document, is the contract.
-* **Determinism + agility:** you get safety-critical rigor *and* rapid iteration.
-* **Sustainability baked in:** energy/CO₂ becomes an enforceable policy, not a slide.
+**CIs (OS-centrados)**
+- Readiness Monitor —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-004-EMERGENCY/CI-CA-O-004-001-READINESS-MONITOR/`
+- Drill & Checklist Runtime —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-004-EMERGENCY/CI-CA-O-004-002-DRILL-CHECKLIST-RUNTIME/`
+- Emergency Lighting GW (RO) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-004-EMERGENCY/CI-CA-O-004-003-EMERG-LIGHTING-GW-RO/`
+- Dispenser Status Service —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-004-EMERGENCY/CI-CA-O-004-004-DISPENSER-STATUS-SERVICE/`
+- DET Event Packs —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-004-EMERGENCY/CI-CA-O-004-005-DET-EVENT-PACKS/`
+- README del CA —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-004-EMERGENCY/README.md`
 
 ---
 
-### Tagline
+## CA-O-005 — MULTI-DOMAIN-OPS
+**Ámbito:** Orquestación aire/tierra, integraciones AOC/ATM/UTM, optimización de flota, cross-link.  
+**Seguridad:** Fuera de caminos DAL-A; gateways particionados.
 
-**Design. Build. Operate. Prove it.** All under a deterministic, quantum-extensible operating fabric.
+**CIs (OS-centrados)**
+- AOC/ATM Gateway —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-005-MULTI-DOMAIN-OPS/CI-CA-O-005-001-AOC-ATM-GATEWAY/`
+- SWIM/UTM Connector —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-005-MULTI-DOMAIN-OPS/CI-CA-O-005-002-SWIM-UTM-CONNECTOR/`
+- Fleet Optimization Orchestrator (QAL offboard) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-005-MULTI-DOMAIN-OPS/CI-CA-O-005-003-FLEET-OPT-ORCHESTRATOR/`
+- Crosslink Network Manager —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-005-MULTI-DOMAIN-OPS/CI-CA-O-005-004-CROSSLINK-NETWORK-MGR/`
+- Policy Engine (Energy-as-Policy / RBAC) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-005-MULTI-DOMAIN-OPS/CI-CA-O-005-005-POLICY-ENGINE/`
+- DET Fleet Repository —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-005-MULTI-DOMAIN-OPS/CI-CA-O-005-006-DET-FLEET-REPO/`
+- README del CA —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-005-MULTI-DOMAIN-OPS/README.md`
 
+---
 
-- **AQUA-BRIDGE-OS v22.0** - The tri-modal and multi-physical Mixed Operating System (MOS)
-- **Triadic Computational Architecture (ACT)** - Electronic, Photonic, and Organic substrates
+## CA-O-006 — AQUA-OS
+**Ámbito:** **Mixed Operating System (MOS)** y tejido de integración (**AQUA-OS BRIDGE v22.0**) unificando diseño→fabricación→operación.  
+**Seguridad:** El vuelo crítico permanece **clásico y particionado (DAL-A)**.
+
+**CIs (núcleo AQUA-OS)**
+- AQUA-BRIDGE-OS (control plane) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-001-AQUA-BRIDGE-OS/`
+- TSN/TSP Sync —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-002-TSN-TSP-SYNC/`
+- Data/Model Fabric (Twin APIs, UTCS-MI) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-003-DATA-MODEL-FABRIC/`
+- Security & Provenance (DET/FAT/PQC/SBOM) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-004-SECURITY-PROVENANCE/`
+- Adapters Suite —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-005-ADAPTERS-SUITE/`
+- QAL (Non-RT Optimization) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-006-QAL-NONRT/`
+
+**CIs (bridges de ciclo de vida)**
+- **CAD/CAM/CAE/PLM Bridge** —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-007-CAD-CAM-CAE-PLM-BRIDGE/`
+- **SCADA/ROS/NC Bridge (producción)** —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-008-SCADA-ROS-NC-BRIDGE/`
+- **CaaS — Certification as a Service** —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-009-CAAS-CERTIFICATION-AS-SERVICE/`
+- **MRO Bridge** —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-010-MRO-BRIDGE/`
+- **EOL Bridge (End-of-Life/Disposal)** —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-011-EOL-BRIDGE/`
+- **Procurement/ERP Bridge** —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-012-PROCUREMENT-ERP-BRIDGE/`
+- **Legacy Systems Bridge** (ARINC 429/AFDX/Proprietary) —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/CI-CA-O-006-013-LEGACY-SYSTEMS-BRIDGE/`
+
+- README del CA —  
+  `OPTIM-FRAMEWORK/.../O-OPERATING_SYSTEMS/CA-O-006-AQUA-OS/README.md`
+
+---
+
+### Notas
+- Puedes crear los directorios de cada CI exactamente con los nombres mostrados para que los enlaces funcionen tal cual.  
+- ¿Quieres que genere **plantillas README** para cada CI (Scope • Interfaces • Seguridad • DET • KPIs)? Las dejo listas para commit.
+
 - **Computación Circular Multi-Física (CCMF)** - The computational paradigm for continuous optimization
 - **GAIA AIR-RTOS** - Real-time operating system kernel with DAL-A certification framework
