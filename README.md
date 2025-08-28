@@ -212,9 +212,9 @@ donde **H_s** es el coste ecosistema (RD + MFG_INV + CERT_TIME·CAPITAL + INFRA 
 
 ## 9. Trazabilidad y artefactos
 - **Constraints**: `constraints/hard_constraints.yaml`  
-- **Donantes**: `data/candidates.yaml`  
+- **Donantes**: `OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml`  
 - **Feasible set**: `feasible_set.json` (post‑enumeración)  
-- **Selector**: `scripts/qaoa_over_F.py` (stub CVaR; sustituible por QAOA one‑hot)
+- **Selector**: `OPTIM-FRAMEWORK/I-.INTELLIGENT/scripts/qaoa_over_F.py` (stub CVaR; sustituible por QAOA one‑hot)
 
 ## 10. Aprobación
 - **Estado**: *Aprobado para desarrollo detallado (P2)*, a reserva de cierre de **QNNN** tras la corrida completa.
@@ -360,13 +360,15 @@ flowchart TD
 ├─ ampel360-config.yaml
 ├─ constraints/
 │  └─ hard_constraints.yaml
-├─ data/
-│  └─ candidates.yaml
-├─ scripts/
-│  ├─ qaoa_over_F.py
-│  ├─ feasible_first_milp.py
-│  └─ utils/
-│     └─ scoring.py
+├─ OPTIM-FRAMEWORK/
+│  └─ I-.INTELLIGENT/
+│     ├─ data/
+│     │  └─ candidates.yaml
+│     └─ scripts/
+│        ├─ qaoa_over_F.py
+│        ├─ feasible_first_milp.py
+│        └─ utils/
+│           └─ scoring.py
 ├─ ampel360_utils.py
 └─ OPTIM-FRAMEWORK/
    ├─ O-ORGANIZATIONAL/
