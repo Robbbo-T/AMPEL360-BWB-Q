@@ -11,7 +11,13 @@ import os
 from pathlib import Path
 
 # Add project root to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+repo_root = Path(__file__).parent
+sys.path.insert(0, str(repo_root))
+
+# Ensure moved scripts/ are importable as 'scripts.*'
+scripts_parent = repo_root / "OPTIM-FRAMEWORK" / "I-.INTELLIGENT"
+if scripts_parent.exists():
+    sys.path.insert(0, str(scripts_parent))
 
 from cad_ai_convert import (
     CADAIConvert, ConstraintLayer, ParametricVolume, AircraftConcept,
@@ -256,7 +262,7 @@ class TestQAOAIntegration(unittest.TestCase):
             self.skipTest("QAOA module not available")
         
         # Test that integration is properly detected
-        from scripts.qaoa_over_F import CAD_AI_AVAILABLE
+    from scripts.qaoa_over_F import CAD_AI_AVAILABLE
         self.assertTrue(CAD_AI_AVAILABLE, "CAD-AI Convert should be available for QAOA integration")
     
     def test_constraint_conversion(self):
@@ -264,11 +270,11 @@ class TestQAOAIntegration(unittest.TestCase):
         if not self.qaoa_available:
             self.skipTest("QAOA module not available")
         
-        from scripts.qaoa_over_F import QAOASelector
+    from scripts.qaoa_over_F import QAOASelector
         
         # Create test QAOA selector (will fail gracefully if files don't exist)
         try:
-            selector = QAOASelector("constraints/hard_constraints.yaml", "data/candidates.yaml")
+            selector = QAOASelector("constraints/hard_constraints.yaml", "OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml")
             
             test_config = {
                 "id": "TEST_BWB_H2", 
