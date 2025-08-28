@@ -1,0 +1,39 @@
+name: Validate Configuration Index
+on:
+  push:
+    paths:
+      - "OPTIM-FRAMEWORK/**"
+      - ".github/workflows/config-index.yml"
+      - "tools/**"
+  pull_request:
+    paths:
+      - "OPTIM-FRAMEWORK/**"
+      - "tools/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with: 
+          python-version: "3.11"
+      
+      - name: Install dependencies
+        run: pip install pyyaml jsonschema
+      
+      - name: Validate configuration index
+        run: python tools/validate_config_index.py
+        
+      - name: Check for configuration changes
+        run: |
+          if ! git diff --quiet OPTIM-FRAMEWORK/O-ORGANIZATIONAL/artifacts/configuration-index.yaml; then
+            echo "⚠️ Configuration index was updated with SHA256 stamps"
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add OPTIM-FRAMEWORK/O-ORGANIZATIONAL/artifacts/configuration-index.yaml
+            git commit -m "Auto-update: Stamp SHA256 hashes in configuration index [skip ci]" || exit 0
+          fi

@@ -1,0 +1,119 @@
+utcs_mi_header: EstándarUniversal:IndiceDeConfiguracion:Desarrollo:ARP4754A:00.00:RegistroCentralDeConfiguracion:0001:v1.0:AmpelTrescientosSesentaHidrogenoAlaCombinadaQuantum:GeneracionHumana:CROSS:Amedeo
+  Pelliccia:8f2ad9c1:01-Requirements→11-Sustainment-Recycle
+meta:
+  version: 1.0.0
+  last_updated: '2025-08-28'
+  maintainer: Chief Architect (DT)
+  purpose: Central index for all AMPEL360 configuration artifacts
+  path_base: this_file_dir
+configurations:
+  primary:
+  - id: AMPEL360-CONFIG-MAIN
+    file: ../../../ampel360-config.yaml
+    description: Main framework configuration
+    status: ACTIVE
+    phase: P2
+  architectural_decisions:
+  - id: ACTA-UTCS-MI-V5
+    file: ACTA-UTCS-MI-v5.0.md
+    description: Digital Acta de Nacimiento - Architecture Decision Record
+    status: APPROVED
+    decision_date: '2025-08-26'
+    signatories:
+    - Chief Architect (DT)
+    - Chief Systems Engineer
+    - Certification Lead
+  constraints:
+  - id: HARD-CONSTRAINTS-P2
+    file: ../../../constraints/hard_constraints.yaml
+    description: P2 Phase hard constraints - TRL gates, compatibility rules
+    status: ENFORCED
+  optimization:
+  - id: QAOA-SELECTOR
+    file: ../../I-.INTELLIGENT/scripts/qaoa_over_F.py
+    description: QAOA optimization selector with CVaR objective
+    status: OPERATIONAL
+  - id: FEASIBLE-SET
+    file: ../../../feasible_set.json
+    description: Enumerated feasible configurations
+    status: GENERATED
+    last_run: null
+    sha256: 30b035f08e505ec195fb9d8e70a54ee352604f98cacf82117d4dedfb2edce6f3
+  donor_database:
+  - id: AMPEL-CANDIDATES
+    file: ../../I-.INTELLIGENT/data/candidates.yaml
+    description: 43 AMPEL aircraft subsystem donors
+    status: VALIDATED
+    count: 43
+    sha256: 0831ac0d8f892741815b69edbb6db4fe5fba967c96ad74afab66e274f8704004
+configuration_parameters:
+  phase: P2
+  architecture_selection:
+    fuselage: 24
+    wing: 24
+    primary_structure: 24
+    flight_controls: 24
+    propulsion: 37
+    energy: 38
+    avionics: 1
+    landing_gear: 1
+    cabin: 1
+    tail: N/A-BWB
+  capacity:
+    QNNN: 150
+    range_pax:
+    - 150
+    - 220
+  risk_parameters:
+    cvar_alpha: 0.8
+    beta: 0.25
+  corridors:
+    initial:
+    - LHR
+    - FRA
+    - DXB
+    - SIN
+validation_gates:
+  P1_CONSERVATIVE:
+    status: PASSED
+    date: '2025-01-15'
+  P2_INTRODUCE_BWB:
+    status: ACTIVE
+    target_date: '2025-09-30'
+    criteria:
+    - TRL ≥ 6 for core BWB systems
+    - H₂ infrastructure readiness assessment
+    - Certification pathway defined
+  P3_FULL_OPTIMAL:
+    status: PLANNED
+    target_date: '2026-03-31'
+    criteria:
+    - BLI/DP integration feasibility
+    - Morphing surfaces TRL ≥ 6
+    - Quantum optimization validated
+key_decisions:
+- id: DEC-001
+  date: '2025-08-26'
+  decision: Select BWB architecture with H₂ propulsion for P2
+  rationale: Optimal L/D and volume for cryogenic storage
+- id: DEC-002
+  date: '2025-08-26'
+  decision: Apply CVaR optimization with α=0.8, β=0.25
+  rationale: Mitigate tail risks in H₂ infrastructure deployment
+- id: DEC-003
+  date: null
+  decision: Final QNNN capacity selection
+  rationale: Pending feasible set enumeration and QAOA optimization
+traceability:
+  requirements_to_design:
+    file: ../../P-PROCEDURAL/standards/requirements-traceability.yaml
+  design_to_test:
+    file: ../../M-MACHINE/simulation-models/test-matrix.yaml
+  certification_compliance:
+    file: ../../P-PROCEDURAL/processes/certification-process.bpmn
+audit_trail:
+  changes:
+  - date: '2025-08-26'
+    author: AMEDEO PELLICCIA
+    change: Initial configuration index created
+    version: 1.0.0

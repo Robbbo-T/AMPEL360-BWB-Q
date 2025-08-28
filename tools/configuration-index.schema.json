@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AMPEL360 Configuration Index",
+  "type": "object",
+  "required": ["meta", "configurations", "configuration_parameters", "validation_gates", "key_decisions", "traceability", "audit_trail"],
+  "properties": {
+    "utcs_mi_header": { "type": "string", "pattern": "^EstándarUniversal:" },
+    "meta": {
+      "type": "object",
+      "required": ["version", "last_updated", "maintainer", "purpose"],
+      "properties": {
+        "version": { "type": "string" },
+        "last_updated": { "type": "string", "format": "date" },
+        "maintainer": { "type": "string" },
+        "purpose": { "type": "string" },
+        "path_base": { "type": "string", "enum": ["this_file_dir", "repo_root"] }
+      }
+    },
+    "configurations": { "type": "object" },
+    "configuration_parameters": {
+      "type": "object",
+      "required": ["phase", "architecture_selection", "risk_parameters"],
+      "properties": {
+        "phase": { "type": "string" },
+        "architecture_selection": { "type": "object" },
+        "risk_parameters": {
+          "type": "object",
+          "required": ["cvar_alpha", "beta"],
+          "properties": {
+            "cvar_alpha": { "type": "number", "minimum": 0, "maximum": 1 },
+            "beta": { "type": "number", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "validation_gates": { "type": "object" },
+    "key_decisions": { "type": "array" },
+    "traceability": { "type": "object" },
+    "audit_trail": { "type": "object" }
+  }
+}
