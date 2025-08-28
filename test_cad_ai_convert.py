@@ -262,18 +262,21 @@ class TestQAOAIntegration(unittest.TestCase):
             self.skipTest("QAOA module not available")
         
         # Test that integration is properly detected
-    from scripts.qaoa_over_F import CAD_AI_AVAILABLE
-        self.assertTrue(CAD_AI_AVAILABLE, "CAD-AI Convert should be available for QAOA integration")
+        try:
+            from scripts.qaoa_over_F import CAD_AI_AVAILABLE
+            self.assertTrue(CAD_AI_AVAILABLE, "CAD-AI Convert should be available for QAOA integration")
+        except ImportError:
+            self.skipTest("QAOA scripts not available")
     
     def test_constraint_conversion(self):
         """Test conversion from QAOA config to CAD-AI constraints"""
         if not self.qaoa_available:
             self.skipTest("QAOA module not available")
         
-    from scripts.qaoa_over_F import QAOASelector
-        
-        # Create test QAOA selector (will fail gracefully if files don't exist)
         try:
+            from scripts.qaoa_over_F import QAOASelector
+            
+            # Create test QAOA selector (will fail gracefully if files don't exist)
             selector = QAOASelector("constraints/hard_constraints.yaml", "OPTIM-FRAMEWORK/I-.INTELLIGENT/data/candidates.yaml")
             
             test_config = {
@@ -293,6 +296,8 @@ class TestQAOAIntegration(unittest.TestCase):
             
         except FileNotFoundError:
             self.skipTest("QAOA configuration files not available")
+        except ImportError:
+            self.skipTest("QAOA scripts not available")
 
 
 def run_validation_tests():

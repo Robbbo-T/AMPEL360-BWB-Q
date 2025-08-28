@@ -22,6 +22,9 @@ This index links into each section and the deeper technological/AMEDEO-PELLICCIA
 - **M-MACHINE** — Simulation, digital twins, co-simulation, HIL testing  
   ➜ [`./M-MACHINE/`](./M-MACHINE/)
 
+- **E-EXECUTING** — Execution orchestration, deployment automation, runtime monitoring  
+  ➜ [`./E-EXECUTING/`](./E-EXECUTING/)
+
 ---
 
 ## Technological Fast Lanes
@@ -57,6 +60,9 @@ _(Add direct links for other domains as they come online: C, C2, D, E, E2, E3, I
 
 - **M-MACHINE**  
   Simulation models, digital twin capabilities, co-simulation, and hardware-in-the-loop testing.
+
+- **E-EXECUTING**  
+  Execution orchestration, deployment automation, runtime monitoring, and workflow management.
 
 ---
 
@@ -99,7 +105,8 @@ OPTIM-FRAMEWORK/
 │           ├─ A2-AIRPORTS/
 │           └─ ... (C, C2, D, E, E2, E3, I, I2, L, L2, M, O, P)
 ├─ I-INTELLIGENT/
-└─ M-MACHINE/
+├─ M-MACHINE/
+└─ E-EXECUTING/
 
 ```
 
