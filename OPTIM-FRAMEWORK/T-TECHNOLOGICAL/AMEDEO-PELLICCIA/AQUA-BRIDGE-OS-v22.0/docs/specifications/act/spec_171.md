@@ -1,0 +1,1 @@
+# Specification 171 for AQUA-BRIDGE-OS v22.0

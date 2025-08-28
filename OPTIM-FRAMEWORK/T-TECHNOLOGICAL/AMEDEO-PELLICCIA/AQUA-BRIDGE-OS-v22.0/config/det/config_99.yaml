@@ -1,0 +1,3 @@
+# Configuration 99 for det
+version: "22.0"
+component: "det"

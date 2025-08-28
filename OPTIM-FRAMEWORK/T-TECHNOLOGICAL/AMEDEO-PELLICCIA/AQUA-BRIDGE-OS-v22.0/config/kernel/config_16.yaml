@@ -1,0 +1,3 @@
+# Configuration 16 for kernel
+version: "22.0"
+component: "kernel"

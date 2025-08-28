@@ -1,0 +1,245 @@
+{
+  "aqua_bridge_os_version": "22.0",
+  "test_execution_time_seconds": 1.365593433380127,
+  "total_tests": 9,
+  "tests_passed": 8,
+  "tests_failed": 1,
+  "test_results": {
+    "Kernel Initialization": {
+      "status": "PASS",
+      "result": {
+        "running": true,
+        "partitions": 3,
+        "tasks": 1,
+        "current_time_us": 0,
+        "major_frame_us": 50000,
+        "substrate_queues": {
+          "cpu": 1,
+          "fpga": 0,
+          "dsp": 0
+        }
+      }
+    },
+    "ACT Triadic Architecture": {
+      "status": "PASS",
+      "result": {
+        "vote_result": "UNANIMOUS",
+        "output_size": 32,
+        "status": {
+          "electronic": {
+            "cpu_available": true,
+            "fpga_available": true,
+            "dsp_available": true
+          },
+          "photonic": {
+            "tsn_available": true,
+            "latency_target_us": 200
+          },
+          "organic": {
+            "flight_mode": false,
+            "research_capabilities": "bio-inspired optimization"
+          }
+        }
+      }
+    },
+    "CCMF Circular Computing": {
+      "status": "PASS",
+      "result": {
+        "cycle_result": {
+          "cycle_id": "cycle_000000",
+          "cycle_time_ms": 14.014720916748047,
+          "observation": "ObservationData(timestamp=1756405127.8855774, environment_state={'altitude_m': 10000, 'airspeed_ms': 250, 'temperature_k': 273, 'pressure_pa': 101325, 'wind_ms': [10, 5, 0]}, system_state={'cpu_usage_percent': 45, 'memory_usage_percent': 60, 'power_consumption_w': 1200, 'temperature_c': 65, 'partition_health': 'nominal'}, sensor_readings={'accel_x_ms2': 0.1, 'accel_y_ms2': 0.0, 'accel_z_ms2': 9.81, 'gyro_x_rads': 0.01, 'gyro_y_rads': 0.02, 'gyro_z_rads': 0.0}, performance_metrics={'latency_ms': 12.5, 'throughput_ops': 1000, 'energy_efficiency': 0.85, 'error_rate': 0.001})",
+          "proposals_generated": 1,
+          "proposals_validated": 1,
+          "commands_executed": 1,
+          "execution_results": {
+            "cmd_energy_opt_001": true
+          },
+          "metrics": {
+            "total_cycles": 3,
+            "avg_cycle_time_ms": 14.341990152994791,
+            "proposals_generated": 3,
+            "proposals_approved": 3,
+            "energy_saved_kj": 45.599999999999994,
+            "carbon_saved_gco2": 15.299999999999999
+          }
+        },
+        "controller_status": {
+          "current_phase": "idle",
+          "cycle_count": 1,
+          "running": false,
+          "metrics": {
+            "total_cycles": 3,
+            "avg_cycle_time_ms": 14.341990152994791,
+            "proposals_generated": 3,
+            "proposals_approved": 3,
+            "energy_saved_kj": 45.599999999999994,
+            "carbon_saved_gco2": 15.299999999999999
+          }
+        }
+      }
+    },
+    "Digital Evidence Twin": {
+      "status": "FAIL",
+      "error": "Evidence integrity check failed"
+    },
+    "Energy-as-Policy": {
+      "status": "PASS",
+      "result": {
+        "budgets": {
+          "FLIGHT_CRITICAL": {
+            "budget_id": "FLIGHT_CRITICAL",
+            "name": "Flight Critical Systems",
+            "energy_usage": {
+              "current_kj": 4.5,
+              "max_kj": 100.0,
+              "usage_percent": 4.5
+            },
+            "carbon_usage": {
+              "current_gco2": 0.5,
+              "max_gco2": 33.3,
+              "usage_percent": 1.5015015015015016
+            },
+            "time_window": {
+              "total_seconds": 3600,
+              "remaining_seconds": 3599.9996778964996,
+              "progress_percent": 8.94731945461697e-06
+            }
+          },
+          "NON_FLIGHT": {
+            "budget_id": "NON_FLIGHT",
+            "name": "Non-Flight Systems",
+            "energy_usage": {
+              "current_kj": 0.0,
+              "max_kj": 50.0,
+              "usage_percent": 0.0
+            },
+            "carbon_usage": {
+              "current_gco2": 0.0,
+              "max_gco2": 16.7,
+              "usage_percent": 0.0
+            },
+            "time_window": {
+              "total_seconds": 3600,
+              "remaining_seconds": 3599.999674797058,
+              "progress_percent": 9.033415052625867e-06
+            }
+          }
+        },
+        "recent_violations": 1,
+        "total_consumption_events": 1,
+        "grid_carbon_intensity": 400,
+        "enforcement_enabled": true
+      }
+    },
+    "Quantum Gateway": {
+      "status": "PASS",
+      "result": {
+        "job_submitted": true,
+        "job_result": "COMPLETED",
+        "system_status": {
+          "air_gap_enabled": true,
+          "flight_mode": false,
+          "active_jobs": 0,
+          "completed_jobs": 1,
+          "failed_jobs": 0,
+          "backends": {
+            "aqua_nisq_v1": {
+              "available": true,
+              "qubits": 64
+            }
+          },
+          "approved_requesters": 3
+        }
+      }
+    },
+    "TSN Networking": {
+      "status": "PASS",
+      "result": {
+        "frame_sent": true,
+        "network_status": {
+          "nodes": {
+            "cpu_node": {
+              "online": true,
+              "load_percent": 0.0,
+              "interface": "eth_electronic"
+            },
+            "fpga_node": {
+              "online": true,
+              "load_percent": 0.0,
+              "interface": "eth_electronic"
+            },
+            "dsp_node": {
+              "online": true,
+              "load_percent": 0.0,
+              "interface": "eth_electronic"
+            },
+            "optical_switch": {
+              "online": true,
+              "load_percent": 0.0,
+              "interface": "opt_photonic"
+            }
+          },
+          "photonic_switch": {
+            "frames_switched": 1,
+            "average_latency_us": 5.1288,
+            "active_routes": 3,
+            "wavelength_utilization": {
+              "1310nm": 1,
+              "1550nm": 1,
+              "1490nm": 1,
+              "1625nm": 0
+            }
+          },
+          "scheduler": {
+            "frames_transmitted": {},
+            "frames_dropped": {},
+            "latency_stats": {
+              "average_us": 0,
+              "p50_us": 0,
+              "p95_us": 0,
+              "p99_us": 0
+            },
+            "queue_depths": {
+              "EMERGENCY": 0,
+              "VOICE": 0,
+              "VIDEO": 0,
+              "CONTROLLED_LOAD": 0,
+              "EXCELLENT_EFFORT": 0,
+              "BEST_EFFORT": 0,
+              "BACKGROUND": 0
+            }
+          },
+          "performance_targets": {
+            "target_latency_us": 200,
+            "target_jitter_us": 50
+          }
+        }
+      }
+    },
+    "End-to-End Integration": {
+      "status": "PASS",
+      "result": {
+        "ccmf_cycle_completed": true,
+        "act_computation_completed": true,
+        "det_evidence_logged": true,
+        "kernel_still_running": true
+      }
+    },
+    "Performance Validation": {
+      "status": "PASS",
+      "result": {
+        "ccmf_cycle_time_ms": 14.59360122680664,
+        "ccmf_target_met": true,
+        "act_computation_time_ms": 3.486156463623047,
+        "act_target_met": true,
+        "tsn_latency_us": 5.1288,
+        "tsn_target_met": true,
+        "overall_performance_score": 1.0,
+        "performance_grade": "PASS"
+      }
+    }
+  },
+  "overall_status": "PASS",
+  "success_rate_percent": 88.88888888888889
+}

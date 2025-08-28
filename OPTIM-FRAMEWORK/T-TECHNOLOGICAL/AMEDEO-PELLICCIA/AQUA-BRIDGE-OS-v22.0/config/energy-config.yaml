@@ -1,0 +1,3 @@
+# Configuration: energy-config
+version: "22.0"
+module: "energy-config"

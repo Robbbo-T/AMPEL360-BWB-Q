@@ -1,0 +1,3 @@
+# Configuration 6 for tsn
+version: "22.0"
+component: "tsn"

@@ -1,0 +1,3 @@
+# Configuration: ccmf-config
+version: "22.0"
+module: "ccmf-config"

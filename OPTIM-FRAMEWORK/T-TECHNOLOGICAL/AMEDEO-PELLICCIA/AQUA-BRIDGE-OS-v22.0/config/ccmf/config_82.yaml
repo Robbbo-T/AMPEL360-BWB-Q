@@ -1,0 +1,3 @@
+# Configuration 82 for ccmf
+version: "22.0"
+component: "ccmf"

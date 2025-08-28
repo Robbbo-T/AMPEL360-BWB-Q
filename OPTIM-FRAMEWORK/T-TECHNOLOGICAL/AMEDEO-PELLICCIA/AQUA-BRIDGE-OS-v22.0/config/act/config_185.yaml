@@ -1,0 +1,3 @@
+# Configuration 185 for act
+version: "22.0"
+component: "act"

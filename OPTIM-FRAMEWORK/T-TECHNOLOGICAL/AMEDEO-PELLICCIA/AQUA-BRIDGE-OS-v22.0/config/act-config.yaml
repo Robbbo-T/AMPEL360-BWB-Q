@@ -1,0 +1,3 @@
+# Configuration: act-config
+version: "22.0"
+module: "act-config"

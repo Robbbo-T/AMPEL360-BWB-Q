@@ -1,0 +1,3 @@
+# Configuration 1 for act
+version: "22.0"
+component: "act"

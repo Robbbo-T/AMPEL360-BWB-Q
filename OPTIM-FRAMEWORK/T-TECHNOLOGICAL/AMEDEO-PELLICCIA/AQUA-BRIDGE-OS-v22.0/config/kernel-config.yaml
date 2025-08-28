@@ -1,0 +1,3 @@
+# Configuration: kernel-config
+version: "22.0"
+module: "kernel-config"

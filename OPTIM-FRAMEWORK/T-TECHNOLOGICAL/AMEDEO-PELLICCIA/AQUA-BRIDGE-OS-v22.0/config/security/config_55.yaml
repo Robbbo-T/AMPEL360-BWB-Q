@@ -1,0 +1,3 @@
+# Configuration 55 for security
+version: "22.0"
+component: "security"

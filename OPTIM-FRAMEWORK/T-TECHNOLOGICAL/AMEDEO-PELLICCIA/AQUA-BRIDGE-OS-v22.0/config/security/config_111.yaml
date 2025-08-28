@@ -1,0 +1,3 @@
+# Configuration 111 for security
+version: "22.0"
+component: "security"

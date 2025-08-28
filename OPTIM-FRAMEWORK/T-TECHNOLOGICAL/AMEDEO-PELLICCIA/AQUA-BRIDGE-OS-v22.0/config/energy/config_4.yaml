@@ -1,0 +1,3 @@
+# Configuration 4 for energy
+version: "22.0"
+component: "energy"

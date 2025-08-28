@@ -1,0 +1,3 @@
+# Configuration 95 for security
+version: "22.0"
+component: "security"

@@ -1,0 +1,3 @@
+# Configuration: det-config
+version: "22.0"
+module: "det-config"
