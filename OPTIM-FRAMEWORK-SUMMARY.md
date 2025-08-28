@@ -51,7 +51,7 @@ Complete aircraft architecture breakdown with:
 - Generation, distribution, storage, conversion
 - Hydrogen storage, HV distribution
 
-#### O-OPERATIONS (5 CAs, 27 CIs)
+#### O-OPERATING_SYSTEMS (5 CAs, 27 CIs)
 - Cockpit, cabin, cargo, emergency
 - Multi-domain operations
 
