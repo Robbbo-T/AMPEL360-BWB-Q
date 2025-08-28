@@ -96,7 +96,7 @@ def main():
         print(f"\n🚀 Next Steps:")
         print(f"   • Review optimization results in qnnn_optimization_result.json")
         print(f"   • Customize constraints in constraints/hard_constraints.yaml")
-        print(f"   • Add more candidates to OPTIM-FRAMEWORK/I-INTELLIGENT/data/candidates.yaml")
+        print("   • Add more candidates to OPTIM-FRAMEWORK/I-INTELLIGENT/data/candidates.yaml")
         print(f"   • Run detailed geometric integration analysis")
         print(f"   • Proceed to P3 phase with BLI/DP and morphing capabilities")
 
