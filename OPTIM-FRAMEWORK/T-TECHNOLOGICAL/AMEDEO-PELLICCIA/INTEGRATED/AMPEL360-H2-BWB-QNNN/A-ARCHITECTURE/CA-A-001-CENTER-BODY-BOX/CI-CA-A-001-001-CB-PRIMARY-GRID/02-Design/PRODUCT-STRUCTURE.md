@@ -11,17 +11,17 @@ Primary load-bearing grid of the center body: keel members, longerons, frames, L
 ### 2. Structure (Mermaid)
 ```mermaid
 graph TD
-  PG[CB-PRIMARY-GRID (CI-CA-A-001-001)]
-  PG --> KEEL[KEEL-MEMBERS (ASM)]
-  PG --> LON[LONGERONS (ASM)]
-  PG --> FRM[FRAMES (ASM)]
-  PG --> LGR[LG-REINFORCEMENTS (ASM)]
-  PG --> LPS[LPS-BONDING (ASM)]
-  PG --> BRK[SYSTEMS-BRACKETS (ASM)]
-  PG --> ACC[ACCESS-DOORS & PANELS (ASM)]
+  PG[CB-PRIMARY-GRID CI-CA-A-001-001]
+  PG --> KEEL[KEEL-MEMBERS ASM]
+  PG --> LON[LONGERONS ASM]
+  PG --> FRM[FRAMES ASM]
+  PG --> LGR[LG-REINFORCEMENTS ASM]
+  PG --> LPS[LPS-BONDING ASM]
+  PG --> BRK[SYSTEMS-BRACKETS ASM]
+  PG --> ACC[ACCESS-DOORS & PANELS ASM]
   %% External references in same CA
-  PG -. external .-> RIBS[CB-RIBS-BULKHEADS (CI-CA-A-001-002)]
-  PG -. external .-> SKIN[CB-SKIN-PANELS (CI-CA-A-001-003)]
+  PG -. external .-> RIBS[CB-RIBS-BULKHEADS CI-CA-A-001-002]
+  PG -. external .-> SKIN[CB-SKIN-PANELS CI-CA-A-001-003]
 ```
 
 ### 3. Bill of Structure (BoS) — navigation
