@@ -1,0 +1,1056 @@
+{
+  "id": "AMPEL360-H2-BWB-Q",
+  "name": "AMPEL360 H₂-BWB-Q Framework",
+  "type": "folder",
+  "description": "Enterprise-grade framework for AMPEL360 H₂-BWB-Q aircraft configuration optimization",
+  "children": [
+    {
+      "id": "O-ORGANIZATIONAL",
+      "name": "Organizational",
+      "type": "folder",
+      "description": "Governance, financial control, strategic management, org structures",
+      "children": [
+        {
+          "id": "CA-O-001-GOVERNANCE",
+          "name": "GOVERNANCE",
+          "type": "folder",
+          "description": "Component Architecture: GOVERNANCE",
+          "children": [
+            {
+              "id": "CI-CA-O-001-001-PROGRAM-GOVERNANCE-FRAMEWORK",
+              "name": "PROGRAM-GOVERNANCE-FRAMEWORK",
+              "type": "folder",
+              "description": "Configuration Item: PROGRAM GOVERNANCE FRAMEWORK"
+            },
+            {
+              "id": "CI-CA-O-001-002-QUALITY-MANAGEMENT-SYSTEM",
+              "name": "QUALITY-MANAGEMENT-SYSTEM",
+              "type": "folder",
+              "description": "Configuration Item: QUALITY MANAGEMENT SYSTEM"
+            },
+            {
+              "id": "CI-CA-O-001-003-CERTIFICATION-ROADMAP",
+              "name": "CERTIFICATION-ROADMAP",
+              "type": "folder",
+              "description": "Configuration Item: CERTIFICATION ROADMAP"
+            }
+          ]
+        },
+        {
+          "id": "CA-O-002-FINANCIAL-CONTROL",
+          "name": "FINANCIAL-CONTROL",
+          "type": "folder",
+          "description": "Component Architecture: FINANCIAL CONTROL",
+          "children": [
+            {
+              "id": "CI-CA-O-002-001-BUDGET-TRACKING",
+              "name": "BUDGET-TRACKING",
+              "type": "folder",
+              "description": "Configuration Item: BUDGET TRACKING"
+            },
+            {
+              "id": "CI-CA-O-002-002-LIFECYCLE-COST-MODEL",
+              "name": "LIFECYCLE-COST-MODEL",
+              "type": "folder",
+              "description": "Configuration Item: LIFECYCLE COST MODEL"
+            },
+            {
+              "id": "CI-CA-O-002-003-FUNDING-STRATEGY",
+              "name": "FUNDING-STRATEGY",
+              "type": "folder",
+              "description": "Configuration Item: FUNDING STRATEGY"
+            }
+          ]
+        },
+        {
+          "id": "CA-O-003-KPI-MONITORING",
+          "name": "KPI-MONITORING",
+          "type": "folder",
+          "description": "Component Architecture: KPI MONITORING",
+          "children": [
+            {
+              "id": "CI-CA-O-003-001-PERFORMANCE-INDICATORS",
+              "name": "PERFORMANCE-INDICATORS",
+              "type": "folder",
+              "description": "Configuration Item: PERFORMANCE INDICATORS"
+            },
+            {
+              "id": "CI-CA-O-003-002-RISK-DASHBOARD",
+              "name": "RISK-DASHBOARD",
+              "type": "folder",
+              "description": "Configuration Item: RISK DASHBOARD"
+            },
+            {
+              "id": "CI-CA-O-003-003-TRACEABILITY-METRICS",
+              "name": "TRACEABILITY-METRICS",
+              "type": "folder",
+              "description": "Configuration Item: TRACEABILITY METRICS"
+            }
+          ]
+        },
+        {
+          "id": "CA-O-004-ORGANIZATIONAL-STRUCTURE",
+          "name": "ORGANIZATIONAL-STRUCTURE",
+          "type": "folder",
+          "description": "Component Architecture: ORGANIZATIONAL STRUCTURE",
+          "children": [
+            {
+              "id": "CI-CA-O-004-001-ORG-CHART",
+              "name": "ORG-CHART",
+              "type": "folder",
+              "description": "Configuration Item: ORG CHART"
+            },
+            {
+              "id": "CI-CA-O-004-002-ROLES-RESPONSIBILITIES",
+              "name": "ROLES-RESPONSIBILITIES",
+              "type": "folder",
+              "description": "Configuration Item: ROLES RESPONSIBILITIES"
+            },
+            {
+              "id": "CI-CA-O-004-003-DECISION-RIGHTS",
+              "name": "DECISION-RIGHTS",
+              "type": "folder",
+              "description": "Configuration Item: DECISION RIGHTS"
+            }
+          ]
+        },
+        {
+          "id": "CA-O-005-STEERING-COMMITTEES",
+          "name": "STEERING-COMMITTEES",
+          "type": "folder",
+          "description": "Component Architecture: STEERING COMMITTEES",
+          "children": [
+            {
+              "id": "CI-CA-O-005-001-TECHNICAL-BOARD",
+              "name": "TECHNICAL-BOARD",
+              "type": "folder",
+              "description": "Configuration Item: TECHNICAL BOARD"
+            },
+            {
+              "id": "CI-CA-O-005-002-SAFETY-BOARD",
+              "name": "SAFETY-BOARD",
+              "type": "folder",
+              "description": "Configuration Item: SAFETY BOARD"
+            },
+            {
+              "id": "CI-CA-O-005-003-CERTIFICATION-BOARD",
+              "name": "CERTIFICATION-BOARD",
+              "type": "folder",
+              "description": "Configuration Item: CERTIFICATION BOARD"
+            }
+          ]
+        },
+        {
+          "id": "CA-O-006-STRATEGIC-ALIGNMENT",
+          "name": "STRATEGIC-ALIGNMENT",
+          "type": "folder",
+          "description": "Component Architecture: STRATEGIC ALIGNMENT",
+          "children": [
+            {
+              "id": "CI-CA-O-006-001-VISION-MISSION",
+              "name": "VISION-MISSION",
+              "type": "folder",
+              "description": "Configuration Item: VISION MISSION"
+            },
+            {
+              "id": "CI-CA-O-006-002-STRATEGIC-OBJECTIVES",
+              "name": "STRATEGIC-OBJECTIVES",
+              "type": "folder",
+              "description": "Configuration Item: STRATEGIC OBJECTIVES"
+            },
+            {
+              "id": "CI-CA-O-006-003-ROADMAP-MILESTONES",
+              "name": "ROADMAP-MILESTONES",
+              "type": "folder",
+              "description": "Configuration Item: ROADMAP MILESTONES"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P-PROCEDURAL",
+      "name": "Procedural",
+      "type": "folder",
+      "description": "Processes, workflows, phase gates, enterprise standards",
+      "children": [
+        {
+          "id": "CA-P-001-PROCESS-ARCHITECTURE",
+          "name": "PROCESS-ARCHITECTURE",
+          "type": "folder",
+          "description": "Component Architecture: PROCESS ARCHITECTURE",
+          "children": [
+            {
+              "id": "CI-CA-P-001-001-PROCESS-CATALOG",
+              "name": "PROCESS-CATALOG",
+              "type": "folder",
+              "description": "Configuration Item: PROCESS CATALOG"
+            },
+            {
+              "id": "CI-CA-P-001-002-BPMN-META-MODEL",
+              "name": "BPMN-META-MODEL",
+              "type": "folder",
+              "description": "Configuration Item: BPMN META MODEL"
+            },
+            {
+              "id": "CI-CA-P-001-003-LIFECYCLE-MAP",
+              "name": "LIFECYCLE-MAP",
+              "type": "folder",
+              "description": "Configuration Item: LIFECYCLE MAP"
+            },
+            {
+              "id": "CI-CA-P-001-004-RACI-MATRIX",
+              "name": "RACI-MATRIX",
+              "type": "folder",
+              "description": "Configuration Item: RACI MATRIX"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-002-GATES-AND-REVIEWS",
+          "name": "GATES-AND-REVIEWS",
+          "type": "folder",
+          "description": "Component Architecture: GATES AND REVIEWS",
+          "children": [
+            {
+              "id": "CI-CA-P-002-001-SRR-GATE",
+              "name": "SRR-GATE",
+              "type": "folder",
+              "description": "Configuration Item: SRR GATE"
+            },
+            {
+              "id": "CI-CA-P-002-002-PDR-GATE",
+              "name": "PDR-GATE",
+              "type": "folder",
+              "description": "Configuration Item: PDR GATE"
+            },
+            {
+              "id": "CI-CA-P-002-003-CDR-GATE",
+              "name": "CDR-GATE",
+              "type": "folder",
+              "description": "Configuration Item: CDR GATE"
+            },
+            {
+              "id": "CI-CA-P-002-004-TRR-GATE",
+              "name": "TRR-GATE",
+              "type": "folder",
+              "description": "Configuration Item: TRR GATE"
+            },
+            {
+              "id": "CI-CA-P-002-005-FRR-ORR-GATES",
+              "name": "FRR-ORR-GATES",
+              "type": "folder",
+              "description": "Configuration Item: FRR ORR GATES"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-003-CHANGE-MANAGEMENT",
+          "name": "CHANGE-MANAGEMENT",
+          "type": "folder",
+          "description": "Component Architecture: CHANGE MANAGEMENT",
+          "children": [
+            {
+              "id": "CI-CA-P-003-001-ECR-WORKFLOW",
+              "name": "ECR-WORKFLOW",
+              "type": "folder",
+              "description": "Configuration Item: ECR WORKFLOW"
+            },
+            {
+              "id": "CI-CA-P-003-002-ECO-IMPLEMENTATION",
+              "name": "ECO-IMPLEMENTATION",
+              "type": "folder",
+              "description": "Configuration Item: ECO IMPLEMENTATION"
+            },
+            {
+              "id": "CI-CA-P-003-003-CCB-CHARTER",
+              "name": "CCB-CHARTER",
+              "type": "folder",
+              "description": "Configuration Item: CCB CHARTER"
+            },
+            {
+              "id": "CI-CA-P-003-004-DEVIATIONS-CONCESSIONS",
+              "name": "DEVIATIONS-CONCESSIONS",
+              "type": "folder",
+              "description": "Configuration Item: DEVIATIONS CONCESSIONS"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-004-VV-PLANNING-AND-RTM",
+          "name": "VV-PLANNING-AND-RTM",
+          "type": "folder",
+          "description": "Component Architecture: VV PLANNING AND RTM",
+          "children": [
+            {
+              "id": "CI-CA-P-004-001-VV-PLAN",
+              "name": "VV-PLAN",
+              "type": "folder",
+              "description": "Configuration Item: VV PLAN"
+            },
+            {
+              "id": "CI-CA-P-004-002-REQUIREMENTS-TRACEABILITY-RTM",
+              "name": "REQUIREMENTS-TRACEABILITY-RTM",
+              "type": "folder",
+              "description": "Configuration Item: REQUIREMENTS TRACEABILITY RTM"
+            },
+            {
+              "id": "CI-CA-P-004-003-TEST-READINESS-REVIEW",
+              "name": "TEST-READINESS-REVIEW",
+              "type": "folder",
+              "description": "Configuration Item: TEST READINESS REVIEW"
+            },
+            {
+              "id": "CI-CA-P-004-004-TEST-DATA-MANAGEMENT",
+              "name": "TEST-DATA-MANAGEMENT",
+              "type": "folder",
+              "description": "Configuration Item: TEST DATA MANAGEMENT"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-005-SAFETY-CERTIFICATION-PROCESSES",
+          "name": "SAFETY-CERTIFICATION-PROCESSES",
+          "type": "folder",
+          "description": "Component Architecture: SAFETY CERTIFICATION PROCESSES",
+          "children": [
+            {
+              "id": "CI-CA-P-005-001-ARP4754A-PROCESS",
+              "name": "ARP4754A-PROCESS",
+              "type": "folder",
+              "description": "Configuration Item: ARP4754A PROCESS"
+            },
+            {
+              "id": "CI-CA-P-005-002-ARP4761A-SAFETY-ASSESSMENT",
+              "name": "ARP4761A-SAFETY-ASSESSMENT",
+              "type": "folder",
+              "description": "Configuration Item: ARP4761A SAFETY ASSESSMENT"
+            },
+            {
+              "id": "CI-CA-P-005-003-DO178C-SOFTWARE-PROCESS",
+              "name": "DO178C-SOFTWARE-PROCESS",
+              "type": "folder",
+              "description": "Configuration Item: DO178C SOFTWARE PROCESS"
+            },
+            {
+              "id": "CI-CA-P-005-004-DO254-HARDWARE-PROCESS",
+              "name": "DO254-HARDWARE-PROCESS",
+              "type": "folder",
+              "description": "Configuration Item: DO254 HARDWARE PROCESS"
+            },
+            {
+              "id": "CI-CA-P-005-005-DO326A-CYBERSECURITY-PROCESS",
+              "name": "DO326A-CYBERSECURITY-PROCESS",
+              "type": "folder",
+              "description": "Configuration Item: DO326A CYBERSECURITY PROCESS"
+            },
+            {
+              "id": "CI-CA-P-005-006-SAFETY-CASE-GSN-TEMPLATES",
+              "name": "SAFETY-CASE-GSN-TEMPLATES",
+              "type": "folder",
+              "description": "Configuration Item: SAFETY CASE GSN TEMPLATES"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-006-QUALITY-NCR-CAPA",
+          "name": "QUALITY-NCR-CAPA",
+          "type": "folder",
+          "description": "Component Architecture: QUALITY NCR CAPA",
+          "children": [
+            {
+              "id": "CI-CA-P-006-001-NCR-WORKFLOW",
+              "name": "NCR-WORKFLOW",
+              "type": "folder",
+              "description": "Configuration Item: NCR WORKFLOW"
+            },
+            {
+              "id": "CI-CA-P-006-002-CAPA-PROCEDURE",
+              "name": "CAPA-PROCEDURE",
+              "type": "folder",
+              "description": "Configuration Item: CAPA PROCEDURE"
+            },
+            {
+              "id": "CI-CA-P-006-003-FAI-FIRST-ARTICLE",
+              "name": "FAI-FIRST-ARTICLE",
+              "type": "folder",
+              "description": "Configuration Item: FAI FIRST ARTICLE"
+            },
+            {
+              "id": "CI-CA-P-006-004-AUDIT-PROGRAM",
+              "name": "AUDIT-PROGRAM",
+              "type": "folder",
+              "description": "Configuration Item: AUDIT PROGRAM"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-007-SUPPLIER-AND-PROCUREMENT",
+          "name": "SUPPLIER-AND-PROCUREMENT",
+          "type": "folder",
+          "description": "Component Architecture: SUPPLIER AND PROCUREMENT",
+          "children": [
+            {
+              "id": "CI-CA-P-007-001-SUPPLIER-QUALIFICATION",
+              "name": "SUPPLIER-QUALIFICATION",
+              "type": "folder",
+              "description": "Configuration Item: SUPPLIER QUALIFICATION"
+            },
+            {
+              "id": "CI-CA-P-007-002-SOW-TEMPLATES",
+              "name": "SOW-TEMPLATES",
+              "type": "folder",
+              "description": "Configuration Item: SOW TEMPLATES"
+            },
+            {
+              "id": "CI-CA-P-007-003-INCOMING-INSPECTION",
+              "name": "INCOMING-INSPECTION",
+              "type": "folder",
+              "description": "Configuration Item: INCOMING INSPECTION"
+            },
+            {
+              "id": "CI-CA-P-007-004-SLA-KPI-FRAMEWORK",
+              "name": "SLA-KPI-FRAMEWORK",
+              "type": "folder",
+              "description": "Configuration Item: SLA KPI FRAMEWORK"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-008-SECURITY-INCIDENT-RESPONSE",
+          "name": "SECURITY-INCIDENT-RESPONSE",
+          "type": "folder",
+          "description": "Component Architecture: SECURITY INCIDENT RESPONSE",
+          "children": [
+            {
+              "id": "CI-CA-P-008-001-CSIRT-RUNBOOK",
+              "name": "CSIRT-RUNBOOK",
+              "type": "folder",
+              "description": "Configuration Item: CSIRT RUNBOOK"
+            },
+            {
+              "id": "CI-CA-P-008-002-VULNERABILITY-MANAGEMENT",
+              "name": "VULNERABILITY-MANAGEMENT",
+              "type": "folder",
+              "description": "Configuration Item: VULNERABILITY MANAGEMENT"
+            },
+            {
+              "id": "CI-CA-P-008-003-SBOM-POLICY",
+              "name": "SBOM-POLICY",
+              "type": "folder",
+              "description": "Configuration Item: SBOM POLICY"
+            },
+            {
+              "id": "CI-CA-P-008-004-KEY-ROTATION-PROCEDURES",
+              "name": "KEY-ROTATION-PROCEDURES",
+              "type": "folder",
+              "description": "Configuration Item: KEY ROTATION PROCEDURES"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-009-DATA-GOVERNANCE-AND-DET",
+          "name": "DATA-GOVERNANCE-AND-DET",
+          "type": "folder",
+          "description": "Component Architecture: DATA GOVERNANCE AND DET",
+          "children": [
+            {
+              "id": "CI-CA-P-009-001-DATA-CLASSIFICATION",
+              "name": "DATA-CLASSIFICATION",
+              "type": "folder",
+              "description": "Configuration Item: DATA CLASSIFICATION"
+            },
+            {
+              "id": "CI-CA-P-009-002-RETENTION-SCHEDULE",
+              "name": "RETENTION-SCHEDULE",
+              "type": "folder",
+              "description": "Configuration Item: RETENTION SCHEDULE"
+            },
+            {
+              "id": "CI-CA-P-009-003-DET-EVIDENCE-PACKAGING",
+              "name": "DET-EVIDENCE-PACKAGING",
+              "type": "folder",
+              "description": "Configuration Item: DET EVIDENCE PACKAGING"
+            },
+            {
+              "id": "CI-CA-P-009-004-PRIVACY-IMPACT-ASSESSMENT",
+              "name": "PRIVACY-IMPACT-ASSESSMENT",
+              "type": "folder",
+              "description": "Configuration Item: PRIVACY IMPACT ASSESSMENT"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-010-CI-CD-AND-RELEASE",
+          "name": "CI-CD-AND-RELEASE",
+          "type": "folder",
+          "description": "Component Architecture: CI CD AND RELEASE",
+          "children": [
+            {
+              "id": "CI-CA-P-010-001-BRANCHING-MODEL",
+              "name": "BRANCHING-MODEL",
+              "type": "folder",
+              "description": "Configuration Item: BRANCHING MODEL"
+            },
+            {
+              "id": "CI-CA-P-010-002-BUILD-PROMOTION-GATES",
+              "name": "BUILD-PROMOTION-GATES",
+              "type": "folder",
+              "description": "Configuration Item: BUILD PROMOTION GATES"
+            },
+            {
+              "id": "CI-CA-P-010-003-RELEASE-CUTOVER",
+              "name": "RELEASE-CUTOVER",
+              "type": "folder",
+              "description": "Configuration Item: RELEASE CUTOVER"
+            },
+            {
+              "id": "CI-CA-P-010-004-ROLLBACK-PLAYBOOK",
+              "name": "ROLLBACK-PLAYBOOK",
+              "type": "folder",
+              "description": "Configuration Item: ROLLBACK PLAYBOOK"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-011-TRAINING-AND-COMPETENCE",
+          "name": "TRAINING-AND-COMPETENCE",
+          "type": "folder",
+          "description": "Component Architecture: TRAINING AND COMPETENCE",
+          "children": [
+            {
+              "id": "CI-CA-P-011-001-COMPETENCY-MATRIX",
+              "name": "COMPETENCY-MATRIX",
+              "type": "folder",
+              "description": "Configuration Item: COMPETENCY MATRIX"
+            },
+            {
+              "id": "CI-CA-P-011-002-TRAINING-CURRICULUM",
+              "name": "TRAINING-CURRICULUM",
+              "type": "folder",
+              "description": "Configuration Item: TRAINING CURRICULUM"
+            },
+            {
+              "id": "CI-CA-P-011-003-AUTHORIZATION-TO-WORK",
+              "name": "AUTHORIZATION-TO-WORK",
+              "type": "folder",
+              "description": "Configuration Item: AUTHORIZATION TO WORK"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-012-MRO-EOL-PROCEDURES",
+          "name": "MRO-EOL-PROCEDURES",
+          "type": "folder",
+          "description": "Component Architecture: MRO EOL PROCEDURES",
+          "children": [
+            {
+              "id": "CI-CA-P-012-001-MRO-WORKPACK-GENERATION",
+              "name": "MRO-WORKPACK-GENERATION",
+              "type": "folder",
+              "description": "Configuration Item: MRO WORKPACK GENERATION"
+            },
+            {
+              "id": "CI-CA-P-012-002-EOL-SORTING-AND-RECOVERY",
+              "name": "EOL-SORTING-AND-RECOVERY",
+              "type": "folder",
+              "description": "Configuration Item: EOL SORTING AND RECOVERY"
+            },
+            {
+              "id": "CI-CA-P-012-003-HAZMAT-HANDLING",
+              "name": "HAZMAT-HANDLING",
+              "type": "folder",
+              "description": "Configuration Item: HAZMAT HANDLING"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-013-ENERGY-AS-POLICY",
+          "name": "ENERGY-AS-POLICY",
+          "type": "folder",
+          "description": "Component Architecture: ENERGY AS POLICY",
+          "children": [
+            {
+              "id": "CI-CA-P-013-001-EAP-BUDGETING",
+              "name": "EAP-BUDGETING",
+              "type": "folder",
+              "description": "Configuration Item: EAP BUDGETING"
+            },
+            {
+              "id": "CI-CA-P-013-002-EAP-SCHEDULING-CONSTRAINTS",
+              "name": "EAP-SCHEDULING-CONSTRAINTS",
+              "type": "folder",
+              "description": "Configuration Item: EAP SCHEDULING CONSTRAINTS"
+            },
+            {
+              "id": "CI-CA-P-013-003-EAP-REPORTING",
+              "name": "EAP-REPORTING",
+              "type": "folder",
+              "description": "Configuration Item: EAP REPORTING"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-014-RISK-MANAGEMENT",
+          "name": "RISK-MANAGEMENT",
+          "type": "folder",
+          "description": "Component Architecture: RISK MANAGEMENT",
+          "children": [
+            {
+              "id": "CI-CA-P-014-001-RISK-REGISTER",
+              "name": "RISK-REGISTER",
+              "type": "folder",
+              "description": "Configuration Item: RISK REGISTER"
+            },
+            {
+              "id": "CI-CA-P-014-002-BOWTIE-ANALYSIS",
+              "name": "BOWTIE-ANALYSIS",
+              "type": "folder",
+              "description": "Configuration Item: BOWTIE ANALYSIS"
+            },
+            {
+              "id": "CI-CA-P-014-003-MITIGATION-PLANS",
+              "name": "MITIGATION-PLANS",
+              "type": "folder",
+              "description": "Configuration Item: MITIGATION PLANS"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-015-DOCUMENT-CONTROL",
+          "name": "DOCUMENT-CONTROL",
+          "type": "folder",
+          "description": "Component Architecture: DOCUMENT CONTROL",
+          "children": [
+            {
+              "id": "CI-CA-P-015-001-DOC-TEMPLATES",
+              "name": "DOC-TEMPLATES",
+              "type": "folder",
+              "description": "Configuration Item: DOC TEMPLATES"
+            },
+            {
+              "id": "CI-CA-P-015-002-APPROVAL-WORKFLOW",
+              "name": "APPROVAL-WORKFLOW",
+              "type": "folder",
+              "description": "Configuration Item: APPROVAL WORKFLOW"
+            },
+            {
+              "id": "CI-CA-P-015-003-VERSIONING-GUIDE",
+              "name": "VERSIONING-GUIDE",
+              "type": "folder",
+              "description": "Configuration Item: VERSIONING GUIDE"
+            },
+            {
+              "id": "CI-CA-P-015-004-DISTRIBUTION-LISTS",
+              "name": "DISTRIBUTION-LISTS",
+              "type": "folder",
+              "description": "Configuration Item: DISTRIBUTION LISTS"
+            }
+          ]
+        },
+        {
+          "id": "CA-P-016-OPERATIONS-HANDOVER",
+          "name": "OPERATIONS-HANDOVER",
+          "type": "folder",
+          "description": "Component Architecture: OPERATIONS HANDOVER",
+          "children": [
+            {
+              "id": "CI-CA-P-016-001-ORR-CHECKLIST",
+              "name": "ORR-CHECKLIST",
+              "type": "folder",
+              "description": "Configuration Item: ORR CHECKLIST"
+            },
+            {
+              "id": "CI-CA-P-016-002-SERVICE-TRANSITION",
+              "name": "SERVICE-TRANSITION",
+              "type": "folder",
+              "description": "Configuration Item: SERVICE TRANSITION"
+            },
+            {
+              "id": "CI-CA-P-016-003-OP-MANUAL-ACCEPTANCE",
+              "name": "OP-MANUAL-ACCEPTANCE",
+              "type": "folder",
+              "description": "Configuration Item: OP MANUAL ACCEPTANCE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T-TECHNOLOGICAL",
+      "name": "Technological",
+      "type": "folder",
+      "description": "Technical architecture, CAs/CIs, UTCS artifacts",
+      "children": [
+        {
+          "id": "A-ARCHITECTURES_AIRFRAMES_AERODYNAMICS",
+          "name": "Architectures Airframes Aerodynamics",
+          "type": "folder",
+          "description": "Technical domain: Architectures Airframes Aerodynamics",
+          "children": [
+            {
+              "id": "CA-A-001-CENTER-BODY-BOX",
+              "name": "CENTER-BODY-BOX",
+              "type": "folder",
+              "description": "Component Architecture: CENTER BODY BOX",
+              "children": [
+                {
+                  "id": "CI-CA-A-001-001-CB-PRIMARY-GRID",
+                  "name": "CB-PRIMARY-GRID",
+                  "type": "folder",
+                  "description": "Configuration Item: CB PRIMARY GRID"
+                },
+                {
+                  "id": "CI-CA-A-001-002-CB-RIBS-BULKHEADS",
+                  "name": "CB-RIBS-BULKHEADS",
+                  "type": "folder",
+                  "description": "Configuration Item: CB RIBS BULKHEADS"
+                },
+                {
+                  "id": "CI-CA-A-001-003-CB-SKIN-PANELS",
+                  "name": "CB-SKIN-PANELS",
+                  "type": "folder",
+                  "description": "Configuration Item: CB SKIN PANELS"
+                },
+                {
+                  "id": "CI-CA-A-001-004-CB-LANDING-GEAR-REINFS",
+                  "name": "CB-LANDING-GEAR-REINFS",
+                  "type": "folder",
+                  "description": "Configuration Item: CB LANDING GEAR REINFS"
+                },
+                {
+                  "id": "CI-CA-A-001-005-CB-PASSAGEWAYS",
+                  "name": "CB-PASSAGEWAYS",
+                  "type": "folder",
+                  "description": "Configuration Item: CB PASSAGEWAYS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "M-MACHINE",
+          "name": "Mechanical and Control",
+          "type": "folder",
+          "description": "Technical domain: Mechanical and Control",
+          "children": [
+            {
+              "id": "CA-M-001-FLIGHT-CONTROL-MECHANISMS",
+              "name": "FLIGHT-CONTROL-MECHANISMS",
+              "type": "folder",
+              "description": "Component Architecture: FLIGHT CONTROL MECHANISMS",
+              "children": [
+                {
+                  "id": "CI-CA-M-001-001-FC-ELEVON-HINGE-LINES",
+                  "name": "FC-ELEVON-HINGE-LINES",
+                  "type": "folder",
+                  "description": "Configuration Item: FC ELEVON HINGE LINES"
+                },
+                {
+                  "id": "CI-CA-M-001-002-FC-FLAPERON-DRIVE-BOXES",
+                  "name": "FC-FLAPERON-DRIVE-BOXES",
+                  "type": "folder",
+                  "description": "Configuration Item: FC FLAPERON DRIVE BOXES"
+                },
+                {
+                  "id": "CI-CA-M-001-003-FC-SPOILER-DRIVE-UNITS",
+                  "name": "FC-SPOILER-DRIVE-UNITS",
+                  "type": "folder",
+                  "description": "Configuration Item: FC SPOILER DRIVE UNITS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "E1-ENVIRONMENTAL_REMEDIATION_CIRCULARITY",
+          "name": "Environmental Remediation Circularity",
+          "type": "folder",
+          "description": "Technical domain: Environmental Remediation Circularity",
+          "children": [
+            {
+              "id": "CA-E1-001-ECS-CABIN-AIR-SYSTEM",
+              "name": "ECS-CABIN-AIR-SYSTEM",
+              "type": "folder",
+              "description": "Component Architecture: ECS CABIN AIR SYSTEM",
+              "children": [
+                {
+                  "id": "CI-CA-E1-001-001-ECS-HEAT-EXCHANGER-CORES",
+                  "name": "ECS-HEAT-EXCHANGER-CORES",
+                  "type": "folder",
+                  "description": "Configuration Item: ECS HEAT EXCHANGER CORES"
+                },
+                {
+                  "id": "CI-CA-E1-001-002-ECS-MIX-MANIFOLD-DUCTS",
+                  "name": "ECS-MIX-MANIFOLD-DUCTS",
+                  "type": "folder",
+                  "description": "Configuration Item: ECS MIX MANIFOLD DUCTS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "D-DEFENCE_CYBERSECURITY_SAFETY",
+          "name": "Defence Cybersecurity Safety",
+          "type": "folder",
+          "description": "Technical domain: Defence Cybersecurity Safety",
+          "children": [
+            {
+              "id": "CA-D-001-PLATFORM-SURVIVABILITY",
+              "name": "PLATFORM-SURVIVABILITY",
+              "type": "folder",
+              "description": "Component Architecture: PLATFORM SURVIVABILITY",
+              "children": [
+                {
+                  "id": "CI-CA-D-001-001-EMI-EMC-HARDENING-GUIDES",
+                  "name": "EMI-EMC-HARDENING-GUIDES",
+                  "type": "folder",
+                  "description": "Configuration Item: EMI EMC HARDENING GUIDES"
+                },
+                {
+                  "id": "CI-CA-D-001-002-LIGHTNING-LPS-INTERFACES",
+                  "name": "LIGHTNING-LPS-INTERFACES",
+                  "type": "folder",
+                  "description": "Configuration Item: LIGHTNING LPS INTERFACES"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "A-ARCHITECTURES_AIRFRAMES_AERODYNAMICS",
+          "name": "Energy and Renewable",
+          "type": "folder",
+          "description": "Technical domain: Energy and Renewable",
+          "children": [
+            {
+              "id": "CA-E2-001-POWER-ARCHITECTURE",
+              "name": "POWER-ARCHITECTURE",
+              "type": "folder",
+              "description": "Component Architecture: POWER ARCHITECTURE",
+              "children": [
+                {
+                  "id": "CI-CA-E2-001-001-BUS-TOPOLOGIES-HVDC-MVDC-LVDC",
+                  "name": "BUS-TOPOLOGIES-HVDC-MVDC-LVDC",
+                  "type": "folder",
+                  "description": "Configuration Item: BUS TOPOLOGIES HVDC MVDC LVDC"
+                },
+                {
+                  "id": "CI-CA-E2-001-002-GALLEY-AND-SERVICE-BRANCHES",
+                  "name": "GALLEY-AND-SERVICE-BRANCHES",
+                  "type": "folder",
+                  "description": "Configuration Item: GALLEY AND SERVICE BRANCHES"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "O-ORGANIZATIONAL",
+          "name": "Operating Systems Navigation HPC",
+          "type": "folder",
+          "description": "Technical domain: Operating Systems Navigation HPC",
+          "children": [
+            {
+              "id": "CA-O-001-AQUA-OS-BRIDGE-CORE",
+              "name": "AQUA-OS-BRIDGE-CORE",
+              "type": "folder",
+              "description": "Component Architecture: AQUA OS BRIDGE CORE",
+              "children": [
+                {
+                  "id": "CI-CA-O-001-001-CONTROL-PLANE-ARCH",
+                  "name": "CONTROL-PLANE-ARCH",
+                  "type": "folder",
+                  "description": "Configuration Item: CONTROL PLANE ARCH"
+                },
+                {
+                  "id": "CI-CA-O-001-002-PARTITION-MANAGER",
+                  "name": "PARTITION-MANAGER",
+                  "type": "folder",
+                  "description": "Configuration Item: PARTITION MANAGER"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I-INTELLIGENT",
+      "name": "Intelligent",
+      "type": "folder",
+      "description": "AI models, optimizers, predictive analytics, decision support",
+      "children": [
+        {
+          "id": "CA-I-001-AUTONOMY-LAYERING-ARCH",
+          "name": "AUTONOMY-LAYERING-ARCH",
+          "type": "folder",
+          "description": "Component Architecture: AUTONOMY LAYERING ARCH",
+          "children": [
+            {
+              "id": "CI-CA-I-001-001-AUTONOMY-LEVELS-STATE-MACHINE",
+              "name": "AUTONOMY-LEVELS-STATE-MACHINE",
+              "type": "folder",
+              "description": "Configuration Item: AUTONOMY LEVELS STATE MACHINE"
+            },
+            {
+              "id": "CI-CA-I-001-002-CREW/AUTOMATION-ARBITRATION",
+              "name": "CREW/AUTOMATION-ARBITRATION",
+              "type": "folder",
+              "description": "Configuration Item: CREW/AUTOMATION ARBITRATION"
+            },
+            {
+              "id": "CI-CA-I-001-003-HAZARD-MAP-(ARP4761)",
+              "name": "HAZARD-MAP-(ARP4761)",
+              "type": "folder",
+              "description": "Configuration Item: HAZARD MAP (ARP4761)"
+            },
+            {
+              "id": "CI-CA-I-001-004-POLICY-HIERARCHY-(AMORES/SEAL)",
+              "name": "POLICY-HIERARCHY-(AMORES/SEAL)",
+              "type": "folder",
+              "description": "Configuration Item: POLICY HIERARCHY (AMORES/SEAL)"
+            },
+            {
+              "id": "CI-CA-I-001-005-DEGRADATION-MODES-(FAIL-OP/SAFE)",
+              "name": "DEGRADATION-MODES-(FAIL-OP/SAFE)",
+              "type": "folder",
+              "description": "Configuration Item: DEGRADATION MODES (FAIL OP/SAFE)"
+            }
+          ]
+        },
+        {
+          "id": "CA-I-002-AGENT-MESH-(ExMCP)",
+          "name": "AGENT-MESH-(ExMCP)",
+          "type": "folder",
+          "description": "Component Architecture: AGENT MESH (ExMCP)",
+          "children": [
+            {
+              "id": "CI-CA-I-002-001-SKILLS/TOOLS-REGISTRY",
+              "name": "SKILLS/TOOLS-REGISTRY",
+              "type": "folder",
+              "description": "Configuration Item: SKILLS/TOOLS REGISTRY"
+            },
+            {
+              "id": "CI-CA-I-002-002-MEMORY-RAG-LIMITS-(PRIVACY)",
+              "name": "MEMORY-RAG-LIMITS-(PRIVACY)",
+              "type": "folder",
+              "description": "Configuration Item: MEMORY RAG LIMITS (PRIVACY)"
+            },
+            {
+              "id": "CI-CA-I-002-003-NEGOTIATION/COORDINATION",
+              "name": "NEGOTIATION/COORDINATION",
+              "type": "folder",
+              "description": "Configuration Item: NEGOTIATION/COORDINATION"
+            },
+            {
+              "id": "CI-CA-I-002-004-HRI-PROMPTS-(COCKPIT/CABIN/CARGO)",
+              "name": "HRI-PROMPTS-(COCKPIT/CABIN/CARGO)",
+              "type": "folder",
+              "description": "Configuration Item: HRI PROMPTS (COCKPIT/CABIN/CARGO)"
+            },
+            {
+              "id": "CI-CA-I-002-005-DET-RATIONALES/WORM",
+              "name": "DET-RATIONALES/WORM",
+              "type": "folder",
+              "description": "Configuration Item: DET RATIONALES/WORM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "M-MACHINE",
+      "name": "Machine",
+      "type": "folder",
+      "description": "Simulation, digital twins, co-simulation, HIL testing",
+      "children": [
+        {
+          "id": "CA-M-001-AUTOMATION-JOBS/ETL",
+          "name": "AUTOMATION-JOBS/ETL",
+          "type": "folder",
+          "description": "Component Architecture: AUTOMATION JOBS/ETL",
+          "children": [
+            {
+              "id": "CI-CA-M-001-001-BATCH/STREAM-ENGINES",
+              "name": "BATCH/STREAM-ENGINES",
+              "type": "folder",
+              "description": "Configuration Item: BATCH/STREAM ENGINES"
+            },
+            {
+              "id": "CI-CA-M-001-002-CANONICAL-SCHEMAS-(Protobuf)",
+              "name": "CANONICAL-SCHEMAS-(Protobuf)",
+              "type": "folder",
+              "description": "Configuration Item: CANONICAL SCHEMAS (Protobuf)"
+            },
+            {
+              "id": "CI-CA-M-001-003-QUALITY-GATES/RETRY",
+              "name": "QUALITY-GATES/RETRY",
+              "type": "folder",
+              "description": "Configuration Item: QUALITY GATES/RETRY"
+            },
+            {
+              "id": "CI-CA-M-001-004-LEDGER-WRITE-(QAUDIT/DET)",
+              "name": "LEDGER-WRITE-(QAUDIT/DET)",
+              "type": "folder",
+              "description": "Configuration Item: LEDGER WRITE (QAUDIT/DET)"
+            },
+            {
+              "id": "CI-CA-M-001-005-ERROR-BUDGETS/SLO",
+              "name": "ERROR-BUDGETS/SLO",
+              "type": "folder",
+              "description": "Configuration Item: ERROR BUDGETS/SLO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E-EXECUTING",
+      "name": "Executing",
+      "type": "folder",
+      "description": "Execution orchestration, deployment automation, runtime monitoring",
+      "children": [
+        {
+          "id": "CA-E-001-RUNTIME-MODES",
+          "name": "RUNTIME-MODES",
+          "type": "folder",
+          "description": "Component Architecture: RUNTIME MODES",
+          "children": [
+            {
+              "id": "CI-CA-E-001-001-MODE-MANAGER-(NORM/INHIBIT/EMERG)",
+              "name": "MODE-MANAGER-(NORM/INHIBIT/EMERG)",
+              "type": "folder",
+              "description": "Configuration Item: MODE MANAGER (NORM/INHIBIT/EMERG)"
+            },
+            {
+              "id": "CI-CA-E-001-002-AUTHZ/RBAC-BINDINGS",
+              "name": "AUTHZ/RBAC-BINDINGS",
+              "type": "folder",
+              "description": "Configuration Item: AUTHZ/RBAC BINDINGS"
+            },
+            {
+              "id": "CI-CA-E-001-003-SAFE-STATE-TRANSITIONS",
+              "name": "SAFE-STATE-TRANSITIONS",
+              "type": "folder",
+              "description": "Configuration Item: SAFE STATE TRANSITIONS"
+            },
+            {
+              "id": "CI-CA-E-001-004-FLEET-POLICY-SYNC",
+              "name": "FLEET-POLICY-SYNC",
+              "type": "folder",
+              "description": "Configuration Item: FLEET POLICY SYNC"
+            },
+            {
+              "id": "CI-CA-E-001-005-READINESS-HEALTH-GATES",
+              "name": "READINESS-HEALTH-GATES",
+              "type": "folder",
+              "description": "Configuration Item: READINESS HEALTH GATES"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
