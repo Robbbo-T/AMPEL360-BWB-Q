@@ -67,13 +67,20 @@ traceability:
 
 # Combined reports
 .PHONY: all-reports
-all-reports: validate evidence-status requirements validate-config-index
+all-reports: validate evidence-status requirements validate-config-index validate-interactive-index
 
 # Configuration Index validation
 .PHONY: validate-config-index
 validate-config-index:
 	@echo "🔍 Validating Configuration Index..."
 	$(PYTHON) tools/validate_config_index.py
+	@echo ""
+
+# Interactive Index validation
+.PHONY: validate-interactive-index
+validate-interactive-index:
+	@echo "🔍 Validating Interactive Framework Index..."
+	$(PYTHON) tools/validate_interactive_index.py
 	@echo ""
 	@echo "✅ All validation reports completed!"
 
