@@ -1,16 +1,3 @@
-# Amedeo Pelliccia
-
-**Aerospace Systems Engineer • Digital-Twin Architecture • Risk-Optimized Design**  
-Project Coordinator, Capgemini Engineering (Madrid) • Founder, GAIA Quantum Aerospace  
-Master's Candidate, Project Management (EAE Business School, 2025–2028)
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/Robbbo-T)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/robbbo-t)
-
----
-
-I am an aerospace systems engineer architecting the next generation of certifiable, sustainable aircraft. My work bridges the gap between rigorous, safety-critical engineering and advanced computational paradigms like digital twins, AI, and quantum-inspired optimization. The goal is to transform aerospace complexity into computational certainty. My primary focus is the development of the **AMPEL360-BWB-Q** framework, a comprehensive system for designing the future of flight.
-
 ## Featured Project: AMPEL360-BWB-Q
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
