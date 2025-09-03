@@ -71,3 +71,9 @@ T-TECHNOLOGICAL/LEDGER/cli/ledger-plan.backup.json
 .pytest_cache/
 .coverage
 node_modules/
+dist/
+*.tsbuildinfo
+
+# Generated output files
+framework-output.json
+ampel360-framework.json
